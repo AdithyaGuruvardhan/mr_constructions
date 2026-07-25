@@ -1,19 +1,36 @@
-import { useState } from 'react'
+import HeroScrollVideo from './components/HeroScrollVideo'
+import AboutSection from './components/AboutSection'
+import ProcessSection from './components/ProcessSection'
+import PortfolioSection from './components/PortfolioSection'
+import ClienteleSection from './components/ClienteleSection'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center text-gray-900">
-      <h1 className="text-4xl font-bold text-blue-600 mb-6">Hello, Tailwind CSS v4!</h1>
-      <p className="text-lg mb-8">This repository has been initialized with React and Tailwind.</p>
-      
-      <button 
-        className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors cursor-pointer"
-        onClick={() => setCount((c) => c + 1)}
-      >
-        Count is {count}
-      </button>
+    <div className="min-h-screen bg-white font-sans selection:bg-[#ff761f] selection:text-white">
+      {/* The Scroll-Driven Video Hero */}
+      <HeroScrollVideo />
+
+      {/* About Section */}
+      <AboutSection />
+
+      {/* Process / Execution Section */}
+      <ProcessSection />
+
+      {/* Portfolio / Works Section */}
+      <PortfolioSection />
+
+      {/* Clientele Section */}
+      <ClienteleSection />
+
+      {/* Outro section */}
+      <section className="h-[60vh] flex flex-col items-center justify-center p-8 text-center bg-white border-t border-gray-100">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#2d2d2d]">
+          Ready to start your project?
+        </h2>
+        <button className="px-8 py-4 bg-[#ff761f] text-black font-semibold rounded-full hover:scale-105 transition-transform shadow-lg cursor-pointer">
+          Contact Us
+        </button>
+      </section>
     </div>
   )
 }

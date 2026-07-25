@@ -1,0 +1,98 @@
+import React, { useEffect, useRef, useState } from 'react';
+
+const logosRow1 = [
+  { src: '/clients/infosys.png', alt: 'Infosys' },
+  { src: '/clients/iit.png', alt: 'IIIT Dharwad' },
+  { src: '/clients/tata.png', alt: 'Tata Memorial' },
+  { src: '/clients/namma_metro.png', alt: 'Namma Metro' },
+];
+
+const logosRow2 = [
+  { src: '/clients/infosys1.png', alt: 'Infosys' },
+  { src: '/clients/kiwadi.png', alt: 'Kidwai' },
+  { src: '/clients/elcita.png', alt: 'Elcita' },
+  { src: '/clients/hospital.png', alt: 'Hospital' },
+  { src: '/clients/elcia.png', alt: 'Elcia' },
+];
+
+export default function ClienteleSection() {
+  const sectionRef = useRef(null);
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      // Get the distance from the top of the viewport to the top of the section
+      const rect = sectionRef.current.getBoundingClientRect();
+      
+      // Calculate how far the section has scrolled into view
+      // window.innerHeight is the bottom of the screen. 
+      // When rect.top equals window.innerHeight, it just entered the screen.
+      const scrollPos = window.innerHeight - rect.top; 
+      
+      if (scrollPos > 0) {
+        // Multiplier 0.15 controls the speed of the parallax scroll
+        setScrollOffset(scrollPos * 0.15); 
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initialize on mount
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="bg-white py-16 md:py-24 overflow-hidden w-full flex flex-col items-center">
+      
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-16">
+        {/* Title */}
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="text-3xl md:text-[2.75rem] font-medium text-[#2d2d2d] mb-4 leading-tight">
+            Trusted By Leaders
+          </h2>
+          <p className="text-[#6b6b6b] text-base md:text-lg max-w-2xl mx-auto">
+            The prominent organizations that have entrusted us with their landmark projects.
+          </p>
+        </div>
+      </div>
+
+      {/* Scroll-driven Parallax Rows */}
+      <div className="w-full flex flex-col gap-6 md:gap-8 relative overflow-visible">
+        
+        {/* Top Row (Scrolls Left as you scroll down) */}
+        {/* We use a left margin (ml-[15%]) to create that staggered offset shown in your design */}
+        <div 
+          className="flex w-max gap-6 md:gap-8 ml-[15%] md:ml-[35%]"
+          style={{ transform: `translateX(-${scrollOffset}px)`, transition: 'transform 0.1s ease-out' }}
+        >
+          {logosRow1.map((logo, index) => (
+            <div 
+              key={`row1-${index}`} 
+              className="w-56 md:w-72 h-28 md:h-36 bg-[#e2e2e2] rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center p-3 md:p-4 shrink-0 shadow-sm transition-transform hover:scale-105"
+            >
+              <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain filter transition-all duration-300" />
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Row (Scrolls Right as you scroll down) */}
+        {/* We use a negative left margin (-ml-[5%]) to offset it to the left initially */}
+        <div 
+          className="flex w-max gap-6 md:gap-8 -ml-[5%] md:-ml-[10%]"
+          style={{ transform: `translateX(${scrollOffset}px)`, transition: 'transform 0.1s ease-out' }}
+        >
+          {logosRow2.map((logo, index) => (
+            <div 
+              key={`row2-${index}`} 
+              className="w-56 md:w-72 h-28 md:h-36 bg-[#e2e2e2] rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center p-3 md:p-4 shrink-0 shadow-sm transition-transform hover:scale-105"
+            >
+              <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain filter transition-all duration-300" />
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
