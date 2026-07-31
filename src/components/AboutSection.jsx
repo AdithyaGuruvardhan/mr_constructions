@@ -52,9 +52,9 @@ export default function AboutSection() {
         {/* Right Image */}
         <div className="w-full md:w-1/2 min-h-[400px] md:min-h-full relative rounded-[2.5rem] overflow-hidden shadow-sm border border-gray-100">
           <img 
-            src="/building.png" 
+            src="/infosys/INFOSYS HUBLI7.jpg" 
             alt="MR Construction Building" 
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-[80%_center]"
           />
         </div>
 

@@ -9,8 +9,10 @@ export default function HubliSchoolShowcase() {
   const container = useRef();
   const schoolImgRef = useRef();
   const textRef = useRef();
+  const leavesRef = useRef();
 
   useGSAP(() => {
+    // Main scroll animation
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
@@ -37,6 +39,20 @@ export default function HubliSchoolShowcase() {
       y: -50,
       ease: "power1.inOut"
     }, 0);
+
+    // Parallax mouse movement using GSAP quickTo for high performance
+    const xTo = gsap.quickTo(leavesRef.current, "x", { duration: 0.5, ease: "power3" });
+    const yTo = gsap.quickTo(leavesRef.current, "y", { duration: 0.5, ease: "power3" });
+
+    const handleMouseMove = (e) => {
+      const moveX = (e.clientX / window.innerWidth - 0.5) * -60;
+      const moveY = (e.clientY / window.innerHeight - 0.5) * -60;
+      xTo(moveX);
+      yTo(moveY);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
 
   }, { scope: container });
 
@@ -72,9 +88,12 @@ export default function HubliSchoolShowcase() {
           </div>
         </div>
 
-        {/* Static Foreground Leaves Layer (z-30) */}
-        {/* The leaves stay perfectly still! */}
-        <div className="absolute inset-0 w-full h-full z-30 pointer-events-none">
+        {/* Interactive Foreground Leaves Layer (z-30) */}
+        {/* Moves slightly based on mouse position for a parallax effect */}
+        <div 
+          ref={leavesRef}
+          className="absolute inset-0 w-full h-full z-30 pointer-events-none scale-105"
+        >
           <img 
             src="/Hubli_School_leaves.png" 
             alt="Leaves Overlay" 

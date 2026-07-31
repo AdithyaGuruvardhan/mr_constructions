@@ -25,33 +25,33 @@ export default function ProjectShowcase() {
       }
     });
 
-    // 1. Initial State: Polygons placed partially on-screen at top and bottom
-    // Left mask is 60% tall, starting at the top edge (0% to 60%)
+    // 1. Initial State: Rectangles placed partially on-screen at top and bottom
+    // Left mask is 60% tall, starting at the top edge
     gsap.set(leftMaskRef.current, {
-      clipPath: "polygon(35% 0%, 49.5% 0%, 49.5% 60%, 35% 60%)"
+      clipPath: "inset(0% 50.5% 40% 35% round 1.5rem)"
     });
-    // Right mask is 60% tall, starting at the bottom edge (40% to 100%)
+    // Right mask is 60% tall, starting at the bottom edge
     gsap.set(rightMaskRef.current, {
-      clipPath: "polygon(50.5% 40%, 65% 40%, 65% 100%, 50.5% 100%)"
+      clipPath: "inset(40% 35% 0% 50.5% round 1.5rem)"
     });
 
     // Phase 1: Slide in from top/bottom to the center (with a small gap between them)
     tl.to(leftMaskRef.current, {
-      clipPath: "polygon(35% 20%, 49.5% 20%, 49.5% 80%, 35% 80%)",
+      clipPath: "inset(20% 50.5% 20% 35% round 1.5rem)",
       ease: "power1.out"
     }, 0);
     tl.to(rightMaskRef.current, {
-      clipPath: "polygon(50.5% 20%, 65% 20%, 65% 80%, 50.5% 80%)",
+      clipPath: "inset(20% 35% 20% 50.5% round 1.5rem)",
       ease: "power1.out"
     }, 0);
 
     // Phase 2: Merge the gap in the center (Overlap slightly to hide sub-pixel line)
     tl.to(leftMaskRef.current, {
-      clipPath: "polygon(35% 20%, 50.5% 20%, 50.5% 80%, 35% 80%)",
+      clipPath: "inset(20% 49.5% 20% 35% round 1.5rem)",
       ease: "none"
     }, 1);
     tl.to(rightMaskRef.current, {
-      clipPath: "polygon(49.5% 20%, 65% 20%, 65% 80%, 49.5% 80%)",
+      clipPath: "inset(20% 35% 20% 49.5% round 1.5rem)",
       ease: "none"
     }, 1);
 
@@ -61,13 +61,13 @@ export default function ProjectShowcase() {
       ease: "none"
     }, 1);
 
-    // Phase 3: Expand both polygons outward to fill the screen (keep the overlap)
+    // Phase 3: Expand both outward to fill the screen (keep the overlap) and remove rounded corners
     tl.to(leftMaskRef.current, {
-      clipPath: "polygon(0% 0%, 50.5% 0%, 50.5% 100%, 0% 100%)",
+      clipPath: "inset(0% 49.5% 0% 0% round 0px)",
       ease: "power2.inOut"
     }, 2);
     tl.to(rightMaskRef.current, {
-      clipPath: "polygon(49.5% 0%, 100% 0%, 100% 100%, 49.5% 100%)",
+      clipPath: "inset(0% 0% 0% 49.5% round 0px)",
       ease: "power2.inOut"
     }, 2);
 
@@ -160,13 +160,31 @@ export default function ProjectShowcase() {
     </div>
     
     {/* Post-Showcase Description Section */}
-    <div className="w-full bg-white py-8 md:py-16 px-6">
-      <div className="max-w-4xl mx-auto text-center font-sans flex flex-col items-center">
+    <div className="w-full bg-white py-8 md:py-16 px-6 relative overflow-hidden">
+      
+      {/* View Project Circular Badge (Top Right) */}
+      <div className="absolute right-4 md:right-12 top-4 md:top-12 flex items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-10 group hidden sm:flex">
+        {/* Center Text */}
+        <span className="absolute text-[10px] md:text-xs font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#ff761f] transition-colors duration-300">
+          View<br/>Project
+        </span>
+        {/* Rotating Circular Text */}
+        <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
+          <path id="circlePathHubli" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="transparent" />
+          <text>
+            <textPath href="#circlePathHubli" startOffset="0" className="text-[9.5px] font-medium tracking-[0.18em] fill-[#2d2d2d]/60 uppercase">
+              • EXPLORE • DISCOVER • EXPLORE • DISCOVER
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <div className="max-w-4xl mx-auto text-center font-sans flex flex-col items-center relative z-0">
         <div className="w-[2px] h-20 md:h-32 bg-[#2d2d2d]/70 mb-8 md:mb-12"></div>
-        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed mb-8">
+        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed mb-8 sm:pr-24 lg:pr-0">
           M R Constructions delivered the New Campus Development for Infosys Limited at Hubli, in association with architects M/s RSP Consultants. We covered a built-up area of 378,000 sq. ft. with full site development, completed in 24 months.
         </p>
-        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed">
+        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed sm:pr-24 lg:pr-0">
           Our scope included the SDB (G+5), Food Court (G+2), UGR, amphitheater, land development, compound walls, and all associated roads, services, and finishing works.
         </p>
       </div>

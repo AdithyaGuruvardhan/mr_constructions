@@ -50,37 +50,52 @@ export default function LakeDevelopmentShowcase() {
         {/* Static Elements Group (Fades out on scroll) */}
         <div ref={textGroupRef} className="absolute inset-0 w-full h-full flex items-center justify-center p-6">
           
-          {/* Top Left Vertical Image (Sharp corners, a bit to the top) */}
+          {/* Top Left Vertical Image */}
           <div className="absolute top-0 md:top-10 left-10 w-[40vw] md:w-[25vw] h-[40vh] md:h-[60vh]">
             <img 
-              src="/Lake Development_vert.png" 
-              alt="Lake Development Left" 
-              className="w-full h-full object-cover rounded-none shadow-2xl" 
+              src="/hospital/hospital.png" 
+              alt="Infosys Foundation Jayadeva Hospital Left" 
+              className="w-full h-full object-cover rounded-[1.5rem] shadow-2xl relative z-10" 
             />
           </div>
 
-          {/* Bottom Right Vertical Image (Sharp corners) */}
+          {/* Bottom Right Vertical Image */}
           <div className="absolute bottom-0 md:bottom-10 right-0 md:right-10 w-[40vw] md:w-[20vw] h-[55vh]">
             <img 
-              src="/Lake Development_vert (1).png" 
-              alt="Lake Development Right" 
-              className="w-full h-full object-cover rounded-none" 
+              src="/hospital/hospital (1).JPG" 
+              alt="Infosys Foundation Jayadeva Hospital Right" 
+              className="w-full h-full object-cover rounded-[1.5rem]" 
             />
           </div>
           
           {/* Center Text Description */}
           <div className="relative z-10 max-w-2xl text-center flex flex-col items-center">
             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#2d2d2d] mb-6">
-              Hebbal Lake, Mysore
+              Infosys Foundation Jayadeva Hospital Building, Bangalore
             </h2>
             <div className="w-[2px] h-16 md:h-24 bg-[#2d2d2d]/50 mb-8"></div>
             
             <p className="text-base md:text-lg lg:text-xl text-[#2d2d2d] leading-relaxed mb-6 font-medium">
-              We undertook the Lake Development & Construction project at Hebbal Lake, Mysore, for Infosys Limited, in association with architects TRC. The project covered an 8 MLD capacity STP with full site development, completed in 15 months.
+              We undertook the construction of the Infosys Foundation Jayadeva Hospital Building in Bangalore. The state-of-the-art facility is designed to provide world-class healthcare infrastructure.
             </p>
             <p className="text-base md:text-lg lg:text-xl text-[#2d2d2d] leading-relaxed font-medium">
-              Our scope included a 78,000 sft floor area for the 8 MLD facility, lake development, 5 kms of roads, and all associated civil and finishing works.
+              Our scope of work included the complete civil and structural construction, specialized medical infrastructure integration, MEP services, and finishing works, ensuring the highest standards of safety and quality.
             </p>
+
+            {/* Small View Project Badge */}
+            <div className="mt-8 md:mt-12 flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-20 group hidden sm:flex">
+              <span className="absolute text-[8px] md:text-[10px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#ff761f] transition-colors duration-300">
+                View<br/>Project
+              </span>
+              <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
+                <path id="circlePathHospital" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="transparent" />
+                <text>
+                  <textPath href="#circlePathHospital" startOffset="0" className="text-[9.5px] font-medium tracking-[0.18em] fill-[#2d2d2d]/60 uppercase">
+                    • EXPLORE • DISCOVER • EXPLORE • DISCOVER
+                  </textPath>
+                </text>
+              </svg>
+            </div>
           </div>
           
         </div>
@@ -88,9 +103,9 @@ export default function LakeDevelopmentShowcase() {
         {/* Expanding Center Bottom Image */}
         <div ref={expandImgRef} className="absolute inset-0 w-[90vw] h-full z-20 shadow-2xl top-50 left-1/2 transform -translate-x-1/2">
           <img 
-            src="/Lake Development.png" 
-            alt="Lake Development Panorama" 
-            className="w-full h-full object-cover rounded-none" 
+            src="/hospital/MRC jayadeva 2S _81.JPG" 
+            alt="Infosys Foundation Jayadeva Hospital Panorama" 
+            className="w-full h-full object-cover rounded-[1.5rem]" 
           />
         </div>
 

@@ -7,6 +7,7 @@ import ServicesSection from './components/ServicesSection'
 import ProjectShowcase from './components/ProjectShowcase'
 import LakeDevelopmentShowcase from './components/LakeDevelopmentShowcase'
 import HubliSchoolShowcase from './components/HubliSchoolShowcase'
+import SchoolInfrastructureFocus from './components/SchoolInfrastructureFocus'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
 
       <LakeDevelopmentShowcase />
       <HubliSchoolShowcase />
+      <SchoolInfrastructureFocus />
 
       {/* Outro section */}
       <section className="h-[60vh] flex flex-col items-center justify-center p-8 text-center bg-white border-t border-gray-100">

@@ -7,12 +7,10 @@ export default function ServicesSection() {
   const [scrollLeft, setScrollLeft] = useState(0);
 
   const serviceItems = [
-    { id: 1, title: 'Residential Construction', projects: 'Villas, Apartments, Luxury Homes, Farm Houses', image: '/building.png' },
-    { id: 2, title: 'Commercial Construction', projects: 'Office Buildings, Shopping Malls, Hotels, Retail Spaces', image: '/building.png' },
-    { id: 3, title: 'Industrial Construction', projects: 'Factories, Warehouses, Manufacturing Units', image: '/building.png' },
-    { id: 4, title: 'Infrastructure', projects: 'Roads, Bridges, Flyovers, Public Projects', image: '/building.png' },
-    { id: 5, title: 'Interior Solutions', projects: 'Residential Interiors, Commercial Interiors, Office Fit-Outs', image: '/building.png' },
-    { id: 6, title: 'Renovation', projects: 'Home Renovation, Building Restoration, Structural Strengthening', image: '/building.png' },
+    { id: 1, title: 'Commercial', projects: 'Delivering modern office spaces, retail environments, and state-of-the-art commercial complexes.', image: '/sira_solar.png' },
+    { id: 2, title: 'Education Institute', projects: 'Building inspiring learning environments, from schools to advanced research campuses.', image: '/hubli_school_vert.png' },
+    { id: 3, title: 'Hospitals', projects: 'Constructing specialized healthcare facilities, clinics, and multi-specialty hospitals with precision.', image: '/hospital.png' },
+    { id: 4, title: 'Temple', projects: 'Creating timeless spiritual centers and cultural complexes with traditional architectural integrity.', image: '/melukote_temple.png' },
   ];
 
   const handleMouseDown = (e) => {
@@ -85,7 +83,7 @@ export default function ServicesSection() {
                 />
                 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/2 to-transparent pointer-events-none"></div>
                 
                 {/* Text */}
                 <div className="absolute bottom-0 left-0 p-8 w-full pointer-events-none z-10">
