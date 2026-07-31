@@ -4,10 +4,14 @@ import ProcessSection from './components/ProcessSection'
 import PortfolioSection from './components/PortfolioSection'
 import ClienteleSection from './components/ClienteleSection'
 import ServicesSection from './components/ServicesSection'
+import WhyChooseUsSection from './components/WhyChooseUsSection'
+import InspiringDesignSection from './components/InspiringDesignSection'
 import ProjectShowcase from './components/ProjectShowcase'
 import LakeDevelopmentShowcase from './components/LakeDevelopmentShowcase'
 import HubliSchoolShowcase from './components/HubliSchoolShowcase'
 import SchoolInfrastructureFocus from './components/SchoolInfrastructureFocus'
+import FAQSection from './components/FAQSection'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -24,8 +28,8 @@ function App() {
       {/* Services Section */}
       <ServicesSection />
 
-      {/* Portfolio / Works Section */}
-      {/* <PortfolioSection /> */}
+      {/* Why Choose Us Section */}
+      <WhyChooseUsSection />
 
       {/* Clientele Section */}
       <ClienteleSection />
@@ -37,15 +41,14 @@ function App() {
       <HubliSchoolShowcase />
       <SchoolInfrastructureFocus />
 
-      {/* Outro section */}
-      <section className="h-[60vh] flex flex-col items-center justify-center p-8 text-center bg-white border-t border-gray-100">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#2d2d2d]">
-          Ready to start your project?
-        </h2>
-        <button className="px-8 py-4 bg-[#ff761f] text-black font-semibold rounded-full hover:scale-105 transition-transform shadow-lg cursor-pointer">
-          Contact Us
-        </button>
-      </section>
+      {/* Inspiring Design (Temple Layout) */}
+      <InspiringDesignSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

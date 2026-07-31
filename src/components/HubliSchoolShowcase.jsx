@@ -58,19 +58,19 @@ export default function HubliSchoolShowcase() {
 
   return (
     <div ref={container} className="relative h-[250vh] w-full bg-white font-sans">
-      
+
       {/* Sticky Inner Container */}
       <div className="sticky top-0 w-full h-screen overflow-hidden bg-white">
-        
+
         {/* The School Image Layer (z-10, behind text) */}
-        <div 
-          ref={schoolImgRef} 
+        <div
+          ref={schoolImgRef}
           className="absolute inset-0 w-full h-full z-10"
         >
-          <img 
-            src="/Hubli_School.png" 
-            alt="Hubli School Project" 
-            className="w-full h-full object-cover" 
+          <img
+            src="/Hubli_School.png"
+            alt="Hubli School Project"
+            className="w-full h-full object-cover"
           />
         </div>
 
@@ -81,7 +81,7 @@ export default function HubliSchoolShowcase() {
               Ramakrishna Mission School, Hubli
             </h2>
             <div className="w-[2px] h-16 md:h-24 bg-[#2d2d2d]/50 mb-8"></div>
-            
+
             <p className="text-lg md:text-2xl text-[#2d2d2d] leading-relaxed font-medium drop-shadow-sm">
               We undertook the construction of a CBSE school building for Ramakrishna Mission at Hubli, covering an area of 35,000 sft.
             </p>
@@ -90,14 +90,14 @@ export default function HubliSchoolShowcase() {
 
         {/* Interactive Foreground Leaves Layer (z-30) */}
         {/* Moves slightly based on mouse position for a parallax effect */}
-        <div 
+        <div
           ref={leavesRef}
           className="absolute inset-0 w-full h-full z-30 pointer-events-none scale-105"
         >
-          <img 
-            src="/Hubli_School_leaves.png" 
-            alt="Leaves Overlay" 
-            className="w-full h-full object-cover" 
+          <img
+            src="/Hubli_School_leaves.png"
+            alt="Leaves Overlay"
+            className="w-full h-full object-cover"
           />
         </div>
       </div>

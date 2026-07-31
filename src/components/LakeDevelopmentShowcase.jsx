@@ -91,7 +91,7 @@ export default function LakeDevelopmentShowcase() {
                 <path id="circlePathHospital" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="transparent" />
                 <text>
                   <textPath href="#circlePathHospital" startOffset="0" className="text-[9.5px] font-medium tracking-[0.18em] fill-[#2d2d2d]/60 uppercase">
-                    • EXPLORE • DISCOVER • EXPLORE • DISCOVER
+                    EXPLORE • DISCOVER • EXPLORE • DISCOVER
                   </textPath>
                 </text>
               </svg>
