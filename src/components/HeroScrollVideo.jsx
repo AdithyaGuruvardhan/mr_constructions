@@ -217,41 +217,7 @@ export default function HeroScrollVideo() {
         {/* Overlay Content */}
         <div className="absolute inset-0 z-10 pointer-events-none flex flex-col justify-between px-6 py-8 md:px-16 md:py-12">
 
-          {/* Top Bar / Nav */}
-          <div className="w-full max-w-7xl mx-auto pointer-events-auto relative">
-            <div className="bg-[#878787] text-white py-3 px-4 md:px-8 rounded-xl w-full flex items-center justify-between shadow-lg">
-              
-              {/* Left - Hamburger */}
-              <button 
-                onClick={() => setMenuOpen(!menuOpen)} 
-                className="p-2 hover:bg-white/20 rounded-lg transition-colors flex flex-col gap-1.5 cursor-pointer z-10"
-                aria-label="Menu"
-              >
-                <div className={`w-5 md:w-6 h-0.5 bg-white transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
-                <div className={`w-5 md:w-6 h-0.5 bg-white transition-all ${menuOpen ? 'opacity-0' : ''}`}></div>
-                <div className={`w-5 md:w-6 h-0.5 bg-white transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
-              </button>
 
-              {/* Center - Logo */}
-              <div className="absolute left-1/2 -translate-x-1/2 text-lg md:text-2xl font-medium tracking-wide pointer-events-none whitespace-nowrap">
-                MR Construction
-              </div>
-
-              {/* Right - Enquire Button */}
-              <button className="bg-white text-[#4b4b4b] px-3 md:px-6 py-1.5 md:py-2.5 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-xs md:text-base cursor-pointer z-10">
-                Enquire <span className="hidden sm:inline">Now</span>
-              </button>
-            </div>
-
-            {/* Dropdown Menu */}
-            <div className={`absolute top-full left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-full overflow-hidden py-4 z-50 transition-all origin-top ${menuOpen ? 'scale-y-100 opacity-100' : 'scale-y-95 opacity-0 pointer-events-none'}`}>
-              {['Home', 'About Us', 'Portfolio', 'Clients', 'Contact Us'].map((item) => (
-                <button key={item} className="w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-medium text-[#4b4b4b] cursor-pointer text-lg">
-                  {item}
-                </button>
-              ))}
-            </div>
-          </div>
 
           {/* Left aligned main content */}
           <div className="flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto w-full pt-10">

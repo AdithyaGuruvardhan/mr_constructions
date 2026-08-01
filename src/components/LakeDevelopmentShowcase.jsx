@@ -101,7 +101,7 @@ export default function LakeDevelopmentShowcase() {
         </div>
 
         {/* Expanding Center Bottom Image */}
-        <div ref={expandImgRef} className="absolute inset-0 w-[90vw] h-full z-20 shadow-2xl top-50 left-1/2 transform -translate-x-1/2">
+        <div ref={expandImgRef} className="absolute inset-0 w-[95vw] h-full z-20 shadow-2xl top-50 left-1/2 transform -translate-x-1/2">
           <img 
             src="/hospital/MRC jayadeva 2S _81.JPG" 
             alt="Infosys Foundation Jayadeva Hospital Panorama" 
