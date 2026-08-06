@@ -148,9 +148,10 @@ export default function AboutUs() {
 
           </div>
         </div>
+      </div>
 
-        {/* Why MRC Section - Layered Parallax Layout */}
-        <div ref={sectionRef} className="relative w-full rounded-[3rem] overflow-hidden min-h-[900px] lg:min-h-[1000px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0]">
+      {/* Why MRC Section - Layered Parallax Layout */}
+      <div ref={sectionRef} className="relative w-[90vw] max-w-[1800px] mx-auto rounded-[3rem] overflow-hidden min-h-[900px] lg:min-h-[1000px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0] z-30">
 
           {/* Layer 1: Background Image */}
           <img src="/temple_bg.png" alt="Temple Background" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] z-0" />
@@ -208,7 +209,6 @@ export default function AboutUs() {
           <img src="/temple_fg.png" alt="Temple Foreground" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] pointer-events-none z-20" />
         </div>
 
-      </div>
     </div>
   );
 }
