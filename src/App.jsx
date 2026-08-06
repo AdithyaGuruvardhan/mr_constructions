@@ -5,6 +5,11 @@ import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import ContactUs from './pages/ContactUs'
 import AboutUs from './pages/AboutUs'
+import Portfolio from './pages/Portfolio'
+import Commercial from './pages/Commercial'
+import Education from './pages/Education'
+import Hospitals from './pages/Hospitals'
+import Temples from './pages/Temples'
 
 function App() {
   return (
@@ -17,6 +22,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/commercial" element={<Commercial />} />
+          <Route path="/portfolio/education" element={<Education />} />
+          <Route path="/portfolio/hospitals" element={<Hospitals />} />
+          <Route path="/portfolio/temples" element={<Temples />} />
         </Routes>
       </main>
 

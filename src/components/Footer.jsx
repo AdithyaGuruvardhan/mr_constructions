@@ -6,15 +6,15 @@ export default function Footer() {
     <footer className="bg-[#18181b] text-white pt-24 pb-8 px-6 md:px-12 font-sans">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row justify-between mb-16 lg:mb-24">
-          
+
           {/* Left Side */}
           <div className="lg:w-1/2 flex flex-col justify-between mb-16 lg:mb-0">
             <div className="mb-20">
               <h2 className="text-3xl font-medium mb-10">Subscribe to our Newsletter!</h2>
               <div className="relative max-w-md border-b border-gray-500 pb-3 group">
-                <input 
-                  type="email" 
-                  placeholder="Enter address" 
+                <input
+                  type="email"
+                  placeholder="Enter address"
                   className="bg-transparent w-full text-gray-300 text-sm outline-none placeholder-gray-500 pr-10"
                 />
                 <button className="absolute right-0 top-1/2 -translate-y-1/2 text-white group-hover:translate-x-1 transition-transform">
@@ -29,8 +29,8 @@ export default function Footer() {
               <div>
                 <h4 className="text-gray-500 mb-4 font-medium">Head Office</h4>
                 <p className="font-semibold text-gray-200 leading-relaxed text-sm">
-                  No.16/1, 1st Main, 2nd Floor,<br/>
-                  VR Layout, Basavanagudi,<br/>
+                  No.16/1, 1st Main, 2nd Floor,<br />
+                  VR Layout, Basavanagudi,<br />
                   Bangalore-560004 Karnataka
                 </p>
               </div>
@@ -54,11 +54,10 @@ export default function Footer() {
             <ul className="space-y-5 text-2xl lg:text-3xl font-medium tracking-tight">
               <li><Link to="/" className="hover:text-gray-300 transition-colors">Home</Link></li>
               <li><Link to="/about" className="hover:text-gray-300 transition-colors">About Us</Link></li>
-              <li><Link to="/#services" className="hover:text-gray-300 transition-colors">Services</Link></li>
-              <li><Link to="/#portfolio" className="hover:text-gray-300 transition-colors">Portfolio</Link></li>
+              <li><Link to="/portfolio" className="hover:text-gray-300 transition-colors">Portfolio</Link></li>
               <li><Link to="/contact" className="hover:text-gray-300 transition-colors">Contact</Link></li>
             </ul>
-            
+
             <ul className="space-y-6 text-sm font-medium pt-1.5">
               <li><a href="#" className="hover:text-gray-300 transition-colors">Facebook</a></li>
               <li><a href="#" className="hover:text-gray-300 transition-colors">Instagram</a></li>
@@ -71,22 +70,27 @@ export default function Footer() {
 
         {/* Large Logo */}
         <div className="mb-6 w-full overflow-hidden">
-           {/* We use SVG text to ensure it scales perfectly and fills width like in the image */}
-           <svg viewBox="0 0 1000 160" className="w-full h-auto fill-white">
-             <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" 
-                   className="font-black" style={{ fontSize: '105px', letterSpacing: '-0.02em' }}>
-               MR CONSTRUCTION
-             </text>
-           </svg>
+          {/* We use SVG text to ensure it scales perfectly and fills width like in the image */}
+          <svg viewBox="0 0 1000 160" className="w-full h-auto fill-white">
+            <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle"
+              className="font-black" style={{ fontSize: '105px', letterSpacing: '-0.02em' }}>
+              MR CONSTRUCTION
+            </text>
+          </svg>
         </div>
-        
+
         {/* Bottom Links */}
-        <div className="flex flex-col xl:flex-row flex-wrap gap-x-8 gap-y-4 text-[11px] text-gray-500 font-medium">
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
+        <div className="flex flex-col xl:flex-row flex-wrap gap-x-8 gap-y-6 text-[11px] text-gray-500 font-medium items-start xl:items-center">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 w-full xl:w-auto">
             <a href="#" className="hover:text-gray-300 transition-colors">Terms</a>
             <a href="#" className="hover:text-gray-300 transition-colors">Privacy policy</a>
           </div>
-          <div className="xl:ml-auto flex gap-6">
+
+          <div className="flex-1 flex justify-start xl:justify-center w-full xl:w-auto">
+            <span>Designed and developed by <a href="https://www.buzziwah.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors underline decoration-white/30 hover:decoration-white/80 underline-offset-2 font-semibold">Buzziwah</a> 💜</span>
+          </div>
+
+          <div className="xl:ml-auto flex gap-6 w-full xl:w-auto justify-start xl:justify-end">
             <span>MR Constructions</span>
             <span>Copyright &copy; {new Date().getFullYear()}</span>
           </div>

@@ -7,17 +7,35 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutUs() {
   const cardsRef = useRef(null);
+  const sectionRef = useRef(null);
+  const pointsRef = useRef(null);
 
   useGSAP(() => {
+    // 1. Container comes in when section is reached
     gsap.from(cardsRef.current, {
       y: 150,
       opacity: 0,
       duration: 1.2,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: cardsRef.current,
-        start: "top 85%",
+        trigger: sectionRef.current,
+        start: "top 75%", // Triggers before it gets pinned
         toggleActions: "play none none reverse"
+      }
+    });
+
+    // 2. Points scrub in while section is pinned
+    gsap.from(pointsRef.current.children, {
+      y: 30,
+      opacity: 0,
+      stagger: 0.2,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 5%",
+        end: "+=100%",
+        pin: true,
+        scrub: 1,
       }
     });
   });
@@ -55,18 +73,13 @@ export default function AboutUs() {
 
         {/* Capabilities Inline Image Section */}
         <div className="flex justify-end mb-24 md:mb-32 w-full">
-          <p className="text-xl md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed md:leading-relaxed max-w-5xl text-right uppercase font-medium tracking-wide">
-            We cover the full construction value chain - <br /> <span className="text-[#c19b76]">design management</span>,{' '}
-            <img src="/building_plan.png" alt="design management" className="inline-block h-8 w-16 md:h-10 md:w-20 hover:w-24 md:hover:w-32 transition-all duration-500 ease-out cursor-pointer rounded-[2rem] object-cover align-middle mx-3 shadow-sm border border-gray-200" />
-            {' '}civil construction,{' '}
-            <img src="/building.png" alt="civil construction" className="inline-block h-8 w-16 md:h-10 md:w-20 hover:w-24 md:hover:w-32 transition-all duration-500 ease-out cursor-pointer rounded-[2rem] object-cover align-middle mx-3 shadow-sm border border-gray-200" />
-            {' '}infrastructure,{' '}
-            <img src="/tall building.png" alt="infrastructure" className="inline-block h-8 w-16 md:h-10 md:w-20 hover:w-24 md:hover:w-32 transition-all duration-500 ease-out cursor-pointer rounded-[2rem] object-cover align-middle mx-3 shadow-sm border border-gray-200" />
-            {' '}finishing,{' '}
-            <img src="/infosys_hubli.png" alt="finishing" className="inline-block h-8 w-16 md:h-10 md:w-20 hover:w-24 md:hover:w-32 transition-all duration-500 ease-out cursor-pointer rounded-[2rem] object-cover align-middle mx-3 shadow-sm border border-gray-200" />
-            {' '}and <span className="text-[#c19b76]">MEP</span> -{' '}
-            <img src="/hospital.png" alt="MEP" className="inline-block h-8 w-16 md:h-10 md:w-20 hover:w-24 md:hover:w-32 transition-all duration-500 ease-out cursor-pointer rounded-[2rem] object-cover align-middle mx-3 shadow-sm border border-gray-200" />
-            {' '}backed by experienced teams and modern methods, delivering <span className="text-[#c19b76]">practical, efficient, long-lasting builds.</span>
+          <p className="text-xl md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed md:leading-relaxed max-w-6xl text-right uppercase font-medium tracking-wide">
+            We cover the full construction value chain - <br /> <span className="text-[#f97316]">design management</span>,{' '}
+            civil construction,{' '}
+            infrastructure,{' '}
+            finishing,{' '}
+            and <span className="text-[#f97316]">MEP</span> -{' '}
+            backed by experienced teams and modern methods, delivering <span className="text-[#f97316]">practical, efficient, long-lasting builds.</span>
           </p>
         </div>
 
@@ -137,7 +150,7 @@ export default function AboutUs() {
         </div>
 
         {/* Why MRC Section - Layered Parallax Layout */}
-        <div className="relative w-[90vw] max-w-[90vw] left-1/2 -translate-x-1/2 rounded-[3rem] overflow-hidden min-h-[900px] lg:min-h-[1000px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0]">
+        <div ref={sectionRef} className="relative w-[90vw] max-w-[90vw] left-1/2 -translate-x-1/2 rounded-[3rem] overflow-hidden min-h-[900px] lg:min-h-[1000px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0]">
 
           {/* Layer 1: Background Image */}
           <img src="/temple_bg.png" alt="Temple Background" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] z-0" />
@@ -170,7 +183,7 @@ export default function AboutUs() {
               <h3 className="text-3xl md:text-4xl text-[#2d2d2d] font-bold mb-8 leading-tight">Uncompromising standards & precision</h3>
 
               {/* The 8 points in a 2-col grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+              <div ref={pointsRef} className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
                 {[
                   "Two Decades of Proven Expertise",
                   "ISO-Certified Quality Systems",
