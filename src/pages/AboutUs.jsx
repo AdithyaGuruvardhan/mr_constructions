@@ -150,7 +150,7 @@ export default function AboutUs() {
         </div>
 
         {/* Why MRC Section - Layered Parallax Layout */}
-        <div ref={sectionRef} className="relative w-[90vw] max-w-[90vw] left-1/2 -translate-x-1/2 rounded-[3rem] overflow-hidden min-h-[900px] lg:min-h-[1000px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0]">
+        <div ref={sectionRef} className="relative w-full rounded-[3rem] overflow-hidden min-h-[900px] lg:min-h-[1000px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0]">
 
           {/* Layer 1: Background Image */}
           <img src="/temple_bg.png" alt="Temple Background" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] z-0" />
