@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -320,14 +320,136 @@ const TempleSection = () => {
   );
 };
 
-export default function Portfolio() {
-  const images = {
-    commercial: "/infosys_hubli.png",
-    education: "/Hubli_School.png",
-    hospitals: "/hospital.png",
-    temples: "/melukote_temple.png"
+const portfolioCategories = [
+  {
+    category: "Commercial",
+    projects: [
+      { id: "c1", title: "Infosys New Campus", subtitle: "Hubli", img: "/infosys_hubli.png" },
+      { id: "c2", title: "Lake development and construction", subtitle: "Hebbal Mysore", img: "/Lake Development.png" },
+      { id: "c3", title: "Sira Solar Plant", subtitle: "Sira", img: "/sira_solar.png" },
+      { id: "c4", title: "Paying Guest Buildings", subtitle: "Electronic city", img: "/commercial/pg/PG19.JPG" },
+    ]
+  },
+  {
+    category: "Education Institution",
+    projects: [
+      { id: "e1", title: "CBSE ENGLISH MEDIUM HIGH SCHOOL", subtitle: "Shivanahalli", img: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC%20shivanahalli%20DRONE%20_9.JPG" },
+      { id: "e2", title: "Hubli School", subtitle: "Hubli", img: "/Education%20Institution/Hubli%20School/HUBLI%20SCHOOL4.jpg" },
+      { id: "e3", title: "Indian Institute of Information Technology", subtitle: "Dharwad", img: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT16.JPG" },
+    ]
+  },
+  {
+    category: "Hospitals",
+    projects: [
+      { id: "h1", title: "Bowring Hospital", subtitle: "Bangalore", img: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.JPG" },
+      { id: "h2", title: "Infosys Foundation Government Maternity Hospital", subtitle: "Kanakapura", img: "/hospital/hospital (1).JPG" },
+      { id: "h3", title: "Infosys Foundation Jayadeva Hospital Building", subtitle: "Bangalore", img: "/hospital/Infosys%20Foundation%20Jayadeva%20Hospital%20Building%20Bangalore/MRC%20jayadeva%20drone%202S%20_19.JPG" },
+      { id: "h4", title: "Kidwai Cancer Hospital", subtitle: "Bangalore", img: "/hospital/Kidwai%20Cancer%20Hospital/MRC%20kidwai%20DRONE%20_11.JPG" },
+      { id: "h5", title: "Tata Memorial Centre Advanced Centre", subtitle: "Mumbai", img: "/hospital/Tata%20Memorial%20Centre%20Advanced%20Centr%20-%20Mumbai/MRC%20MUMBAI%20day%201_25.JPG" },
+    ]
+  },
+  {
+    category: "Temple",
+    projects: [
+      { id: "t1", title: "DEVELOPMENT OF KALAYANI VASANTHPURA", subtitle: "BANGALORE", img: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA%20KALYANI18.jpg" },
+      { id: "t2", title: "Melukote Kalayani", subtitle: "Melukote", img: "/temple/Melukote%20Kalayani/MELKOTE%20KALYANI9.jpg" },
+    ]
+  }
+];
+
+const ProjectCard = ({ project }) => {
+  return (
+    <div className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[350px] aspect-[3/4] bg-gray-200 rounded-[2rem] p-8 md:p-10 flex flex-col justify-between relative group overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+      {/* Top Text */}
+      <div className="z-10 flex flex-col gap-2 pointer-events-none select-none">
+        <h3 className="font-bold text-xl md:text-2xl text-[#1c1c1e] leading-tight">{project.title}</h3>
+        {project.subtitle && (
+          <p className="text-sm md:text-base text-gray-500 font-light leading-relaxed">{project.subtitle}</p>
+        )}
+      </div>
+
+      {/* Center Image (takes most of the card) */}
+      <div className="absolute top-[140px] left-5 right-5 bottom-24 rounded-2xl overflow-hidden shadow-lg pointer-events-none select-none">
+        <img 
+          src={project.img} 
+          alt={project.title} 
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          draggable="false"
+        />
+      </div>
+
+      {/* Bottom Button (Matching Affordable Price Card) */}
+      <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-12 h-12 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 cursor-pointer bg-[#1c1c1e] text-white shadow-xl z-10">
+        <svg className="w-5 h-5 transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </div>
+    </div>
+  );
+};
+
+const DraggableCategoryRow = ({ category, projects }) => {
+  const scrollRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const onMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
   };
 
+  const onMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const onMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const onMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // scroll-fast
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const justifyClass = projects.length <= 4 ? "md:justify-center" : "md:justify-start";
+
+  return (
+    <div className="w-full mb-16 md:mb-24 overflow-hidden max-w-[1600px] mx-auto">
+      <div className="flex items-center justify-center mb-8 px-6 md:px-16 text-center">
+        <h2 className="text-2xl md:text-4xl font-bold text-[#1a1a1a] tracking-tight uppercase">{category}</h2>
+      </div>
+      
+      <div 
+        ref={scrollRef}
+        onMouseDown={onMouseDown}
+        onMouseLeave={onMouseLeave}
+        onMouseUp={onMouseUp}
+        onMouseMove={onMouseMove}
+        className={`flex gap-6 overflow-x-auto hide-scrollbar pb-8 pt-4 px-6 md:px-16 ${justifyClass} ${isDragging ? 'cursor-grabbing select-none snap-none' : 'cursor-grab snap-x snap-mandatory'}`}
+        style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
+      >
+        {projects.map(p => (
+          <Link 
+            to={`/portfolio/${p.id}`} 
+            key={p.id} 
+            className="snap-center block"
+            draggable="false"
+            onDragStart={(e) => e.preventDefault()}
+          >
+            <ProjectCard project={p} />
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default function Portfolio() {
   return (
     <div className="pt-32 min-h-screen bg-[#fafafa] overflow-hidden">
       {/* Optional Top Header if needed, but since each section has a title, we might just jump straight into the sections. */}
@@ -366,19 +488,13 @@ export default function Portfolio() {
         </div>
       </div>
 
-      <AsymmetricalSection
-        title="Commercial"
-        subtitle="Explore our corporate and retail projects"
-        link="/portfolio/commercial"
-        imgUrl={images.commercial}
-        animateFromCenter={true}
-      />
+      {/* Draggable Category Rows */}
+      <div className="pt-12 pb-32">
+        {portfolioCategories.map((cat, idx) => (
+          <DraggableCategoryRow key={idx} category={cat.category} projects={cat.projects} />
+        ))}
+      </div>
 
-      <EducationSection />
-
-      <HospitalSection />
-
-      <TempleSection />
     </div>
   );
 }

@@ -72,14 +72,12 @@ export default function AboutUs() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-30">
 
         {/* Capabilities Inline Image Section */}
-        <div className="flex justify-end mb-24 md:mb-32 w-full">
-          <p className="text-xl md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed md:leading-relaxed max-w-6xl text-right uppercase font-medium tracking-wide">
-            We cover the full construction value chain - <br /> <span className="text-[#f97316]">design management</span>,{' '}
-            civil construction,{' '}
-            infrastructure,{' '}
-            finishing,{' '}
-            and <span className="text-[#f97316]">MEP</span> -{' '}
-            backed by experienced teams and modern methods, delivering <span className="text-[#f97316]">practical, efficient, long-lasting builds.</span>
+        <div className="flex justify-center mb-24 md:mb-32 w-full">
+          <p className="text-xl md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed md:leading-relaxed max-w-6xl text-center uppercase font-medium tracking-wide">
+            We cover the full construction value chain - <br className="hidden lg:block" />
+            design management, civil construction,{' '}
+            infrastructure, finishing, and MEP -{' '}
+            backed by experienced teams and modern methods, delivering practical, efficient, long-lasting builds.
           </p>
         </div>
 
@@ -172,19 +170,19 @@ export default function AboutUs() {
             </div>
 
             {/* Right: The Cards inside a beautiful glass/white container */}
-            <div ref={cardsRef} className="w-full lg:w-7/12 bg-white/95 backdrop-blur-2xl p-8 md:p-10 rounded-[3rem] shadow-2xl relative lg:-mr-8 z-10 flex flex-col border border-white/20 mt-4 lg:mt-0">
+            <div ref={cardsRef} className="w-full lg:w-7/12 bg-white/95 backdrop-blur-2xl p-8 md:p-10 rounded-[3rem] shadow-2xl relative lg:-mr-8 z-10 flex flex-col border border-white/20 mt-4 lg:mt-0 min-h-[600px] lg:min-h-[700px]">
 
               {/* Top badges */}
-              <div className="flex gap-3 mb-8">
-                <span className="border border-gray-200 px-5 py-2 rounded-full text-[10px] font-bold text-gray-500 uppercase tracking-widest">Excellence</span>
-                <span className="border border-gray-200 px-5 py-2 rounded-full text-[10px] font-bold text-gray-500 uppercase tracking-widest">Quality</span>
-                <span className="border border-[#3b3228] bg-[#3b3228] text-white px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest hidden md:block">Trust</span>
+              <div className="flex gap-2 md:gap-3 mb-6 md:mb-8">
+                <span className="border border-gray-200 px-3 py-1.5 md:px-5 md:py-2 rounded-full text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest">Excellence</span>
+                <span className="border border-gray-200 px-3 py-1.5 md:px-5 md:py-2 rounded-full text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest">Quality</span>
+                <span className="border border-[#3b3228] bg-[#3b3228] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest hidden md:block">Trust</span>
               </div>
 
-              <h3 className="text-3xl md:text-4xl text-[#2d2d2d] font-bold mb-8 leading-tight">Uncompromising standards & precision</h3>
+              <h3 className="text-2xl md:text-4xl text-[#2d2d2d] font-bold mb-6 md:mb-8 leading-tight">Uncompromising standards & precision</h3>
 
               {/* The 8 points in a 2-col grid */}
-              <div ref={pointsRef} className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+              <div ref={pointsRef} className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 md:gap-y-6">
                 {[
                   "Two Decades of Proven Expertise",
                   "ISO-Certified Quality Systems",
@@ -195,9 +193,9 @@ export default function AboutUs() {
                   "Safety-Led Execution",
                   "Timely Delivery. Lasting Value"
                 ].map((text, idx) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <span className="text-[#8c7362] shrink-0 text-sm md:text-base">✦</span>
-                    <span className="text-[#2d2d2d] font-bold text-base md:text-lg leading-tight">{text}</span>
+                  <div key={idx} className="flex items-start md:items-center gap-3 md:gap-4">
+                    <span className="text-[#8c7362] shrink-0 text-xs md:text-base mt-1 md:mt-0">✦</span>
+                    <span className="text-[#2d2d2d] font-bold text-sm md:text-lg leading-snug md:leading-tight">{text}</span>
                   </div>
                 ))}
               </div>
@@ -207,6 +205,61 @@ export default function AboutUs() {
 
           {/* Layer 3: Foreground Image */}
           <img src="/temple_fg.png" alt="Temple Foreground" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] pointer-events-none z-20" />
+        </div>
+
+        {/* Core Values & Ethics Section (Full Width) */}
+        <div className="relative w-full overflow-hidden min-h-[800px] lg:min-h-[900px] flex flex-col justify-center bg-gray-900 z-30">
+          
+          {/* Background Image */}
+          <img 
+            src="/commercial/infosys/INFOSYS%20HUBLI50.jpg" 
+            alt="Infosys Hubli Background" 
+            className="absolute inset-0 w-full h-full object-cover z-0" 
+          />
+          
+          {/* Dark overlay for readability */}
+          <div className="absolute inset-0 bg-black/30 z-10"></div>
+
+          <div className="relative z-20 w-full max-w-[1600px] mx-auto px-6 md:px-16 py-24">
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+              
+              {/* Column 1: Title & Card 2 */}
+              <div className="flex flex-col justify-between gap-12 lg:gap-32">
+                <div className="text-white pt-4">
+                  <h2 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tighter uppercase drop-shadow-lg">
+                    Core Values <br className="hidden lg:block"/> & Ethics
+                  </h2>
+                  <div className="mt-8 w-24 h-1 bg-[#f97316]"></div>
+                </div>
+                
+                <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
+                  <p className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed">
+                    We are committed to maintaining the highest standards of professionalism, ethics, and transparency across all aspects of our business. Our reputation has been earned through consistent delivery, uncompromising quality, and a client-centric approach that fosters lasting relationships built on trust.
+                  </p>
+                </div>
+              </div>
+
+              {/* Column 2: Card 1 */}
+              <div className="flex flex-col justify-center lg:pt-32">
+                <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
+                  <p className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed">
+                    At MRC Construction Company, our foundation is built on the enduring principles of quality, integrity, and unwavering commitment—values established by our founder, Mr. M. Ramesh, and upheld in every project we undertake.
+                  </p>
+                </div>
+              </div>
+
+              {/* Column 3: Card 3 */}
+              <div className="flex flex-col justify-end lg:pb-12">
+                <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
+                  <p className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed">
+                    Integrity is not merely a principle we follow—it is the cornerstone of every decision we make.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
     </div>

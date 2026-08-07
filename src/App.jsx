@@ -10,6 +10,7 @@ import Commercial from './pages/Commercial'
 import Education from './pages/Education'
 import Hospitals from './pages/Hospitals'
 import Temples from './pages/Temples'
+import ProjectDetails from './pages/ProjectDetails'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:id" element={<ProjectDetails />} />
           <Route path="/portfolio/commercial" element={<Commercial />} />
           <Route path="/portfolio/education" element={<Education />} />
           <Route path="/portfolio/hospitals" element={<Hospitals />} />
