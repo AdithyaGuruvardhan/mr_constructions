@@ -226,7 +226,7 @@ export default function HeroScrollVideo() {
                 Engineering Excellence.<br />Since 2005.
               </h1>
               <p className="text-lg md:text-xl max-w-lg mb-8 leading-relaxed" style={{ color: '#f2f2f2' }}>
-                ISO-certified construction and engineering trusted by government and private clients. 1000+ projects completed with precision.
+                ISO-certified construction and engineering trusted by government and private clients. 125+ projects completed with precision.
               </p>
               <button className="px-6 py-2 rounded-lg text-lg font-medium pointer-events-auto transition-transform hover:scale-105" style={{ backgroundColor: '#ff761f', color: '#000000' }}>
                 Start Your Project

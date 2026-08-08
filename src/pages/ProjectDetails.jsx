@@ -8,6 +8,8 @@ export default function ProjectDetails() {
 
   const scrollContainerRef = useRef(null);
   const itemsRef = useRef([]);
+  const gallerySectionRef = useRef(null);
+  const hasAutoScrolled = useRef(false);
 
   // drag to scroll functionality
   const isDown = useRef(false);
@@ -25,7 +27,7 @@ export default function ProjectDetails() {
     const vw = window.innerWidth;
     const isLg = vw >= 1024;
     const isMd = vw >= 768 && vw < 1024;
-    
+
     // We want a visual gap of 1.5vw on desktop and 2vw on mobile between the active and inactive items.
     // The active item expands by 17.5% (0.35/2) of its base width.
     const gapVw = isLg ? 4.65 : (isMd ? 5.35 : 8.125);
@@ -35,15 +37,15 @@ export default function ProjectDetails() {
       if (!item) return;
       const itemCenter = item.offsetLeft + item.offsetWidth / 2;
       const distance = Math.abs(center - itemCenter);
-      
+
       const maxDist = item.offsetWidth + gapPx;
       let progress = 1 - (distance / maxDist);
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
-      
+
       const currentScale = 1 + (0.35 * progress);
-      const r = 209 + (20 * progress); 
-      
+      const r = 209 + (20 * progress);
+
       item.style.transform = `scale(${currentScale})`;
       item.style.zIndex = Math.round(progress * 10);
       item.children[0].style.backgroundColor = `rgb(${r}, ${r}, ${r})`;
@@ -58,7 +60,31 @@ export default function ProjectDetails() {
     updateGallery();
     window.addEventListener('resize', updateGallery);
     return () => window.removeEventListener('resize', updateGallery);
-  }, [id]);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !hasAutoScrolled.current) {
+        hasAutoScrolled.current = true;
+        setTimeout(() => {
+          if (scrollContainerRef.current && itemsRef.current[2]) {
+            const container = scrollContainerRef.current;
+            const targetItem = itemsRef.current[2];
+            const targetScrollLeft = targetItem.offsetLeft + targetItem.offsetWidth / 2 - container.offsetWidth / 2;
+            container.scrollTo({
+              left: targetScrollLeft,
+              behavior: 'smooth'
+            });
+          }
+        }, 600);
+      }
+    }, { threshold: 0.4 });
+
+    if (gallerySectionRef.current) {
+      observer.observe(gallerySectionRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseDown = (e) => {
     isDown.current = true;
@@ -80,7 +106,7 @@ export default function ProjectDetails() {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.classList.remove('cursor-grabbing');
     }
-    
+
     if (isDragging.current) {
       snapToClosest();
     }
@@ -197,9 +223,9 @@ export default function ProjectDetails() {
       <div className="w-full bg-gray-50 flex flex-col md:flex-row justify-between gap-12 lg:gap-0 py-16 md:py-24 px-6 md:px-16 items-stretch">
         {/* Left Image & Overlay */}
         <div className="relative w-full lg:w-[55%]">
-          <img 
-            src={project.droneSection.img1} 
-            alt="Drone View 1" 
+          <img
+            src={project.droneSection.img1}
+            alt="Drone View 1"
             className="w-full h-auto md:h-[60vh] lg:h-[65vh] object-cover rounded-3xl shadow-xl"
           />
           {/* Info Card Overlay (Inside Image) */}
@@ -213,7 +239,7 @@ export default function ProjectDetails() {
 
         {/* Right Content (Text + Staggered Image) */}
         <div className="w-full lg:w-[38%] mt-8 md:mt-0 flex flex-col justify-end items-end">
-          
+
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
             {project.droneSection.stats.map((stat, idx) => (
               <div key={idx} className="bg-[#2c2c2e] p-6 shadow-xl rounded-2xl flex-1 hover:-translate-y-2 transition-transform duration-300">
@@ -225,23 +251,23 @@ export default function ProjectDetails() {
             ))}
           </div>
 
-          <img 
-            src={project.droneSection.img2} 
-            alt="Drone View 2" 
+          <img
+            src={project.droneSection.img2}
+            alt="Drone View 2"
             className="w-full h-auto md:h-[40vh] lg:h-[35vh] object-cover rounded-3xl shadow-xl"
           />
         </div>
       </div>
-      
+
       {/* Gallery Section */}
-      <div className="w-full bg-white py-12 flex flex-col overflow-hidden">
+      <div ref={gallerySectionRef} className="w-full bg-white py-12 flex flex-col overflow-hidden">
         <h2 className="text-4xl md:text-5xl lg:text-6xl text-black mb-12 tracking-tighter leading-[1.1] pl-6 md:px-16 max-w-[1600px] mx-auto w-full">
           <span className="font-light block">Project</span>
           <span className="font-medium block">Gallery</span>
         </h2>
-        
+
         {/* Horizontal Scroll Container (Carousel) */}
-        <div 
+        <div
           ref={scrollContainerRef}
           onScroll={handleScroll}
           onMouseDown={handleMouseDown}
@@ -252,13 +278,13 @@ export default function ProjectDetails() {
         >
           {project.galleryImages.map((img, index) => {
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 ref={el => itemsRef.current[index] = el}
                 className="flex-none w-[35vw] md:w-[22vw] lg:w-[18vw] transition-none origin-center relative"
               >
                 <div className="w-full h-[25vh] md:h-[40vh] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-[#d1d1d1]">
-                  <img 
+                  <img
                     src={img}
                     alt={`Gallery Image ${index + 1}`}
                     className="w-full h-full object-cover pointer-events-none select-none"

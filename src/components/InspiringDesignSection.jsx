@@ -63,7 +63,7 @@ export default function InspiringDesignSection() {
             <div className="w-full xl:w-[30%] relative flex flex-col justify-center xl:min-h-[80vh]">
               {/* Main Huge Typography */}
               <div className="relative md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-4 z-30 pointer-events-none mt-12 xl:mt-0 xl:ml-4">
-                <h2 className="font-editorial text-[16vw] md:text-[6.5vw] leading-[0.8] tracking-[-0.03em] text-[#131b2c] drop-shadow-xl md:drop-shadow-none">
+                <h2 className="font-editorial text-[16vw] md:text-[5.5vw] leading-[0.8] tracking-[-0.03em] text-[#131b2c] drop-shadow-xl md:drop-shadow-none">
                   <span className="block">MELKOTE</span>
                   <span className="block ml-12 md:ml-32 xl:ml-24">KALYANI</span>
                 </h2>
