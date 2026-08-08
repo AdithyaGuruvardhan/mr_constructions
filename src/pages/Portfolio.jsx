@@ -430,7 +430,7 @@ const DraggableCategoryRow = ({ category, projects }) => {
   return (
     <div className="w-full mb-16 md:mb-24 overflow-hidden max-w-[1600px] mx-auto">
       <div className="flex items-center justify-center mb-8 px-6 md:px-16 text-center">
-        <h2 className="text-2xl md:text-4xl font-bold text-[#1a1a1a] tracking-tight uppercase">{category}</h2>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] tracking-tight uppercase drop-shadow-sm">{category}</h2>
       </div>
 
       <div
@@ -498,7 +498,7 @@ export default function Portfolio() {
       </div>
 
       {/* Draggable Category Rows */}
-      <div className="pt-12 pb-32">
+      <div className="-mt-10 md:mt-0 pb-32">
         {portfolioCategories.map((cat, idx) => (
           <DraggableCategoryRow key={idx} category={cat.category} projects={cat.projects} />
         ))}

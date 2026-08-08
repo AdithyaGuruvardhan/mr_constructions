@@ -57,19 +57,19 @@ export default function ClienteleSection() {
         </div>
       </div>
 
-      {/* Scroll-driven Parallax Rows */}
-      <div className="w-full flex flex-col gap-6 md:gap-8 relative overflow-visible">
+      {/* Desktop View: Scroll-driven Parallax Rows */}
+      <div className="hidden md:flex w-full flex-col gap-8 relative overflow-visible">
         
         {/* Top Row (Scrolls Left as you scroll down) */}
-        {/* We use a left margin (ml-[15%]) to create that staggered offset shown in your design */}
+        {/* We use a left margin (ml-[35%]) to create that staggered offset shown in your design */}
         <div 
-          className="flex w-max gap-6 md:gap-8 ml-[15%] md:ml-[35%]"
+          className="flex w-max gap-8 ml-[35%]"
           style={{ transform: `translateX(-${scrollOffset}px)`, transition: 'transform 0.1s ease-out' }}
         >
           {logosRow1.map((logo, index) => (
             <div 
               key={`row1-${index}`} 
-              className="w-56 md:w-72 h-28 md:h-36 bg-[#e2e2e2] rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center p-3 md:p-4 shrink-0 shadow-sm transition-transform hover:scale-105"
+              className="w-72 h-36 bg-[#e2e2e2] rounded-[2rem] flex items-center justify-center p-4 shrink-0 shadow-sm transition-transform hover:scale-105"
             >
               <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain filter transition-all duration-300" />
             </div>
@@ -77,21 +77,32 @@ export default function ClienteleSection() {
         </div>
 
         {/* Bottom Row (Scrolls Right as you scroll down) */}
-        {/* We use a negative left margin (-ml-[5%]) to offset it to the left initially */}
+        {/* We use a negative left margin (-ml-[10%]) to offset it to the left initially */}
         <div 
-          className="flex w-max gap-6 md:gap-8 -ml-[5%] md:-ml-[10%]"
+          className="flex w-max gap-8 -ml-[10%]"
           style={{ transform: `translateX(${scrollOffset}px)`, transition: 'transform 0.1s ease-out' }}
         >
           {logosRow2.map((logo, index) => (
             <div 
               key={`row2-${index}`} 
-              className="w-56 md:w-72 h-28 md:h-36 bg-[#e2e2e2] rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center p-3 md:p-4 shrink-0 shadow-sm transition-transform hover:scale-105"
+              className="w-72 h-36 bg-[#e2e2e2] rounded-[2rem] flex items-center justify-center p-4 shrink-0 shadow-sm transition-transform hover:scale-105"
             >
               <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain filter transition-all duration-300" />
             </div>
           ))}
         </div>
+      </div>
 
+      {/* Mobile View: Static Flex Grid */}
+      <div className="flex md:hidden w-full px-6 flex-wrap justify-center gap-3">
+        {[...logosRow1, ...logosRow2].map((logo, index) => (
+          <div 
+            key={`mobile-${index}`} 
+            className="w-[calc(50%-0.5rem)] h-24 bg-[#e2e2e2] rounded-[1.25rem] flex items-center justify-center p-3 shadow-sm"
+          >
+            <img src={logo.src} alt={logo.alt} className="max-w-[85%] max-h-[85%] object-contain" />
+          </div>
+        ))}
       </div>
     </section>
   );

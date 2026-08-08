@@ -35,7 +35,7 @@ export default function InspiringDesignSection() {
   }, []);
 
   return (
-    <section ref={pinContainerRef} className="relative w-full bg-[#f4f2ec] overflow-hidden flex flex-col justify-start lg:h-screen lg:flex-row lg:items-center">
+    <section ref={pinContainerRef} className="relative w-full bg-[#fff0e6] overflow-hidden flex flex-col justify-start lg:h-screen lg:flex-row lg:items-center">
       <style>
         {`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
@@ -56,7 +56,7 @@ export default function InspiringDesignSection() {
       <div ref={trackRef} className="flex flex-col lg:flex-row w-full lg:w-max h-full">
         
         {/* Slide 1: Main Title and First Image */}
-        <div className="w-full lg:w-[100vw] h-full flex items-center px-6 md:px-12 py-12 lg:py-0 shrink-0">
+        <div className="w-full lg:w-[100vw] h-full flex items-center px-6 md:px-12 pt-12 pb-4 lg:py-0 shrink-0">
           <div className="max-w-[1600px] mx-auto w-full relative z-10 flex flex-col xl:flex-row h-full items-center justify-start xl:gap-16 gap-12">
             
             {/* Left Side (Typography) */}
@@ -90,13 +90,13 @@ export default function InspiringDesignSection() {
         </div>
 
         {/* Slide 2: Gallery Collage */}
-        <div className="w-full lg:w-[100vw] h-full flex flex-col lg:flex-row justify-between px-6 md:px-12 py-12 lg:py-16 shrink-0 gap-12">
+        <div className="w-full lg:w-[100vw] h-full flex flex-col lg:flex-row justify-between px-6 md:px-12 pt-4 pb-12 lg:py-16 shrink-0 gap-12">
           
           {/* Collage Item 1: Bottom Left (Vertical) */}
           <div className="w-full lg:w-[35vw] h-auto lg:h-full flex flex-col justify-between items-start lg:-mb-16">
             
             {/* View Project Circular Badge */}
-            <Link to="/portfolio/t2" className="hidden lg:flex relative items-center justify-center w-28 h-28 md:w-32 md:h-32 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 group mt-8 md:mt-12 lg:mt-0 xl:mt-8 -ml-20">
+            <Link to="/portfolio/t2" className="flex relative items-center justify-center w-24 h-24 lg:w-28 lg:h-28 md:w-32 md:h-32 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 group mt-0 lg:mt-0 xl:mt-8 lg:-ml-20 mb-8 lg:mb-0">
               {/* Center Text */}
               <span className="absolute text-[10px] md:text-xs font-semibold uppercase tracking-widest text-[#1c1c1e] text-center z-10 group-hover:text-[#6b6b6b] transition-colors duration-300">
                 View<br/>Project
@@ -112,7 +112,7 @@ export default function InspiringDesignSection() {
               </svg>
             </Link>
 
-            <div className="w-full sm:w-[70%] lg:w-[65%] shadow-[0_1px_5px_rgba(0,0,0,0.3)] rounded-[1.5rem] overflow-hidden relative group mt-8 lg:mt-auto">
+            <div className="w-full sm:w-[70%] lg:w-[65%] shadow-[0_1px_5px_rgba(0,0,0,0.3)] rounded-[1.5rem] overflow-hidden relative group mt-0 lg:mt-auto">
               <img src="/temple/MELKOTE KALYANI19.webp" alt="Melkote Kalyani detail" className="w-full aspect-[4/5] lg:aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-[1.5s]" />
               <div className="absolute inset-0 bg-black/2 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>

@@ -80,7 +80,7 @@ export default function HubliSchoolShowcase() {
             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#2d2d2d] mb-6 drop-shadow-sm">
               Ramakrishna Mission School, Hubli
             </h2>
-            <div className="w-[2px] h-16 md:h-12 bg-[#2d2d2d]/50 mb-8"></div>
+            <div className="w-[2px] h-8 md:h-12 bg-[#2d2d2d]/50 mb-8"></div>
 
             <p className="text-lg md:text-2xl text-[#2d2d2d] leading-relaxed font-medium drop-shadow-sm">
               We undertook the construction of a CBSE school building for Ramakrishna Mission at Hubli, covering an area of 35,000 sft.
@@ -92,7 +92,7 @@ export default function HubliSchoolShowcase() {
         {/* Moves slightly based on mouse position for a parallax effect */}
         <div
           ref={leavesRef}
-          className="absolute inset-0 w-full h-full z-30 pointer-events-none scale-100"
+          className="absolute inset-0 w-full h-full z-30 pointer-events-none scale-110"
         >
           <img
             src="/Hubli_School_leaves.webp"

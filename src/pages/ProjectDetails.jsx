@@ -129,13 +129,15 @@ export default function ProjectDetails() {
         className="min-h-[75vh] md:min-h-[95vh] w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat relative"
         style={{ backgroundImage: `url('${project.heroBg}')` }}
       >
-        <div className="z-10 flex flex-col items-end mb-36 md:mb-50">
-          <h1 className="text-6xl md:text-8xl font-bold text-white text-center drop-shadow-md">
-            {project.title}
-          </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white text-right drop-shadow-md mt-2 font-bold uppercase">
-            {project.location}
-          </p>
+        <div className="z-10 w-full px-6 flex justify-center mb-36 md:mb-50">
+          <div className="flex flex-col items-end w-fit max-w-[95vw] md:max-w-[85vw] lg:max-w-[1100px] xl:max-w-[1200px]">
+            <h1 className="text-5xl sm:text-6xl md:text-[6rem] lg:text-[7rem] font-bold text-white text-center drop-shadow-md leading-[1.1]">
+              {project.title}
+            </h1>
+            <p className="text-xl md:text-2xl lg:text-3xl text-white text-right drop-shadow-md mt-2 md:mt-4 font-bold uppercase mr-8 md:mr-32">
+              {project.location}
+            </p>
+          </div>
         </div>
 
         <div className="absolute bottom-8 left-8 md:bottom-16 md:left-92 text-white font-bold text-4xl md:text-8xl drop-shadow-md z-10">

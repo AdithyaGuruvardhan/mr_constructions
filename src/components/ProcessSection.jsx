@@ -5,7 +5,7 @@ export default function ProcessSection() {
         
         {/* Left Column - Text and Main Image */}
         <div className="w-full lg:w-3/5 flex flex-col">
-          <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#2d2d2d] leading-tight mb-6">
+          <h2 className="text-3xl md:text-[2.75rem] font-medium text-[#2d2d2d] leading-tight mb-6">
             Meticulous Planning &<br /> Flawless Execution
           </h2>
           <p className="text-[#6b6b6b] text-lg mb-10 leading-relaxed max-w-xl">

@@ -73,7 +73,7 @@ export default function AboutUs() {
 
         {/* Capabilities Inline Image Section */}
         <div className="flex justify-center mb-24 md:mb-32 w-full">
-          <p className="text-xl md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed md:leading-relaxed max-w-6xl text-center uppercase font-medium tracking-wide">
+          <p className="text-md md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed md:leading-relaxed max-w-6xl text-center uppercase font-medium tracking-wide">
             We cover the full construction value chain - <br className="hidden lg:block" />
             design management, civil construction,{' '}
             infrastructure, finishing, and MEP -{' '}
@@ -227,7 +227,7 @@ export default function AboutUs() {
               {/* Column 1: Title & Card 2 */}
               <div className="flex flex-col justify-between gap-12 lg:gap-32">
                 <div className="text-white pt-4">
-                  <h2 className="text-5xl md:text-5xl font-bold leading-[1.1] tracking-tighter uppercase drop-shadow-lg">
+                  <h2 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tighter uppercase drop-shadow-lg">
                     Core Values <br className="hidden lg:block"/> & Ethics
                   </h2>
                   <div className="mt-8 w-24 h-1 bg-[#f97316]"></div>

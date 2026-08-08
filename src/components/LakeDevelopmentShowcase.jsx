@@ -4,40 +4,31 @@ import { Link } from 'react-router-dom';
 export default function LakeDevelopmentShowcase() {
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-white font-sans">
+    <div className="relative w-full min-h-screen md:h-screen overflow-hidden bg-white font-sans flex flex-col md:block py-16 md:py-0">
         
       {/* Static Elements Group */}
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center p-6">
+      <div className="relative md:absolute inset-0 w-full h-full flex flex-col md:items-center justify-center p-6 gap-10 md:gap-0">
 
-          {/* Top Left Vertical Image */}
-          <div className="absolute top-0 md:top-10 left-10 w-[40vw] md:w-[25vw] h-[40vh] md:h-[60vh]">
+          {/* Top Left Vertical Image (Mobile Top) */}
+          <div className="relative md:absolute md:top-10 md:left-10 w-full md:w-[25vw] h-[35vh] md:h-[60vh] z-0 order-1 md:order-none">
             <img
               src="/hospital/hospital.webp"
               alt="Infosys Foundation Jayadeva Hospital Left"
-              className="w-full h-full object-cover rounded-[1.5rem] shadow-2xl relative z-10"
-            />
-          </div>
-
-          {/* Bottom Right Vertical Image */}
-          <div className="absolute bottom-0 md:bottom-10 right-0 md:right-10 w-[40vw] md:w-[20vw] h-[55vh]">
-            <img
-              src="/hospital/hospital (1).webp"
-              alt="Infosys Foundation Jayadeva Hospital Right"
-              className="w-full h-full object-cover rounded-[1.5rem]"
+              className="w-full h-full object-cover rounded-3xl md:rounded-[1.5rem] shadow-xl md:shadow-2xl"
             />
           </div>
 
           {/* Center Text Description */}
-          <div className="relative z-10 max-w-2xl text-center flex flex-col items-center">
-            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#2d2d2d] mb-6">
+          <div className="relative z-20 max-w-2xl mx-auto text-center flex flex-col items-center px-2 md:px-4 order-2 md:order-none">
+            <h2 className="text-2xl sm:text-2xl md:text-5xl font-bold uppercase tracking-tight text-[#2d2d2d] mb-6 md:mb-6 leading-tight">
               Infosys Foundation Jayadeva Hospital Building, Bangalore
             </h2>
-            <div className="w-[2px] h-16 md:h-24 bg-[#2d2d2d]/50 mb-8"></div>
+            <div className="w-[2px] h-12 md:h-24 bg-[#2d2d2d]/50 mb-6 md:mb-8"></div>
 
-            <p className="text-base md:text-lg lg:text-xl text-[#2d2d2d] leading-relaxed mb-6 font-medium">
+            <p className="text-base sm:text-lg lg:text-xl text-[#2d2d2d] leading-relaxed mb-6 font-medium">
               We undertook the construction of the Infosys Foundation Jayadeva Hospital Building in Bangalore. The state-of-the-art facility is designed to provide world-class healthcare infrastructure.
             </p>
-            <p className="text-base md:text-lg lg:text-xl text-[#2d2d2d] leading-relaxed font-medium">
+            <p className="text-base sm:text-lg lg:text-xl text-[#2d2d2d] leading-relaxed font-medium">
               Our scope of work included the complete civil and structural construction, specialized medical infrastructure integration, MEP services, and finishing works, ensuring the highest standards of safety and quality.
             </p>
 
@@ -55,6 +46,15 @@ export default function LakeDevelopmentShowcase() {
                 </text>
               </svg>
             </Link>
+          </div>
+
+          {/* Bottom Right Vertical Image (Mobile Bottom) */}
+          <div className="relative md:absolute md:bottom-10 md:right-10 w-full md:w-[20vw] h-[35vh] md:h-[55vh] z-0 order-3 md:order-none">
+            <img
+              src="/hospital/hospital (1).webp"
+              alt="Infosys Foundation Jayadeva Hospital Right"
+              className="w-full h-full object-cover rounded-3xl md:rounded-[1.5rem] shadow-xl md:shadow-2xl"
+            />
           </div>
 
         </div>

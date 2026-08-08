@@ -180,13 +180,17 @@ export default function ProjectShowcase() {
         {/* Top Aligned Text Content */}
         <div
           ref={textRef}
-          className="absolute top-0 left-0 w-full pt-32 md:pt-36 pointer-events-none z-20 flex flex-col items-center"
+          className="absolute top-0 left-0 w-full pt-24 sm:pt-32 md:pt-36 pointer-events-none z-20 flex flex-col items-center"
           style={{ perspective: '1000px' }}
         >
-          <h2 className="text-white font-bold text-4xl sm:text-5xl md:text-[3rem] lg:text-[4.5rem] xl:text-[5.5rem] uppercase tracking-tight text-center leading-[0.95] px-4 w-full whitespace-nowrap">
-            {"Infosys New Campus, Hubli".split('').map((char, index) => (
-              <span key={index} className="inline-block title-char">
-                {char === ' ' ? '\u00A0' : char}
+          <h2 className="text-white font-bold text-[10vw] sm:text-5xl md:text-[3rem] lg:text-[4.5rem] xl:text-[5.5rem] uppercase tracking-tight text-center leading-[1.1] md:leading-[0.95] px-4 w-full flex flex-wrap justify-center gap-x-2 md:gap-x-4">
+            {"Infosys New Campus, Hubli".split(' ').map((word, wordIndex) => (
+              <span key={wordIndex} className="inline-flex whitespace-nowrap">
+                {word.split('').map((char, charIndex) => (
+                  <span key={charIndex} className="inline-block title-char">
+                    {char}
+                  </span>
+                ))}
               </span>
             ))}
           </h2>
@@ -196,11 +200,21 @@ export default function ProjectShowcase() {
     </div>
     
     {/* Post-Showcase Description Section */}
-    <div className="w-full bg-white py-8 md:py-16 px-6 relative overflow-hidden">
+    <div className="w-full bg-white pt-8 pb-0 md:py-16 px-6 relative overflow-hidden">
       
+      <div className="max-w-4xl mx-auto text-center font-sans flex flex-col items-center relative z-0">
+        <div className="w-[2px] h-12 md:h-20 bg-[#2d2d2d]/70 mb-8 md:mb-12"></div>
+        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed mb-8 sm:pr-32 lg:pr-0 px-4">
+          M R Constructions delivered the New Campus Development for Infosys Limited at Hubli, in association with architects M/s RSP Consultants. We covered a built-up area of 378,000 sq. ft. with full site development, completed in 24 months.
+        </p>
+        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed sm:pr-32 lg:pr-0 px-4">
+          Our scope included the SDB (G+5), Food Court (G+2), UGR, amphitheater, land development, compound walls, and all associated roads, services, and finishing works.
+        </p>
+      </div>
+
       {/* View Project Badge */}
-      <Link to="/portfolio/c1" className="absolute right-4 sm:right-10 top-1/2 transform -translate-y-1/2 flex items-center justify-center w-20 h-20 sm:w-28 sm:h-28 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-50 group hidden sm:flex">
-        <span className="absolute text-[8px] sm:text-[10px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#ff761f] transition-colors duration-300">
+      <Link to="/portfolio/c1" className="relative sm:absolute mt-6 sm:mt-0 mx-auto sm:mx-0 right-auto sm:right-16 md:right-42 top-auto sm:top-1/2 transform-none sm:transform sm:-translate-y-1/2 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-50 group">
+        <span className="absolute text-[10px] sm:text-[10px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#ff761f] transition-colors duration-300">
           View<br />Project
         </span>
         <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
@@ -212,16 +226,6 @@ export default function ProjectShowcase() {
           </text>
         </svg>
       </Link>
-
-      <div className="max-w-4xl mx-auto text-center font-sans flex flex-col items-center relative z-0">
-        <div className="w-[2px] h-20 md:h-32 bg-[#2d2d2d]/70 mb-8 md:mb-12"></div>
-        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed mb-8 sm:pr-24 lg:pr-0">
-          M R Constructions delivered the New Campus Development for Infosys Limited at Hubli, in association with architects M/s RSP Consultants. We covered a built-up area of 378,000 sq. ft. with full site development, completed in 24 months.
-        </p>
-        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed sm:pr-24 lg:pr-0">
-          Our scope included the SDB (G+5), Food Court (G+2), UGR, amphitheater, land development, compound walls, and all associated roads, services, and finishing works.
-        </p>
-      </div>
     </div>
     </>
   );

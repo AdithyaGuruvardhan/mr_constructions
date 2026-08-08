@@ -84,11 +84,11 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-[#fcfcfc] pt-24 pb-24 md:pt-[10rem] md:pb-32 overflow-hidden font-sans">
+    <section ref={sectionRef} className="relative w-full bg-[#fcfcfc] pt-18 pb-8 md:pt-[16rem] md:pb-18 overflow-hidden font-sans">
       
       {/* Massive Background Watermark */}
-      <div className="absolute top-8 md:top-12 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
-        <h1 className="text-[7vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-gray-50 opacity-80 whitespace-nowrap">
+      <div className="absolute top-6 md:top-12 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
+        <h1 className="text-[12vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-gray-50 opacity-80 whitespace-nowrap">
           TESTIMONIALS
         </h1>
       </div>
@@ -96,11 +96,8 @@ export default function TestimonialsSection() {
       <div className="w-[90vw] mx-auto relative z-10 flex flex-col items-center">
         
         {/* Header */}
-        <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
-          <div className="w-[2px] h-16 md:h-20 bg-[#ff761f] mb-8"></div>
-          <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-[#2d2d2d] mb-6">
-            CLIENT STORIES
-          </h2>
+        <div className="text-center mb-6 md:mb-12 flex flex-col items-center">
+          <div className="w-[2px] h-12 md:h-20 bg-[#ff761f] mb-8"></div>
           <p className="text-lg text-[#6b6b6b] leading-relaxed max-w-2xl mx-auto">
             Hear from our esteemed clients about their experiences partnering with M R Constructions for their landmark projects.
           </p>

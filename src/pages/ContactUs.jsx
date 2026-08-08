@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ContactUs() {
   return (
-    <div className="relative w-full min-h-screen bg-white text-[#2d2d2d] pt-48 md:pt-[14rem] pb-20 font-sans overflow-hidden">
+    <div className="relative w-full min-h-screen bg-white text-[#2d2d2d] pt-42 md:pt-[18rem] pb-20 font-sans overflow-hidden">
 
       {/* Massive Background Watermark */}
       <div className="absolute top-28 md:top-32 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
-        <h1 className="text-[8vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-50 opacity-80 whitespace-nowrap">
+        <h1 className="text-[12vw] md:text-[8vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-50 opacity-80 whitespace-nowrap">
           GET IN TOUCH
         </h1>
       </div>
@@ -14,8 +15,8 @@ export default function ContactUs() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
 
         {/* Header Section */}
-        <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
-          <div className="w-[2px] h-16 md:h-20 bg-[#ff761f] mb-8"></div>
+        <div className="text-center mb-6 md:mb-8 flex flex-col items-center">
+          <div className="w-[2px] h-12 md:h-20 bg-[#ff761f] mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-2xl mx-auto">
             Ready to bring your vision to life? Contact M R Constructions today. Our team is ready to assist you with your next landmark project.
           </p>
@@ -34,10 +35,10 @@ export default function ContactUs() {
               <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight">
                 Building Excellence <br /> For Your Next <br /> Landmark Project
               </h2>
-              <div className="mt-6 md:mt-8 flex items-center text-white/60 text-xs md:text-sm font-medium gap-2">
+              <Link to="/portfolio" className="mt-6 md:mt-8 flex items-center text-white/60 hover:text-white text-xs md:text-sm font-medium gap-2 transition-colors cursor-pointer w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-white/60"></span>
-                Explore More <span className="ml-1">→</span>
-              </div>
+                Explore More <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
             </div>
 
             <div className="relative z-10 flex flex-col gap-4 md:gap-6 lg:w-7/12 justify-center w-full">
