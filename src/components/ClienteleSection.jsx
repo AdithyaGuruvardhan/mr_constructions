@@ -1,18 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const logosRow1 = [
-  { src: '/clients/infosys.png', alt: 'Infosys' },
-  { src: '/clients/iit.png', alt: 'IIIT Dharwad' },
-  { src: '/clients/tata.png', alt: 'Tata Memorial' },
-  { src: '/clients/namma_metro.png', alt: 'Namma Metro' },
+  { src: '/clients/infosys.webp', alt: 'Infosys' },
+  { src: '/clients/iit.webp', alt: 'IIIT Dharwad' },
+  { src: '/clients/tata.webp', alt: 'Tata Memorial' },
+  { src: '/clients/namma_metro.webp', alt: 'Namma Metro' },
 ];
 
 const logosRow2 = [
-  { src: '/clients/infosys1.png', alt: 'Infosys' },
-  { src: '/clients/kiwadi.png', alt: 'Kidwai' },
-  { src: '/clients/elcita.png', alt: 'Elcita' },
-  { src: '/clients/hospital.png', alt: 'Hospital' },
-  { src: '/clients/elcia.png', alt: 'Elcia' },
+  { src: '/clients/infosys1.webp', alt: 'Infosys' },
+  { src: '/clients/kiwadi.webp', alt: 'Kidwai' },
+  { src: '/clients/elcita.webp', alt: 'Elcita' },
+  { src: '/clients/hospital.webp', alt: 'Hospital' },
+  { src: '/clients/elcia.webp', alt: 'Elcia' },
 ];
 
 export default function ClienteleSection() {

@@ -68,19 +68,19 @@ export default function HubliSchoolShowcase() {
           className="absolute inset-0 w-full h-full z-10"
         >
           <img
-            src="/Hubli_School.png"
+            src="/Hubli_School.webp"
             alt="Hubli School Project"
             className="w-full h-full object-cover"
           />
         </div>
 
         {/* Static Text Layer (z-20) */}
-        <div ref={textRef} className="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-6 z-20 pointer-events-none mt-38">
+        <div ref={textRef} className="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-6 z-20 pointer-events-none mt-32">
           <div className="max-w-3xl text-center flex flex-col items-center pointer-events-auto">
             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#2d2d2d] mb-6 drop-shadow-sm">
               Ramakrishna Mission School, Hubli
             </h2>
-            <div className="w-[2px] h-16 md:h-24 bg-[#2d2d2d]/50 mb-8"></div>
+            <div className="w-[2px] h-16 md:h-12 bg-[#2d2d2d]/50 mb-8"></div>
 
             <p className="text-lg md:text-2xl text-[#2d2d2d] leading-relaxed font-medium drop-shadow-sm">
               We undertook the construction of a CBSE school building for Ramakrishna Mission at Hubli, covering an area of 35,000 sft.
@@ -92,14 +92,28 @@ export default function HubliSchoolShowcase() {
         {/* Moves slightly based on mouse position for a parallax effect */}
         <div
           ref={leavesRef}
-          className="absolute inset-0 w-full h-full z-30 pointer-events-none scale-105"
+          className="absolute inset-0 w-full h-full z-30 pointer-events-none scale-100"
         >
           <img
-            src="/Hubli_School_leaves.png"
+            src="/Hubli_School_leaves.webp"
             alt="Leaves Overlay"
             className="w-full h-full object-cover"
           />
         </div>
+
+        {/* Static Clouds Transition Layer (z-40) */}
+        <div 
+          className="absolute top-0 left-0 w-full h-[20vh] md:h-[40vh] z-40 pointer-events-none"
+          style={{ WebkitMaskImage: 'linear-gradient(to bottom, black 10%, transparent 100%)', maskImage: 'linear-gradient(to bottom, black 5%, transparent 100%)' }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent z-10"></div>
+          <img
+            src="/clouds_1.webp"
+            alt="Clouds Transition"
+            className="w-full h-full object-cover object-top opacity-90 relative z-20"
+          />
+        </div>
+
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -65,7 +66,7 @@ export default function SchoolInfrastructureFocus() {
           >
             <img 
               ref={imageRef}
-              src="/hubli_school_vert.png" 
+              src="/hubli_school_vert.webp" 
               alt="School Infrastructure" 
               className="w-full h-full object-cover object-center"
             />
@@ -81,6 +82,23 @@ export default function SchoolInfrastructureFocus() {
             <p>
               Whether you're seeking a serene study retreat, a vibrant collaborative hub, or a space that fosters personal development, our infrastructure offers a robust foundation for success.
             </p>
+
+            <div className="w-full flex justify-end mt-12 md:pr-4">
+              {/* Small View Project Badge */}
+              <Link to="/portfolio/e2" className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 group">
+                <span className="absolute text-[8px] md:text-[9px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#ff761f] transition-colors duration-300">
+                  View<br />Project
+                </span>
+                <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
+                  <path id="circlePathFocus" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="transparent" />
+                  <text>
+                    <textPath href="#circlePathFocus" startOffset="0" className="text-[9px] font-medium tracking-[0.18em] fill-[#2d2d2d]/60 uppercase">
+                      EXPLORE • DISCOVER • EXPLORE • DISCOVER
+                    </textPath>
+                  </text>
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
 

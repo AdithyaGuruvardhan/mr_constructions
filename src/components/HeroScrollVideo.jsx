@@ -6,7 +6,7 @@ const BATCH_SIZE = 30;
 function getFrameUrl(index, isMobile) {
   // index is 1-based (1 to 144)
   const paddedIndex = index.toString().padStart(4, '0');
-  return `/metro_to_infosys/output_frame_${paddedIndex}.png`;
+  return `/metro_to_infosys/output_frame_${paddedIndex}.webp`;
 }
 
 export default function HeroScrollVideo() {
@@ -220,9 +220,9 @@ export default function HeroScrollVideo() {
 
 
           {/* Left aligned main content */}
-          <div className="flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto w-full pt-10">
+          <div className="flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto w-full pt-14">
             <div className="max-w-2xl">
-              <h1 className="text-5xl md:text-[4.5rem] font-medium leading-tight mb-6" style={{ color: '#f2f2f2' }}>
+              <h1 className="text-5xl md:text-[4rem] font-medium leading-tight mb-6" style={{ color: '#f2f2f2' }}>
                 Engineering Excellence.<br />Since 2005.
               </h1>
               <p className="text-lg md:text-xl max-w-lg mb-8 leading-relaxed" style={{ color: '#f2f2f2' }}>

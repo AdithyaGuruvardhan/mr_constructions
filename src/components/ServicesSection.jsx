@@ -7,10 +7,10 @@ export default function ServicesSection() {
   const [scrollLeft, setScrollLeft] = useState(0);
 
   const serviceItems = [
-    { id: 1, title: 'Commercial', projects: 'Delivering modern office spaces, retail environments, and state-of-the-art commercial complexes.', image: '/sira_solar.png' },
-    { id: 2, title: 'Education Institute', projects: 'Building inspiring learning environments, from schools to advanced research campuses.', image: '/hubli_school_vert.png' },
-    { id: 3, title: 'Hospitals', projects: 'Constructing specialized healthcare facilities, clinics, and multi-specialty hospitals with precision.', image: '/hospital.png' },
-    { id: 4, title: 'Temple', projects: 'Creating timeless spiritual centers and cultural complexes with traditional architectural integrity.', image: '/melukote_temple.png' },
+    { id: 1, title: 'Commercial', projects: 'Delivering modern office spaces, retail environments, and state-of-the-art commercial complexes.', image: '/sira_solar.webp' },
+    { id: 2, title: 'Education Institute', projects: 'Building inspiring learning environments, from schools to advanced research campuses.', image: '/hubli_school_vert.webp' },
+    { id: 3, title: 'Hospitals', projects: 'Constructing specialized healthcare facilities, clinics, and multi-specialty hospitals with precision.', image: '/hospital.webp' },
+    { id: 4, title: 'Temple', projects: 'Creating timeless spiritual centers and cultural complexes with traditional architectural integrity.', image: '/melukote_temple.webp' },
   ];
 
   const handleMouseDown = (e) => {

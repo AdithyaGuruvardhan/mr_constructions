@@ -7,10 +7,10 @@ export default function PortfolioSection() {
   const [scrollLeft, setScrollLeft] = useState(0);
 
   const portfolioItems = [
-    { id: 1, title: 'Commercial', projects: 'Infosys Campus (Hubli), Lake Development (Hebbal, Mysore), PG Buildings (Electronic City), Sira Solar Plant', image: '/building.png' },
-    { id: 2, title: 'Educational Institute', projects: 'CBSE English Medium Highschool (Shivanahalli), Hubli School, IIIT Dharwad', image: '/building.png' },
-    { id: 3, title: 'Hospitals', projects: 'Bowring Hospital (Bangalore), Infosys Foundation Maternity Hospital (Kanakapura), Infosys Foundation Jayadeva Hospital, Kidwai Cancer Hospital, Tata Memorial Centre (Mumbai)', image: '/building.png' },
-    { id: 4, title: 'Temples', projects: 'Kalayani Development (Vasanthpura, Bangalore), Melukote Kalayani', image: '/building.png' },
+    { id: 1, title: 'Commercial', projects: 'Infosys Campus (Hubli), Lake Development (Hebbal, Mysore), PG Buildings (Electronic City), Sira Solar Plant', image: '/building.webp' },
+    { id: 2, title: 'Educational Institute', projects: 'CBSE English Medium Highschool (Shivanahalli), Hubli School, IIIT Dharwad', image: '/building.webp' },
+    { id: 3, title: 'Hospitals', projects: 'Bowring Hospital (Bangalore), Infosys Foundation Maternity Hospital (Kanakapura), Infosys Foundation Jayadeva Hospital, Kidwai Cancer Hospital, Tata Memorial Centre (Mumbai)', image: '/building.webp' },
+    { id: 4, title: 'Temples', projects: 'Kalayani Development (Vasanthpura, Bangalore), Melukote Kalayani', image: '/building.webp' },
   ];
 
   const handleMouseDown = (e) => {

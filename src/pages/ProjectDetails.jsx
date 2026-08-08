@@ -126,11 +126,11 @@ export default function ProjectDetails() {
   return (
     <div className="w-full flex flex-col">
       <div
-        className="min-h-[75vh] md:min-h-[80vh] w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat relative"
+        className="min-h-[75vh] md:min-h-[95vh] w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat relative"
         style={{ backgroundImage: `url('${project.heroBg}')` }}
       >
         <div className="z-10 flex flex-col items-end mb-36 md:mb-50">
-          <h1 className="text-6xl md:text-9xl font-bold text-white text-center drop-shadow-md">
+          <h1 className="text-6xl md:text-8xl font-bold text-white text-center drop-shadow-md">
             {project.title}
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl text-white text-right drop-shadow-md mt-2 font-bold uppercase">
@@ -201,9 +201,9 @@ export default function ProjectDetails() {
             className="w-full h-auto md:h-[60vh] lg:h-[65vh] object-cover rounded-3xl shadow-xl"
           />
           {/* Info Card Overlay (Inside Image) */}
-          <div className="absolute top-4 right-4 md:top-12 md:right-12 bg-gray-50 p-6 md:p-8 shadow-lg rounded-3xl z-10 w-[calc(100%-2rem)] md:w-[360px] text-left hover:-translate-y-1 transition-transform duration-300">
-            <h3 className="text-lg md:text-2xl font-bold text-[#1c1c1e] mb-1 md:mb-2">{project.droneSection.cardTitle}</h3>
-            <p className="text-gray-500 text-sm md:text-base font-medium leading-relaxed">
+          <div className="absolute top-4 right-4 md:top-8 md:right-8 bg-gray-50 p-6 md:p-6 shadow-lg rounded-3xl z-10 w-[calc(100%-2rem)] md:w-[360px] text-left hover:-translate-y-1 transition-transform duration-300">
+            <h3 className="text-lg md:text-xl font-bold text-[#1c1c1e] mb-1 md:mb-2">{project.droneSection.cardTitle}</h3>
+            <p className="text-gray-500 text-sm md:text-sm font-medium leading-relaxed">
               {project.droneSection.cardDesc}
             </p>
           </div>
@@ -215,8 +215,8 @@ export default function ProjectDetails() {
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
             {project.droneSection.stats.map((stat, idx) => (
               <div key={idx} className="bg-[#2c2c2e] p-6 shadow-xl rounded-2xl flex-1 hover:-translate-y-2 transition-transform duration-300">
-                <h4 className="text-2xl lg:text-3xl font-bold text-white mb-2">{stat.title}</h4>
-                <p className="text-gray-400 text-sm font-medium leading-relaxed">
+                <h4 className="text-2xl lg:text-xl font-bold text-white mb-2">{stat.title}</h4>
+                <p className="text-gray-400 text-xs font-medium leading-relaxed">
                   {stat.desc}
                 </p>
               </div>

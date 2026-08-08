@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { getProjectData } from '../data/projectsData';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const AsymmetricalSection = ({ title, subtitle, link, imgUrl, animateFromCenter }) => {
   const containerRef = useRef(null);
+  const portfolioCategories = getProjectData();
 
   useGSAP(() => {
     if (animateFromCenter) {
@@ -156,18 +158,18 @@ const EducationSection = () => {
   return (
     <div className="mb-32 md:mb-48 w-full px-6 md:px-16 mt-32">
       <div className="w-full max-w-[1400px] mx-auto flex flex-col gap-16 md:gap-32">
-        
+
         {/* Top: Image left, Text right */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
           {/* Left: Image */}
           <div className="w-full h-[500px] md:h-[650px] rounded-[2rem] overflow-hidden shadow-md">
-            <img src="/hubli_school_vert.png" alt="Education" className="w-full h-full object-cover object-center" />
+            <img src="/hubli_school_vert.webp" alt="Education" className="w-full h-full object-cover object-center" />
           </div>
-          
+
           {/* Right: Text */}
           <div className="flex flex-col items-start justify-center pt-8 md:pt-0">
             <h2 className="text-4xl md:text-[3.5vw] font-medium text-[#1a1a1a] leading-[1.1] uppercase tracking-wide mb-8">
-              SHAPING FUTURE <br/> GENERATIONS
+              SHAPING FUTURE <br /> GENERATIONS
             </h2>
             <p className="text-lg text-gray-600 font-light leading-relaxed max-w-lg">
               At M R Constructions, we specialize in building large-scale educational institutions. We work closely with our partners, ensuring that every classroom, library, and campus facility is built with an eye for detail, structural safety, and long-lasting quality to foster the perfect learning environment.
@@ -177,24 +179,24 @@ const EducationSection = () => {
 
         {/* Bottom: Centered Text with Scattered Images */}
         <div className="relative w-full py-32 flex flex-col items-center justify-center mt-8 md:mt-0">
-          
+
           {/* Scattered Left Images */}
           <div className="hidden md:block absolute left-0 top-[10%] w-48 h-48 rounded-[1.5rem] overflow-hidden shadow-sm">
-            <img src="/Hubli_School.png" alt="Detail 1" className="w-full h-full object-cover" />
+            <img src="/Hubli_School.webp" alt="Detail 1" className="w-full h-full object-cover" />
           </div>
           <div className="hidden md:block absolute left-[12%] top-[60%] w-28 h-28 rounded-[1rem] overflow-hidden shadow-sm">
-            <img src="/Hubli_School_leaves.png" alt="Detail 2" className="w-full h-full object-cover" />
+            <img src="/Hubli_School_leaves.webp" alt="Detail 2" className="w-full h-full object-cover" />
           </div>
 
           {/* Scattered Right Image */}
           <div className="hidden md:block absolute right-0 top-[20%] w-56 h-56 rounded-[1.5rem] overflow-hidden shadow-sm">
-            <img src="/MRC shivanahalli DRONE _18.JPG" alt="Detail 3" className="w-full h-full object-cover" />
+            <img src="/MRC shivanahalli DRONE _18.webp" alt="Detail 3" className="w-full h-full object-cover" />
           </div>
 
           {/* Center Content */}
           <div className="text-center z-10 max-w-3xl flex flex-col items-center px-4">
             <h2 className="text-4xl md:text-[3.5vw] font-medium text-[#1a1a1a] leading-[1.2] uppercase tracking-wide mb-10">
-              BUILDING FOR TOMORROW, <br/> EDUCATING SMARTER.
+              BUILDING FOR TOMORROW, <br /> EDUCATING SMARTER.
             </h2>
             <Link to="/portfolio/education" className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#ff761f] transition-colors shadow-lg">
               <span className="font-semibold mr-4 text-xs md:text-sm tracking-widest uppercase">VIEW PROJECTS</span>
@@ -203,7 +205,7 @@ const EducationSection = () => {
               </svg>
             </Link>
           </div>
-          
+
         </div>
 
       </div>
@@ -215,7 +217,7 @@ const HospitalSection = () => {
   return (
     <div className="mb-32 md:mb-48 w-full px-6 md:px-16 mt-32">
       <div className="w-full max-w-[1400px] mx-auto flex flex-col gap-12">
-        
+
         {/* Header Area */}
         <div className="w-full flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8">
           <div className="max-w-2xl">
@@ -238,11 +240,11 @@ const HospitalSection = () => {
 
         {/* Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-end">
-          
+
           {/* Left Column (Tall) */}
           <div className="flex flex-col gap-4">
             <div className="w-full h-[400px] md:h-[600px] rounded-[2rem] overflow-hidden shadow-sm">
-              <img src="/hospital/hospital.png" alt="Hospital Exterior" className="w-full h-full object-cover object-center" />
+              <img src="/hospital/hospital.webp" alt="Hospital Exterior" className="w-full h-full object-cover object-center" />
             </div>
             <div className="flex items-center justify-between text-[#1a1a1a] px-2">
               <span className="text-sm font-medium tracking-wide">— Specialized Facilities</span>
@@ -252,14 +254,14 @@ const HospitalSection = () => {
           {/* Middle Column (Landscape, lower) */}
           <div className="flex flex-col gap-4">
             <div className="w-full h-[300px] md:h-[400px] rounded-[2rem] overflow-hidden shadow-sm">
-              <img src="/hospital/MRC jayadeva 2S _81.JPG" alt="Hospital Construction" className="w-full h-full object-cover object-center" />
+              <img src="/hospital/MRC jayadeva 2S _81.webp" alt="Hospital Construction" className="w-full h-full object-cover object-center" />
             </div>
           </div>
 
           {/* Right Column (Tall) */}
           <div className="flex flex-col gap-4">
             <div className="w-full h-[400px] md:h-[600px] rounded-[2rem] overflow-hidden shadow-sm">
-              <img src="/hospital/MRC jayadeva drone 2S _23.JPG" alt="Hospital Aerial" className="w-full h-full object-cover object-center" />
+              <img src="/hospital/MRC jayadeva drone 2S _23.webp" alt="Hospital Aerial" className="w-full h-full object-cover object-center" />
             </div>
             <div className="flex items-center justify-between text-[#1a1a1a] px-2">
               <span className="text-sm font-medium tracking-wide">— Advanced Engineering</span>
@@ -277,10 +279,10 @@ const TempleSection = () => {
   return (
     <div className="w-full px-4 md:px-[5vw] mt-32 mb-24">
       <div className="relative w-full h-[70vh] min-h-[700px] overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-[#fafafa] flex items-center shadow-lg">
-        
+
         {/* Back Layer (temple_bg) */}
         <div className="absolute inset-0 z-0">
-          <img src="/temple_bg.png" alt="Temple Background" className="w-full h-full object-cover" />
+          <img src="/temple_bg.webp" alt="Temple Background" className="w-full h-full object-cover" />
         </div>
 
         {/* Middle Layer (Text - Under Foreground) */}
@@ -289,14 +291,14 @@ const TempleSection = () => {
           <div className="w-full md:w-2/3">
             <p className="text-black/80 text-sm md:text-base font-medium mb-4 md:mb-6 uppercase tracking-widest">Spiritual Architecture</p>
             <h2 className="text-5xl md:text-[6vw] font-medium text-white leading-[0.85] tracking-tighter uppercase drop-shadow-md">
-              WE BUILD <br/> SPACES OF <br/> DEVOTION
+              WE BUILD <br /> SPACES OF <br /> DEVOTION
             </h2>
           </div>
         </div>
 
         {/* Front Layer (temple_fg) */}
         <div className="absolute inset-0 z-20 pointer-events-none">
-          <img src="/temple_fg.png" alt="Temple Foreground" className="w-full h-full object-cover object-bottom" />
+          <img src="/temple_fg.webp" alt="Temple Foreground" className="w-full h-full object-cover object-bottom" />
         </div>
 
         {/* Top Layer (Text - Above Foreground) */}
@@ -324,35 +326,34 @@ const portfolioCategories = [
   {
     category: "Commercial",
     projects: [
-      { id: "c1", title: "Infosys New Campus", subtitle: "Hubli", img: "/infosys_hubli.png" },
-      { id: "c2", title: "Lake development and construction", subtitle: "Hebbal Mysore", img: "/Lake Development.png" },
-      { id: "c3", title: "Sira Solar Plant", subtitle: "Sira", img: "/sira_solar.png" },
-      { id: "c4", title: "Paying Guest Buildings", subtitle: "Electronic city", img: "/commercial/pg/PG19.JPG" },
+      { id: "c1", title: "Infosys New Campus", subtitle: "Hubli", img: "/commercial/infosys/INFOSYS HUBLI29.webp" },
+      { id: "c2", title: "Lake development and construction", subtitle: "Hebbal Mysore", img: "/commercial/lake/infosys STP drone 1_10.webp" },
+      { id: "c3", title: "Sira Solar Plant", subtitle: "Sira", img: "/sira_solar.webp" },
+      { id: "c4", title: "Paying Guest Buildings", subtitle: "Electronic city", img: "/commercial/pg/PG13.webp" },
     ]
   },
   {
     category: "Education Institution",
     projects: [
-      { id: "e1", title: "CBSE ENGLISH MEDIUM HIGH SCHOOL", subtitle: "Shivanahalli", img: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC%20shivanahalli%20DRONE%20_9.JPG" },
-      { id: "e2", title: "Hubli School", subtitle: "Hubli", img: "/Education%20Institution/Hubli%20School/HUBLI%20SCHOOL4.jpg" },
-      { id: "e3", title: "Indian Institute of Information Technology", subtitle: "Dharwad", img: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT16.JPG" },
+      { id: "e1", title: "CBSE ENGLISH MEDIUM HIGH SCHOOL", subtitle: "Shivanahalli", img: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC shivanahalli DRONE _21.webp" },
+      { id: "e2", title: "Hubli School", subtitle: "Hubli", img: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp" },
+      { id: "e3", title: "Indian Institute of Information Technology", subtitle: "Dharwad", img: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT7.webp" },
     ]
   },
   {
     category: "Hospitals",
     projects: [
-      { id: "h1", title: "Bowring Hospital", subtitle: "Bangalore", img: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.JPG" },
-      { id: "h2", title: "Infosys Foundation Government Maternity Hospital", subtitle: "Kanakapura", img: "/hospital/hospital (1).JPG" },
-      { id: "h3", title: "Infosys Foundation Jayadeva Hospital Building", subtitle: "Bangalore", img: "/hospital/Infosys%20Foundation%20Jayadeva%20Hospital%20Building%20Bangalore/MRC%20jayadeva%20drone%202S%20_19.JPG" },
-      { id: "h4", title: "Kidwai Cancer Hospital", subtitle: "Bangalore", img: "/hospital/Kidwai%20Cancer%20Hospital/MRC%20kidwai%20DRONE%20_11.JPG" },
-      { id: "h5", title: "Tata Memorial Centre Advanced Centre", subtitle: "Mumbai", img: "/hospital/Tata%20Memorial%20Centre%20Advanced%20Centr%20-%20Mumbai/MRC%20MUMBAI%20day%201_25.JPG" },
+      { id: "h1", title: "Bowring Hospital", subtitle: "Bangalore", img: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.webp" },
+      { id: "h3", title: "Jayadeva Hospital Building", subtitle: "Bangalore", img: "/hospital.webp" },
+      { id: "h4", title: "Kidwai Cancer Hospital", subtitle: "Bangalore", img: "/hospital/Kidwai%20Cancer%20Hospital/MRC%20kidwai%20DRONE%20_11.webp" },
+      { id: "h5", title: "Tata Memorial Centre Advanced Centre", subtitle: "Mumbai", img: "/hospital/Tata%20Memorial%20Centre%20Advanced%20Centr%20-%20Mumbai/MRC mumbai DRONE_6.webp" },
     ]
   },
   {
     category: "Temple",
     projects: [
-      { id: "t1", title: "DEVELOPMENT OF KALAYANI VASANTHPURA", subtitle: "BANGALORE", img: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA%20KALYANI18.jpg" },
-      { id: "t2", title: "Melukote Kalayani", subtitle: "Melukote", img: "/temple/Melukote%20Kalayani/MELKOTE%20KALYANI9.jpg" },
+      { id: "t1", title: "Development Of Kalayani", subtitle: "Vasanthpura, Bangalore", img: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA KALYANI12.webp" },
+      { id: "t2", title: "Melukote Kalayani", subtitle: "Melukote", img: "/temple/Melukote%20Kalayani/MELKOTE KALYANI5.webp" },
     ]
   }
 ];
@@ -370,9 +371,9 @@ const ProjectCard = ({ project }) => {
 
       {/* Center Image (takes most of the card) */}
       <div className="absolute top-[140px] left-5 right-5 bottom-24 rounded-2xl overflow-hidden shadow-lg pointer-events-none select-none">
-        <img 
-          src={project.img} 
-          alt={project.title} 
+        <img
+          src={project.img}
+          alt={project.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           draggable="false"
         />
@@ -416,15 +417,23 @@ const DraggableCategoryRow = ({ category, projects }) => {
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  const justifyClass = projects.length <= 4 ? "md:justify-center" : "md:justify-start";
+  // Center items based on how many fit safely on the screen to prevent cutoff bugs
+  let justifyClass = "justify-start";
+  if (projects.length <= 2) {
+    justifyClass = "md:justify-center";
+  } else if (projects.length === 3) {
+    justifyClass = "xl:justify-center justify-start";
+  } else if (projects.length === 4) {
+    justifyClass = "2xl:justify-center justify-start";
+  }
 
   return (
     <div className="w-full mb-16 md:mb-24 overflow-hidden max-w-[1600px] mx-auto">
       <div className="flex items-center justify-center mb-8 px-6 md:px-16 text-center">
         <h2 className="text-2xl md:text-4xl font-bold text-[#1a1a1a] tracking-tight uppercase">{category}</h2>
       </div>
-      
-      <div 
+
+      <div
         ref={scrollRef}
         onMouseDown={onMouseDown}
         onMouseLeave={onMouseLeave}
@@ -434,9 +443,9 @@ const DraggableCategoryRow = ({ category, projects }) => {
         style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
       >
         {projects.map(p => (
-          <Link 
-            to={`/portfolio/${p.id}`} 
-            key={p.id} 
+          <Link
+            to={`/portfolio/${p.id}`}
+            key={p.id}
             className="snap-center block"
             draggable="false"
             onDragStart={(e) => e.preventDefault()}
@@ -456,8 +465,8 @@ export default function Portfolio() {
       <div className="w-full px-6 md:px-16 mb-24 mt-0 md:mt-4">
         <div className="w-full max-w-[1400px] mx-auto">
           {/* Typographical Header */}
-          <div className="border-t-2 border-black/10 pt-4 mb-16 md:mb-24">
-            <h1 className="text-[14vw] md:text-[8vw] leading-[1.1] font-extrabold tracking-tighter uppercase pb-2">
+          <div className="border-t-2 border-black/10 pt-4 mb-0 md:mb-12">
+            <h1 className="text-[13vw] md:text-[8vw] leading-[1.1] font-extrabold tracking-tighter uppercase pb-2">
               <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2a2a2a] to-transparent inline-block pb-4">Our</span> <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#ff761f] to-transparent inline-block pb-4">Portfolio</span>
             </h1>
           </div>
@@ -477,7 +486,7 @@ export default function Portfolio() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-6 border-t border-black/10">
                 <p>
-                  We approach every site with the same discipline, whether we're building a corporate campus for a global technology leader or a school that will shape generations of students. Our work spans commercial, educational, healthcare, and heritage construction, each built to the same uncompromising standard.
+                  We approach every project with the same discipline — whether it's a corporate campus for a global tech leader or a school shaping generations of students. Our work spans commercial, educational, healthcare, and heritage construction, all held to the same uncompromising standard.
                 </p>
                 <p>
                   What you'll find here is not just a list of completed structures, but a record of partnerships built on reliability — with organizations that trusted us to deliver on time, on budget, and beyond expectation.

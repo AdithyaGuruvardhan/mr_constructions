@@ -15,7 +15,7 @@ export default function ProcessSection() {
           {/* Cropped Building Plan Image */}
           <div className="w-full h-[280px] md:h-[350px] overflow-hidden rounded-[2rem] ">
             <img 
-              src="/infosys_plan.png" 
+              src="/infosys_plan.webp" 
               alt="Building Blueprint" 
               className="w-full h-full object-cover object-[center_45%] scale-[1]"
             />
@@ -28,7 +28,7 @@ export default function ProcessSection() {
           {/* Card 1 */}
           <div className="bg-[#1e2025] rounded-[1.5rem] flex items-stretch p-3 shadow-lg hover:-translate-y-1 transition-transform duration-300">
             <div className="w-24 md:w-28 h-auto min-h-[90px] flex-shrink-0 bg-gray-800 relative rounded-xl overflow-hidden">
-               <img src="/infosys_plan (1).png" alt="Plan" className="absolute inset-0 w-full h-full object-cover object-center bg-white scale-[1.2]" />
+               <img src="/infosys_plan (1).webp" alt="Plan" className="absolute inset-0 w-full h-full object-cover object-center bg-white scale-[1.2]" />
             </div>
             <div className="p-4 md:px-6 flex flex-col justify-center">
               <h3 className="text-white font-medium text-lg mb-2">1. Strategic Design</h3>
@@ -41,7 +41,7 @@ export default function ProcessSection() {
           {/* Card 2 */}
           <div className="bg-[#1e2025] rounded-[1.5rem] flex items-stretch p-3 shadow-lg hover:-translate-y-1 transition-transform duration-300">
             <div className="w-24 md:w-28 h-auto min-h-[90px] flex-shrink-0 bg-gray-300 relative rounded-xl overflow-hidden">
-               <img src="/infosys_top_view.png" alt="Build" className="absolute inset-0 w-full h-full object-cover scale-[1.2]" />
+               <img src="/infosys_top_view.webp" alt="Build" className="absolute inset-0 w-full h-full object-cover scale-[1.2]" />
             </div>
             <div className="p-4 md:px-6 flex flex-col justify-center">
               <h3 className="text-white font-medium text-lg mb-2">2. Structural Integrity</h3>
@@ -54,7 +54,7 @@ export default function ProcessSection() {
           {/* Card 3 */}
           <div className="bg-[#1e2025] rounded-[1.5rem] flex items-stretch p-3 shadow-lg hover:-translate-y-1 transition-transform duration-300">
             <div className="w-24 md:w-28 h-auto min-h-[90px] flex-shrink-0 bg-gray-300 relative rounded-xl overflow-hidden">
-               <img src="/INFOSYS HUBLI29.jpg" alt="Deliver" className="absolute inset-0 w-full h-full object-cover object-center" />
+               <img src="/INFOSYS HUBLI29.webp" alt="Deliver" className="absolute inset-0 w-full h-full object-cover object-center" />
             </div>
             <div className="p-4 md:px-6 flex flex-col justify-center">
               <h3 className="text-white font-medium text-lg mb-2">3. Final Handover</h3>

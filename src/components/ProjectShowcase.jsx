@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -13,6 +14,8 @@ export default function ProjectShowcase() {
   const sideElementsRef = useRef();
   const imgLeftRef = useRef();
   const imgRightRef = useRef();
+  const cloudRef = useRef();
+  const cloudRightRef = useRef();
 
   useGSAP(() => {
     // We use a sticky container instead of GSAP pin to prevent layout glitches
@@ -71,6 +74,23 @@ export default function ProjectShowcase() {
       ease: "power2.inOut"
     }, 2);
 
+    // Cloud animation: come front, move out and get hidden
+    tl.to(cloudRef.current, {
+      scale: 8,
+      x: "-60vw",
+      y: "-20vh",
+      opacity: 0,
+      ease: "power2.inOut"
+    }, 2);
+
+    tl.to(cloudRightRef.current, {
+      scale: 8,
+      x: "60vw",
+      y: "20vh",
+      opacity: 0,
+      ease: "power2.inOut"
+    }, 2);
+
     // Phase 4: Letter stagger animation for the title
     tl.fromTo(".title-char", 
       { opacity: 0, y: 50, rotateX: -80, scale: 0.8 }, 
@@ -93,7 +113,7 @@ export default function ProjectShowcase() {
 
   return (
     <>
-    <div ref={container} className="relative h-[500vh] w-full bg-white">
+    <div ref={container} className="relative h-[500vh] w-full bg-[#e4f7ff]">
 
       {/* Sticky Inner Container */}
       <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
@@ -102,15 +122,15 @@ export default function ProjectShowcase() {
         <div ref={sideElementsRef} className="absolute inset-0 flex justify-between p-6 md:p-16 pointer-events-none z-10 font-sans">
 
           {/* Left Side (Rotated Badge & Line) */}
-          <div className="flex flex-col items-center justify-start pt-10 md:pt-20">
+          <div className="flex flex-col items-center justify-end pb-10 md:pb-0">
+            <div className="w-[1px] h-20 md:h-32 bg-[#2d2d2d]/30 mb-8 md:mb-12"></div>
             <div className="w-16 h-16 md:w-24 md:h-24 border border-[#2d2d2d] rounded-full flex items-center justify-center text-[10px] md:text-xs tracking-widest text-[#2d2d2d] uppercase -rotate-90 text-center leading-tight">
               MR<br />Const
             </div>
-            <div className="w-[1px] h-20 md:h-32 bg-[#2d2d2d]/30 mt-8 md:mt-12"></div>
           </div>
 
           {/* Right Side (Title & Instructions) */}
-          <div className="flex flex-col items-end text-right pt-10 md:pt-20">
+          <div className="flex flex-col items-end text-right pt-20 md:pt-20">
             <h3 className="text-xl md:text-4xl text-[#2d2d2d] uppercase tracking-widest font-medium mb-4">
               Selected<br />Work
             </h3>
@@ -121,11 +141,27 @@ export default function ProjectShowcase() {
           </div>
         </div>
 
+        {/* Floating Cloud (Top Left) */}
+        <img
+          ref={cloudRef}
+          src="/clouds.webp"
+          alt="Clouds"
+          className="absolute top-30 left-5 md:top-30 md:left-20 w-62 md:w-132 object-contain pointer-events-none z-20 brightness-170"
+        />
+
+        {/* Floating Cloud (Bottom Right) */}
+        <img
+          ref={cloudRightRef}
+          src="/clouds.webp"
+          alt="Clouds"
+          className="absolute bottom-10 right-5 md:bottom-0 md:right-10 w-62 md:w-132 object-contain pointer-events-none z-20 brightness-170"
+        />
+
         {/* Left Mask Image */}
         <div ref={leftMaskRef} className="absolute inset-0 w-full h-full shadow-2xl">
           <img
             ref={imgLeftRef}
-            src="/infosys_hubli.png"
+            src="/infosys_hubli.webp"
             alt="Infosys New Campus, Hubli"
             className="absolute top-0 left-0 w-full h-auto min-h-screen object-cover object-top"
           />
@@ -135,7 +171,7 @@ export default function ProjectShowcase() {
         <div ref={rightMaskRef} className="absolute inset-0 w-full h-full shadow-2xl">
           <img
             ref={imgRightRef}
-            src="/infosys_hubli.png"
+            src="/infosys_hubli.webp"
             alt="Infosys New Campus, Hubli"
             className="absolute top-0 left-0 w-full h-auto min-h-screen object-cover object-top"
           />
@@ -162,13 +198,11 @@ export default function ProjectShowcase() {
     {/* Post-Showcase Description Section */}
     <div className="w-full bg-white py-8 md:py-16 px-6 relative overflow-hidden">
       
-      {/* View Project Circular Badge (Top Right) */}
-      <div className="absolute right-4 md:right-12 top-4 md:top-12 flex items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-10 group hidden sm:flex">
-        {/* Center Text */}
-        <span className="absolute text-[10px] md:text-xs font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#ff761f] transition-colors duration-300">
-          View<br/>Project
+      {/* View Project Badge */}
+      <Link to="/portfolio/c1" className="absolute right-4 sm:right-10 top-1/2 transform -translate-y-1/2 flex items-center justify-center w-20 h-20 sm:w-28 sm:h-28 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-50 group hidden sm:flex">
+        <span className="absolute text-[8px] sm:text-[10px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#ff761f] transition-colors duration-300">
+          View<br />Project
         </span>
-        {/* Rotating Circular Text */}
         <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
           <path id="circlePathHubli" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="transparent" />
           <text>
@@ -177,7 +211,7 @@ export default function ProjectShowcase() {
             </textPath>
           </text>
         </svg>
-      </div>
+      </Link>
 
       <div className="max-w-4xl mx-auto text-center font-sans flex flex-col items-center relative z-0">
         <div className="w-[2px] h-20 md:h-32 bg-[#2d2d2d]/70 mb-8 md:mb-12"></div>

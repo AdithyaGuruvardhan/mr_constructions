@@ -48,19 +48,19 @@ export default function AboutUs() {
 
         {/* Background Image Layer */}
         <img
-          src="/bg.png"
+          src="/bg.webp"
           alt="Background Skyline"
           className="absolute inset-0 w-full h-full object-cover object-[50%_70%] z-0"
         />
 
         {/* Sandwiched Text Layer */}
-        <h1 className="relative z-10 text-[18vw] md:text-[16vw] leading-none font-bold uppercase tracking-normal text-transparent bg-clip-text bg-gradient-to-b from-gray-500 to-transparent opacity-80 select-none -translate-y-12 md:-translate-y-24 drop-shadow-md">
+        <h1 className="relative z-10 text-[18vw] md:text-[16vw] leading-none font-bold uppercase tracking-normal text-transparent bg-clip-text bg-gradient-to-b from-gray-500 to-transparent opacity-80 select-none -translate-y-12 md:-translate-y-26 drop-shadow-md">
           ABOUT US
         </h1>
 
         {/* Foreground Image Layer */}
         <img
-          src="/fg.png"
+          src="/fg.webp"
           alt="Foreground Building"
           className="absolute inset-0 w-full h-full object-cover object-[50%_70%] z-20 pointer-events-none"
         />
@@ -133,7 +133,7 @@ export default function AboutUs() {
 
             {/* Right: Image */}
             <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden h-[400px] lg:h-[550px] shadow-lg">
-              <img src="/infosys_hubli.png" alt="Engineering Excellence" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/infosys_hubli.webp" alt="Engineering Excellence" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent"></div>
 
               {/* Image Overlay Text */}
@@ -149,20 +149,20 @@ export default function AboutUs() {
       </div>
 
       {/* Why MRC Section - Layered Parallax Layout */}
-      <div ref={sectionRef} className="relative w-[90vw] max-w-[1800px] mx-auto rounded-[3rem] overflow-hidden min-h-[900px] lg:min-h-[1000px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0] z-30">
+      <div ref={sectionRef} className="relative w-[95vw] md:w-[90vw] max-w-[1800px] mx-auto rounded-[1.5rem] md:rounded-[3rem] overflow-hidden min-h-[1050px] sm:min-h-[900px] lg:min-h-[1000px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0] z-30 pb-32 lg:pb-0">
 
           {/* Layer 1: Background Image */}
-          <img src="/temple_bg.png" alt="Temple Background" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] z-0" />
+          <img src="/temple_bg.webp" alt="Temple Background" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] z-0" />
 
           {/* Layer 2: Content (Title and Cards) */}
-          <div className="relative z-10 w-full flex flex-col lg:flex-row items-start justify-between px-8 md:px-16 pt-10 lg:pt-14 gap-8">
+          <div className="relative z-10 w-full flex flex-col lg:flex-row items-start justify-between px-4 sm:px-8 md:px-16 pt-12 md:pt-18 lg:pt-24 gap-6 md:gap-8">
 
             {/* Left: Hero Title */}
             <div className="w-full lg:w-5/12 flex flex-col items-start z-10">
-              <h2 className="text-6xl md:text-[5.5rem] font-medium text-[#f2f2f2] leading-[0.9] tracking-tighter uppercase w-full">
+              <h2 className="text-5xl sm:text-6xl md:text-[5.5rem] font-medium text-[#f2f2f2] leading-[0.9] tracking-tighter uppercase w-full">
                 Why MRC
               </h2>
-              <div className="ml-2 mt-4 flex flex-row flex-wrap gap-3 md:gap-4 uppercase tracking-widest text-[10px] md:text-xs font-bold items-center">
+              <div className="ml-1 sm:ml-2 mt-4 flex flex-row flex-wrap gap-2 md:gap-4 uppercase tracking-widest text-[9px] sm:text-[10px] md:text-xs font-bold items-center">
                  <span className="bg-white text-[#2d2d2d] px-5 py-2.5 rounded-full shadow-md">Excellence</span>
                  <span className="bg-white text-[#2d2d2d] px-5 py-2.5 rounded-full shadow-md">Quality</span>
                  <span className="bg-white text-[#2d2d2d] px-5 py-2.5 rounded-full shadow-md">Trust</span>
@@ -170,16 +170,16 @@ export default function AboutUs() {
             </div>
 
             {/* Right: The Cards inside a beautiful glass/white container */}
-            <div ref={cardsRef} className="w-full lg:w-7/12 bg-white/95 backdrop-blur-2xl p-8 md:p-10 rounded-[3rem] shadow-2xl relative lg:-mr-8 z-10 flex flex-col border border-white/20 mt-4 lg:mt-0 min-h-[600px] lg:min-h-[700px]">
+            <div ref={cardsRef} className="w-full lg:w-7/12 bg-white/95 backdrop-blur-2xl p-6 sm:p-8 md:p-10 rounded-[1.5rem] md:rounded-[3rem] shadow-2xl relative lg:-mr-8 z-10 flex flex-col border border-white/20 mt-2 lg:mt-0 h-auto lg:min-h-[700px] pb-32 sm:pb-40 md:pb-48 lg:pb-32">
 
               {/* Top badges */}
-              <div className="flex gap-2 md:gap-3 mb-6 md:mb-8">
+              {/* <div className="flex gap-2 md:gap-3 mb-4 md:mb-8 flex-wrap">
                 <span className="border border-gray-200 px-3 py-1.5 md:px-5 md:py-2 rounded-full text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest">Excellence</span>
                 <span className="border border-gray-200 px-3 py-1.5 md:px-5 md:py-2 rounded-full text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest">Quality</span>
                 <span className="border border-[#3b3228] bg-[#3b3228] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest hidden md:block">Trust</span>
-              </div>
+              </div> */}
 
-              <h3 className="text-2xl md:text-4xl text-[#2d2d2d] font-bold mb-6 md:mb-8 leading-tight">Uncompromising standards & precision</h3>
+              <h3 className="text-md sm:text-md md:text-4xl text-[#2d2d2d] font-bold mb-5 md:mb-8 leading-tight">Uncompromising standards & precision</h3>
 
               {/* The 8 points in a 2-col grid */}
               <div ref={pointsRef} className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 md:gap-y-6">
@@ -204,7 +204,7 @@ export default function AboutUs() {
           </div>
 
           {/* Layer 3: Foreground Image */}
-          <img src="/temple_fg.png" alt="Temple Foreground" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] pointer-events-none z-20" />
+          <img src="/temple_fg.webp" alt="Temple Foreground" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] pointer-events-none z-20" />
         </div>
 
         {/* Core Values & Ethics Section (Full Width) */}
@@ -212,7 +212,7 @@ export default function AboutUs() {
           
           {/* Background Image */}
           <img 
-            src="/commercial/infosys/INFOSYS%20HUBLI50.jpg" 
+            src="/commercial/infosys/INFOSYS%20HUBLI50.webp" 
             alt="Infosys Hubli Background" 
             className="absolute inset-0 w-full h-full object-cover z-0" 
           />
@@ -227,7 +227,7 @@ export default function AboutUs() {
               {/* Column 1: Title & Card 2 */}
               <div className="flex flex-col justify-between gap-12 lg:gap-32">
                 <div className="text-white pt-4">
-                  <h2 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tighter uppercase drop-shadow-lg">
+                  <h2 className="text-5xl md:text-5xl font-bold leading-[1.1] tracking-tighter uppercase drop-shadow-lg">
                     Core Values <br className="hidden lg:block"/> & Ethics
                   </h2>
                   <div className="mt-8 w-24 h-1 bg-[#f97316]"></div>

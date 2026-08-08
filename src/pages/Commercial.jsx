@@ -11,12 +11,12 @@ export default function Commercial() {
   const isDragging = useRef(false);
 
   const galleryImages = [
-    "MRC SIRA DRONE_4.JPG",
-    "MRC sira 2S _8.JPG",
-    "SIRA SOLAR PLANT12.jpg",
-    "MRC sira 2S _42.JPG",
-    "SIRA SOLAR PLANT17.jpg",
-    "SIRA SOLAR PLANT5.jpg"
+    "MRC SIRA DRONE_4.webp",
+    "MRC sira 2S _8.webp",
+    "SIRA SOLAR PLANT12.webp",
+    "MRC sira 2S _42.webp",
+    "SIRA SOLAR PLANT17.webp",
+    "SIRA SOLAR PLANT5.webp"
   ];
 
   const updateGallery = () => {
@@ -136,7 +136,7 @@ export default function Commercial() {
     <div className="w-full flex flex-col">
       <div
         className="min-h-[75vh] md:min-h-[80vh] w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat relative"
-        style={{ backgroundImage: `url('/commercial/sira%20solar%20plant/MRC%20sira%202S%20_8.JPG')` }}
+        style={{ backgroundImage: `url('/commercial/sira%20solar%20plant/MRC%20sira%202S%20_8.webp')` }}
       >
         <div className="z-10 flex flex-col items-end mb-36 md:mb-50">
           <h1 className="text-6xl md:text-9xl font-bold text-white text-center drop-shadow-md">
@@ -157,12 +157,12 @@ export default function Commercial() {
         {/* Mobile Overlapped Images (Visible only on mobile/tablet) */}
         <div className="flex lg:hidden relative w-full max-w-sm mx-auto h-64 md:h-80 mb-14">
           <img
-            src="/commercial/sira%20solar%20plant/MRC%20sira%202S%20_14.JPG"
+            src="/commercial/sira%20solar%20plant/MRC%20sira%202S%20_14.webp"
             alt="Sira Solar Plant View 1"
             className="absolute top-0 left-4 md:left-8 w-44 md:w-56 h-auto object-cover rounded-xl shadow-lg z-10"
           />
           <img
-            src="/commercial/sira%20solar%20plant/SIRA%20SOLAR%20PLANT11.jpg"
+            src="/commercial/sira%20solar%20plant/SIRA%20SOLAR%20PLANT11.webp"
             alt="Sira Solar Plant View 2"
             className="absolute top-24 md:top-32 right-12 md:right-8 w-44 md:w-56 h-auto object-cover rounded-xl shadow-lg z-20"
           />
@@ -171,7 +171,7 @@ export default function Commercial() {
         {/* Left Image (Visible only on desktop) */}
         <div className="hidden lg:flex w-full lg:w-1/4 justify-center">
           <img
-            src="/commercial/sira%20solar%20plant/MRC%20sira%202S%20_14.JPG"
+            src="/commercial/sira%20solar%20plant/MRC%20sira%202S%20_14.webp"
             alt="Sira Solar Plant View 1"
             className="w-full max-w-full aspect-[4000/5393] object-cover rounded-xl shadow-lg"
           />
@@ -193,7 +193,7 @@ export default function Commercial() {
         {/* Right Image (Visible only on desktop) */}
         <div className="hidden lg:flex w-full lg:w-1/4 justify-center">
           <img
-            src="/commercial/sira%20solar%20plant/SIRA%20SOLAR%20PLANT11.jpg"
+            src="/commercial/sira%20solar%20plant/SIRA%20SOLAR%20PLANT11.webp"
             alt="Sira Solar Plant View 2"
             className="w-full max-w-full aspect-[4000/5393] object-cover rounded-xl shadow-lg"
           />
@@ -205,7 +205,7 @@ export default function Commercial() {
         {/* Left Image & Overlay */}
         <div className="relative w-full lg:w-[55%]">
           <img 
-            src="/commercial/sira%20solar%20plant/MRC%20SIRA%20DRONE_10.JPG" 
+            src="/commercial/sira%20solar%20plant/MRC%20SIRA%20DRONE_10.webp" 
             alt="Drone View of Sira Solar Plant 1" 
             className="w-full h-auto md:h-[60vh] lg:h-[65vh] object-cover rounded-3xl shadow-xl"
           />
@@ -237,7 +237,7 @@ export default function Commercial() {
           </div>
 
           <img 
-            src="/commercial/sira%20solar%20plant/MRC%20SIRA%20DRONE_13.JPG" 
+            src="/commercial/sira%20solar%20plant/MRC%20SIRA%20DRONE_13.webp" 
             alt="Drone View of Sira Solar Plant 2" 
             className="w-full h-auto md:h-[40vh] lg:h-[35vh] object-cover rounded-3xl shadow-xl"
           />
