@@ -81,6 +81,31 @@ export default function AboutUs() {
           </p>
         </div>
 
+        {/* Ramesh Reddy Section */}
+        <div className="w-full relative z-30 mb-24 md:mb-32">
+          <div className="bg-[#1c1c1e] rounded-[2rem] p-8 md:p-16 flex flex-col-reverse lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-12 lg:gap-16 items-center">
+            {/* Decorative bottom text */}
+            <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#2a2a2c] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
+              <span>THE VISIONARY</span>
+            </div>
+
+            <div className="relative z-10 flex flex-col lg:w-6/12 justify-center">
+              <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight mb-6 md:mb-8">
+                Ramesh Reddy
+              </h2>
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
+                Ramesh Reddy, a visionary film producer, has made a significant impact on the film industry with his thought-provoking productions. Born in Nangali, Karnataka, into a lower-middle-class family, Ramesh Reddy’s journey to success was marked by hard work and determination. He began his career as a civil contractor and later became a vendor for Infosys in 2012, where he had the opportunity to meet the renowned Sudha Murty.
+              </p>
+            </div>
+            
+            <div className="relative z-10 flex flex-col lg:w-5/12 justify-center w-full">
+              <div className="w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-square rounded-[1.5rem] overflow-hidden shadow-lg border border-white/10">
+                <img src="/Suraj-Productions.jpg" alt="Ramesh Reddy" className="w-full h-full object-cover object-top" />
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Engineered for Performance / Vision & Mission Section */}
         <div className="flex flex-col mb-24">
 
