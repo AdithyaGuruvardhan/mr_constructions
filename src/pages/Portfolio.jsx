@@ -352,7 +352,7 @@ const portfolioCategories = [
   {
     category: "Temple",
     projects: [
-      { id: "t1", title: "Development Of Kalyani", subtitle: "Vasanthpura, Bangalore", img: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA KALYANI12.webp" },
+      { id: "t1", title: "Development Of Kalyani", subtitle: "Vasanthpura, Bengaluru", img: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA KALYANI12.webp" },
       { id: "t2", title: "Melukote Kalyani", subtitle: "Melukote", img: "/temple/Melukote%20Kalayani/MELKOTE KALYANI5.webp" },
     ]
   }

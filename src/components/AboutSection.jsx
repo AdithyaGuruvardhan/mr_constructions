@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const CAROUSEL_IMAGES = [
-  "/commercial/infosys/INFOSYS HUBLI35.webp",
+  "/commercial/infosys/INFOSYS HUBLI19.webp",
   "/Lake Development_vert (1).webp",
-  "/Hubli_School.webp",
-  "/hospital.webp",
-  "/temple_bg.webp"
+  "/Education Institution/CBSE ENGLISH MEDIUM HIGH SCHOOL- Shivanahalli/MRC shivanahalli 2S 22_40.webp",
+  "/hospital/Kidwai Cancer Hospital/MRC kidwai DRONE _8.webp",
+  "/temple/Melukote Kalayani/MELKOTE KALYANI17.webp"
 ];
 
 export default function AboutSection() {

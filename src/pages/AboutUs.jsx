@@ -176,10 +176,10 @@ export default function AboutUs() {
       <div ref={sectionRef} className="relative w-[95vw] md:w-[90vw] max-w-[1800px] mx-auto rounded-[1.5rem] md:rounded-[3rem] overflow-hidden min-h-[1050px] sm:min-h-[900px] lg:min-h-[1000px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0] z-30 pb-32 lg:pb-0">
 
           {/* Layer 1: Background Image */}
-          <img src="/temple_bg.webp" alt="Temple Background" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] z-0" />
+          <img src="/temple_bg.webp" alt="Temple Background" className="absolute inset-0 w-full h-full object-cover object-[50%_100%] z-0" />
 
           {/* Layer 2: Content (Title and Cards) */}
-          <div className="relative z-10 w-full flex flex-col lg:flex-row items-start justify-between px-4 sm:px-8 md:px-16 pt-12 md:pt-18 lg:pt-24 gap-6 md:gap-8">
+          <div className="relative z-10 w-full flex flex-col lg:flex-row items-start justify-between px-4 sm:px-8 md:px-16 pt-8 md:pt-12 lg:pt-16 gap-6 md:gap-8">
 
             {/* Left: Hero Title */}
             <div className="w-full lg:w-5/12 flex flex-col items-start z-10">
@@ -194,7 +194,7 @@ export default function AboutUs() {
             </div>
 
             {/* Right: The Cards inside a beautiful glass/white container */}
-            <div ref={cardsRef} className="w-full lg:w-7/12 bg-white/95 backdrop-blur-2xl p-6 sm:p-8 md:p-10 rounded-[1.5rem] md:rounded-[3rem] shadow-2xl relative lg:-mr-8 z-10 flex flex-col border border-white/20 mt-2 lg:mt-0 h-auto lg:min-h-[700px] pb-32 sm:pb-40 md:pb-48 lg:pb-32">
+            <div ref={cardsRef} className="w-full lg:w-7/12 bg-white/95 backdrop-blur-2xl p-6 sm:p-8 md:p-10 rounded-[1.5rem] md:rounded-[3rem] shadow-2xl relative lg:-mr-8 z-10 flex flex-col border border-white/20 mt-2 lg:mt-0 h-auto lg:min-h-[700px] pb-24 sm:pb-32 md:pb-40 lg:pb-16">
               <h3 className="text-md sm:text-md md:text-4xl text-[#2d2d2d] font-bold mb-5 md:mb-8 leading-tight">Uncompromising standards & precision</h3>
 
               {/* The 8 points in a 2-col grid */}
@@ -220,7 +220,7 @@ export default function AboutUs() {
           </div>
 
           {/* Layer 3: Foreground Image */}
-          <img src="/temple_fg.webp" alt="Temple Foreground" className="absolute inset-0 w-full h-full object-cover object-[50%_0%] pointer-events-none z-20" />
+          <img src="/temple_fg 2.png" alt="Temple Foreground" className="absolute inset-0 w-full h-full object-cover object-[50%_100%] pointer-events-none z-20" />
         </div>
 
         {/* Core Values & Ethics Section (Full Width) */}
