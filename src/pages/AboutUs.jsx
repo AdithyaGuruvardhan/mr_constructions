@@ -98,9 +98,9 @@ export default function AboutUs() {
               </p>
             </div>
             
-            <div className="relative z-10 flex flex-col lg:w-5/12 justify-center w-full">
-              <div className="w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-square rounded-[1.5rem] overflow-hidden shadow-lg border border-white/10">
-                <img src="/Suraj-Productions.jpg" alt="Ramesh Reddy" className="w-full h-full object-cover object-top" />
+            <div className="relative z-10 flex flex-col lg:w-5/12 justify-end w-full self-end -mb-8 md:-mb-16 pt-8 md:pt-0">
+              <div className="w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-square rounded-t-[1.5rem] md:rounded-t-[1.5rem] rounded-b-none overflow-hidden shadow-lg border-t border-l border-r border-white/10">
+                <img src="/ramesh_reddy.png" alt="Ramesh Reddy" className="w-full h-full object-cover object-top" />
               </div>
             </div>
           </div>

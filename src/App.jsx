@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Preloader from './components/Preloader';
 import CardNav from './components/CardNav'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -41,14 +40,11 @@ const navItems = [
 ];
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-[#2c52a1] selection:text-white flex flex-col">
-      {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
       <ScrollToTop />
       <CardNav 
-        logo="/mrc_full_length_blue_logo.png"
+        logo="/mrc_blue_logo.png"
         logoAlt="MR Constructions Logo"
         items={navItems}
         baseColor="rgba(255, 255, 255, 0.95)"
