@@ -125,14 +125,14 @@ export default function ProjectShowcase() {
           <div className="flex flex-col items-center justify-end pb-10 md:pb-0">
             <div className="w-[1px] h-20 md:h-32 bg-[#2d2d2d]/30 mb-8 md:mb-12"></div>
             <div className="w-16 h-16 md:w-24 md:h-24 border border-[#2d2d2d] rounded-full flex items-center justify-center text-[10px] md:text-xs tracking-widest text-[#2d2d2d] uppercase -rotate-90 text-center leading-tight">
-              MR<br />Const
+              MRC
             </div>
           </div>
 
           {/* Right Side (Title & Instructions) */}
           <div className="flex flex-col items-end text-right pt-20 md:pt-20">
             <h3 className="text-xl md:text-4xl text-[#2d2d2d] uppercase tracking-widest font-medium mb-4">
-              Selected<br />Work
+              Best<br />Work
             </h3>
             <p className="text-xs md:text-sm text-[#6b6b6b] tracking-[0.2em] uppercase flex flex-col items-end gap-2">
               <span>Scroll</span>
@@ -205,23 +205,28 @@ export default function ProjectShowcase() {
       <div className="max-w-4xl mx-auto text-center font-sans flex flex-col items-center relative z-0">
         <div className="w-[2px] h-12 md:h-20 bg-[#2d2d2d]/70 mb-8 md:mb-12"></div>
         <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed mb-8 sm:pr-32 lg:pr-0 px-4">
-          M R Constructions delivered the New Campus Development for Infosys Limited at Hubli, in association with architects M/s RSP Consultants. We covered a built-up area of 378,000 sq. ft. with full site development, completed in 24 months.
+          M R Constructions delivered the <span className="font-bold">New Campus Development</span> for <span className="font-bold">Infosys Limited at Hubli</span>, in association with architects <span className="font-bold">M/s RSP Consultants</span>. We covered a built-up area of <span className="font-bold">378,000 sq. ft.</span> with full site development, completed in <span className="font-bold">24 months</span>.
         </p>
         <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed sm:pr-32 lg:pr-0 px-4">
-          Our scope included the SDB (G+5), Food Court (G+2), UGR, amphitheater, land development, compound walls, and all associated roads, services, and finishing works.
+          Our scope included the <span className="font-bold">SDB (G+5)</span>, <span className="font-bold">Food Court (G+2)</span>, <span className="font-bold">UGR</span>, <span className="font-bold">amphitheater</span>, land development, compound walls, and all associated roads, services, and finishing works.
         </p>
       </div>
 
       {/* View Project Badge */}
-      <Link to="/portfolio/c1" className="relative sm:absolute mt-6 sm:mt-0 mx-auto sm:mx-0 right-auto sm:right-16 md:right-42 top-auto sm:top-1/2 transform-none sm:transform sm:-translate-y-1/2 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-50 group">
-        <span className="absolute text-[10px] sm:text-[10px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#2c52a1] transition-colors duration-300">
-          View<br />Project
-        </span>
+      <Link to="/portfolio/c1" className="relative sm:absolute mt-6 sm:mt-0 mx-auto sm:mx-0 right-auto sm:right-16 md:right-42 top-auto sm:top-1/2 transform-none sm:transform sm:-translate-y-1/2 flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-50 group">
+        {/* Inner Circle */}
+        <div className="absolute inset-0 m-auto w-16 h-16 sm:w-20 sm:h-20 bg-[#2c52a1] group-hover:bg-[#1c1c1e] transition-colors duration-300 rounded-full flex items-center justify-center shadow-lg z-10">
+          <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-white text-center leading-tight">
+            View<br />Project
+          </span>
+        </div>
+        
+        {/* Rotating Text */}
         <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
-          <path id="circlePathHubli" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="transparent" />
+          <path id="circlePathHubli" d="M 50, 50 m -42, 0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" fill="transparent" />
           <text>
-            <textPath href="#circlePathHubli" startOffset="0" className="text-[9.5px] font-medium tracking-[0.18em] fill-[#2d2d2d]/60 uppercase">
-              EXPLORE • DISCOVER • EXPLORE • DISCOVER
+            <textPath href="#circlePathHubli" startOffset="0" className="text-[8px] font-bold tracking-[0.18em] fill-[#2d2d2d]/80 uppercase">
+              EXPLORE • DISCOVER • EXPLORE • DISCOVER •
             </textPath>
           </text>
         </svg>

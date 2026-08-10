@@ -169,7 +169,9 @@ const CardNav = ({
           </div>
 
           <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
-            <img src={logo} alt={logoAlt} className="logo h-24 md:h-30 lg:h-34 w-auto object-contain object-center" />
+            <Link to="/" className="cursor-pointer hover:opacity-80 transition-opacity">
+              <img src={logo} alt={logoAlt} className="logo h-24 md:h-30 lg:h-34 w-auto object-contain object-center" />
+            </Link>
           </div>
 
           <Link
@@ -200,7 +202,7 @@ const CardNav = ({
                 {item.links?.map((lnk, i) => (
                   <a
                     key={`${lnk.label}-${i}`}
-                    className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-lg md:text-xl py-1"
+                    className={`nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-lg md:text-xl py-1 ${lnk.label === 'Contact Us' ? 'font-bold' : ''}`}
                     href={lnk.href}
                     aria-label={lnk.ariaLabel}
                   >

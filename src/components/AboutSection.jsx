@@ -37,7 +37,7 @@ export default function AboutSection() {
             Building Excellence <br /> Since 2005
           </h2>
           <p className="text-[#6b6b6b] text-base md:text-lg mb-8 md:mb-12 leading-relaxed max-w-lg">
-            M R Constructions (MRC) is an ISO-certified construction and engineering company based in Basavanagudi, Bangalore.<br /> Over 25+ years, we've built a reputation for handling large, complex projects for both government and private clients,<br /> with 125+ completed projects.
+            M R Constructions (MRC) is an ISO-certified construction and engineering company based in Basavanagudi, Bengaluru.<br /> Over 25+ years, we've built a reputation for handling large, complex projects for both government and private clients,<br /> with 125+ completed projects.
           </p>
 
           {/* Action Button */}

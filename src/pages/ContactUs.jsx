@@ -18,7 +18,7 @@ export default function ContactUs() {
         <div className="text-center mb-6 md:mb-8 flex flex-col items-center">
           <div className="w-[2px] h-12 md:h-20 bg-[#2c52a1] mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-2xl mx-auto">
-            Ready to bring your vision to life? Contact M R Constructions today. Our team is ready to assist you with your next landmark project.
+            Ready to bring your vision to life? <br/>Contact M R Constructions today. <br/>Our team is ready to assist you with your next landmark project.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default function ContactUs() {
                   </div>
                   <div className="flex flex-col py-1 md:py-2">
                     <span className="text-[#1a1a1a] font-medium text-sm md:text-base">M R Constructions</span>
-                    <span className="text-gray-500 group-hover:text-[#2c52a1] transition-colors text-[11px] md:text-sm leading-snug mt-1 md:mt-0.5">No.16/1, 1st Main, 2nd Floor, VR Layout, Basavanagudi, Bangalore-560004 Karnataka</span>
+                    <span className="text-gray-500 group-hover:text-[#2c52a1] transition-colors text-[11px] md:text-sm leading-snug mt-1 md:mt-0.5">No.16/1, 1st Main, 2nd Floor, VR Layout, Basavanagudi, Bengaluru-560004 Karnataka</span>
                   </div>
                 </div>
                 <div className="text-gray-400 group-hover:text-[#2c52a1] ml-2 md:ml-4 flex-shrink-0 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all self-start mt-2 md:mt-4">
@@ -118,7 +118,7 @@ export default function ContactUs() {
                     <label className="text-sm font-medium text-gray-700 pl-4">Full Name</label>
                     <input
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="Name"
                       className="bg-white border border-gray-300 rounded-[2rem] px-6 py-4 text-[#2d2d2d] focus:outline-none focus:border-[#2c52a1] focus:ring-1 focus:ring-[#2c52a1] transition-all"
                     />
                   </div>
@@ -126,7 +126,7 @@ export default function ContactUs() {
                     <label className="text-sm font-medium text-gray-700 pl-4">Email Address</label>
                     <input
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="Email"
                       className="bg-white border border-gray-300 rounded-[2rem] px-6 py-4 text-[#2d2d2d] focus:outline-none focus:border-[#2c52a1] focus:ring-1 focus:ring-[#2c52a1] transition-all"
                     />
                   </div>
@@ -136,7 +136,7 @@ export default function ContactUs() {
                   <label className="text-sm font-medium text-gray-700 pl-4">Subject</label>
                   <input
                     type="text"
-                    placeholder="How can we help you?"
+                    placeholder="Subject"
                     className="bg-white border border-gray-300 rounded-[2rem] px-6 py-4 text-[#2d2d2d] focus:outline-none focus:border-[#2c52a1] focus:ring-1 focus:ring-[#2c52a1] transition-all"
                   />
                 </div>
@@ -144,11 +144,11 @@ export default function ContactUs() {
                   <label className="text-sm font-medium text-gray-700 pl-4">Message</label>
                   <textarea
                     rows="5"
-                    placeholder="Write your message here..."
+                    placeholder="Message"
                     className="bg-white border border-gray-300 rounded-[2rem] px-6 py-5 text-[#2d2d2d] focus:outline-none focus:border-[#2c52a1] focus:ring-1 focus:ring-[#2c52a1] transition-all resize-none"
                   ></textarea>
                 </div>
-                <button className="bg-[#2c52a1] text-white font-bold text-lg py-4 rounded-[2rem] mt-4 hover:bg-[#e66a1c] hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer">
+                <button className="bg-[#2c52a1] text-white font-bold text-lg py-4 rounded-[2rem] mt-4 hover:bg-[#1a1a1a] hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer">
                   Submit Request
                 </button>
               </form>

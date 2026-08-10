@@ -19,7 +19,7 @@ export default function Footer() {
                 <p className="font-semibold text-gray-200 leading-relaxed text-sm">
                   No.16/1, 1st Main, 2nd Floor,<br />
                   VR Layout, Basavanagudi,<br />
-                  Bangalore-560004 Karnataka
+                  Bengaluru-560004 Karnataka
                 </p>
               </div>
               <div>
@@ -59,18 +59,16 @@ export default function Footer() {
 
 
         {/* Bottom Links */}
-        <div className="flex flex-col xl:flex-row flex-wrap gap-x-8 gap-y-6 text-[11px] text-gray-500 font-medium items-start xl:items-center">
-          <div className="flex flex-wrap gap-x-6 gap-y-2 w-full xl:w-auto">
-            <a href="#" className="hover:text-gray-300 transition-colors">Terms</a>
-            <a href="#" className="hover:text-gray-300 transition-colors">Privacy policy</a>
+        <div className="flex flex-col xl:flex-row flex-wrap gap-y-6 text-[11px] text-gray-500 font-medium items-start xl:items-center justify-between w-full">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 w-full xl:w-1/3 xl:justify-start">
+            <Link to="/" className="hover:text-gray-300 transition-colors">MR Constructions</Link>
           </div>
 
-          <div className="flex-1 flex justify-start xl:justify-center w-full xl:w-auto">
-            <span>Designed and developed by <a href="https://www.buzziwah.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors underline decoration-white/30 hover:decoration-white/80 underline-offset-2 font-semibold">Buzziwah</a> 💜</span>
+          <div className="w-full xl:w-1/3 flex justify-start xl:justify-center">
+            <span className="italic">Designed and developed by <a href="https://www.buzziwah.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors underline decoration-white/30 hover:decoration-white/80 underline-offset-2 font-semibold">Buzziwah</a> 💜</span>
           </div>
 
-          <div className="xl:ml-auto flex gap-6 w-full xl:w-auto justify-start xl:justify-end">
-            <span>MR Constructions</span>
+          <div className="flex gap-6 w-full xl:w-1/3 justify-start xl:justify-end">
             <span>Copyright &copy; {new Date().getFullYear()}</span>
           </div>
         </div>

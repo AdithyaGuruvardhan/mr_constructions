@@ -31,8 +31,8 @@ export default function FAQSection() {
       
       {/* Massive Background Watermark */}
       <div className="absolute top-8 md:top-8 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
-        <h1 className="text-[20vw] md:text-[8vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 whitespace-nowrap">
-          FAQs
+        <h1 className="text-[20vw] md:text-[8vw] leading-none font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 whitespace-nowrap">
+          FAQ's
         </h1>
       </div>
 
@@ -42,7 +42,7 @@ export default function FAQSection() {
         <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
           <div className="w-[2px] h-10 md:h-16 bg-[#2c52a1] mb-2 md:mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-3xl mx-auto">
-            Find answers to common questions about our construction process, capabilities, and quality assurance.
+            Find answers to common questions about<br /> our construction process, capabilities, and quality assurance.
           </p>
         </div>
 

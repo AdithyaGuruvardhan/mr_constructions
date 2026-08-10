@@ -99,7 +99,7 @@ export default function TestimonialsSection() {
         <div className="text-center mb-6 md:mb-12 flex flex-col items-center">
           <div className="w-[2px] h-12 md:h-20 bg-[#2c52a1] mb-8"></div>
           <p className="text-lg text-[#6b6b6b] leading-relaxed max-w-2xl mx-auto">
-            Hear from our esteemed clients about their experiences partnering with M R Constructions for their landmark projects.
+            Hear from our esteemed clients about their experiences partnering with <br /> M R Constructions for their landmark projects.
           </p>
         </div>
 

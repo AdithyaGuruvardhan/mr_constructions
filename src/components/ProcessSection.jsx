@@ -5,21 +5,26 @@ export default function ProcessSection() {
 
         {/* Left Column - Text and Main Image */}
         <div className="w-full lg:w-3/5 flex flex-col">
-          <h2 className="text-3xl md:text-[2.75rem] font-medium text-[#2d2d2d] leading-tight mb-6">
+          <h2 className="text-3xl md:text-[2.75rem] font-medium text-[#2c52a1] leading-tight mb-6">
             Meticulous Planning &<br /> Flawless Execution
           </h2>
-          <p className="text-[#6b6b6b] text-lg mb-10 leading-relaxed max-w-xl">
-            Our service range spans Design, Civil, Infrastructure, Finishing Works, and MEP (Mechanical, Electrical, Plumbing) services. Our core differentiators are affordability, on-time delivery, quality assurance, and deep sector experience—backed by a strong safety record.
+          <p className="text-[#6b6b6b] text-lg mb-10 leading-relaxed max-w-2xl">
+            Our service range spans Design, Civil, Infrastructure, Finishing Works, and MEP (Mechanical, Electrical, Plumbing) services.<br /> Our core differentiators are affordability, on-time delivery, quality assurance, and deep sector experience—backed by a strong safety record.
           </p>
 
           {/* Cropped Building Plan Image */}
-          <div className="w-full h-[280px] md:h-[350px] overflow-hidden rounded-[2rem] ">
+          {/* <div className="w-full h-[280px] md:h-[355px] overflow-hidden rounded-[2rem] relative group">
             <img
               src="/infosys_plan.webp"
               alt="Building Blueprint"
-              className="w-full h-full object-cover object-[center_45%] scale-[1]"
+              className="w-full h-full object-cover object-[center_46%] scale-[0.6] absolute inset-0"
             />
-          </div>
+            <img
+              src="/infosys_plan (2).png"
+              alt="Building Blueprint Color"
+              className="w-full h-full object-cover object-[center_45%] scale-[0.7] absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"
+            />
+          </div> */}
         </div>
 
         {/* Right Column - Process Cards */}
@@ -33,7 +38,7 @@ export default function ProcessSection() {
             <div className="p-4 md:px-6 flex flex-col justify-center">
               <h3 className="text-white font-medium text-lg mb-2">1. Strategic Design</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Comprehensive site analysis and detailed 3D architectural modeling.
+                Comprehensive site analysis and detailed <br />3D architectural modeling.
               </p>
             </div>
           </div>
@@ -46,7 +51,7 @@ export default function ProcessSection() {
             <div className="p-4 md:px-6 flex flex-col justify-center">
               <h3 className="text-white font-medium text-lg mb-2">2. Structural Integrity</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Utilizing premium materials with advanced framing technology.
+                Utilizing premium materials with <br />advanced framing technology.
               </p>
             </div>
           </div>
@@ -59,7 +64,7 @@ export default function ProcessSection() {
             <div className="p-4 md:px-6 flex flex-col justify-center">
               <h3 className="text-white font-medium text-lg mb-2">3. Final Handover</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Rigorous quality inspections ensuring zero defects before move-in.
+                Rigorous quality inspections <br />ensuring zero defects before move-in.
               </p>
             </div>
           </div>

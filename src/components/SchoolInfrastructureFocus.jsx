@@ -85,15 +85,20 @@ export default function SchoolInfrastructureFocus() {
 
             <div className="w-full flex justify-end mt-12 md:pr-4">
               {/* Small View Project Badge */}
-              <Link to="/portfolio/e2" className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 group">
-                <span className="absolute text-[8px] md:text-[9px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#2c52a1] transition-colors duration-300">
-                  View<br />Project
-                </span>
+              <Link to="/portfolio/e2" className="relative flex items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 group">
+                {/* Inner Circle */}
+                <div className="absolute inset-0 m-auto w-16 h-16 md:w-20 md:h-20 bg-[#2c52a1] group-hover:bg-[#1c1c1e] transition-colors duration-300 rounded-full flex items-center justify-center shadow-lg z-10">
+                  <span className="text-[9px] md:text-[10px] font-extrabold uppercase tracking-widest text-white text-center leading-tight">
+                    View<br />Project
+                  </span>
+                </div>
+                
+                {/* Rotating Text */}
                 <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
-                  <path id="circlePathFocus" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="transparent" />
+                  <path id="circlePathFocus" d="M 50, 50 m -42, 0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" fill="transparent" />
                   <text>
-                    <textPath href="#circlePathFocus" startOffset="0" className="text-[9px] font-medium tracking-[0.18em] fill-[#2d2d2d]/60 uppercase">
-                      EXPLORE • DISCOVER • EXPLORE • DISCOVER
+                    <textPath href="#circlePathFocus" startOffset="0" className="text-[8px] font-bold tracking-[0.18em] fill-[#2d2d2d]/80 uppercase">
+                      EXPLORE • DISCOVER • EXPLORE • DISCOVER •
                     </textPath>
                   </text>
                 </svg>

@@ -74,17 +74,17 @@ export default function WhyChooseUsSection() {
             return (
               <div 
                 key={index}
-                className={`feature-card relative ${isDark ? 'bg-[#2c2d3c] text-white' : 'bg-gray-200 text-[#1c1c1e] shadow-sm'} p-6 sm:p-8 md:p-8 rounded-[1.5rem] md:rounded-[2rem] hover:-translate-y-2 transition-transform duration-300 flex flex-col min-h-[160px] md:min-h-[240px]`}
+                className={`feature-card relative ${isDark ? 'bg-[#2c52a1] text-white' : 'bg-gray-200 text-[#1c1c1e] shadow-sm'} p-6 sm:p-8 md:p-8 rounded-[1.5rem] md:rounded-[2rem] hover:-translate-y-2 transition-transform duration-300 flex flex-col min-h-[160px] md:min-h-[240px]`}
               >
                 <h3 className="text-lg md:text-xl lg:text-2xl font-semibold mb-3 md:mb-4 leading-tight">
                   {feature.title}
                 </h3>
-                <p className={`${isDark ? 'text-gray-400' : 'text-gray-500'} text-xs md:text-sm leading-relaxed mb-10 md:mb-12`}>
+                <p className={`${isDark ? 'text-blue-100' : 'text-gray-500'} text-xs md:text-sm leading-relaxed mb-10 md:mb-12`}>
                   {feature.description}
                 </p>
                 
                 {/* Circular Arrow Icon */}
-                <div className={`absolute bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-transform hover:scale-110 cursor-pointer ${isDark ? 'bg-white text-black' : 'bg-[#1c1c1e] text-white'}`}>
+                <div className={`absolute bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-transform hover:scale-110 cursor-pointer ${isDark ? 'bg-white text-[#2c52a1]' : 'bg-[#1c1c1e] text-white'}`}>
                   <svg className="w-4 h-4 md:w-5 md:h-5 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>

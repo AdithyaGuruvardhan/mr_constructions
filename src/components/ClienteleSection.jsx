@@ -48,7 +48,7 @@ export default function ClienteleSection() {
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16">
         {/* Title */}
         <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-3xl md:text-[2.75rem] font-medium text-[#2d2d2d] mb-4 leading-tight">
+          <h2 className="text-3xl md:text-[2.75rem] font-medium text-[#2c52a1] mb-4 leading-tight">
             Trusted By Leaders
           </h2>
           <p className="text-[#6b6b6b] text-base md:text-lg max-w-2xl mx-auto">

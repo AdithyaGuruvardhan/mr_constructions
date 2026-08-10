@@ -95,23 +95,6 @@ export default function InspiringDesignSection() {
           {/* Collage Item 1: Bottom Left (Vertical) */}
           <div className="w-full lg:w-[35vw] h-auto lg:h-full flex flex-col justify-between items-start lg:-mb-16">
             
-            {/* View Project Circular Badge */}
-            <Link to="/portfolio/t2" className="flex relative items-center justify-center w-24 h-24 lg:w-28 lg:h-28 md:w-32 md:h-32 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 group mt-0 lg:mt-0 xl:mt-8 lg:-ml-20 mb-8 lg:mb-0">
-              {/* Center Text */}
-              <span className="absolute text-[10px] md:text-xs font-semibold uppercase tracking-widest text-[#1c1c1e] text-center z-10 group-hover:text-[#6b6b6b] transition-colors duration-300">
-                View<br/>Project
-              </span>
-              {/* Rotating Circular Text */}
-              <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
-                <path id="circlePathMelkote" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="transparent" />
-                <text>
-                  <textPath href="#circlePathMelkote" startOffset="0" className="text-[9.5px] font-medium tracking-[0.18em] fill-[#1c1c1e]/60 uppercase">
-                    EXPLORE • DISCOVER • EXPLORE • DISCOVER
-                  </textPath>
-                </text>
-              </svg>
-            </Link>
-
             <div className="w-full sm:w-[70%] lg:w-[65%] shadow-[0_1px_5px_rgba(0,0,0,0.3)] rounded-[1.5rem] overflow-hidden relative group mt-0 lg:mt-auto">
               <img src="/temple/MELKOTE KALYANI19.webp" alt="Melkote Kalyani detail" className="w-full aspect-[4/5] lg:aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-[1.5s]" />
               <div className="absolute inset-0 bg-black/2 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -137,6 +120,28 @@ export default function InspiringDesignSection() {
                  <p className="text-[#6b6b6b] text-[12px] md:text-sm max-w-[280px] text-center lg:text-left leading-relaxed">
                    Careful restoration of ancient stonework throughout the structure. Traditional water management systems. Structural reinforcements using authentic materials. Hand-carved architectural elements matching historical accuracy.
                  </p>
+               </div>
+               
+               {/* View Project Circular Badge (Moved to bottom right) */}
+               <div className="w-full flex justify-center lg:justify-end">
+                 <Link to="/portfolio/t2" className="flex relative items-center justify-center w-28 h-28 lg:w-36 lg:h-36 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 group mt-4 lg:mt-8 lg:-mr-12 xl:-mr-16">
+                   {/* Inner Circle */}
+                   <div className="absolute inset-0 m-auto w-16 h-16 lg:w-20 lg:h-20 bg-[#2c52a1] group-hover:bg-[#1c1c1e] transition-colors duration-300 rounded-full flex items-center justify-center shadow-lg z-10">
+                     <span className="text-[9px] lg:text-[10px] font-extrabold uppercase tracking-widest text-white text-center leading-tight">
+                       View<br/>Project
+                     </span>
+                   </div>
+                   
+                   {/* Rotating Circular Text */}
+                   <svg className="w-full h-full animate-spin pointer-events-none" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
+                     <path id="circlePathMelkote" d="M 50, 50 m -42, 0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" fill="transparent" />
+                     <text>
+                       <textPath href="#circlePathMelkote" startOffset="0" className="text-[8px] font-bold tracking-[0.18em] fill-[#1c1c1e]/80 uppercase">
+                         EXPLORE • DISCOVER • EXPLORE • DISCOVER •
+                       </textPath>
+                     </text>
+                   </svg>
+                 </Link>
                </div>
             </div>
 

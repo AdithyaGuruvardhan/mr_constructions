@@ -68,7 +68,7 @@ export default function ServicesSection() {
         
         {/* Title */}
         <div className="text-left mb-12">
-          <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#2d2d2d] mb-4">SERVICES</h2>
+          <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#2c52a1] mb-4">Services</h2>
           <p className="text-[#6b6b6b] text-lg max-w-2xl">
             Explore our diverse range of services across various sectors.
           </p>

@@ -248,7 +248,7 @@ export const projectsData = {
   "h1": {
     id: "h1",
     title: "Bowring Hospital",
-    location: "BANGALORE",
+    location: "BENGALURU",
     number: "08",
     heroBg: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.webp",
     images: {
@@ -257,13 +257,13 @@ export const projectsData = {
       desktopLeft: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital4.webp",
       desktopRight: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital7.webp"
     },
-    introText1: "Located in the heart of Bangalore, this project reflects our experience in delivering healthcare infrastructure for public institutions.",
+    introText1: "Located in the heart of Bengaluru, this project reflects our experience in delivering healthcare infrastructure for public institutions.",
     introText2: "Our work here reflects the same discipline and quality standards we bring across all our projects, regardless of scale or sector.",
     droneSection: {
       img1: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital17.webp",
       img2: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital2.webp",
       cardTitle: "Healthcare Infrastructure",
-      cardDesc: "Contribution to a key public healthcare facility in Bangalore",
+      cardDesc: "Contribution to a key public healthcare facility in Bengaluru",
       stats: [
         { title: "Institutional Project", desc: "Delivered for a prominent government hospital" },
         { title: "Quality Execution", desc: "Built with the same standards across all our projects" },
@@ -282,7 +282,7 @@ export const projectsData = {
   "h3": {
     id: "h3",
     title: "Infosys Foundation Jayadeva Hospital",
-    location: "BANGALORE",
+    location: "BENGALURU",
     number: "09",
     heroBg: "/hospital/Infosys Foundation Jayadeva Hospital Building Bangalore/MRC jayadeva drone 2S _5.webp",
     images: {
@@ -291,7 +291,7 @@ export const projectsData = {
       desktopLeft: "/hospital/Infosys Foundation Jayadeva Hospital Building Bangalore/MRC jayadeva 2S _123.webp",
       desktopRight: "/hospital/Infosys Foundation Jayadeva Hospital Building Bangalore/MRC jayadeva 2S _133.webp"
     },
-    introText1: "Delivered for Infosys Foundation in Bangalore, this project reflects our experience in building specialised healthcare infrastructure for institutions serving critical care needs.",
+    introText1: "Delivered for Infosys Foundation in Bengaluru, this project reflects our experience in building specialised healthcare infrastructure for institutions serving critical care needs.",
     introText2: "Executed over 24 months, our scope went well beyond core construction — spanning electrical, PHE, HVAC, fire safety, and lift systems, all brought together across a Basement plus G+3 structure. Here's a closer look at the numbers behind the project.",
     droneSection: {
       img1: "/hospital/Infosys Foundation Jayadeva Hospital Building Bangalore/MRC jayadeva drone 2S _19.webp",
@@ -317,7 +317,7 @@ export const projectsData = {
   "h4": {
     id: "h4",
     title: "Kidwai Cancer Hospital",
-    location: "BANGALORE",
+    location: "BENGALURU",
     number: "11",
     heroBg: "/hospital/Kidwai%20Cancer%20Hospital/MRC kidwai DRONE _2.webp",
     images: {
@@ -388,8 +388,8 @@ export const projectsData = {
   // ================= TEMPLES =================
   "t1": {
     id: "t1",
-    title: "Development of Kalayani Vasanthpura",
-    location: "BANGALORE",
+    title: "Development of Kalyani Vasanthpura",
+    location: "BENGALURU",
     number: "13",
     heroBg: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA KALYANI12.webp",
     images: {
@@ -398,7 +398,7 @@ export const projectsData = {
       desktopLeft: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA%20KALYANI19.webp",
       desktopRight: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA%20KALYANI1.webp"
     },
-    introText1: "Located at Vasanthapura, Bangalore, this project reflects our experience in delivering site development works with precision and reliability.",
+    introText1: "Located at Vasanthapura, Bengaluru, this project reflects our experience in delivering site development works with precision and reliability.",
     introText2: "Our scope covered the essential civil and infrastructure work needed to bring the site to a functional, developed state.",
     droneSection: {
       img1: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA%20KALYANI4.webp",
@@ -406,7 +406,7 @@ export const projectsData = {
       cardTitle: "Site Development",
       cardDesc: "Comprehensive development works executed at Vasanthapura",
       stats: [
-        { title: "Bangalore Location", desc: "Situated within one of the city's developing areas" },
+        { title: "Bengaluru Location", desc: "Situated within one of the city's developing areas" },
         { title: "Complete Civil Works", desc: "Full infrastructure and civil works delivered end to end" },
         { title: "Quality Execution", desc: "Built with the same standards across all our projects" },
         { title: "Status: Completed", desc: "Project delivered and fully developed" }
@@ -423,7 +423,7 @@ export const projectsData = {
   },
   "t2": {
     id: "t2",
-    title: "Melukote Kalayani",
+    title: "Melukote Kalyani",
     location: "MELUKOTE",
     number: "14",
     heroBg: "/temple/Melukote%20Kalayani/MELKOTE%20KALYANI9.webp",

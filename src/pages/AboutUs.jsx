@@ -41,7 +41,7 @@ export default function AboutUs() {
   });
 
   return (
-    <div className="relative w-full min-h-screen bg-white text-[#2d2d2d] pb-20 font-sans overflow-hidden">
+    <div className="relative w-full min-h-screen bg-white text-[#2d2d2d] pb-0 font-sans overflow-hidden">
 
       {/* Layered Parallax Hero Section */}
       <div className="relative w-full h-[60vh] md:h-[90vh] flex items-center justify-center overflow-hidden mb-12 md:mb-20 bg-[#e0e0e0]">
@@ -73,15 +73,15 @@ export default function AboutUs() {
 
         {/* Capabilities Inline Image Section */}
         <div className="flex justify-center mb-24 md:mb-32 w-full">
-          <p className="text-md md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed md:leading-relaxed max-w-6xl text-center uppercase font-medium tracking-wide">
+          <p className="text-md md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed md:leading-relaxed max-w-5xl text-center font-normal tracking-wide">
             We cover the full construction value chain - <br className="hidden lg:block" />
             design management, civil construction,{' '}
-            infrastructure, finishing, and MEP -{' '}
-            backed by experienced teams and modern methods, delivering practical, efficient, long-lasting builds.
+            infrastructure, finishing, and<br /> MEP -{' '}
+            backed by experienced teams and modern methods,<br /> delivering practical, efficient, long-lasting builds.
           </p>
         </div>
 
-        {/* Ramesh Reddy Section */}
+        {/* M Ramesh Reddy Section */}
         <div className="w-full relative z-30 mb-24 md:mb-32">
           <div className="bg-[#1c1c1e] rounded-[2rem] p-8 md:p-16 flex flex-col-reverse lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-12 lg:gap-16 items-center">
             {/* Decorative bottom text */}
@@ -91,16 +91,16 @@ export default function AboutUs() {
 
             <div className="relative z-10 flex flex-col lg:w-6/12 justify-center">
               <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight mb-6 md:mb-8">
-                Ramesh Reddy
+                M Ramesh Reddy
               </h2>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
-                Ramesh Reddy, a visionary film producer, has made a significant impact on the film industry with his thought-provoking productions. Born in Nangali, Karnataka, into a lower-middle-class family, Ramesh Reddy’s journey to success was marked by hard work and determination. He began his career as a civil contractor and later became a vendor for Infosys in 2012, where he had the opportunity to meet the renowned Sudha Murty.
+                M Ramesh Reddy’s journey is defined by hard work, determination, and an unwavering commitment to excellence. Born in Nangali, Karnataka, into a humble family, he began his career as a civil contractor and steadily built M R Constructions into a trusted leader in the industry. A pivotal milestone in his career came in 2012 when he became a vendor for Infosys, leading to an inspiring meeting with the renowned Sudha Murty. Today, his visionary leadership continues to drive M R Constructions toward new heights of engineering and operational success.
               </p>
             </div>
             
             <div className="relative z-10 flex flex-col lg:w-5/12 justify-end w-full self-end -mb-8 md:-mb-16 pt-8 md:pt-0">
               <div className="w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-square rounded-t-[1.5rem] md:rounded-t-[1.5rem] rounded-b-none overflow-hidden shadow-lg border-t border-l border-r border-white/10">
-                <img src="/ramesh_reddy.png" alt="Ramesh Reddy" className="w-full h-full object-cover object-top" />
+                <img src="/ramesh_reddy.png" alt="M Ramesh Reddy" className="w-full h-full object-cover object-top" />
               </div>
             </div>
           </div>
@@ -166,14 +166,6 @@ export default function AboutUs() {
             {/* Right: Image */}
             <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden h-[400px] lg:h-[550px] shadow-lg">
               <img src="/infosys_hubli.webp" alt="Engineering Excellence" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent"></div>
-
-              {/* Image Overlay Text */}
-              <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full text-white">
-                <p className="text-base md:text-lg font-medium max-w-lg leading-relaxed text-gray-100">
-                  At MRC, excellence goes beyond the structures we build - it's in the confidence we inspire. Our commitment to safety, transparency, and engineering integrity forges enduring relationships with every client and partner.
-                </p>
-              </div>
             </div>
 
           </div>
@@ -277,7 +269,7 @@ export default function AboutUs() {
                       At MRC Construction Company, our foundation is built on the enduring principles of quality, integrity, and unwavering commitment.
                     </p>
                     <p>
-                      These values were established by our founder, Mr.&nbsp;M.&nbsp;Ramesh, and are upheld in every project we undertake.
+                      These values were established by our founder, Mr.&nbsp;M.&nbsp;Ramesh Reddy, and are upheld in every project we undertake.
                     </p>
                   </div>
                 </div>
@@ -288,10 +280,7 @@ export default function AboutUs() {
                 <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
                   <div className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed space-y-2">
                     <p>
-                      Integrity is not merely a principle we follow—
-                    </p>
-                    <p>
-                      it is the cornerstone of every decision we make.
+                      Integrity is not merely a principle we follow—it is the cornerstone of every decision we make.
                     </p>
                   </div>
                 </div>

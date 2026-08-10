@@ -335,7 +335,7 @@ const portfolioCategories = [
   {
     category: "Education Institution",
     projects: [
-      { id: "e1", title: "CBSE ENGLISH MEDIUM HIGH SCHOOL", subtitle: "Shivanahalli", img: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC shivanahalli DRONE _21.webp" },
+      { id: "e1", title: "CBSE English Medium High School", subtitle: "Shivanahalli", img: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC shivanahalli DRONE _21.webp" },
       { id: "e2", title: "Hubli School", subtitle: "Hubli", img: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp" },
       { id: "e3", title: "Indian Institute of Information Technology", subtitle: "Dharwad", img: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT7.webp" },
     ]
@@ -343,17 +343,17 @@ const portfolioCategories = [
   {
     category: "Hospitals",
     projects: [
-      { id: "h1", title: "Bowring Hospital", subtitle: "Bangalore", img: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.webp" },
-      { id: "h3", title: "Jayadeva Hospital Building", subtitle: "Bangalore", img: "/hospital.webp" },
-      { id: "h4", title: "Kidwai Cancer Hospital", subtitle: "Bangalore", img: "/hospital/Kidwai%20Cancer%20Hospital/MRC%20kidwai%20DRONE%20_11.webp" },
+      { id: "h1", title: "Bowring Hospital", subtitle: "Bengaluru", img: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.webp" },
+      { id: "h3", title: "Infosys Foundation Jayadeva Hospital", subtitle: "Bengaluru", img: "/hospital.webp" },
+      { id: "h4", title: "Kidwai Cancer Hospital", subtitle: "Bengaluru", img: "/hospital/Kidwai%20Cancer%20Hospital/MRC%20kidwai%20DRONE%20_11.webp" },
       { id: "h5", title: "Tata Memorial Centre Advanced Centre", subtitle: "Mumbai", img: "/hospital/Tata%20Memorial%20Centre%20Advanced%20Centr%20-%20Mumbai/MRC mumbai DRONE_6.webp" },
     ]
   },
   {
     category: "Temple",
     projects: [
-      { id: "t1", title: "Development Of Kalayani", subtitle: "Vasanthpura, Bangalore", img: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA KALYANI12.webp" },
-      { id: "t2", title: "Melukote Kalayani", subtitle: "Melukote", img: "/temple/Melukote%20Kalayani/MELKOTE KALYANI5.webp" },
+      { id: "t1", title: "Development Of Kalyani", subtitle: "Vasanthpura, Bangalore", img: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA KALYANI12.webp" },
+      { id: "t2", title: "Melukote Kalyani", subtitle: "Melukote", img: "/temple/Melukote%20Kalayani/MELKOTE KALYANI5.webp" },
     ]
   }
 ];
@@ -497,14 +497,14 @@ export default function Portfolio() {
 
             {/* Right side: Paragraphs */}
             <div className="lg:col-span-7 flex flex-col space-y-8 text-lg md:text-xl text-gray-600 font-light leading-relaxed">
-              <p className="text-2xl md:text-2xl text-gray-800 font-normal leading-snug">
+              <p className="text-2xl md:text-2xl text-gray-800 font-normal leading-snug text-justify">
                 At M R Constructions, our portfolio is a reflection of the trust placed in us over 25+ years of building for institutions that matter. Each project — from IT campuses to hospitals, schools, and heritage structures — represents more than construction; it represents a commitment to precision, safety, and lasting quality.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-6 border-t border-black/10">
-                <p>
+                <p className="text-justify">
                   We approach every project with the same discipline — whether it's a corporate campus for a global tech leader or a school shaping generations of students. Our work spans commercial, educational, healthcare, and heritage construction, all held to the same uncompromising standard.
                 </p>
-                <p>
+                <p className="text-justify">
                   What you'll find here is not just a list of completed structures, but a record of partnerships built on reliability — with organizations that trusted us to deliver on time, on budget, and beyond expectation.
                 </p>
               </div>

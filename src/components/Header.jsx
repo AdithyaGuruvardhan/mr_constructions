@@ -36,7 +36,7 @@ export default function Header() {
           <Link to="/" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-medium text-[#4b4b4b] cursor-pointer text-lg">Home</Link>
           <Link to="/portfolio" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-medium text-[#4b4b4b] cursor-pointer text-lg">Portfolio</Link>
           <Link to="/about" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-medium text-[#4b4b4b] cursor-pointer text-lg">About Us</Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-medium text-[#4b4b4b] cursor-pointer text-lg">Contact Us</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-bold text-[#4b4b4b] cursor-pointer text-lg">Contact Us</Link>
         </div>
       </div>
     </header>
