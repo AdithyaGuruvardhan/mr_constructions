@@ -1,5 +1,7 @@
-import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Preloader from './components/Preloader';
+import CardNav from './components/CardNav'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
@@ -12,11 +14,48 @@ import Hospitals from './pages/Hospitals'
 import Temples from './pages/Temples'
 import ProjectDetails from './pages/ProjectDetails'
 
+const navItems = [
+  {
+    label: 'Navigate',
+    bgColor: '#f4f4f5',
+    textColor: '#18181b',
+    links: [
+      { label: 'Home', href: '/' },
+      { label: 'About Us', href: '/about' },
+      { label: 'Contact Us', href: '/contact' }
+    ]
+  },
+  {
+    label: 'Portfolio',
+    bgColor: '#e4e4e7',
+    textColor: '#18181b',
+    twoCols: true,
+    links: [
+      { label: 'All Projects', href: '/portfolio' },
+      { label: 'Hospitals', href: '/portfolio/hospitals' },
+      { label: 'Commercial', href: '/portfolio/commercial' },
+      { label: 'Temples', href: '/portfolio/temples' },
+      { label: 'Education', href: '/portfolio/education' }
+    ]
+  }
+];
+
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-[#ff761f] selection:text-white flex flex-col">
+    <div className="min-h-screen bg-white font-sans selection:bg-[#2c52a1] selection:text-white flex flex-col">
+      {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
       <ScrollToTop />
-      <Header />
+      <CardNav 
+        logo="/mrc_full_length_blue_logo.png"
+        logoAlt="MR Constructions Logo"
+        items={navItems}
+        baseColor="rgba(255, 255, 255, 0.95)"
+        menuColor="#4b4b4b"
+        buttonBgColor="#2c52a1"
+        buttonTextColor="#fff"
+      />
       
       <main className="flex-grow">
         <Routes>

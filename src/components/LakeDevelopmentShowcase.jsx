@@ -33,8 +33,8 @@ export default function LakeDevelopmentShowcase() {
             </p>
 
             {/* Small View Project Badge */}
-            <Link to="/portfolio/h3" className="mt-8 md:mt-12 flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-20 group hidden sm:flex block">
-              <span className="absolute text-[8px] md:text-[10px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#ff761f] transition-colors duration-300">
+            <Link to="/portfolio/h3" className="mt-4 md:mt-6 flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-20 group hidden sm:flex block">
+              <span className="absolute text-[8px] md:text-[10px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#2c52a1] transition-colors duration-300">
                 View<br />Project
               </span>
               <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
@@ -49,7 +49,7 @@ export default function LakeDevelopmentShowcase() {
           </div>
 
           {/* Bottom Right Vertical Image (Mobile Bottom) */}
-          <div className="relative md:absolute md:bottom-10 md:right-10 w-full md:w-[20vw] h-[35vh] md:h-[55vh] z-0 order-3 md:order-none">
+          <div className="relative md:absolute md:bottom-20 md:right-10 w-full md:w-[20vw] h-[35vh] md:h-[55vh] z-0 order-3 md:order-none">
             <img
               src="/hospital/hospital (1).webp"
               alt="Infosys Foundation Jayadeva Hospital Right"

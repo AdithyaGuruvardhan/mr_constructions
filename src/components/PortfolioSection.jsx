@@ -110,7 +110,7 @@ export default function PortfolioSection() {
         <div className="w-full flex justify-end mt-8 gap-4">
           <button 
             onClick={scrollLeftBtn}
-            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#ff761f] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
+            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#2c52a1] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
             aria-label="Scroll left"
           >
             <span className="material-symbols-outlined text-2xl transition-transform duration-300 group-hover:-translate-x-1">arrow_left</span>
@@ -118,7 +118,7 @@ export default function PortfolioSection() {
           
           <button 
             onClick={scrollRight}
-            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#ff761f] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
+            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#2c52a1] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
             aria-label="Scroll right"
           >
             <span className="material-symbols-outlined text-2xl transition-transform duration-300 group-hover:translate-x-1">arrow_right</span>

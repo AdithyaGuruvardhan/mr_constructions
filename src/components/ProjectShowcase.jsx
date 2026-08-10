@@ -121,23 +121,23 @@ export default function ProjectShowcase() {
         {/* Decorative Side Elements */}
         <div ref={sideElementsRef} className="absolute inset-0 flex justify-between p-6 md:p-16 pointer-events-none z-10 font-sans">
 
-          {/* Left Side (Title & Instructions at Bottom Left) */}
-          <div className="flex flex-col items-start justify-end pb-10 md:pb-16 text-left">
-            <h3 className="text-xl md:text-4xl text-[#2d2d2d] uppercase tracking-widest font-medium mb-4">
-              Selected<br />Work
-            </h3>
-            <p className="text-xs md:text-sm text-[#6b6b6b] tracking-[0.2em] uppercase flex flex-col items-start gap-2">
-              <span>Scroll</span>
-              <span className="h-12 w-[1px] bg-[#6b6b6b]/50 block"></span>
-            </p>
-          </div>
-
-          {/* Right Side (Rotated Badge & Line at Top Right) */}
-          <div className="flex flex-col items-center justify-start pt-20 md:pt-20">
+          {/* Left Side (Rotated Badge & Line) */}
+          <div className="flex flex-col items-center justify-end pb-10 md:pb-0">
             <div className="w-[1px] h-20 md:h-32 bg-[#2d2d2d]/30 mb-8 md:mb-12"></div>
             <div className="w-16 h-16 md:w-24 md:h-24 border border-[#2d2d2d] rounded-full flex items-center justify-center text-[10px] md:text-xs tracking-widest text-[#2d2d2d] uppercase -rotate-90 text-center leading-tight">
               MR<br />Const
             </div>
+          </div>
+
+          {/* Right Side (Title & Instructions) */}
+          <div className="flex flex-col items-end text-right pt-20 md:pt-20">
+            <h3 className="text-xl md:text-4xl text-[#2d2d2d] uppercase tracking-widest font-medium mb-4">
+              Selected<br />Work
+            </h3>
+            <p className="text-xs md:text-sm text-[#6b6b6b] tracking-[0.2em] uppercase flex flex-col items-end gap-2">
+              <span>Scroll</span>
+              <span className="h-12 w-[1px] bg-[#6b6b6b]/50 block"></span>
+            </p>
           </div>
         </div>
 
@@ -214,7 +214,7 @@ export default function ProjectShowcase() {
 
       {/* View Project Badge */}
       <Link to="/portfolio/c1" className="relative sm:absolute mt-6 sm:mt-0 mx-auto sm:mx-0 right-auto sm:right-16 md:right-42 top-auto sm:top-1/2 transform-none sm:transform sm:-translate-y-1/2 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-50 group">
-        <span className="absolute text-[10px] sm:text-[10px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#ff761f] transition-colors duration-300">
+        <span className="absolute text-[10px] sm:text-[10px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#2c52a1] transition-colors duration-300">
           View<br />Project
         </span>
         <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">

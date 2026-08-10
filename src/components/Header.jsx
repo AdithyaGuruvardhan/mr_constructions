@@ -21,8 +21,8 @@ export default function Header() {
           </button>
 
           {/* Center - Logo */}
-          <Link to="/" className="absolute left-1/2 -translate-x-1/2 text-lg md:text-2xl font-medium tracking-wide whitespace-nowrap hover:opacity-80 transition-opacity pointer-events-auto">
-            MR Construction
+          <Link to="/" className="absolute left-1/2 -translate-x-1/2 hover:opacity-80 transition-opacity pointer-events-auto">
+            <img src="/mrc_full_length_logo.png" alt="MR Construction Logo" className="w-32 h-8 md:w-48 md:h-12 lg:w-56 lg:h-14 object-cover object-center brightness-0 invert" />
           </Link>
 
           {/* Right - Enquire Button */}

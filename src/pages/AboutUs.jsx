@@ -54,7 +54,7 @@ export default function AboutUs() {
         />
 
         {/* Sandwiched Text Layer */}
-        <h1 className="relative z-10 text-[18vw] md:text-[16vw] leading-none font-bold uppercase tracking-normal text-transparent bg-clip-text bg-gradient-to-b from-gray-500 to-transparent opacity-80 select-none -translate-y-12 md:-translate-y-26 drop-shadow-md">
+        <h1 className="relative z-10 text-[18vw] md:text-[16vw] leading-none font-bold uppercase tracking-normal text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 select-none -translate-y-12 md:-translate-y-26 drop-shadow-md">
           ABOUT US
         </h1>
 
@@ -115,10 +115,10 @@ export default function AboutUs() {
               OUR COMMITMENT
             </div>
             <p className="text-2xl md:text-3xl lg:text-[2rem] text-[#4a4a4a] leading-tight mb-8 max-w-5xl">
-              As we continue to expand into larger and more complex developments, our focus remains unchanged—to deliver projects that meet the highest standards of quality while creating lasting value for every stakeholder.
+              At MRC, excellence goes beyond the structures we build - it's in the confidence we inspire. Our commitment to safety, transparency, and engineering integrity forges enduring relationships with every client and partner.
             </p>
 
-            <button className="flex items-center justify-between bg-[#111111] text-white px-2 py-2 rounded-full w-44 hover:bg-[#2d2d2d] transition-colors shadow-lg">
+            <button className="flex items-center justify-between bg-[#2c52a1] text-white px-2 py-2 rounded-full w-44 hover:bg-[#2c2d3c] transition-colors shadow-lg">
               <span className="pl-4 text-sm font-medium tracking-wide">Get in touch</span>
               <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
@@ -129,31 +129,38 @@ export default function AboutUs() {
           {/* Cards & Image Row */}
           <div className="flex flex-col lg:flex-row items-end gap-6 md:gap-8">
 
-            {/* Left: Vision & Mission Cards */}
-            <div className="flex flex-col md:flex-row gap-4 w-full lg:w-1/2">
+            {/* Left: Logo & Vision/Mission Cards */}
+            <div className="flex flex-col gap-6 w-full lg:w-1/2">
+              
+              <div className="w-48 md:w-64 lg:w-72 h-16 md:h-20 lg:h-24 overflow-hidden relative mt-4 md:mt-0 opacity-10">
+                <img src="/mrc_logo.png" alt="MRC Logo" className="absolute top-1/2 left-0 w-full -translate-y-1/2 invert" />
+              </div>
+
+              <div className="flex flex-col md:flex-row gap-4 w-full">
 
               {/* Vision Card */}
-              <div className="bg-[#f5f5f7] rounded-[2rem] p-6 md:p-8 flex-1 flex flex-col hover:bg-[#f0f0f2] transition-colors">
-                <div className="bg-white w-10 h-10 rounded-full flex items-center justify-center mb-6 shadow-sm text-lg">
+              <div className="bg-[#2c52a1]/75 rounded-[2rem] p-6 md:p-8 flex-1 flex flex-col hover:bg-[#2c52a1]/80 transition-colors">
+                <div className="bg-white text-[#2c52a1] w-10 h-10 rounded-full flex items-center justify-center mb-6 shadow-sm text-lg">
                   ✦
                 </div>
-                <h4 className="text-sm font-bold uppercase tracking-wider text-[#2d2d2d] mb-3">Vision</h4>
-                <p className="text-sm text-gray-500 leading-relaxed font-medium">
+                <h4 className="text-md font-bold uppercase tracking-wider text-white mb-3">Vision</h4>
+                <p className="text-md text-white/80 leading-relaxed font-medium">
                   To shape the built environment through engineering excellence, responsible construction practices, and enduring partnerships that stand the test of time.
                 </p>
               </div>
 
               {/* Mission Card */}
-              <div className="bg-[#f5f5f7] rounded-[2rem] p-6 md:p-8 flex-1 flex flex-col hover:bg-[#f0f0f2] transition-colors">
-                <div className="bg-white w-10 h-10 rounded-full flex items-center justify-center mb-6 shadow-sm text-lg">
+              <div className="bg-[#2c52a1]/75 rounded-[2rem] p-6 md:p-8 flex-1 flex flex-col hover:bg-[#2c52a1]/80 transition-colors">
+                <div className="bg-white text-[#2c52a1] w-10 h-10 rounded-full flex items-center justify-center mb-6 shadow-sm text-lg">
                   ✧
                 </div>
-                <h4 className="text-sm font-bold uppercase tracking-wider text-[#2d2d2d] mb-3">Mission</h4>
-                <p className="text-sm text-gray-500 leading-relaxed font-medium">
+                <h4 className="text-md font-bold uppercase tracking-wider text-white mb-3">Mission</h4>
+                <p className="text-md text-white/80 leading-relaxed font-medium">
                   To deliver construction solutions that combine technical expertise, operational excellence, and uncompromising quality.
                 </p>
               </div>
 
+            </div>
             </div>
 
             {/* Right: Image */}
@@ -196,14 +203,6 @@ export default function AboutUs() {
 
             {/* Right: The Cards inside a beautiful glass/white container */}
             <div ref={cardsRef} className="w-full lg:w-7/12 bg-white/95 backdrop-blur-2xl p-6 sm:p-8 md:p-10 rounded-[1.5rem] md:rounded-[3rem] shadow-2xl relative lg:-mr-8 z-10 flex flex-col border border-white/20 mt-2 lg:mt-0 h-auto lg:min-h-[700px] pb-32 sm:pb-40 md:pb-48 lg:pb-32">
-
-              {/* Top badges */}
-              {/* <div className="flex gap-2 md:gap-3 mb-4 md:mb-8 flex-wrap">
-                <span className="border border-gray-200 px-3 py-1.5 md:px-5 md:py-2 rounded-full text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest">Excellence</span>
-                <span className="border border-gray-200 px-3 py-1.5 md:px-5 md:py-2 rounded-full text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest">Quality</span>
-                <span className="border border-[#3b3228] bg-[#3b3228] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest hidden md:block">Trust</span>
-              </div> */}
-
               <h3 className="text-md sm:text-md md:text-4xl text-[#2d2d2d] font-bold mb-5 md:mb-8 leading-tight">Uncompromising standards & precision</h3>
 
               {/* The 8 points in a 2-col grid */}
@@ -219,7 +218,7 @@ export default function AboutUs() {
                   "Timely Delivery. Lasting Value"
                 ].map((text, idx) => (
                   <div key={idx} className="flex items-start md:items-center gap-3 md:gap-4">
-                    <span className="text-[#8c7362] shrink-0 text-xs md:text-base mt-1 md:mt-0">✦</span>
+                    <span className="text-[#2052a1] shrink-0 text-xs md:text-base mt-1 md:mt-0">✦</span>
                     <span className="text-[#2d2d2d] font-bold text-sm md:text-lg leading-snug md:leading-tight">{text}</span>
                   </div>
                 ))}
@@ -255,31 +254,46 @@ export default function AboutUs() {
                   <h2 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tighter uppercase drop-shadow-lg">
                     Core Values <br className="hidden lg:block"/> & Ethics
                   </h2>
-                  <div className="mt-8 w-24 h-1 bg-[#f97316]"></div>
+                  <div className="mt-8 w-24 h-1 bg-[#cca164]"></div>
                 </div>
                 
                 <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
-                  <p className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed">
-                    We are committed to maintaining the highest standards of professionalism, ethics, and transparency across all aspects of our business. Our reputation has been earned through consistent delivery, uncompromising quality, and a client-centric approach that fosters lasting relationships built on trust.
-                  </p>
+                  <div className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed space-y-2">
+                    <p>
+                      We are committed to maintaining the highest standards of professionalism, ethics, and transparency across all aspects of our business.
+                    </p>
+                    <p>
+                      Our reputation has been earned through consistent delivery, uncompromising quality, and a client-centric approach that fosters lasting relationships built on trust.
+                    </p>
+                  </div>
                 </div>
               </div>
 
               {/* Column 2: Card 1 */}
               <div className="flex flex-col justify-center lg:pt-32">
                 <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
-                  <p className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed">
-                    At MRC Construction Company, our foundation is built on the enduring principles of quality, integrity, and unwavering commitment—values established by our founder, Mr. M. Ramesh, and upheld in every project we undertake.
-                  </p>
+                  <div className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed space-y-2">
+                    <p>
+                      At MRC Construction Company, our foundation is built on the enduring principles of quality, integrity, and unwavering commitment.
+                    </p>
+                    <p>
+                      These values were established by our founder, Mr.&nbsp;M.&nbsp;Ramesh, and are upheld in every project we undertake.
+                    </p>
+                  </div>
                 </div>
               </div>
 
               {/* Column 3: Card 3 */}
               <div className="flex flex-col justify-end lg:pb-12">
                 <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
-                  <p className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed">
-                    Integrity is not merely a principle we follow—it is the cornerstone of every decision we make.
-                  </p>
+                  <div className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed space-y-2">
+                    <p>
+                      Integrity is not merely a principle we follow—
+                    </p>
+                    <p>
+                      it is the cornerstone of every decision we make.
+                    </p>
+                  </div>
                 </div>
               </div>
 

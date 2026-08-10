@@ -52,7 +52,7 @@ export default function WhyChooseUsSection() {
       
       {/* Massive Background Watermark */}
       <div className="absolute top-8 md:top-12 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
-        <h1 className="text-[10vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-20 opacity-80 whitespace-nowrap">
+        <h1 className="text-[10vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 whitespace-nowrap">
           Why Choose Us
         </h1>
       </div>
@@ -61,9 +61,9 @@ export default function WhyChooseUsSection() {
         
         {/* Header Section */}
         <div ref={headerRef} className="text-center mb-10 md:mb-14 flex flex-col items-center">
-          <div className="w-[2px] h-16 md:h-20 bg-[#ff761f] mb-8"></div>
+          <div className="w-[2px] h-16 md:h-20 bg-[#2c52a1] mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-3xl mx-auto">
-            With 17+ years of experience and 125+ projects delivered, M R Constructions has established itself as a trusted name in construction and engineering.
+            With 25+ years of experience and 125+ projects delivered, M R Constructions has established itself as a trusted name in construction and engineering.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function WhyChooseUsSection() {
             return (
               <div 
                 key={index}
-                className={`feature-card relative ${isDark ? 'bg-[#2c2c2e] text-white' : 'bg-gray-200 text-[#1c1c1e] shadow-sm'} p-6 sm:p-8 md:p-8 rounded-[1.5rem] md:rounded-[2rem] hover:-translate-y-2 transition-transform duration-300 flex flex-col min-h-[160px] md:min-h-[240px]`}
+                className={`feature-card relative ${isDark ? 'bg-[#2c2d3c] text-white' : 'bg-gray-200 text-[#1c1c1e] shadow-sm'} p-6 sm:p-8 md:p-8 rounded-[1.5rem] md:rounded-[2rem] hover:-translate-y-2 transition-transform duration-300 flex flex-col min-h-[160px] md:min-h-[240px]`}
               >
                 <h3 className="text-lg md:text-xl lg:text-2xl font-semibold mb-3 md:mb-4 leading-tight">
                   {feature.title}

@@ -31,7 +31,7 @@ export default function FAQSection() {
       
       {/* Massive Background Watermark */}
       <div className="absolute top-8 md:top-8 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
-        <h1 className="text-[20vw] md:text-[8vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-20 opacity-80 whitespace-nowrap">
+        <h1 className="text-[20vw] md:text-[8vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 whitespace-nowrap">
           FAQs
         </h1>
       </div>
@@ -40,7 +40,7 @@ export default function FAQSection() {
         
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
-          <div className="w-[2px] h-10 md:h-16 bg-[#ff761f] mb-2 md:mb-8"></div>
+          <div className="w-[2px] h-10 md:h-16 bg-[#2c52a1] mb-2 md:mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-3xl mx-auto">
             Find answers to common questions about our construction process, capabilities, and quality assurance.
           </p>
@@ -56,10 +56,10 @@ export default function FAQSection() {
                 onClick={() => toggleFaq(index)}
                 className="w-full flex justify-between items-center py-6 text-left focus:outline-none group"
               >
-                <h3 className={`text-lg md:text-xl font-medium pr-8 transition-colors duration-300 ${openIndex === index ? 'text-[#ff761f]' : 'text-[#2d2d2d] group-hover:text-[#ff761f]'}`}>
+                <h3 className={`text-lg md:text-xl font-medium pr-8 transition-colors duration-300 ${openIndex === index ? 'text-[#2c52a1]' : 'text-[#2d2d2d] group-hover:text-[#2c52a1]'}`}>
                   {faq.question}
                 </h3>
-                <span className={`flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full border transition-all duration-300 ${openIndex === index ? 'border-[#ff761f] bg-[#ff761f] text-white rotate-45' : 'border-gray-300 text-gray-500 group-hover:border-[#ff761f] group-hover:text-[#ff761f]'}`}>
+                <span className={`flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full border transition-all duration-300 ${openIndex === index ? 'border-[#2c52a1] bg-[#2c52a1] text-white rotate-45' : 'border-gray-300 text-gray-500 group-hover:border-[#2c52a1] group-hover:text-[#2c52a1]'}`}>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
                   </svg>

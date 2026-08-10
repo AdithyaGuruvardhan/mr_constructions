@@ -26,7 +26,7 @@ export default function ProcessSection() {
         <div className="w-full lg:w-2/5 flex flex-col gap-5">
           
           {/* Card 1 */}
-          <div className="bg-[#1e2025] rounded-[1.5rem] flex items-stretch p-3 shadow-lg hover:-translate-y-1 transition-transform duration-300">
+          <div className="bg-[#2c2d3c] rounded-[1.5rem] flex items-stretch p-3 shadow-lg hover:-translate-y-1 transition-transform duration-300">
             <div className="w-24 md:w-28 h-auto min-h-[90px] flex-shrink-0 bg-gray-800 relative rounded-xl overflow-hidden">
                <img src="/infosys_plan (1).webp" alt="Plan" className="absolute inset-0 w-full h-full object-cover object-center bg-white scale-[1.2]" />
             </div>
@@ -39,7 +39,7 @@ export default function ProcessSection() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-[#1e2025] rounded-[1.5rem] flex items-stretch p-3 shadow-lg hover:-translate-y-1 transition-transform duration-300">
+          <div className="bg-[#2c2d3c] rounded-[1.5rem] flex items-stretch p-3 shadow-lg hover:-translate-y-1 transition-transform duration-300">
             <div className="w-24 md:w-28 h-auto min-h-[90px] flex-shrink-0 bg-gray-300 relative rounded-xl overflow-hidden">
                <img src="/infosys_top_view.webp" alt="Build" className="absolute inset-0 w-full h-full object-cover scale-[1.2]" />
             </div>
@@ -52,7 +52,7 @@ export default function ProcessSection() {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-[#1e2025] rounded-[1.5rem] flex items-stretch p-3 shadow-lg hover:-translate-y-1 transition-transform duration-300">
+          <div className="bg-[#2c2d3c] rounded-[1.5rem] flex items-stretch p-3 shadow-lg hover:-translate-y-1 transition-transform duration-300">
             <div className="w-24 md:w-28 h-auto min-h-[90px] flex-shrink-0 bg-gray-300 relative rounded-xl overflow-hidden">
                <img src="/INFOSYS HUBLI29.webp" alt="Deliver" className="absolute inset-0 w-full h-full object-cover object-center" />
             </div>

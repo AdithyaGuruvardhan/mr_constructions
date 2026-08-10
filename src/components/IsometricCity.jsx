@@ -5,7 +5,7 @@ const mapIso = (x, y, z) => ({
   cy: (x + y) * 0.5 - z,
 });
 
-const IsoBlock = ({ x, y, z, w, d, h, stroke = '#ff761f', fill = 'white', showGrid = false }) => {
+const IsoBlock = ({ x, y, z, w, d, h, stroke = '#2c52a1', fill = 'white', showGrid = false }) => {
   const p1 = mapIso(x + w, y, z);
   const p2 = mapIso(x + w, y + d, z);
   const p3 = mapIso(x, y + d, z);
@@ -44,7 +44,7 @@ const IsoBlock = ({ x, y, z, w, d, h, stroke = '#ff761f', fill = 'white', showGr
   );
 };
 
-const IsoPath = ({ points, stroke = '#ff761f', strokeWidth = "1", dashed = false }) => {
+const IsoPath = ({ points, stroke = '#2c52a1', strokeWidth = "1", dashed = false }) => {
   const mapped = points.map(p => mapIso(p[0], p[1], p[2]));
   const d = `M ${mapped.map(p => `${p.cx},${p.cy}`).join(' L ')}`;
   return (
@@ -66,8 +66,8 @@ export default function IsometricCity() {
         {/* Ground grid lines for technical feel */}
         {Array.from({ length: 15 }).map((_, i) => (
           <React.Fragment key={`grid-${i}`}>
-            <IsoPath points={[[-400, i * 60 - 400, 0], [600, i * 60 - 400, 0]]} stroke="#ff761f" strokeWidth="0.2" />
-            <IsoPath points={[[i * 60 - 400, -400, 0], [i * 60 - 400, 600, 0]]} stroke="#ff761f" strokeWidth="0.2" />
+            <IsoPath points={[[-400, i * 60 - 400, 0], [600, i * 60 - 400, 0]]} stroke="#2c52a1" strokeWidth="0.2" />
+            <IsoPath points={[[i * 60 - 400, -400, 0], [i * 60 - 400, 600, 0]]} stroke="#2c52a1" strokeWidth="0.2" />
           </React.Fragment>
         ))}
 

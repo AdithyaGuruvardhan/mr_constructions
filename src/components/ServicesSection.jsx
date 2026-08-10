@@ -1,20 +1,24 @@
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function ServicesSection() {
   const scrollRef = useRef(null);
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const navigate = useNavigate();
 
   const serviceItems = [
-    { id: 1, title: 'Commercial', projects: 'Delivering modern office spaces, retail environments, and state-of-the-art commercial complexes.', image: '/sira_solar.webp' },
-    { id: 2, title: 'Education Institute', projects: 'Building inspiring learning environments, from schools to advanced research campuses.', image: '/hubli_school_vert.webp' },
-    { id: 3, title: 'Hospitals', projects: 'Constructing specialized healthcare facilities, clinics, and multi-specialty hospitals with precision.', image: '/hospital.webp' },
-    { id: 4, title: 'Temple', projects: 'Creating timeless spiritual centers and cultural complexes with traditional architectural integrity.', image: '/melukote_temple.webp' },
+    { id: 1, title: 'Commercial', projects: 'Delivering modern office spaces, retail environments, and state-of-the-art commercial complexes.', image: '/sira_solar.webp', link: '/portfolio#commercial' },
+    { id: 2, title: 'Education Institute', projects: 'Building inspiring learning environments, from schools to advanced research campuses.', image: '/hubli_school_vert.webp', link: '/portfolio#education-institution' },
+    { id: 3, title: 'Hospitals', projects: 'Constructing specialized healthcare facilities, clinics, and multi-specialty hospitals with precision.', image: '/hospital.webp', link: '/portfolio#hospitals' },
+    { id: 4, title: 'Temple', projects: 'Creating timeless spiritual centers and cultural complexes with traditional architectural integrity.', image: '/melukote_temple.webp', link: '/portfolio#temple' },
   ];
 
   const handleMouseDown = (e) => {
     setIsDown(true);
+    setIsDragging(false);
     setStartX(e.pageX - scrollRef.current.offsetLeft);
     setScrollLeft(scrollRef.current.scrollLeft);
   };
@@ -31,8 +35,19 @@ export default function ServicesSection() {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
+    if (Math.abs(x - startX) > 5) {
+      setIsDragging(true);
+    }
     const walk = (x - startX) * 1.5; // Natural scroll speed multiplier
     scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleCardClick = (link, e) => {
+    if (isDragging) {
+      e.preventDefault();
+      return;
+    }
+    navigate(link);
   };
 
   const scrollRight = () => {
@@ -60,7 +75,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Draggable/Scrollable Container */}
-        <div className="bg-[#cfcfcf] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 w-full overflow-hidden shadow-sm">
+        <div className="bg-[#2c2d3c]/10 rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 w-full overflow-hidden shadow-sm">
           
           <div 
             ref={scrollRef}
@@ -74,7 +89,8 @@ export default function ServicesSection() {
             {serviceItems.map((item) => (
               <div 
                 key={item.id} 
-                className="relative w-[280px] md:w-[360px] h-[400px] md:h-[500px] flex-shrink-0 rounded-[1.5rem] overflow-hidden group shadow-lg bg-gray-300"
+                onClick={(e) => handleCardClick(item.link, e)}
+                className="relative w-[280px] md:w-[360px] h-[400px] md:h-[500px] flex-shrink-0 rounded-[1.5rem] overflow-hidden group shadow-lg bg-gray-300 cursor-pointer"
               >
                 <img 
                   src={item.image} 
@@ -110,7 +126,7 @@ export default function ServicesSection() {
         <div className="w-full flex justify-end mt-8 gap-4">
           <button 
             onClick={scrollLeftBtn}
-            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#ff761f] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
+            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#2c52a1] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
             aria-label="Scroll left"
           >
             <span className="material-symbols-outlined text-2xl transition-transform duration-300 group-hover:-translate-x-1">arrow_left</span>
@@ -118,7 +134,7 @@ export default function ServicesSection() {
           
           <button 
             onClick={scrollRight}
-            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#ff761f] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
+            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#2c52a1] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
             aria-label="Scroll right"
           >
             <span className="material-symbols-outlined text-2xl transition-transform duration-300 group-hover:translate-x-1">arrow_right</span>

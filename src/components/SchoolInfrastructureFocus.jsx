@@ -44,12 +44,12 @@ export default function SchoolInfrastructureFocus() {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="bg-white text-[#2d2d2d] py-16 md:py-0 md:h-[80vh] lg:h-[90vh] w-full relative border-t border-gray-100">
+    <section ref={sectionRef} className="bg-white text-[#2c2d3c] py-16 md:py-0 md:h-[80vh] lg:h-[90vh] w-full relative border-t border-gray-100">
       <div className="w-full h-full flex flex-col md:flex-row items-center justify-between gap-12 md:gap-0 px-6 md:px-12 lg:px-20 mx-auto max-w-[1800px]">
         
         {/* Left Column - Large Typography (Aligned to bottom end) */}
         <div className="w-full md:w-1/3 h-full flex flex-col justify-end z-10 order-1">
-          <h2 className="text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.05] md:mb-2 lg:mb-4 font-light tracking-tight text-left">
+          <h2 className="text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.05] md:mb-2 lg:mb-4 font-light tracking-tight text-left text-[#2c2d3c]/90">
             <span className="italic font-serif">INSPIRING</span><br />
             DESIGN<br />
             <span className="italic font-serif">WELLNESS-</span><br />
@@ -86,7 +86,7 @@ export default function SchoolInfrastructureFocus() {
             <div className="w-full flex justify-end mt-12 md:pr-4">
               {/* Small View Project Badge */}
               <Link to="/portfolio/e2" className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 group">
-                <span className="absolute text-[8px] md:text-[9px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#ff761f] transition-colors duration-300">
+                <span className="absolute text-[8px] md:text-[9px] font-semibold uppercase tracking-widest text-[#2d2d2d] text-center z-10 group-hover:text-[#2c52a1] transition-colors duration-300">
                   View<br />Project
                 </span>
                 <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">

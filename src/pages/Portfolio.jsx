@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef, useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -57,7 +57,7 @@ const AsymmetricalSection = ({ title, subtitle, link, imgUrl, animateFromCenter 
           </div>
           <h2 className="text-5xl font-bold text-black mb-6 leading-tight">{title}</h2>
           <p className="text-gray-800 text-xl mb-8 leading-relaxed">{subtitle}</p>
-          <Link to={link} className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#ff761f] transition-colors shadow-lg">
+          <Link to={link} className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#2c52a1] transition-colors shadow-lg">
             <span className="font-semibold mr-4 text-xs md:text-sm tracking-widest uppercase">VIEW PROJECTS</span>
             <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -129,7 +129,7 @@ const AsymmetricalSection = ({ title, subtitle, link, imgUrl, animateFromCenter 
           </div>
           <h2 className="text-3xl font-bold text-black mb-4 leading-snug">{title}</h2>
           <p className="text-gray-700 text-lg mb-6 leading-relaxed">{subtitle}</p>
-          <Link to={link} className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#ff761f] transition-colors shadow-lg mt-2">
+          <Link to={link} className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#2c52a1] transition-colors shadow-lg mt-2">
             <span className="font-semibold mr-4 text-xs tracking-widest uppercase">VIEW PROJECTS</span>
             <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -198,7 +198,7 @@ const EducationSection = () => {
             <h2 className="text-4xl md:text-[3.5vw] font-medium text-[#1a1a1a] leading-[1.2] uppercase tracking-wide mb-10">
               BUILDING FOR TOMORROW, <br /> EDUCATING SMARTER.
             </h2>
-            <Link to="/portfolio/education" className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#ff761f] transition-colors shadow-lg">
+            <Link to="/portfolio/education" className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#2c52a1] transition-colors shadow-lg">
               <span className="font-semibold mr-4 text-xs md:text-sm tracking-widest uppercase">VIEW PROJECTS</span>
               <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -229,7 +229,7 @@ const HospitalSection = () => {
             </h2>
           </div>
           <div className="pb-4">
-            <Link to="/portfolio/hospitals" className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#ff761f] transition-colors shadow-lg">
+            <Link to="/portfolio/hospitals" className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#2c52a1] transition-colors shadow-lg">
               <span className="font-semibold mr-4 text-xs md:text-sm tracking-widest uppercase">VIEW PROJECTS</span>
               <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -308,7 +308,7 @@ const TempleSection = () => {
             <p className="text-white text-sm md:text-base font-light leading-relaxed drop-shadow-md max-w-sm">
               M R Constructions specializes in realizing grand temple projects, shaping serene environments for spiritual journeys.
             </p>
-            <Link to="/portfolio/temples" className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#ff761f] transition-colors shadow-lg pointer-events-auto">
+            <Link to="/portfolio/temples" className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#2c52a1] transition-colors shadow-lg pointer-events-auto">
               <span className="font-semibold mr-4 text-xs md:text-sm tracking-widest uppercase">VIEW PROJECTS</span>
               <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -380,7 +380,7 @@ const ProjectCard = ({ project }) => {
       </div>
 
       {/* Bottom Button (Matching Affordable Price Card) */}
-      <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-12 h-12 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 cursor-pointer bg-[#1c1c1e] text-white shadow-xl z-10">
+      <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-[#1c1c1e] cursor-pointer bg-[#2c52a1] text-white shadow-xl z-10">
         <svg className="w-5 h-5 transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
         </svg>
@@ -394,6 +394,8 @@ const DraggableCategoryRow = ({ category, projects }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+
+  const sectionId = category.toLowerCase().replace(/\s+/g, '-');
 
   const onMouseDown = (e) => {
     setIsDragging(true);
@@ -428,7 +430,7 @@ const DraggableCategoryRow = ({ category, projects }) => {
   }
 
   return (
-    <div className="w-full mb-16 md:mb-24 overflow-hidden max-w-[1600px] mx-auto">
+    <div id={sectionId} className="w-full mb-16 md:mb-24 overflow-hidden max-w-[1600px] mx-auto scroll-mt-32">
       <div className="flex items-center justify-center mb-8 px-6 md:px-16 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] tracking-tight uppercase drop-shadow-sm">{category}</h2>
       </div>
@@ -459,6 +461,20 @@ const DraggableCategoryRow = ({ category, projects }) => {
 };
 
 export default function Portfolio() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   return (
     <div className="pt-32 min-h-screen bg-[#fafafa] overflow-hidden">
       {/* Optional Top Header if needed, but since each section has a title, we might just jump straight into the sections. */}
@@ -467,7 +483,7 @@ export default function Portfolio() {
           {/* Typographical Header */}
           <div className="border-t-2 border-black/10 pt-4 mb-0 md:mb-12">
             <h1 className="text-[13vw] md:text-[8vw] leading-[1.1] font-extrabold tracking-tighter uppercase pb-2">
-              <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2a2a2a] to-transparent inline-block pb-4">Our</span> <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#ff761f] to-transparent inline-block pb-4">Portfolio</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2a2a2a] to-transparent inline-block pb-4">Our</span> <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2c52a1] to-transparent inline-block pb-4">Portfolio</span>
             </h1>
           </div>
 
@@ -475,14 +491,14 @@ export default function Portfolio() {
             {/* Left side: Highlight text */}
             <div className="lg:col-span-5">
               <h2 className="text-3xl md:text-4xl font-light text-[#4b4b4b] leading-[1.2] tracking-tight">
-                Building trust over <br className="hidden lg:block" /> <span className="font-semibold text-[#ff761f]">17+ years</span> of excellence.
+                Building trust over <br className="hidden lg:block" /> <span className="font-semibold text-[#2c52a1]">25+ years</span> of excellence.
               </h2>
             </div>
 
             {/* Right side: Paragraphs */}
             <div className="lg:col-span-7 flex flex-col space-y-8 text-lg md:text-xl text-gray-600 font-light leading-relaxed">
               <p className="text-2xl md:text-2xl text-gray-800 font-normal leading-snug">
-                At M R Constructions, our portfolio is a reflection of the trust placed in us over 17+ years of building for institutions that matter. Each project — from IT campuses to hospitals, schools, and heritage structures — represents more than construction; it represents a commitment to precision, safety, and lasting quality.
+                At M R Constructions, our portfolio is a reflection of the trust placed in us over 25+ years of building for institutions that matter. Each project — from IT campuses to hospitals, schools, and heritage structures — represents more than construction; it represents a commitment to precision, safety, and lasting quality.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-6 border-t border-black/10">
                 <p>

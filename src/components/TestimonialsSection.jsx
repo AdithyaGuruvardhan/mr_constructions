@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
       
       {/* Massive Background Watermark */}
       <div className="absolute top-6 md:top-12 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
-        <h1 className="text-[12vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-gray-50 opacity-80 whitespace-nowrap">
+        <h1 className="text-[12vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 whitespace-nowrap">
           TESTIMONIALS
         </h1>
       </div>
@@ -97,14 +97,14 @@ export default function TestimonialsSection() {
         
         {/* Header */}
         <div className="text-center mb-6 md:mb-12 flex flex-col items-center">
-          <div className="w-[2px] h-12 md:h-20 bg-[#ff761f] mb-8"></div>
+          <div className="w-[2px] h-12 md:h-20 bg-[#2c52a1] mb-8"></div>
           <p className="text-lg text-[#6b6b6b] leading-relaxed max-w-2xl mx-auto">
             Hear from our esteemed clients about their experiences partnering with M R Constructions for their landmark projects.
           </p>
         </div>
 
         {/* Draggable/Scrollable Container */}
-        <div className="bg-[#cfcfcf] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 w-full overflow-hidden shadow-sm">
+        <div className="bg-[#2c2d3c]/10 rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 w-full overflow-hidden shadow-sm">
           
           <div 
             ref={scrollRef}
@@ -121,7 +121,7 @@ export default function TestimonialsSection() {
                 className="w-[300px] md:w-[450px] flex-shrink-0 bg-white p-8 md:p-10 rounded-[1.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-shadow duration-500 flex flex-col justify-between"
               >
                 <div>
-                  <svg className="w-10 h-10 text-[#ff761f] mb-6 opacity-40 pointer-events-none" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-10 h-10 text-[#2c52a1] mb-6 opacity-80 pointer-events-none" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
                   <p className="text-[#4a4a4a] text-base md:text-lg leading-relaxed mb-8 font-medium whitespace-normal pointer-events-none">
@@ -130,7 +130,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div className="pt-6 border-t border-gray-100 pointer-events-none">
                   <h4 className="text-[#2d2d2d] font-bold text-lg">{t.name}</h4>
-                  <p className="text-[#ff761f] text-sm font-semibold tracking-wide uppercase mt-1">{t.role}</p>
+                  <p className="text-[#2c52a1] text-sm font-semibold tracking-wide uppercase mt-1">{t.role}</p>
                 </div>
               </div>
             ))}
@@ -148,7 +148,7 @@ export default function TestimonialsSection() {
         <div className="w-full flex justify-end mt-8 gap-4">
           <button 
             onClick={scrollLeftBtn}
-            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#ff761f] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
+            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#2c52a1] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
             aria-label="Scroll left"
           >
             <span className="material-symbols-outlined text-2xl transition-transform duration-300 group-hover:-translate-x-1">arrow_left</span>
@@ -156,7 +156,7 @@ export default function TestimonialsSection() {
           
           <button 
             onClick={scrollRight}
-            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#ff761f] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
+            className="w-14 h-14 rounded-full bg-[#1e2025] hover:bg-[#2c52a1] transition-colors duration-300 text-white flex items-center justify-center shadow-lg group cursor-pointer"
             aria-label="Scroll right"
           >
             <span className="material-symbols-outlined text-2xl transition-transform duration-300 group-hover:translate-x-1">arrow_right</span>
