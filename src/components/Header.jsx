@@ -34,8 +34,17 @@ export default function Header() {
         {/* Dropdown Menu */}
         <div className={`absolute top-full left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-full overflow-hidden py-4 z-50 transition-all origin-top ${menuOpen ? 'scale-y-100 opacity-100' : 'scale-y-95 opacity-0 pointer-events-none'}`}>
           <Link to="/" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-medium text-[#4b4b4b] cursor-pointer text-lg">Home</Link>
-          <Link to="/portfolio" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-medium text-[#4b4b4b] cursor-pointer text-lg">Portfolio</Link>
-          <Link to="/about" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-medium text-[#4b4b4b] cursor-pointer text-lg">About Us</Link>
+          
+          <Link to="/portfolio" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 pt-3 pb-2 hover:bg-gray-50 transition-colors font-bold text-[#2c52a1] cursor-pointer text-lg">Portfolio</Link>
+          <div className="flex flex-col items-center pb-3">
+            <Link to="/portfolio#commercial" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Commercial</Link>
+            <Link to="/portfolio#education-institution" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Education</Link>
+            <Link to="/portfolio#hospitals" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Hospitals</Link>
+            <Link to="/portfolio#archaeological-developments" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Archaeological</Link>
+            <Link to="/portfolio#metro-and-roads" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Metro & Roads</Link>
+          </div>
+
+          <Link to="/about" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-medium text-[#4b4b4b] cursor-pointer text-lg border-t border-gray-100">About Us</Link>
           <Link to="/contact" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-bold text-[#4b4b4b] cursor-pointer text-lg">Contact Us</Link>
         </div>
       </div>

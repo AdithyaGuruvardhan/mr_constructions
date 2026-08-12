@@ -20,7 +20,11 @@ const features = [
   },
   {
     title: "Extensive Experience",
-    description: "From IT Parks & hospitals to educational institutions & temples, our diverse project portfolio speaks for our expertise."
+    description: "Our diverse project portfolio across various sectors highlights our extensive construction expertise."
+  },
+  {
+    title: "Safety",
+    description: "We prioritize a safe working environment for all, ensuring strict compliance with industry safety standards."
   }
 ];
 
@@ -51,24 +55,24 @@ export default function WhyChooseUsSection() {
     <section ref={containerRef} className="relative w-full bg-[#fcfcfc] pt-20 pb-16 md:pt-[14rem] md:pb-12 overflow-hidden font-sans">
       
       {/* Massive Background Watermark */}
-      <div className="absolute top-8 md:top-12 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
+      <div className="absolute top-6 md:top-12 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
         <h1 className="text-[10vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 whitespace-nowrap">
           Why Choose Us
         </h1>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-8xl mx-auto px-8 md:px-16 relative z-10">
         
         {/* Header Section */}
         <div ref={headerRef} className="text-center mb-10 md:mb-14 flex flex-col items-center">
-          <div className="w-[2px] h-16 md:h-20 bg-[#2c52a1] mb-8"></div>
+          <div className="w-[2px] h-10 md:h-14 bg-[#2c52a1] mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-3xl mx-auto">
-            With 25+ years of experience and 125+ projects delivered, M R Constructions has established itself as a trusted name in construction and engineering.
+            With 20+ years of experience and 125+ projects delivered, M R Constructions has established itself as a trusted name in construction and engineering.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
           {features.map((feature, index) => {
             const isDark = index % 2 !== 0; // Odd indices are dark to match image
             return (
@@ -84,7 +88,7 @@ export default function WhyChooseUsSection() {
                 </p>
                 
                 {/* Circular Arrow Icon */}
-                <div className={`absolute bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-transform hover:scale-110 cursor-pointer ${isDark ? 'bg-white text-[#2c52a1]' : 'bg-[#1c1c1e] text-white'}`}>
+                <div className={`absolute bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110 cursor-pointer ${isDark ? 'bg-white text-[#2c52a1]' : 'bg-[#1c1c1e] text-white'}`}>
                   <svg className="w-4 h-4 md:w-5 md:h-5 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>

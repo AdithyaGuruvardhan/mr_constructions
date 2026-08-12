@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Temples() {
+export default function ArchaeologicalDevelopments() {
   return (
     <div className="pt-32 pb-20 px-6 md:px-16 min-h-screen flex flex-col items-center justify-center bg-gray-50 relative overflow-hidden">
       
@@ -16,9 +16,9 @@ export default function Temples() {
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
           Back to Portfolio
         </Link>
-        <h1 className="text-5xl md:text-7xl font-bold text-[#4b4b4b] mb-6 tracking-tight">Sacred <span className="text-[#2c52a1]">Temples</span></h1>
+        <h1 className="text-5xl md:text-7xl font-bold text-[#4b4b4b] mb-6 tracking-tight">Archaeological <span className="text-[#2c52a1]">Developments</span></h1>
         <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-          Honoring tradition and spirituality through masterful construction. Our temple projects combine ancient architectural principles with modern engineering to create enduring spaces for devotion and community.
+          Preserving history and honoring heritage through masterful restoration and construction. Our archaeological projects combine ancient architectural principles with modern engineering to create enduring spaces for community and historical preservation.
         </p>
         <button className="bg-[#2c52a1] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#e06515] transition-colors shadow-lg shadow-[#2c52a1]/30">
           View Projects

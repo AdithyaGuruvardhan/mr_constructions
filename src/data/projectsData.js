@@ -175,7 +175,7 @@ export const projectsData = {
   },
   "e2": {
     id: "e2",
-    title: "Hubli School",
+    title: "Hubli Education Institution",
     location: "HUBLI",
     number: "06",
     heroBg: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp",
@@ -385,7 +385,7 @@ export const projectsData = {
     ]
   },
 
-  // ================= TEMPLES =================
+  // ================= ARCHAEOLOGICAL DEVELOPMENTS =================
   "t1": {
     id: "t1",
     title: "Development of Kalyani Vasanthpura",

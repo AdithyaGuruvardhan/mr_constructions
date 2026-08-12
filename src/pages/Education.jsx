@@ -18,7 +18,7 @@ export default function Education() {
         </Link>
         <h1 className="text-5xl md:text-7xl font-bold text-[#4b4b4b] mb-6 tracking-tight">Educational <span className="text-green-600">Institutions</span></h1>
         <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-          Building the foundations of knowledge. Our educational projects provide safe, modern, and inspiring environments for students and educators to thrive, from primary schools to world-class universities.
+          Building the foundations of knowledge. Our educational projects provide safe, modern, and inspiring environments for students and educators to thrive, from primary educational institutions to world-class universities.
         </p>
         <button className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-colors shadow-lg shadow-green-600/30">
           View Projects

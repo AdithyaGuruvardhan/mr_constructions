@@ -37,7 +37,7 @@ export default function AboutSection() {
             Building Excellence <br /> Since 2005
           </h2>
           <p className="text-[#6b6b6b] text-base md:text-lg mb-8 md:mb-12 leading-relaxed max-w-lg">
-            M R Constructions (MRC) is an ISO-certified construction and engineering company based in Basavanagudi, Bengaluru.<br /> Over 25+ years, we've built a reputation for handling large, complex projects for both government and private clients,<br /> with 125+ completed projects.
+            M R Constructions (MRC) is an ISO-certified construction and engineering company based in Basavanagudi, Bengaluru.<br /> Over 20+ years, we've built a reputation for handling large, complex projects for both government and private clients,<br /> with 125+ completed projects.
           </p>
 
           {/* Action Button */}
@@ -57,7 +57,7 @@ export default function AboutSection() {
               <p className="text-[10px] sm:text-xs text-gray-500 font-medium leading-snug">Completed<br />Projects</p>
             </div>
             <div className="bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-sm flex flex-col justify-center">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-1">25+</h3>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-1">20+</h3>
               <p className="text-[10px] sm:text-xs text-gray-500 font-medium leading-snug">Years of<br />Experience</p>
             </div>
             <div className="bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-sm flex flex-col justify-center hidden lg:flex">

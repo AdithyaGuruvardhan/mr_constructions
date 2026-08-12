@@ -176,7 +176,7 @@ export default function AboutUs() {
       <div ref={sectionRef} className="relative w-[95vw] md:w-[90vw] max-w-[1800px] mx-auto rounded-[1.5rem] md:rounded-[3rem] overflow-hidden min-h-[1050px] sm:min-h-[900px] lg:min-h-[1000px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0] z-30 pb-32 lg:pb-0">
 
           {/* Layer 1: Background Image */}
-          <img src="/temple_bg.webp" alt="Temple Background" className="absolute inset-0 w-full h-full object-cover object-[50%_100%] z-0" />
+          <img src="/temple_bg.webp" alt="Archaeological Site Background" className="absolute inset-0 w-full h-full object-cover object-[50%_100%] z-0" />
 
           {/* Layer 2: Content (Title and Cards) */}
           <div className="relative z-10 w-full flex flex-col lg:flex-row items-start justify-between px-4 sm:px-8 md:px-16 pt-8 md:pt-12 lg:pt-16 gap-6 md:gap-8">
@@ -220,7 +220,7 @@ export default function AboutUs() {
           </div>
 
           {/* Layer 3: Foreground Image */}
-          <img src="/temple_fg 2.png" alt="Temple Foreground" className="absolute inset-0 w-full h-full object-cover object-[50%_100%] pointer-events-none z-20" />
+          <img src="/temple_fg 2.png" alt="Archaeological Site Foreground" className="absolute inset-0 w-full h-full object-cover object-[50%_100%] pointer-events-none z-20" />
         </div>
 
         {/* Core Values & Ethics Section (Full Width) */}

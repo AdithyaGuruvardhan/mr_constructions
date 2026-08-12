@@ -10,7 +10,7 @@ import Portfolio from './pages/Portfolio'
 import Commercial from './pages/Commercial'
 import Education from './pages/Education'
 import Hospitals from './pages/Hospitals'
-import Temples from './pages/Temples'
+import ArchaeologicalDevelopments from './pages/ArchaeologicalDevelopments'
 import ProjectDetails from './pages/ProjectDetails'
 
 const navItems = [
@@ -31,10 +31,11 @@ const navItems = [
     twoCols: true,
     links: [
       { label: 'All Projects', href: '/portfolio' },
-      { label: 'Hospitals', href: '/portfolio/hospitals' },
-      { label: 'Commercial', href: '/portfolio/commercial' },
-      { label: 'Temples', href: '/portfolio/temples' },
-      { label: 'Education', href: '/portfolio/education' }
+      { label: 'Hospitals', href: '/portfolio#hospitals' },
+      { label: 'Commercial', href: '/portfolio#commercial' },
+      { label: 'Archaeological Developments', href: '/portfolio#archaeological-developments' },
+      { label: 'Education', href: '/portfolio#education-institution' },
+      { label: 'Metro and Roads', href: '/portfolio#metro-and-roads' }
     ]
   }
 ];
@@ -63,7 +64,7 @@ function App() {
           <Route path="/portfolio/commercial" element={<Commercial />} />
           <Route path="/portfolio/education" element={<Education />} />
           <Route path="/portfolio/hospitals" element={<Hospitals />} />
-          <Route path="/portfolio/temples" element={<Temples />} />
+          <Route path="/portfolio/archaeological-developments" element={<ArchaeologicalDevelopments />} />
         </Routes>
       </main>
 

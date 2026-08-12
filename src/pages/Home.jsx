@@ -46,7 +46,7 @@ export default function Home() {
         <SchoolInfrastructureFocus />
       </section>
 
-      {/* Inspiring Design (Temple Layout) */}
+      {/* Inspiring Design (Archaeological Development Layout) */}
       <InspiringDesignSection />
 
       {/* Testimonials Section */}

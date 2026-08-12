@@ -282,23 +282,23 @@ const TempleSection = () => {
 
         {/* Back Layer (temple_bg) */}
         <div className="absolute inset-0 z-0">
-          <img src="/temple_bg.webp" alt="Temple Background" className="w-full h-full object-cover" />
+          <img src="/temple_bg.webp" alt="Archaeological Site Background" className="w-full h-full object-cover" />
         </div>
 
         {/* Middle Layer (Text - Under Foreground) */}
         <div className="absolute inset-0 z-10 w-full max-w-[1400px] mx-auto px-8 md:px-12 flex flex-col justify-start pt-12 md:pt-16">
           {/* Top Left Headline */}
           <div className="w-full md:w-2/3">
-            <p className="text-black/80 text-sm md:text-base font-medium mb-4 md:mb-6 uppercase tracking-widest">Spiritual Architecture</p>
+            <p className="text-black/80 text-sm md:text-base font-medium mb-4 md:mb-6 uppercase tracking-widest">Heritage Architecture</p>
             <h2 className="text-5xl md:text-[6vw] font-medium text-white leading-[0.85] tracking-tighter uppercase drop-shadow-md">
-              WE BUILD <br /> SPACES OF <br /> DEVOTION
+              WE PRESERVE <br /> HISTORY
             </h2>
           </div>
         </div>
 
         {/* Front Layer (temple_fg) */}
         <div className="absolute inset-0 z-20 pointer-events-none">
-          <img src="/temple_fg.webp" alt="Temple Foreground" className="w-full h-full object-cover object-bottom" />
+          <img src="/temple_fg.webp" alt="Archaeological Site Foreground" className="w-full h-full object-cover object-bottom" />
         </div>
 
         {/* Top Layer (Text - Above Foreground) */}
@@ -306,9 +306,9 @@ const TempleSection = () => {
           {/* Bottom Right Description & Button */}
           <div className="w-full md:w-1/2 self-end text-right flex flex-col items-end gap-6 pointer-events-auto">
             <p className="text-white text-sm md:text-base font-light leading-relaxed drop-shadow-md max-w-sm">
-              M R Constructions specializes in realizing grand temple projects, shaping serene environments for spiritual journeys.
+              M R Constructions specializes in restoring and developing significant archaeological sites, preserving our rich historical heritage.
             </p>
-            <Link to="/portfolio/temples" className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#2c52a1] transition-colors shadow-lg pointer-events-auto">
+            <Link to="/portfolio/archaeological-developments" className="inline-flex items-center justify-center bg-[#1a1a1a] text-white px-8 py-4 rounded-full group hover:bg-[#2c52a1] transition-colors shadow-lg pointer-events-auto">
               <span className="font-semibold mr-4 text-xs md:text-sm tracking-widest uppercase">VIEW PROJECTS</span>
               <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -336,7 +336,7 @@ const portfolioCategories = [
     category: "Education Institution",
     projects: [
       { id: "e1", title: "CBSE English Medium High School", subtitle: "Shivanahalli", img: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC shivanahalli DRONE _21.webp" },
-      { id: "e2", title: "Hubli School", subtitle: "Hubli", img: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp" },
+      { id: "e2", title: "Hubli Education Institution", subtitle: "Hubli", img: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp" },
       { id: "e3", title: "Indian Institute of Information Technology", subtitle: "Dharwad", img: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT7.webp" },
     ]
   },
@@ -350,11 +350,15 @@ const portfolioCategories = [
     ]
   },
   {
-    category: "Temple",
+    category: "Archaeological Developments",
     projects: [
       { id: "t1", title: "Development Of Kalyani", subtitle: "Vasanthpura, Bengaluru", img: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA KALYANI12.webp" },
       { id: "t2", title: "Melukote Kalyani", subtitle: "Melukote", img: "/temple/Melukote%20Kalayani/MELKOTE KALYANI5.webp" },
     ]
+  },
+  {
+    category: "Metro and Roads",
+    projects: []
   }
 ];
 
@@ -491,18 +495,18 @@ export default function Portfolio() {
             {/* Left side: Highlight text */}
             <div className="lg:col-span-5">
               <h2 className="text-3xl md:text-4xl font-light text-[#4b4b4b] leading-[1.2] tracking-tight">
-                Building trust over <br className="hidden lg:block" /> <span className="font-semibold text-[#2c52a1]">25+ years</span> of excellence.
+                Building trust over <br className="hidden lg:block" /> <span className="font-semibold text-[#2c52a1]">20+ years</span> of excellence.
               </h2>
             </div>
 
             {/* Right side: Paragraphs */}
             <div className="lg:col-span-7 flex flex-col space-y-8 text-lg md:text-xl text-gray-600 font-light leading-relaxed">
               <p className="text-2xl md:text-2xl text-gray-800 font-normal leading-snug text-justify">
-                At M R Constructions, our portfolio is a reflection of the trust placed in us over 25+ years of building for institutions that matter. Each project — from IT campuses to hospitals, schools, and heritage structures — represents more than construction; it represents a commitment to precision, safety, and lasting quality.
+                At M R Constructions, our portfolio is a reflection of the trust placed in us over 20+ years of building for institutions that matter. Each project — from IT campuses to hospitals, educational institutions, and heritage structures — represents more than construction; it represents a commitment to precision, safety, and lasting quality.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-6 border-t border-black/10">
                 <p className="text-justify">
-                  We approach every project with the same discipline — whether it's a corporate campus for a global tech leader or a school shaping generations of students. Our work spans commercial, educational, healthcare, and heritage construction, all held to the same uncompromising standard.
+                  We approach every project with the same discipline — whether it's a corporate campus for a global tech leader or an educational institution shaping generations of students. Our work spans commercial, educational, healthcare, and heritage construction, all held to the same uncompromising standard.
                 </p>
                 <p className="text-justify">
                   What you'll find here is not just a list of completed structures, but a record of partnerships built on reliability — with organizations that trusted us to deliver on time, on budget, and beyond expectation.

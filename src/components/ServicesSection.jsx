@@ -11,9 +11,10 @@ export default function ServicesSection() {
 
   const serviceItems = [
     { id: 1, title: 'Commercial', projects: 'Delivering modern office spaces, retail environments, and state-of-the-art commercial complexes.', image: '/sira_solar.webp', link: '/portfolio#commercial' },
-    { id: 2, title: 'Education Institute', projects: 'Building inspiring learning environments, from schools to advanced research campuses.', image: '/hubli_school_vert.webp', link: '/portfolio#education-institution' },
+    { id: 2, title: 'Education Institute', projects: 'Building inspiring learning environments, from educational institutions to advanced research campuses.', image: '/hubli_school_vert.webp', link: '/portfolio#education-institution' },
     { id: 3, title: 'Hospitals', projects: 'Constructing specialized healthcare facilities, clinics, and multi-specialty hospitals with precision.', image: '/hospital.webp', link: '/portfolio#hospitals' },
-    { id: 4, title: 'Temple', projects: 'Creating timeless spiritual centers and cultural complexes with traditional architectural integrity.', image: '/melukote_temple.webp', link: '/portfolio#temple' },
+    { id: 4, title: 'Archaeological Developments', projects: 'Preserving historical heritage and developing archaeological sites with traditional architectural integrity.', image: '/melukote_temple.webp', link: '/portfolio#archaeological-developments' },
+    { id: 5, title: 'Metro and Roads', projects: 'Developing critical transportation infrastructure including metro lines and road networks for seamless connectivity.', image: '/building.webp', link: '/portfolio#metro-and-roads' },
   ];
 
   const handleMouseDown = (e) => {

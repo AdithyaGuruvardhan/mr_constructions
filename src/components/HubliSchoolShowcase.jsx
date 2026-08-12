@@ -78,12 +78,12 @@ export default function HubliSchoolShowcase() {
         <div ref={textRef} className="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-6 z-20 pointer-events-none mt-32">
           <div className="max-w-3xl text-center flex flex-col items-center pointer-events-auto">
             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#2d2d2d] mb-6 drop-shadow-sm">
-              Ramakrishna Mission School, Hubli
+              Ramakrishna Mission Education Institution, Hubli
             </h2>
             <div className="w-[2px] h-8 md:h-12 bg-[#2d2d2d]/50 mb-8"></div>
 
             <p className="text-lg md:text-2xl text-[#2d2d2d] leading-relaxed font-medium drop-shadow-sm">
-              We undertook the construction of a CBSE school building for Ramakrishna Mission at Hubli, covering an area of 35,000 sft.
+              We undertook the construction of a CBSE education institution building for Ramakrishna Mission at Hubli, covering an area of 35,000 sft.
             </p>
           </div>
         </div>
