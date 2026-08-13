@@ -154,6 +154,39 @@ export default function ContactUs() {
               </form>
             </div>
           </div>
+
+          {/* Map Section */}
+          <div className="bg-[#1c1c1e] rounded-[2rem] p-8 md:p-16 flex flex-col lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-12 lg:gap-16 min-h-[500px]">
+            {/* Decorative bottom text */}
+            <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#2a2a2c] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none z-0">
+              <span>OUR LOCATION</span>
+            </div>
+            
+            {/* Left Side: Text */}
+            <div className="relative z-10 lg:w-5/12 flex flex-col justify-start">
+              <h2 className="text-white text-3xl md:text-5xl lg:text-[3.5rem] font-medium leading-[1.1] tracking-tight mb-6">
+                Visit Our <br /> Office
+              </h2>
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium mb-4">
+                Drop by our office to discuss how we can bring your next landmark project to life with precision and excellence.
+              </p>
+            </div>
+
+            {/* Right Side: Map */}
+            <div className="relative z-10 lg:w-7/12 w-full h-[350px] lg:h-auto rounded-[1.5rem] overflow-hidden bg-gray-100 shadow-inner">
+              <iframe 
+                src="https://maps.google.com/maps?q=M%20R%20Constructions,%20No.16/1,%201st%20Main,%202nd%20Floor,%20VR%20Layout,%20Basavanagudi,%20Bengaluru-560004&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                frameBorder="0" 
+                style={{ border: 0, minHeight: '100%' }} 
+                allowFullScreen="" 
+                aria-hidden="false" 
+                tabIndex="0"
+                title="M R Constructions Location">
+              </iframe>
+            </div>
+          </div>
         </div>
       </div>
     </div>

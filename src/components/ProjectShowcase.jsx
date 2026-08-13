@@ -23,7 +23,7 @@ export default function ProjectShowcase() {
       scrollTrigger: {
         trigger: container.current,
         start: "top top",
-        end: "+=400%", // Extended scroll duration to accommodate the pan
+        end: "+=120%", // Adjusted scroll duration since we removed a phase
         scrub: 1, // Smooth scrubbing
       }
     });
@@ -41,38 +41,28 @@ export default function ProjectShowcase() {
     // Phase 1: Slide in from top/bottom to the center (with a small gap between them)
     tl.to(leftMaskRef.current, {
       clipPath: "inset(20% 50.5% 20% 35% round 1.5rem)",
-      ease: "power1.out"
+      ease: "none"
     }, 0);
     tl.to(rightMaskRef.current, {
       clipPath: "inset(20% 35% 20% 50.5% round 1.5rem)",
-      ease: "power1.out"
+      ease: "none"
     }, 0);
 
-    // Phase 2: Merge the gap in the center (Overlap slightly to hide sub-pixel line)
+    // Phase 2: Expand both outward to fill the screen and merge the gap, happening immediately at 1
     tl.to(leftMaskRef.current, {
-      clipPath: "inset(20% 49.5% 20% 35% round 1.5rem)",
+      clipPath: "inset(0% 49.5% 0% 0% round 0px)",
       ease: "none"
     }, 1);
     tl.to(rightMaskRef.current, {
-      clipPath: "inset(20% 35% 20% 49.5% round 1.5rem)",
+      clipPath: "inset(0% 0% 0% 49.5% round 0px)",
       ease: "none"
     }, 1);
 
-    // Fade out side elements as they merge
+    // Fade out side elements as they expand
     tl.to(sideElementsRef.current, {
       opacity: 0,
       ease: "none"
     }, 1);
-
-    // Phase 3: Expand both outward to fill the screen (keep the overlap) and remove rounded corners
-    tl.to(leftMaskRef.current, {
-      clipPath: "inset(0% 49.5% 0% 0% round 0px)",
-      ease: "power2.inOut"
-    }, 2);
-    tl.to(rightMaskRef.current, {
-      clipPath: "inset(0% 0% 0% 49.5% round 0px)",
-      ease: "power2.inOut"
-    }, 2);
 
     // Cloud animation: come front, move out and get hidden
     tl.to(cloudRef.current, {
@@ -81,7 +71,7 @@ export default function ProjectShowcase() {
       y: "-20vh",
       opacity: 0,
       ease: "power2.inOut"
-    }, 2);
+    }, 1);
 
     tl.to(cloudRightRef.current, {
       scale: 8,
@@ -89,15 +79,15 @@ export default function ProjectShowcase() {
       y: "20vh",
       opacity: 0,
       ease: "power2.inOut"
-    }, 2);
+    }, 1);
 
-    // Phase 4: Letter stagger animation for the title
+    // Phase 3: Letter stagger animation for the title
     tl.fromTo(".title-char", 
       { opacity: 0, y: 50, rotateX: -80, scale: 0.8 }, 
       { opacity: 1, y: 0, rotateX: 0, scale: 1, ease: "power2.out", duration: 0.4, stagger: 0.02 }, 
-    2.3);
+    1.3);
 
-    // Phase 5: Pan the images and text up to simulate scrolling down the full image
+    // Phase 4: Pan the images and text up to simulate scrolling down the full image
     tl.to([imgLeftRef.current, imgRightRef.current, textRef.current], {
       y: () => {
         // Calculate how much the image overflows the window height
@@ -107,13 +97,13 @@ export default function ProjectShowcase() {
       },
       ease: "none",
       duration: 2 // Give it plenty of time in the timeline to scroll naturally
-    }, 3);
+    }, 2);
 
   }, { scope: container });
 
   return (
     <>
-    <div ref={container} className="relative h-[500vh] w-full bg-[#e4f7ff]">
+    <div ref={container} className="relative h-[220vh] w-full bg-[#e4f7ff]">
 
       {/* Sticky Inner Container */}
       <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">

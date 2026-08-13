@@ -25,8 +25,19 @@ const navItems = [
     ]
   },
   {
-    label: 'Portfolio',
+    label: 'Company',
     bgColor: '#e4e4e7',
+    textColor: '#18181b',
+    links: [
+      { label: 'Safety', href: '/safety' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'Awards', href: '/awards' },
+      { label: 'Certificates', href: '/certificates' }
+    ]
+  },
+  {
+    label: 'Portfolio',
+    bgColor: '#d4d4d8',
     textColor: '#18181b',
     twoCols: true,
     links: [

@@ -175,7 +175,7 @@ export const projectsData = {
   },
   "e2": {
     id: "e2",
-    title: "Hubli Education Institution",
+    title: "Smt. Vimalakulkarni Memorial School",
     location: "HUBLI",
     number: "06",
     heroBg: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp",
@@ -185,7 +185,7 @@ export const projectsData = {
       desktopLeft: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL4.webp",
       desktopRight: "/Education%20Institution/Hubli%20School/HUBLI%20SCHOOL3.webp"
     },
-    introText1: "Built for Ramakrishna Mission at Hubli, this project reflects our experience in delivering educational infrastructure with care and precision.",
+    introText1: "Built for Smt. Vimalakulkarni Memorial School at Hubli, this project reflects our experience in delivering educational infrastructure with care and precision.",
     introText2: "Our scope covered complete construction of the school building, resulting in a functional, well-built facility designed to serve students for years to come.",
     droneSection: {
       img1: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL2.webp",

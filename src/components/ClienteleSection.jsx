@@ -8,11 +8,20 @@ const logosRow1 = [
 ];
 
 const logosRow2 = [
-  { src: '/clients/infosys1.webp', alt: 'Infosys' },
+  { src: '/clients/Infosys%20Foundation.png', alt: 'Infosys Foundation' },
   { src: '/clients/kiwadi.webp', alt: 'Kidwai' },
   { src: '/clients/elcita.webp', alt: 'Elcita' },
   { src: '/clients/hospital.webp', alt: 'Hospital' },
   { src: '/clients/elcia.webp', alt: 'Elcia' },
+];
+
+const logosRow3 = [
+  { src: '/clients/aqua.png', alt: 'Aqua' },
+  { src: '/clients/deshpande.png', alt: 'Deshpande' },
+  { src: '/clients/gail.png', alt: 'GAIL' },
+  { src: '/clients/ntpc.png', alt: 'NTPC' },
+  { src: '/clients/pc.png', alt: 'PC' },
+  { src: '/clients/jvhvb.png', alt: 'Jvhvb' },
 ];
 
 export default function ClienteleSection() {
@@ -69,9 +78,9 @@ export default function ClienteleSection() {
           {logosRow1.map((logo, index) => (
             <div 
               key={`row1-${index}`} 
-              className="w-72 h-36 bg-[#e2e2e2] rounded-[2rem] flex items-center justify-center p-4 shrink-0 shadow-sm transition-transform hover:scale-105"
+              className="w-64 h-32 bg-[#e2e2e2] rounded-[1.5rem] flex items-center justify-center p-2 shrink-0 shadow-sm transition-transform hover:scale-105"
             >
-              <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain filter transition-all duration-300" />
+              <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain scale-160 filter transition-all duration-300" />
             </div>
           ))}
         </div>
@@ -85,9 +94,24 @@ export default function ClienteleSection() {
           {logosRow2.map((logo, index) => (
             <div 
               key={`row2-${index}`} 
-              className="w-72 h-36 bg-[#e2e2e2] rounded-[2rem] flex items-center justify-center p-4 shrink-0 shadow-sm transition-transform hover:scale-105"
+              className="w-64 h-32 bg-[#e2e2e2] rounded-[1.5rem] flex items-center justify-center p-2 shrink-0 shadow-sm transition-transform hover:scale-105"
             >
-              <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain filter transition-all duration-300" />
+              <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain scale-150 filter transition-all duration-300" />
+            </div>
+          ))}
+        </div>
+
+        {/* Third Row (Scrolls Left as you scroll down) */}
+        <div 
+          className="flex w-max gap-8 ml-[20%]"
+          style={{ transform: `translateX(-${scrollOffset}px)`, transition: 'transform 0.1s ease-out' }}
+        >
+          {logosRow3.map((logo, index) => (
+            <div 
+              key={`row3-${index}`} 
+              className="w-64 h-32 bg-[#e2e2e2] rounded-[1.5rem] flex items-center justify-center p-2 shrink-0 shadow-sm transition-transform hover:scale-105"
+            >
+              <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain scale-160 filter transition-all duration-300" />
             </div>
           ))}
         </div>
@@ -95,12 +119,12 @@ export default function ClienteleSection() {
 
       {/* Mobile View: Static Flex Grid */}
       <div className="flex md:hidden w-full px-6 flex-wrap justify-center gap-3">
-        {[...logosRow1, ...logosRow2].map((logo, index) => (
+        {[...logosRow1, ...logosRow2, ...logosRow3].map((logo, index) => (
           <div 
             key={`mobile-${index}`} 
-            className="w-[calc(50%-0.5rem)] h-24 bg-[#e2e2e2] rounded-[1.25rem] flex items-center justify-center p-3 shadow-sm"
+            className="w-[calc(50%-0.5rem)] h-20 bg-[#e2e2e2] rounded-[1rem] flex items-center justify-center p-2 shadow-sm"
           >
-            <img src={logo.src} alt={logo.alt} className="max-w-[85%] max-h-[85%] object-contain" />
+            <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain scale-150" />
           </div>
         ))}
       </div>

@@ -24,7 +24,7 @@ const features = [
   },
   {
     title: "Safety",
-    description: "We prioritize a safe working environment for all, ensuring strict compliance with industry safety standards."
+    description: "Committed to workplace, project-site, and employee safety, ensuring quality, compliance, and safe project execution."
   }
 ];
 
@@ -67,7 +67,7 @@ export default function WhyChooseUsSection() {
         <div ref={headerRef} className="text-center mb-10 md:mb-14 flex flex-col items-center">
           <div className="w-[2px] h-10 md:h-14 bg-[#2c52a1] mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-3xl mx-auto">
-            With 20+ years of experience and 125+ projects delivered, M R Constructions has established itself as a trusted name in construction and engineering.
+            With over 2 Decades of experience and 125+ projects delivered, M R Constructions has established itself as a trusted name in construction and engineering.
           </p>
         </div>
 

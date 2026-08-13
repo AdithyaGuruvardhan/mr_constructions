@@ -47,10 +47,10 @@ export default function Footer() {
             </ul>
 
             <ul className="space-y-6 text-sm font-medium pt-1.5">
-              <li><a href="#" className="hover:text-gray-300 transition-colors">Facebook</a></li>
-              <li><a href="#" className="hover:text-gray-300 transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-gray-300 transition-colors">Youtube</a></li>
-              <li><a href="#" className="hover:text-gray-300 transition-colors">Linkedin</a></li>
+              <li><Link to="/safety" className="hover:text-gray-300 transition-colors">Safety</Link></li>
+              <li><Link to="/careers" className="hover:text-gray-300 transition-colors">Careers</Link></li>
+              <li><Link to="/awards" className="hover:text-gray-300 transition-colors">Awards</Link></li>
+              <li><Link to="/certificates" className="hover:text-gray-300 transition-colors">Certificates</Link></li>
             </ul>
           </div>
 

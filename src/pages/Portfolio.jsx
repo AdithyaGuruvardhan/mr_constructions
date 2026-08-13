@@ -495,7 +495,7 @@ export default function Portfolio() {
             {/* Left side: Highlight text */}
             <div className="lg:col-span-5">
               <h2 className="text-3xl md:text-4xl font-light text-[#4b4b4b] leading-[1.2] tracking-tight">
-                Building trust over <br className="hidden lg:block" /> <span className="font-semibold text-[#2c52a1]">20+ years</span> of excellence.
+                Building trust over <br className="hidden lg:block" /> <span className="font-semibold text-[#2c52a1]">2 Decades</span> of excellence.
               </h2>
             </div>
 

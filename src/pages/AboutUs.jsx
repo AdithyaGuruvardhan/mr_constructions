@@ -106,6 +106,34 @@ export default function AboutUs() {
           </div>
         </div>
 
+        {/* Smt. Sudha Murty Section */}
+        <div className="w-full relative z-30 mb-24 md:mb-32">
+          <div className="bg-[#1c1c1e] rounded-[2rem] p-8 md:p-16 flex flex-col-reverse lg:flex-row-reverse justify-between shadow-2xl relative overflow-hidden gap-12 lg:gap-16 items-center">
+            {/* Decorative bottom text */}
+            <div className="absolute -bottom-6 right-0 w-full flex justify-end gap-4 text-[#2a2a2c] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
+              <span>THE INSPIRATION</span>
+            </div>
+
+            <div className="relative z-10 flex flex-col lg:w-6/12 justify-center">
+              <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight mb-6 md:mb-8">
+                Smt. Sudha Murty
+              </h2>
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium mb-4">
+                Smt. Sudha Murty is a renowned author, philanthropist, educator, and social worker known for her simplicity and dedication to serving society. Through her work in education, healthcare, rural development, and social welfare, she has contributed to meaningful change across India.
+              </p>
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
+                Her writing has inspired generations with stories rooted in kindness, humility, compassion, and life lessons. Her journey reflects a deep commitment to empowering communities and creating a positive and lasting impact on society.
+              </p>
+            </div>
+            
+            <div className="relative z-10 flex flex-col lg:w-5/12 justify-end w-full self-end -mb-8 md:-mb-16 pt-8 md:pt-0">
+              <div className="w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-square rounded-t-[1.5rem] md:rounded-t-[1.5rem] rounded-b-none overflow-hidden shadow-lg border-t border-l border-r border-white/10">
+                <img src="/sudha_murthy.png" alt="Smt. Sudha Murty" className="w-full h-full object-cover object-top" />
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Engineered for Performance / Vision & Mission Section */}
         <div className="flex flex-col mb-24">
 
