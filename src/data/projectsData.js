@@ -455,6 +455,173 @@ export const projectsData = {
       "/temple/Melukote%20Kalayani/MELKOTE%20KALYANI3.webp",
       "/temple/Melukote%20Kalayani/MELKOTE%20KALYANI30.webp"
     ]
+  },
+
+  // ================= METRO =================
+  "m1": {
+    id: "m1",
+    title: "BTM Layout Station",
+    location: "BENGALURU",
+    number: "15",
+    heroBg: "/metro/BTM/BTM.webp",
+    images: {
+      mobile1: "/metro/BTM/BTM (2).webp",
+      mobile2: "/metro/BTM/SWA01466.webp",
+      desktopLeft: "/metro/BTM/BTM (2).webp",
+      desktopRight: "/metro/BTM/SWA01466.webp"
+    },
+    introText1: "Located at BTM Layout, this project demonstrates our capacity to deliver complex urban transportation infrastructure.",
+    introText2: "Our scope encompassed comprehensive civil works, resulting in a state-of-the-art metro station facilitating seamless connectivity.",
+    droneSection: {
+      img1: "/metro/BTM/SWA01477.webp",
+      img2: "/metro/BTM/SWA01483.webp",
+      cardTitle: "Metro Infrastructure",
+      cardDesc: "Vital node in Bengaluru's mass transit network",
+      stats: [
+        { title: "Urban Transit", desc: "Key metro station serving the BTM Layout area" },
+        { title: "Complete Civil Works", desc: "Full structural and finishing works delivered" }
+      ]
+    },
+    galleryImages: [
+      "/metro/BTM/BTM.webp",
+      "/metro/BTM/BTM (2).webp",
+      "/metro/BTM/SWA01466.webp",
+      "/metro/BTM/SWA01477.webp",
+      "/metro/BTM/SWA01485.webp",
+      "/metro/BTM/SWA01488.webp"
+    ]
+  },
+  "m2": {
+    id: "m2",
+    title: "Jayadeva Station",
+    location: "BENGALURU",
+    number: "16",
+    heroBg: "/metro/Jayadeva/JDS.webp",
+    images: {
+      mobile1: "/metro/Jayadeva/SWA01331.webp",
+      mobile2: "/metro/Jayadeva/SWA01339.webp",
+      desktopLeft: "/metro/Jayadeva/SWA01331.webp",
+      desktopRight: "/metro/Jayadeva/SWA01339.webp"
+    },
+    introText1: "An interchange station situated at Jayadeva, this project forms a crucial part of Bengaluru's expanding metro network.",
+    introText2: "Executed with precision, we managed the demanding construction requirements of a multi-level transit hub in a high-density area.",
+    droneSection: {
+      img1: "/metro/Jayadeva/SWA01341.webp",
+      img2: "/metro/Jayadeva/SWA01366.webp",
+      cardTitle: "Interchange Hub",
+      cardDesc: "Major interchange station connecting multiple metro lines",
+      stats: [
+        { title: "Multi-level Structure", desc: "Complex engineering for intersecting transit routes" },
+        { title: "Quality Execution", desc: "Built with exacting safety and durability standards" }
+      ]
+    },
+    galleryImages: [
+      "/metro/Jayadeva/JDS.webp",
+      "/metro/Jayadeva/SWA01331.webp",
+      "/metro/Jayadeva/SWA01367.webp",
+      "/metro/Jayadeva/SWA01377.webp",
+      "/metro/Jayadeva/SWA01441.webp",
+      "/metro/Jayadeva/SWA01339.webp"
+    ]
+  },
+  "m3": {
+    id: "m3",
+    title: "Ragigudda Station",
+    location: "BENGALURU",
+    number: "17",
+    heroBg: "/metro/Ragigudda/RGS.webp",
+    images: {
+      mobile1: "/metro/Ragigudda/RGS (4).webp",
+      mobile2: "/metro/Ragigudda/RGS (7).webp",
+      desktopLeft: "/metro/Ragigudda/RGS (4).webp",
+      desktopRight: "/metro/Ragigudda/RGS (7).webp"
+    },
+    introText1: "Located near the historic Ragigudda temple, this station provides essential connectivity while respecting the local environment.",
+    introText2: "Our team executed the project with minimal disruption to the surrounding community, delivering a highly functional transit facility.",
+    droneSection: {
+      img1: "/metro/Ragigudda/RGS (8).webp",
+      img2: "/metro/Ragigudda/SWA01227.webp",
+      cardTitle: "Community Transit",
+      cardDesc: "A modern metro station serving a vibrant residential and cultural hub",
+      stats: [
+        { title: "Efficient Design", desc: "Optimized passenger flow and accessibility" },
+        { title: "Status: Completed", desc: "Delivered to support the city's mobility needs" }
+      ]
+    },
+    galleryImages: [
+      "/metro/Ragigudda/RGS.webp",
+      "/metro/Ragigudda/RGS (4).webp",
+      "/metro/Ragigudda/SWA01254.webp",
+      "/metro/Ragigudda/SWA01265.webp",
+      "/metro/Ragigudda/SWA01269.webp",
+      "/metro/Ragigudda/SWA01288.webp"
+    ]
+  },
+  "m4": {
+    id: "m4",
+    title: "Rashtreeya Vidyalaya Road Station",
+    location: "BENGALURU",
+    number: "18",
+    heroBg: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01182.webp",
+    images: {
+      mobile1: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01183.webp",
+      mobile2: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01186.webp",
+      desktopLeft: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01183.webp",
+      desktopRight: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01186.webp"
+    },
+    introText1: "Serving the RV Road area, this project highlights our capability in executing critical infrastructure within established urban corridors.",
+    introText2: "We delivered robust civil engineering solutions, ensuring the station integrates smoothly with existing public spaces and roadways.",
+    droneSection: {
+      img1: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01212.webp",
+      img2: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01217.webp",
+      cardTitle: "Urban Integration",
+      cardDesc: "Seamlessly connecting commuters in a key educational and residential district",
+      stats: [
+        { title: "Strategic Location", desc: "Essential node for daily city commuters" },
+        { title: "Complete Civil Works", desc: "End-to-end execution of station infrastructure" }
+      ]
+    },
+    galleryImages: [
+      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01182.webp",
+      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01183.webp",
+      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01186.webp",
+      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01212.webp",
+      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01217.webp",
+      "/metro/Rashtreeya%20Vidyalaya%20Road/RVR%20STATION%20(4).webp"
+    ]
+  },
+  "m5": {
+    id: "m5",
+    title: "Silk Board Station",
+    location: "BENGALURU",
+    number: "19",
+    heroBg: "/metro/Silk%20board/SWA01503.webp",
+    images: {
+      mobile1: "/metro/Silk%20board/SWA01510.webp",
+      mobile2: "/metro/Silk%20board/SWA01513.webp",
+      desktopLeft: "/metro/Silk%20board/SWA01510.webp",
+      desktopRight: "/metro/Silk%20board/SWA01513.webp"
+    },
+    introText1: "Located at one of Bengaluru's busiest intersections, the Silk Board metro station is a landmark infrastructure achievement.",
+    introText2: "Our team overcame significant logistical challenges to construct a facility that will greatly alleviate traffic congestion in the area.",
+    droneSection: {
+      img1: "/metro/Silk%20board/SWA01527.webp",
+      img2: "/metro/Silk%20board/SWA01538.webp",
+      cardTitle: "Major Transit Hub",
+      cardDesc: "Pivotal station designed to handle high passenger volumes",
+      stats: [
+        { title: "High Capacity", desc: "Engineered for maximum throughput and safety" },
+        { title: "Complex Execution", desc: "Built amidst one of the city's densest traffic zones" }
+      ]
+    },
+    galleryImages: [
+      "/metro/Silk%20board/SWA01503.webp",
+      "/metro/Silk%20board/SWA01510.webp",
+      "/metro/Silk%20board/SWA01542.webp",
+      "/metro/Silk%20board/SWA01551.webp",
+      "/metro/Silk%20board/SWA01513.webp",
+      "/metro/Silk%20board/SWA01538.webp"
+    ]
   }
 };
 
