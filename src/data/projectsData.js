@@ -463,18 +463,18 @@ export const projectsData = {
     title: "BTM Layout Station",
     location: "BENGALURU",
     number: "15",
-    heroBg: "/metro/BTM/BTM.webp",
+    heroBg: "/metro/BTM/SWA01485.webp",
     images: {
-      mobile1: "/metro/BTM/BTM (2).webp",
-      mobile2: "/metro/BTM/SWA01466.webp",
-      desktopLeft: "/metro/BTM/BTM (2).webp",
-      desktopRight: "/metro/BTM/SWA01466.webp"
+      mobile1: "/metro/BTM/SWA01466.webp",
+      mobile2: "/metro/BTM/BTM.webp",
+      desktopLeft: "/metro/BTM/SWA01466.webp",
+      desktopRight: "/metro/BTM/BTM.webp"
     },
     introText1: "Located at BTM Layout, this project demonstrates our capacity to deliver complex urban transportation infrastructure.",
     introText2: "Our scope encompassed comprehensive civil works, resulting in a state-of-the-art metro station facilitating seamless connectivity.",
     droneSection: {
-      img1: "/metro/BTM/SWA01477.webp",
-      img2: "/metro/BTM/SWA01483.webp",
+      img1: "/metro/BTM/SWA01492.webp",
+      img2: "/metro/BTM/SWA01500.webp",
       cardTitle: "Metro Infrastructure",
       cardDesc: "Vital node in Bengaluru's mass transit network",
       stats: [
@@ -483,12 +483,11 @@ export const projectsData = {
       ]
     },
     galleryImages: [
-      "/metro/BTM/BTM.webp",
       "/metro/BTM/BTM (2).webp",
-      "/metro/BTM/SWA01466.webp",
       "/metro/BTM/SWA01477.webp",
-      "/metro/BTM/SWA01485.webp",
-      "/metro/BTM/SWA01488.webp"
+      "/metro/BTM/SWA01483.webp",
+      "/metro/BTM/SWA01488.webp",
+      "/metro/BTM/SWA01498.webp"
     ]
   },
   "m2": {
@@ -496,18 +495,18 @@ export const projectsData = {
     title: "Jayadeva Station",
     location: "BENGALURU",
     number: "16",
-    heroBg: "/metro/Jayadeva/JDS.webp",
+    heroBg: "/metro/Jayadeva/SWA01313.webp",
     images: {
-      mobile1: "/metro/Jayadeva/SWA01331.webp",
-      mobile2: "/metro/Jayadeva/SWA01339.webp",
-      desktopLeft: "/metro/Jayadeva/SWA01331.webp",
-      desktopRight: "/metro/Jayadeva/SWA01339.webp"
+      mobile1: "/metro/Jayadeva/clean_shot.webp",
+      mobile2: "/metro/Jayadeva/SWA01321.webp",
+      desktopLeft: "/metro/Jayadeva/clean_shot.webp",
+      desktopRight: "/metro/Jayadeva/SWA01321.webp"
     },
     introText1: "An interchange station situated at Jayadeva, this project forms a crucial part of Bengaluru's expanding metro network.",
     introText2: "Executed with precision, we managed the demanding construction requirements of a multi-level transit hub in a high-density area.",
     droneSection: {
-      img1: "/metro/Jayadeva/SWA01341.webp",
-      img2: "/metro/Jayadeva/SWA01366.webp",
+      img1: "/metro/Jayadeva/JDS (2).webp",
+      img2: "/metro/Jayadeva/SWA01377.webp",
       cardTitle: "Interchange Hub",
       cardDesc: "Major interchange station connecting multiple metro lines",
       stats: [
@@ -517,11 +516,11 @@ export const projectsData = {
     },
     galleryImages: [
       "/metro/Jayadeva/JDS.webp",
+      "/metro/Jayadeva/SWA01311.webp",
       "/metro/Jayadeva/SWA01331.webp",
-      "/metro/Jayadeva/SWA01367.webp",
-      "/metro/Jayadeva/SWA01377.webp",
-      "/metro/Jayadeva/SWA01441.webp",
-      "/metro/Jayadeva/SWA01339.webp"
+      "/metro/Jayadeva/SWA01341.webp",
+      "/metro/Jayadeva/SWA01366.webp",
+      "/metro/Jayadeva/SWA01441.webp"
     ]
   },
   "m3": {
@@ -529,18 +528,18 @@ export const projectsData = {
     title: "Ragigudda Station",
     location: "BENGALURU",
     number: "17",
-    heroBg: "/metro/Ragigudda/RGS.webp",
+    heroBg: "/metro/Ragigudda/RGS (4).webp",
     images: {
-      mobile1: "/metro/Ragigudda/RGS (4).webp",
+      mobile1: "/metro/Ragigudda/SWA01234.webp",
       mobile2: "/metro/Ragigudda/RGS (7).webp",
-      desktopLeft: "/metro/Ragigudda/RGS (4).webp",
+      desktopLeft: "/metro/Ragigudda/SWA01234.webp",
       desktopRight: "/metro/Ragigudda/RGS (7).webp"
     },
     introText1: "Located near the historic Ragigudda temple, this station provides essential connectivity while respecting the local environment.",
     introText2: "Our team executed the project with minimal disruption to the surrounding community, delivering a highly functional transit facility.",
     droneSection: {
-      img1: "/metro/Ragigudda/RGS (8).webp",
-      img2: "/metro/Ragigudda/SWA01227.webp",
+      img1: "/metro/Ragigudda/SWA01271.webp",
+      img2: "/metro/Ragigudda/SWA01269.webp",
       cardTitle: "Community Transit",
       cardDesc: "A modern metro station serving a vibrant residential and cultural hub",
       stats: [
@@ -550,10 +549,10 @@ export const projectsData = {
     },
     galleryImages: [
       "/metro/Ragigudda/RGS.webp",
-      "/metro/Ragigudda/RGS (4).webp",
+      "/metro/Ragigudda/RGS (8).webp",
+      "/metro/Ragigudda/SWA01227.webp",
       "/metro/Ragigudda/SWA01254.webp",
       "/metro/Ragigudda/SWA01265.webp",
-      "/metro/Ragigudda/SWA01269.webp",
       "/metro/Ragigudda/SWA01288.webp"
     ]
   },
@@ -562,18 +561,18 @@ export const projectsData = {
     title: "Rashtreeya Vidyalaya Road Station",
     location: "BENGALURU",
     number: "18",
-    heroBg: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01182.webp",
+    heroBg: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01186.webp",
     images: {
-      mobile1: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01183.webp",
-      mobile2: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01186.webp",
-      desktopLeft: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01183.webp",
-      desktopRight: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01186.webp"
+      mobile1: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01177.webp",
+      mobile2: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01212.webp",
+      desktopLeft: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01177.webp",
+      desktopRight: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01212.webp"
     },
     introText1: "Serving the RV Road area, this project highlights our capability in executing critical infrastructure within established urban corridors.",
     introText2: "We delivered robust civil engineering solutions, ensuring the station integrates smoothly with existing public spaces and roadways.",
     droneSection: {
-      img1: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01212.webp",
-      img2: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01217.webp",
+      img1: "/metro/Rashtreeya%20Vidyalaya%20Road/RVR STATION (3).webp",
+      img2: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01183.webp",
       cardTitle: "Urban Integration",
       cardDesc: "Seamlessly connecting commuters in a key educational and residential district",
       stats: [
@@ -582,12 +581,10 @@ export const projectsData = {
       ]
     },
     galleryImages: [
+      "/metro/Rashtreeya%20Vidyalaya%20Road/RVR STATION (2).webp",
+      "/metro/Rashtreeya%20Vidyalaya%20Road/RVR STATION (4).webp",
       "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01182.webp",
-      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01183.webp",
-      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01186.webp",
-      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01212.webp",
-      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01217.webp",
-      "/metro/Rashtreeya%20Vidyalaya%20Road/RVR%20STATION%20(4).webp"
+      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01217.webp"
     ]
   },
   "m5": {
@@ -595,18 +592,18 @@ export const projectsData = {
     title: "Silk Board Station",
     location: "BENGALURU",
     number: "19",
-    heroBg: "/metro/Silk%20board/SWA01503.webp",
+    heroBg: "/metro/Silk%20board/SWA01540.webp",
     images: {
-      mobile1: "/metro/Silk%20board/SWA01510.webp",
-      mobile2: "/metro/Silk%20board/SWA01513.webp",
-      desktopLeft: "/metro/Silk%20board/SWA01510.webp",
-      desktopRight: "/metro/Silk%20board/SWA01513.webp"
+      mobile1: "/metro/Silk%20board/SWA01514.webp",
+      mobile2: "/metro/Silk%20board/SWA01526.webp",
+      desktopLeft: "/metro/Silk%20board/SWA01514.webp",
+      desktopRight: "/metro/Silk%20board/SWA01526.webp"
     },
     introText1: "Located at one of Bengaluru's busiest intersections, the Silk Board metro station is a landmark infrastructure achievement.",
     introText2: "Our team overcame significant logistical challenges to construct a facility that will greatly alleviate traffic congestion in the area.",
     droneSection: {
       img1: "/metro/Silk%20board/SWA01527.webp",
-      img2: "/metro/Silk%20board/SWA01538.webp",
+      img2: "/metro/Silk%20board/SWA01535.webp",
       cardTitle: "Major Transit Hub",
       cardDesc: "Pivotal station designed to handle high passenger volumes",
       stats: [

@@ -45,9 +45,9 @@ const navItems = [
       { label: 'Hospitals', href: '/portfolio#hospitals' },
       { label: 'Commercial', href: '/portfolio#commercial' },
       { label: 'Archaeological Developments', href: '/portfolio#archaeological-developments' },
-      { label: 'Educational Institution', href: '/portfolio#education-institution' },
+      { label: 'Educational Institutions', href: '/portfolio#educational-institutions' },
       { label: 'Roads & Infrastructure', href: '/portfolio#roads-&-infrastructure' },
-      { label: 'Metro', href: '/portfolio#metro' }
+      { label: 'Government Projects', href: '/portfolio#government-projects' }
     ]
   }
 ];

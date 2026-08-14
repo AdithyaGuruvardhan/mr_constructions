@@ -38,10 +38,11 @@ export default function Header() {
           <Link to="/portfolio" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 pt-3 pb-2 hover:bg-gray-50 transition-colors font-bold text-[#2c52a1] cursor-pointer text-lg">Portfolio</Link>
           <div className="flex flex-col items-center pb-3">
             <Link to="/portfolio#commercial" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Commercial</Link>
-            <Link to="/portfolio#education-institution" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Education</Link>
+            <Link to="/portfolio#educational-institutions" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Education</Link>
             <Link to="/portfolio#hospitals" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Hospitals</Link>
             <Link to="/portfolio#archaeological-developments" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Archaeological</Link>
-            <Link to="/portfolio#metro-and-roads" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Metro & Roads</Link>
+            <Link to="/portfolio#government-projects" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Government Projects</Link>
+            <Link to="/portfolio#roads-&-infrastructure" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-1.5 hover:text-[#2c52a1] transition-colors font-medium text-gray-500 cursor-pointer text-sm">Roads & Infra</Link>
           </div>
 
           <Link to="/about" onClick={() => setMenuOpen(false)} className="block w-full text-center px-6 py-3 hover:bg-gray-50 transition-colors font-medium text-[#4b4b4b] cursor-pointer text-lg border-t border-gray-100">About Us</Link>

@@ -324,6 +324,16 @@ const TempleSection = () => {
 
 const portfolioCategories = [
   {
+    category: "Government Projects",
+    projects: [
+      { id: "m1", title: "BTM Layout Station", subtitle: "Bengaluru", img: "/metro/BTM/BTM.webp" },
+      { id: "m2", title: "Jayadeva Station", subtitle: "Bengaluru", img: "/metro/Jayadeva/clean_shot.webp" },
+      { id: "m3", title: "Ragigudda Station", subtitle: "Bengaluru", img: "/metro/Ragigudda/RGS (4).webp" },
+      { id: "m4", title: "Rashtreeya Vidyalaya Road Station", subtitle: "Bengaluru", img: "/metro/Rashtreeya%20Vidyalaya%20Road/RVR STATION (4).webp" },
+      { id: "m5", title: "Silk Board Station", subtitle: "Bengaluru", img: "/metro/Silk%20board/SWA01542.webp" }
+    ]
+  },
+  {
     category: "Commercial",
     projects: [
       { id: "c1", title: "Infosys New Campus", subtitle: "Hubli", img: "/commercial/infosys/INFOSYS HUBLI29.webp" },
@@ -332,7 +342,7 @@ const portfolioCategories = [
     ]
   },
   {
-    category: "Education Institution",
+    category: "Educational Institutions",
     projects: [
       { id: "e1", title: "CBSE English Medium High School", subtitle: "Shivanahalli", img: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC shivanahalli DRONE _21.webp" },
       { id: "e2", title: "Smt. Vimalakulkarni Memorial School", subtitle: "Hubli", img: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp" },
@@ -359,16 +369,6 @@ const portfolioCategories = [
     category: "Roads & Infrastructure",
     projects: [
       { id: "c3", title: "Sira Solar Plant", subtitle: "Sira", img: "/sira_solar.webp" }
-    ]
-  },
-  {
-    category: "Metro",
-    projects: [
-      { id: "m1", title: "BTM Layout Station", subtitle: "Bengaluru", img: "/metro/BTM/BTM.webp" },
-      { id: "m2", title: "Jayadeva Station", subtitle: "Bengaluru", img: "/metro/Jayadeva/JDS.webp" },
-      { id: "m3", title: "Ragigudda Station", subtitle: "Bengaluru", img: "/metro/Ragigudda/RGS.webp" },
-      { id: "m4", title: "Rashtreeya Vidyalaya Road Station", subtitle: "Bengaluru", img: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01182.webp" },
-      { id: "m5", title: "Silk Board Station", subtitle: "Bengaluru", img: "/metro/Silk%20board/SWA01503.webp" }
     ]
   }
 ];
@@ -506,7 +506,7 @@ export default function Portfolio() {
             {/* Left side: Highlight text */}
             <div className="lg:col-span-5">
               <h2 className="text-3xl md:text-4xl font-light text-[#4b4b4b] leading-[1.2] tracking-tight">
-                Building trust over <br className="hidden lg:block" /> <span className="font-semibold text-[#2c52a1]">2+ Decades</span> of excellence.
+                Building trust over <br className="hidden lg:block" /> <span className="font-semibold text-[#2c52a1]">2+ Decades</span> of Excellence.
               </h2>
             </div>
 

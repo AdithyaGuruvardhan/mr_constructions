@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
-const FRAME_COUNT = 144;
+const FRAME_COUNT = 138;
 const BATCH_SIZE = 30;
 
 function getFrameUrl(index, isMobile) {
-  // index is 1-based (1 to 144)
+  // index is 1-based (1 to 138)
   const paddedIndex = index.toString().padStart(4, '0');
-  return `/metro_to_infosys/output_frame_${paddedIndex}.webp`;
+  return `/metro_hero_vid/output_frame_${paddedIndex}.png`;
 }
 
 export default function HeroScrollVideo() {
@@ -220,7 +220,7 @@ export default function HeroScrollVideo() {
 
 
           {/* Left aligned main content */}
-          <div className="flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto w-full pt-14">
+          <div className="flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto w-full pt-34">
             <div className="max-w-2xl">
               <h1 className="text-5xl md:text-[4rem] font-medium leading-tight mb-6" style={{ color: '#f2f2f2' }}>
                 Engineering Excellence.<br />Since 2005.

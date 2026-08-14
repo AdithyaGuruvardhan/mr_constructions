@@ -10,12 +10,12 @@ export default function ServicesSection() {
   const navigate = useNavigate();
 
   const serviceItems = [
-    { id: 1, title: 'Commercial', projects: 'Delivering modern office spaces, retail environments, and state-of-the-art commercial complexes.', image: '/sira_solar.webp', link: '/portfolio#commercial' },
-    { id: 2, title: 'Educational Institution', projects: 'Building inspiring learning environments, from educational institutions to advanced research campuses.', image: '/hubli_school_vert.webp', link: '/portfolio#education-institution' },
-    { id: 3, title: 'Hospitals', projects: 'Constructing specialized healthcare facilities, clinics, and multi-specialty hospitals with precision.', image: '/hospital.webp', link: '/portfolio#hospitals' },
-    { id: 4, title: 'Archaeological Developments', projects: 'Preserving historical heritage and developing archaeological sites with traditional architectural integrity.', image: '/melukote_temple.webp', link: '/portfolio#archaeological-developments' },
-    { id: 5, title: 'Roads & Infrastructure', projects: 'Developing critical transportation infrastructure including road networks and highways for seamless connectivity.', image: '/building.webp', link: '/portfolio#roads-&-infrastructure' },
-    { id: 6, title: 'Metro', projects: 'Building major urban transit systems, interchange stations, and metro networks to power city mobility.', image: '/metro/Jayadeva/JDS.webp', link: '/portfolio#metro' },
+    { id: 1, title: 'Government Projects', projects: 'Building major urban transit systems, interchange stations, and metro networks to power city mobility.', image: '/metro/Rashtreeya Vidyalaya Road/RVR STATION (2).webp', link: '/portfolio#government-projects' },
+    { id: 2, title: 'Commercial', projects: 'Delivering modern office spaces, retail environments, and state-of-the-art commercial complexes.', image: '/commercial/infosys/INFOSYS HUBLI11.webp', link: '/portfolio#commercial' },
+    { id: 3, title: 'Educational Institutions', projects: 'Building inspiring learning environments, from educational institutions to advanced research campuses.', image: '/hubli_school_vert.webp', link: '/portfolio#educational-institutions' },
+    { id: 4, title: 'Hospitals', projects: 'Constructing specialized healthcare facilities, clinics, and multi-specialty hospitals with precision.', image: '/hospital.webp', link: '/portfolio#hospitals' },
+    { id: 5, title: 'Archaeological Developments', projects: 'Preserving historical heritage and developing archaeological sites with traditional architectural integrity.', image: '/melukote_temple.webp', link: '/portfolio#archaeological-developments' },
+    { id: 6, title: 'Roads & Infrastructure', projects: 'Developing critical transportation infrastructure including road networks and highways for seamless connectivity.', image: '/commercial/sira solar plant/SIRA SOLAR PLANT5.webp', link: '/portfolio#roads-&-infrastructure' },
   ];
 
   const handleMouseDown = (e) => {
