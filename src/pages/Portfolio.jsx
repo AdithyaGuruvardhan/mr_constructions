@@ -407,6 +407,7 @@ const ProjectCard = ({ project }) => {
 const DraggableCategoryRow = ({ category, projects }) => {
   const scrollRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [hasDragged, setHasDragged] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
@@ -414,6 +415,7 @@ const DraggableCategoryRow = ({ category, projects }) => {
 
   const onMouseDown = (e) => {
     setIsDragging(true);
+    setHasDragged(false);
     setStartX(e.pageX - scrollRef.current.offsetLeft);
     setScrollLeft(scrollRef.current.scrollLeft);
   };
@@ -431,6 +433,9 @@ const DraggableCategoryRow = ({ category, projects }) => {
     e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
     const walk = (x - startX) * 2; // scroll-fast
+    if (Math.abs(walk) > 5) {
+      setHasDragged(true);
+    }
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -466,6 +471,11 @@ const DraggableCategoryRow = ({ category, projects }) => {
             className="snap-center block"
             draggable="false"
             onDragStart={(e) => e.preventDefault()}
+            onClick={(e) => {
+              if (hasDragged) {
+                e.preventDefault();
+              }
+            }}
           >
             <ProjectCard project={p} />
           </Link>

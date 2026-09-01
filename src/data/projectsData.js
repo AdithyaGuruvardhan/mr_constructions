@@ -612,8 +612,8 @@ export const projectsData = {
       ]
     },
     galleryImages: [
-      "/metro/Silk%20board/SWA01503.webp",
-      "/metro/Silk%20board/SWA01510.webp",
+      "/metro/Silk%20board/SWA01514.webp",
+      "/metro/Silk%20board/SWA01526.webp",
       "/metro/Silk%20board/SWA01542.webp",
       "/metro/Silk%20board/SWA01551.webp",
       "/metro/Silk%20board/SWA01513.webp",
