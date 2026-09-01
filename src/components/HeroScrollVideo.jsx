@@ -220,15 +220,15 @@ export default function HeroScrollVideo() {
 
 
           {/* Left aligned main content */}
-          <div className="flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto w-full pt-34">
+          <div className="flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto w-full px-4 sm:px-0 mt-24 md:mt-0">
             <div className="max-w-2xl">
-              <h1 className="text-5xl md:text-[4rem] font-medium leading-tight mb-6" style={{ color: '#f2f2f2' }}>
-                Engineering Excellence.<br />Since 2005.
+              <h1 className="text-4xl sm:text-5xl md:text-[4rem] font-medium leading-tight mb-4 md:mb-6 tracking-tight" style={{ color: '#f2f2f2' }}>
+                Engineering Excellence.<br className="hidden sm:block" /> Since 2005.
               </h1>
-              <p className="text-lg md:text-xl max-w-lg mb-8 leading-relaxed" style={{ color: '#f2f2f2' }}>
-                ISO-certified construction and engineering trusted by government and private clients.<br /> 125+ projects completed with precision.
+              <p className="text-base sm:text-lg md:text-xl max-w-[90%] sm:max-w-lg mb-6 md:mb-8 leading-relaxed" style={{ color: '#f2f2f2' }}>
+                ISO-certified construction and engineering trusted by government and private clients.<br className="hidden md:block" /> 125+ projects completed with precision.
               </p>
-              <button className="px-6 py-2 rounded-lg text-lg font-medium pointer-events-auto transition-transform hover:scale-105" style={{ backgroundColor: 'rgba(44, 82, 161, 0.9)', color: '#FFFBF6' }}>
+              <button className="px-6 py-2.5 md:px-8 md:py-3 rounded-lg text-base md:text-lg font-medium pointer-events-auto transition-transform hover:scale-105" style={{ backgroundColor: 'rgba(44, 82, 161, 0.9)', color: '#FFFBF6' }}>
                 Start Your Project
               </button>
             </div>

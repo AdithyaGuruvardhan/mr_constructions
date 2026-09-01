@@ -155,7 +155,7 @@ export default function ProjectDetails() {
         className="min-h-[75vh] md:min-h-[95vh] w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat relative"
         style={{ backgroundImage: `url('${project.heroBg}')` }}
       >
-        <div className="z-10 w-full px-6 flex justify-center mb-36 md:mb-50">
+        <div className="z-10 w-full px-6 flex justify-center mt-20 mb-8 md:mt-0 md:mb-50">
           <div className="flex flex-col items-end w-fit max-w-[95vw] md:max-w-[85vw] lg:max-w-[1100px] xl:max-w-[1200px]">
             <h1 className="text-5xl sm:text-6xl md:text-[6rem] lg:text-[7rem] font-bold text-white text-center drop-shadow-md leading-[1.1]">
               {project.title}
@@ -171,19 +171,19 @@ export default function ProjectDetails() {
         </div>
       </div>
 
-      <div className="w-full bg-white py-16 md:py-24 px-6 md:px-16 flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-12">
+      <div className="w-full bg-white py-8 md:py-24 px-6 md:px-16 flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-12">
 
         {/* Mobile Overlapped Images (Visible only on mobile/tablet) */}
-        <div className="flex lg:hidden relative w-full max-w-sm mx-auto h-64 md:h-80 mb-14">
+        <div className="flex lg:hidden relative w-full max-w-sm mx-auto h-[220px] md:h-80 mb-2 md:mb-14 mt-4 md:mt-0">
           <img
             src={project.images.mobile1}
             alt={`${project.title} View 1`}
-            className="absolute top-0 left-4 md:left-8 w-44 md:w-56 h-auto object-cover rounded-xl shadow-lg z-10"
+            className="absolute top-0 left-2 sm:left-4 md:left-8 w-40 md:w-56 h-auto object-cover rounded-xl shadow-lg z-10"
           />
           <img
             src={project.images.mobile2}
             alt={`${project.title} View 2`}
-            className="absolute top-24 md:top-32 right-12 md:right-8 w-44 md:w-56 h-auto object-cover rounded-xl shadow-lg z-20"
+            className="absolute top-20 md:top-32 right-6 sm:right-12 md:right-8 w-40 md:w-56 h-auto object-cover rounded-xl shadow-lg z-20"
           />
         </div>
 

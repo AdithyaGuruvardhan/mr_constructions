@@ -27,20 +27,20 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="relative w-full bg-white pt-28 pb-16 md:pt-[10rem] md:pb-12 overflow-hidden font-sans">
+    <section className="relative w-full bg-white pt-32 pb-16 md:pt-[10rem] md:pb-12 overflow-hidden font-sans">
       
       {/* Massive Background Watermark */}
-      <div className="absolute top-8 md:top-8 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
-        <h1 className="text-[20vw] md:text-[8vw] leading-none font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 whitespace-nowrap">
+      <div className="absolute top-6 md:top-8 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
+        <h1 className="text-[22vw] md:text-[8vw] leading-none font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 whitespace-nowrap">
           FAQ's
         </h1>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-6 relative z-10 mt-2 md:mt-0">
         
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
-          <div className="w-[2px] h-10 md:h-16 bg-[#2c52a1] mb-2 md:mb-8"></div>
+          <div className="w-[2px] h-10 md:h-16 bg-[#2c52a1] mb-4 md:mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-3xl mx-auto">
             Find answers to common questions about<br /> our construction process, capabilities, and quality assurance.
           </p>

@@ -12,6 +12,7 @@ import Education from './pages/Education'
 import Hospitals from './pages/Hospitals'
 import ArchaeologicalDevelopments from './pages/ArchaeologicalDevelopments'
 import ProjectDetails from './pages/ProjectDetails'
+import Certificates from './pages/Certificates'
 
 const navItems = [
   {
@@ -77,6 +78,7 @@ function App() {
           <Route path="/portfolio/education" element={<Education />} />
           <Route path="/portfolio/hospitals" element={<Hospitals />} />
           <Route path="/portfolio/archaeological-developments" element={<ArchaeologicalDevelopments />} />
+          <Route path="/certificates" element={<Certificates />} />
         </Routes>
       </main>
 
