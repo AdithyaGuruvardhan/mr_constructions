@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { certificatesData } from '../data/certificatesData';
+import { projectsData } from '../data/projectsData';
 import {
   FaAward, FaLightbulb, FaChartLine, FaCogs, FaHandshake
 } from 'react-icons/fa';
@@ -62,105 +63,111 @@ const PerformanceReportCards = ({ performance }) => {
 
 // Image Arc Gallery Component exactly matching the user screenshot
 const ProjectImageArc = ({ certificateId }) => {
-  // Dynamic image fetching based on the selected project ID
-  const getProjectImages = (id) => {
-    switch (id) {
-      case 1: // Hospital Block
-      case 7: // Kidwai OPD
-      case 8: // Maternity Hospital
-        return [
-          '/hospital/Kidwai Cancer Hospital/MRC kidwai DRONE _2.webp',
-          '/hospital/Kidwai Cancer Hospital/MRC KIDWAI 2S _43.webp',
-          '/hospital/Kidwai Cancer Hospital/MRC kidwai DRONE _8.webp',
-          '/hospital/Kidwai Cancer Hospital/MRC KIDWAI 2S _48.webp',
-          '/hospital/Kidwai Cancer Hospital/KIDWA3.jpg'
-        ];
-      case 2: // Software Development Block
-        return [
-          '/commercial/infosys/INFOSYS HUBLI11.webp',
-          '/commercial/infosys/INFOSYS HUBLI50.webp',
-          '/commercial/infosys/INFOSYS HUBLI5.webp',
-          '/commercial/infosys/INFOSYS HUBLI49.jpg',
-          '/commercial/infosys/INFOSYS HUBLI47.webp'
-        ];
-      case 3: // STP
-        return [
-          '/commercial/lake/STP19.webp',
-          '/commercial/lake/MYSORE STP drone_3.webp',
-          '/commercial/lake/MYSORE STP drone_9.jpg',
-          '/commercial/lake/infosys STP drone 1_19.JPG',
-          '/commercial/lake/infosys STP drone 1_14.webp'
-        ];
-      case 4: // IIIT Dharwad
-      case 6: // IIIT Trichy
-        return [
-          '/Education Institution/Indian Institute of Information Technology (IIIT), Dharwad/IIIT10.webp',
-          '/Education Institution/Indian Institute of Information Technology (IIIT), Dharwad/IIIT11.webp',
-          '/Education Institution/Indian Institute of Information Technology (IIIT), Dharwad/IIIT7.JPG',
-          '/Education Institution/Indian Institute of Information Technology (IIIT), Dharwad/IIIT16.webp',
-          '/Education Institution/Indian Institute of Information Technology (IIIT), Dharwad/IIIT14.JPG'
-        ];
-      case 5: // Asha Nivas
-        return [
-          '/hospital/Tata Memorial Centre Advanced Centr - Mumbai/MRC MUMBAI day 1_9.webp',
-          '/hospital/Tata Memorial Centre Advanced Centr - Mumbai/MRC mumbai DRONE day 2_4.webp',
-          '/hospital/Tata Memorial Centre Advanced Centr - Mumbai/MRC mumbai DRONE day 2_2.JPG',
-          '/hospital/Tata Memorial Centre Advanced Centr - Mumbai/MRC mumbai DRONE day 2_4.JPG',
-          '/hospital/Tata Memorial Centre Advanced Centr - Mumbai/MRC MUMBAI day 1_29.webp'
-        ];
-      case 9: // Hubli School
-      case 10: // CBSC School
-        return [
-          '/Education Institution/Hubli School/HUBLI SCHOOL4.webp',
-          '/Education Institution/Hubli School/HUBLI SCHOOL2.webp',
-          '/Education Institution/Hubli School/HUBLI SCHOOL3.webp',
-          '/Education Institution/Hubli School/infosys school in.jpg',
-          '/Education Institution/Hubli School/HUBLI SCHOOL1.webp'
-        ];
-      default:
-        return [
-          '/Lake Development_vert.png',
-          '/commercial/infosys/INFOSYS HUBLI11.webp',
-          '/hubli_school_vert.webp',
-          '/hospital.png',
-          '/tall building.webp'
-        ];
-    }
+  // Pull one image from EVERY project to create a massive, identical gallery for all certificates
+  const getProjectImages = () => {
+    return Object.values(projectsData)
+      .map(project => project.galleryImages?.[0] || project.heroBg)
+      .filter(Boolean);
   };
 
-  const images = getProjectImages(certificateId);
+  const images = getProjectImages();
+  
+  // Use state to track the active center index for the carousel
+  const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 2));
+
+  // Auto-play the carousel to continuously move right to left
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length);
+    }, 2500); // Shift every 2.5 seconds
+    return () => clearInterval(interval);
+  }, [images.length, activeIndex]); // Adding activeIndex resets the timer on manual click
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   return (
-    <div className="w-full relative mt-16 md:mt-32 mb-8 flex flex-col items-center overflow-visible">
+    <div className="w-[100vw] ml-[calc(50%-50vw)] relative mt-0 mb-0 flex flex-col items-center overflow-visible">
+      {/* Dynamic 3D Arc Container with reduced height */}
+      <div
+        className="relative flex justify-center items-center w-full max-w-none h-[200px] sm:h-[250px] md:h-[350px] lg:h-[400px] mx-auto overflow-visible"
+        style={{ perspective: '900px', transformStyle: 'preserve-3d' }}
+      >
+        {images.map((img, index) => {
+          const N = images.length;
+          let offset = index - activeIndex;
 
-      {/* 5 Images Arc Container */}
-      <div className="relative flex justify-center items-center gap-6 md:gap-12 w-full max-w-[1400px] min-h-[300px] md:min-h-[500px]">
+          // Normalize offset for a continuous circular carousel effect
+          if (offset > N / 2) offset -= N;
+          if (offset < -N / 2) offset += N;
 
-        {/* Far Left Image (partially visible in screenshot) */}
-        <div className="hidden lg:block w-[120px] h-[180px] flex-shrink-0 transform -rotate-[18deg] translate-y-32 translate-x-12 opacity-80 z-10 shadow-lg">
-          <img src={images[0]} className="w-full h-full object-cover rounded-md" alt="Gallery Far Left" />
-        </div>
+          const sign = Math.sign(offset);
+          const absOffset = Math.abs(offset);
 
-        {/* Left Image (Rotated Clockwise) */}
-        <div className="w-[140px] sm:w-[180px] md:w-[220px] h-[180px] sm:h-[240px] md:h-[300px] flex-shrink-0 transform -rotate-[9deg] translate-y-8 translate-x-4 z-10 shadow-xl hover:scale-105 transition-transform duration-500">
-          <img src={images[1]} className="w-full h-full object-cover rounded-md" alt="Gallery Left" />
-        </div>
+          // Cap the depth and rotation so outer images don't grow infinitely large
+          const cappedAbsOffset = Math.min(absOffset, 5);
 
-        {/* Center Image (Straight and slightly taller) */}
-        <div className="w-[160px] sm:w-[220px] md:w-[260px] h-[220px] sm:h-[300px] md:h-[360px] flex-shrink-0 z-20 shadow-2xl hover:scale-105 transition-transform duration-500 transform -translate-y-4">
-          <img src={images[2]} className="w-full h-full object-cover rounded-md" alt="Gallery Center" />
-        </div>
+          const translateX = offset * 85;
+          const translateZ = -200 + (cappedAbsOffset * 70);
+          const rotateY = Math.max(-75, Math.min(75, -offset * 15));
 
-        {/* Right Image (Rotated Counter-Clockwise) */}
-        <div className="w-[140px] sm:w-[180px] md:w-[220px] h-[180px] sm:h-[240px] md:h-[300px] flex-shrink-0 transform rotate-[9deg] translate-y-8 -translate-x-4 z-10 shadow-xl hover:scale-105 transition-transform duration-500">
-          <img src={images[3]} className="w-full h-full object-cover rounded-md" alt="Gallery Right" />
-        </div>
+          const zIndex = 10 + absOffset * 10;
+          const shadowX = -sign * 10;
 
-        {/* Far Right Image (partially visible in screenshot) */}
-        <div className="hidden lg:block w-[120px] h-[180px] flex-shrink-0 transform rotate-[18deg] translate-y-32 -translate-x-12 opacity-80 z-10 shadow-lg">
-          <img src={images[4]} className="w-full h-full object-cover rounded-md" alt="Gallery Far Right" />
-        </div>
+          // Assign more natural aspect ratios
+          let aspectClass = "aspect-[3/4]";
+          let widthClass = "w-[20%] sm:w-[16%] md:w-[12%] lg:w-[10%]";
 
+          if (absOffset === 0) {
+            aspectClass = "aspect-video";
+            widthClass = "w-[26%] sm:w-[22%] md:w-[16%] lg:w-[14%]";
+          } else if (absOffset === 1) {
+            aspectClass = "aspect-[4/5]";
+          }
+
+          // Fade out items that are far off-screen so they don't visibly fly across when wrapping
+          const opacity = absOffset > 5 ? 0 : 1;
+
+          return (
+            <div
+              key={index}
+              className={`absolute ${widthClass} ${aspectClass} rounded-md overflow-hidden transition-all duration-700 hover:brightness-110`}
+              style={{
+                transform: `translateX(${translateX}%) translateZ(${translateZ}px) rotateY(${rotateY}deg)`,
+                zIndex: zIndex,
+                boxShadow: `${shadowX}px 0 20px rgba(0,0,0,0.15)`,
+                opacity: opacity
+              }}
+            >
+              <img src={img} className="w-full h-full object-cover" alt={`Gallery ${index}`} />
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Navigation Arrows */}
+      <div className="flex justify-center gap-6 -mt-4 sm:-mt-6 lg:-mt-8 z-20 relative">
+        <button 
+          onClick={handlePrev}
+          className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-transparent border border-[#1c1c1e] text-[#1c1c1e] hover:bg-[#2c52a1] hover:border-[#2c52a1] hover:text-white transition-all duration-300 flex items-center justify-center group cursor-pointer focus:outline-none"
+        >
+          <svg className="w-4 h-4 md:w-5 md:h-5 transform rotate-180 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
+        <button 
+          onClick={handleNext}
+          className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-transparent border border-[#1c1c1e] text-[#1c1c1e] hover:bg-[#2c52a1] hover:border-[#2c52a1] hover:text-white transition-all duration-300 flex items-center justify-center group cursor-pointer focus:outline-none"
+        >
+          <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
       </div>
     </div>
   );
@@ -181,60 +188,22 @@ const CleanCard = ({ certificate }) => {
   return (
     <div
       ref={cardRef}
-      className="bg-[#fafafa] w-[85vw] max-w-[85vw] mx-auto rounded-[40px] p-8 sm:p-12 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-center text-center mb-16 relative overflow-hidden"
+      className="w-[85vw] max-w-[85vw] mx-auto rounded-[40px] p-8 sm:p-12 md:p-16 flex flex-col items-center text-center mb-0 relative"
     >
-      {/* Background Pattern similar to the 0/1 background */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none font-mono text-[10px] leading-loose break-all p-4 text-center overflow-hidden">
-        {'0 1 1 1 0 1 0 1 1 1 0 1 0 0 1 1 1 0 1 0 1 1 0 0 1 '.repeat(200)}
+      {/* Title Area */}
+      <div className="z-10 mb-2 -mt-8 sm:-mt-12 lg:-mt-16 max-w-4xl mx-auto">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-gray-900 leading-[1.1] font-serif">
+          {certificate.projectName}
+        </h2>
       </div>
 
-      {/* Illustration Area */}
-      <div className="relative w-64 h-40 mb-12 flex justify-center items-center z-10">
-        {/* Main Document Body */}
-        <div className="w-48 h-32 bg-white rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center relative">
-          <div className="flex gap-1 absolute top-3 left-3">
-            <div className="w-2 h-2 rounded-full bg-gray-200"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-200"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-200"></div>
-          </div>
-          {/* Signature Line */}
-          <div className="mt-4 border-b-2 border-gray-300 w-24 h-8 relative">
-            <svg className="absolute bottom-0 left-2 w-16 h-8 text-gray-800" viewBox="0 0 100 50" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
-              <path d="M10 40 Q 20 10 30 30 T 50 30 T 70 20 T 90 40" />
-            </svg>
-            <span className="absolute bottom-1 -left-4 text-gray-400 text-sm font-bold">x</span>
-          </div>
-        </div>
-
-        {/* Seal Ribbon */}
-        <div className="absolute -bottom-6 left-10 z-20 transform -rotate-12">
-          <div className="w-16 h-16 bg-yellow-500 rounded-full border-4 border-yellow-400 flex items-center justify-center shadow-lg relative">
-            <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            {/* Ribbons */}
-            <div className="absolute top-12 left-1 w-4 h-8 bg-yellow-600 -z-10 transform skew-y-12 shadow-sm rounded-b-md"></div>
-            <div className="absolute top-12 right-1 w-4 h-8 bg-yellow-600 -z-10 transform -skew-y-12 shadow-sm rounded-b-md"></div>
-          </div>
-        </div>
-
-        {/* Pen */}
-        <div className="absolute top-0 right-4 z-20 transform rotate-[35deg] drop-shadow-xl">
-          <div className="w-6 h-32 bg-gray-100 rounded-full border border-gray-200 flex flex-col items-center justify-start overflow-hidden relative">
-            <div className="w-full h-4 bg-gray-300"></div>
-            <div className="w-full h-8 bg-blue-600 mt-2 flex items-center justify-center">
-              <span className="text-[8px] text-white font-bold transform -rotate-90">MRC</span>
-            </div>
-            <div className="w-2 h-4 bg-gray-400 mt-auto mb-1 rounded-b-full"></div>
-          </div>
-        </div>
+      {/* The Arc Image Gallery in the center */}
+      <div className="w-full z-10 mb-2 mt-0 lg:mt-2">
+        <ProjectImageArc certificateId={certificate.id} />
       </div>
 
-      {/* Text Content */}
-      <h2 className="text-[28px] font-bold text-gray-900 mb-6 z-10" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-        {certificate.projectName}
-      </h2>
-      <div className="z-10 mb-12 max-w-2xl mx-auto">
+      {/* Text Content Below */}
+      <div className="z-10 mb-12 max-w-2xl mx-auto mt-2">
         <p className="text-[17px] text-gray-600 leading-relaxed mb-4">
           {certificate.description}
         </p>
@@ -246,11 +215,6 @@ const CleanCard = ({ certificate }) => {
       {/* The Official Performance Report goes inside or below this card */}
       <div className="w-full bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] z-10">
         <PerformanceReportCards performance={certificate.performance} />
-      </div>
-
-      {/* The Arc Image Gallery */}
-      <div className="w-full z-10 mt-8">
-        <ProjectImageArc certificateId={certificate.id} />
       </div>
 
     </div>
@@ -297,7 +261,7 @@ const Certificates = () => {
   }, [selectedCert]);
 
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white pt-32 pb-2 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       <div className="w-full mx-auto flex flex-col items-center">
 
         {selectedCert ? (
