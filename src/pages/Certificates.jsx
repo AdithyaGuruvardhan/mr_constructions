@@ -202,14 +202,106 @@ const CleanCard = ({ certificate }) => {
         <ProjectImageArc certificateId={certificate.id} />
       </div>
 
-      {/* Text Content Below */}
-      <div className="z-10 mb-12 max-w-2xl mx-auto mt-2">
-        <p className="text-[17px] text-gray-600 leading-relaxed mb-4">
-          {certificate.description}
-        </p>
-        <p className="text-[17px] text-gray-600 leading-relaxed">
-          Our highly guided execution ensures that {certificate.specifications.typeOfWork?.toLowerCase() || 'these'} projects of this scale—over {certificate.specifications.totalBuiltUpArea}—are delivered with peace of mind.
-        </p>
+      {/* Detailed Information Grid */}
+      <div className="w-full z-10 mb-12 mt-4 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Client & Donor */}
+          <div className="bg-gray-50/80 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4">Client Details</h3>
+            <div className="space-y-4">
+              <div>
+                <p className="text-xs text-gray-500 mb-1">Client</p>
+                <p className="text-gray-900 font-medium text-sm">{certificate.client}</p>
+                <p className="text-gray-600 text-xs mt-1">{certificate.location}</p>
+              </div>
+              {certificate.donor?.name && certificate.donor.name !== "N/A" && (
+                <div>
+                  <p className="text-xs text-gray-500 mb-1">Donor</p>
+                  <p className="text-gray-900 font-medium text-sm">{certificate.donor.name}</p>
+                  <p className="text-gray-600 text-xs mt-1">{certificate.donor.address}</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Financials */}
+          <div className="bg-gray-50/80 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4">Financials</h3>
+            <div className="space-y-4">
+              <div>
+                <p className="text-xs text-gray-500 mb-1">Work Order Value</p>
+                <p className="text-gray-900 font-medium text-sm">{certificate.financials?.workOrderValue}</p>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 mb-1">Cost On Completion</p>
+                <p className="text-gray-900 font-medium text-sm">{certificate.financials?.costOnCompletion}</p>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 mb-1">Compensation Levied</p>
+                <p className="text-gray-900 font-medium text-sm">{certificate.financials?.compensationLevied}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Timeline */}
+          <div className="bg-gray-50/80 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4">Timeline</h3>
+            <div className="space-y-4">
+              <div>
+                <p className="text-xs text-gray-500 mb-1">Date of Start</p>
+                <p className="text-gray-900 font-medium text-sm">{certificate.timeline?.dateOfStart}</p>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 mb-1">Stipulated Completion</p>
+                <p className="text-gray-900 font-medium text-sm">{certificate.timeline?.stipulatedCompletion}</p>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 mb-1">Actual Completion</p>
+                <p className="text-gray-900 font-medium text-sm">{certificate.timeline?.actualCompletion}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Specifications */}
+          <div className="bg-gray-50/80 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4">Specifications</h3>
+            <div className="space-y-4">
+              <div>
+                <p className="text-xs text-gray-500 mb-1">Type of Work</p>
+                <p className="text-gray-900 font-medium text-sm">{certificate.specifications?.typeOfWork}</p>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 mb-1">Total Built-Up Area</p>
+                <p className="text-gray-900 font-medium text-sm">{certificate.specifications?.totalBuiltUpArea}</p>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-1">
+                  <p className="text-xs text-gray-500 mb-1">Height</p>
+                  <p className="text-gray-900 font-medium text-sm">{certificate.specifications?.maximumHeight}</p>
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs text-gray-500 mb-1">Basements</p>
+                  <p className="text-gray-900 font-medium text-sm">{certificate.specifications?.basements}</p>
+                </div>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 mb-1">Storeys</p>
+                <p className="text-gray-900 font-medium text-sm">{certificate.specifications?.storeys}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Description Section */}
+        <div className="mt-8 bg-gray-50/80 rounded-2xl p-6 md:p-8 border border-gray-100 hover:shadow-md transition-shadow">
+          <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4">Project Description</h3>
+          <p className="text-[16px] text-gray-700 leading-relaxed mb-4">
+            {certificate.description}
+          </p>
+          <p className="text-[16px] text-gray-700 leading-relaxed italic">
+            "Our highly guided execution ensures that {certificate.specifications?.typeOfWork?.toLowerCase() || 'these'} projects of this scale—over {certificate.specifications?.totalBuiltUpArea || 'the stipulated area'}—are delivered with absolute peace of mind."
+          </p>
+        </div>
       </div>
 
       {/* The Official Performance Report goes inside or below this card */}

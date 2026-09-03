@@ -28,8 +28,8 @@ export const certificatesData = [
     },
     performance: {
       qualityOfWork: "Outstanding",
-      resourcefulness: "Outstanding",
-      financialSoundness: "Outstanding",
+      resourcefulness: "Very Good",
+      financialSoundness: "Very Good",
       technicalProficiency: "Outstanding",
       generalBehaviour: "Outstanding"
     }
@@ -62,10 +62,10 @@ export const certificatesData = [
       storeys: "6 floor"
     },
     performance: {
-      qualityOfWork: "Outstanding",
-      resourcefulness: "Outstanding",
+      qualityOfWork: "Very Good",
+      resourcefulness: "Good",
       financialSoundness: "Outstanding",
-      technicalProficiency: "Outstanding",
+      technicalProficiency: "Good",
       generalBehaviour: "Outstanding"
     }
   },
@@ -99,9 +99,9 @@ export const certificatesData = [
     performance: {
       qualityOfWork: "Outstanding",
       resourcefulness: "Outstanding",
-      financialSoundness: "Outstanding",
-      technicalProficiency: "Outstanding",
-      generalBehaviour: "Outstanding"
+      financialSoundness: "Very Good",
+      technicalProficiency: "Good",
+      generalBehaviour: "Very Good"
     }
   },
   {
@@ -132,11 +132,11 @@ export const certificatesData = [
       storeys: "Basement + Ground Floor + 4 Floors [6 storeys]"
     },
     performance: {
-      qualityOfWork: "Outstanding",
-      resourcefulness: "Outstanding",
+      qualityOfWork: "Very Good",
+      resourcefulness: "Very Good",
       financialSoundness: "Outstanding",
       technicalProficiency: "Outstanding",
-      generalBehaviour: "Outstanding"
+      generalBehaviour: "Good"
     }
   },
   {
@@ -167,10 +167,10 @@ export const certificatesData = [
       storeys: "Stilt Floor + Upper Ground Floor + 11 Floors [13 storeys]"
     },
     performance: {
-      qualityOfWork: "Outstanding",
-      resourcefulness: "Outstanding",
+      qualityOfWork: "Very Good",
+      resourcefulness: "Very Good",
       financialSoundness: "Outstanding",
-      technicalProficiency: "Outstanding",
+      technicalProficiency: "Very Good",
       generalBehaviour: "Outstanding"
     }
   },
@@ -202,11 +202,11 @@ export const certificatesData = [
       storeys: "Ground Floor + 4 Floors [5 storeys]"
     },
     performance: {
-      qualityOfWork: "Outstanding",
+      qualityOfWork: "Good",
       resourcefulness: "Outstanding",
       financialSoundness: "Outstanding",
       technicalProficiency: "Outstanding",
-      generalBehaviour: "Outstanding"
+      generalBehaviour: "Very Good"
     }
   },
   {
@@ -239,7 +239,7 @@ export const certificatesData = [
     performance: {
       qualityOfWork: "Outstanding",
       resourcefulness: "Outstanding",
-      financialSoundness: "Outstanding",
+      financialSoundness: "Very Good",
       technicalProficiency: "Outstanding",
       generalBehaviour: "Outstanding"
     }
@@ -274,9 +274,9 @@ export const certificatesData = [
     performance: {
       qualityOfWork: "Outstanding",
       resourcefulness: "Outstanding",
-      financialSoundness: "Outstanding",
-      technicalProficiency: "Outstanding",
-      generalBehaviour: "Outstanding"
+      financialSoundness: "Very Good",
+      technicalProficiency: "Very Good",
+      generalBehaviour: "Very Good"
     }
   },
   {
@@ -308,10 +308,10 @@ export const certificatesData = [
     },
     performance: {
       qualityOfWork: "Outstanding",
-      resourcefulness: "Outstanding",
+      resourcefulness: "Good",
       financialSoundness: "Outstanding",
       technicalProficiency: "Outstanding",
-      generalBehaviour: "Outstanding"
+      generalBehaviour: "Very Good"
     }
   },
   {
@@ -343,7 +343,7 @@ export const certificatesData = [
     },
     performance: {
       qualityOfWork: "Outstanding",
-      resourcefulness: "Outstanding",
+      resourcefulness: "Very Good",
       financialSoundness: "Outstanding",
       technicalProficiency: "Outstanding",
       generalBehaviour: "Outstanding"
@@ -377,10 +377,10 @@ export const certificatesData = [
       storeys: "Ground Floor+3 Floors [4 Storeys]"
     },
     performance: {
-      qualityOfWork: "Outstanding",
+      qualityOfWork: "Very Good",
       resourcefulness: "Outstanding",
-      financialSoundness: "Outstanding",
-      technicalProficiency: "Outstanding",
+      financialSoundness: "Very Good",
+      technicalProficiency: "Very Good",
       generalBehaviour: "Outstanding"
     }
   },
@@ -401,8 +401,8 @@ export const certificatesData = [
     },
     timeline: {
       dateOfStart: "13th March 2020",
-      stipulatedCompletion: "01St Nov 2022",
-      actualCompletion: "01St Nov 2022"
+      stipulatedCompletion: "01st Nov 2022",
+      actualCompletion: "01st Nov 2022"
     },
     specifications: {
       typeOfWork: "NON-Residential",
@@ -412,11 +412,11 @@ export const certificatesData = [
       storeys: "Ground Floor+3 Floors [4 Storeys]"
     },
     performance: {
-      qualityOfWork: "Outstanding",
-      resourcefulness: "Outstanding",
+      qualityOfWork: "Very Good",
+      resourcefulness: "Good",
       financialSoundness: "Outstanding",
-      technicalProficiency: "Outstanding",
-      generalBehaviour: "Outstanding"
+      technicalProficiency: "Very Good",
+      generalBehaviour: "Good"
     }
   },
   {
@@ -447,11 +447,11 @@ export const certificatesData = [
       storeys: "Basement ,Ground Floor+6 Floors [8 Storeys]"
     },
     performance: {
-      qualityOfWork: "Outstanding",
+      qualityOfWork: "Very Good",
       resourcefulness: "Outstanding",
       financialSoundness: "Outstanding",
       technicalProficiency: "Outstanding",
-      generalBehaviour: "Outstanding"
+      generalBehaviour: "Good"
     }
   },
   {
@@ -521,7 +521,7 @@ export const certificatesData = [
       resourcefulness: "Outstanding",
       financialSoundness: "Outstanding",
       technicalProficiency: "Outstanding",
-      generalBehaviour: "Outstanding"
+      generalBehaviour: "Very Good"
     }
   },
   {
@@ -552,11 +552,11 @@ export const certificatesData = [
       storeys: "Basement ,Ground Floor+2 Floors [4 Storeys]"
     },
     performance: {
-      qualityOfWork: "Outstanding",
-      resourcefulness: "Outstanding",
-      financialSoundness: "Outstanding",
+      qualityOfWork: "Good",
+      resourcefulness: "Very Good",
+      financialSoundness: "Very Good",
       technicalProficiency: "Outstanding",
-      generalBehaviour: "Outstanding"
+      generalBehaviour: "Very Good"
     }
   },
   {
@@ -587,7 +587,7 @@ export const certificatesData = [
       storeys: "Ground Floor+2 Floors [3 Storeys]"
     },
     performance: {
-      qualityOfWork: "Outstanding",
+      qualityOfWork: "Very Good",
       resourcefulness: "Outstanding",
       financialSoundness: "Outstanding",
       technicalProficiency: "Outstanding",
@@ -623,10 +623,10 @@ export const certificatesData = [
     },
     performance: {
       qualityOfWork: "Outstanding",
-      resourcefulness: "Outstanding",
+      resourcefulness: "Very Good",
       financialSoundness: "Outstanding",
       technicalProficiency: "Outstanding",
-      generalBehaviour: "Outstanding"
+      generalBehaviour: "Very Good"
     }
   }
 ];
