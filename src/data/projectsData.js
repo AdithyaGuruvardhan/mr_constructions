@@ -1,4 +1,76 @@
 export const projectsData = {
+  // ================= ONGOING =================
+  "o1": {
+    id: "o1",
+    title: "GAIL Office Building",
+    location: "BENGALURU",
+    number: "20",
+    heroBg: "/gail/6107169124271198344.webp",
+    images: {
+      mobile1: "/gail/6107169124271198341.webp",
+      mobile2: "/gail/6107169124271198342.webp",
+      desktopLeft: "/gail/6107169124271198341.webp",
+      desktopRight: "/gail/6107169124271198342.webp"
+    },
+    introText1: "Located at Manyata Tech Park in Bengaluru, this ongoing project involves the construction of an office building and miscellaneous facilities for Gail India Limited.",
+    introText2: "With a built-up area of 1,28,600 Sqft and an 8-storey structure including a basement, the work encompasses RCC structure, finishes, electrical, PHE, fire fighting, lifts, and facade execution.",
+    droneSection: {
+      img1: "/gail/6107169124271198343.webp",
+      img2: "/gail/6107169124271198345.webp",
+      cardTitle: "1,28,600 Sqft",
+      cardDesc: "Total built-up area under development",
+      stats: [
+        { title: "B+G+6 Floors", desc: "Basement and 6 upper floors constituting the 8-storey structure" },
+        { title: "Complete Civil & MEP", desc: "RCC structure, finishes, electrical, PHE, fire fighting and facade" },
+        { title: "Rs. 34.61 Crore", desc: "Value of the work order executed for Gail India Limited" },
+        { title: "Status: Ongoing", desc: "Project is currently under construction, slated for completion in June 2027" }
+      ]
+    },
+    galleryImages: [
+      "/gail/6107169124271198346.webp",
+      "/gail/6107169124271198347.webp",
+      "/gail/6107169124271198348.webp",
+      "/gail/6107169124271198349.webp",
+      "/gail/6107169124271198341.webp",
+      "/gail/6107169124271198342.webp"
+    ]
+  },
+  "o2": {
+    id: "o2",
+    title: "JSVK Param Convention Center",
+    location: "BENGALURU",
+    number: "21",
+    heroBg: "/jsvk/6107169124271198359.webp",
+    images: {
+      mobile1: "/jsvk/6107169124271198351.webp",
+      mobile2: "/jsvk/6107169124271198352.webp",
+      desktopLeft: "/jsvk/6107169124271198351.webp",
+      desktopRight: "/jsvk/6107169124271198352.webp"
+    },
+    introText1: "Located at Channenahalli on Magadi Main Road in Bengaluru, this ongoing project involves the construction of the Janaseva Trust Param Convention Center and Exhibition Hall for Param Foundation.",
+    introText2: "With a massive built-up area of 6,13,000 Sqft and a towering 19-storey structure including two basements, the work encompasses RCC structure, finishes, electrical, PHE, STP, WTP, swimming pool, and facade execution.",
+    droneSection: {
+      img1: "/jsvk/6107169124271198354.webp",
+      img2: "/jsvk/6107169124271198355.webp",
+      cardTitle: "6,13,000 Sqft",
+      cardDesc: "Total built-up area under development",
+      stats: [
+        { title: "2B+G+16 Floors", desc: "2 Basements and 17 upper floors constituting the 19-storey structure standing 76 meters tall" },
+        { title: "Complete Civil & Amenities", desc: "RCC structure, finishes, STP, WTP, swimming pool, electrical, PHE and facade" },
+        { title: "Rs. 41.00 Crore", desc: "Value of the work order executed for Param Foundation" },
+        { title: "Status: Ongoing", desc: "Project is currently under construction, slated for completion in October 2026" }
+      ]
+    },
+    galleryImages: [
+      "/jsvk/6107169124271198356.webp",
+      "/jsvk/6107169124271198358.webp",
+      "/jsvk/6107169124271198359.webp",
+      "/jsvk/6107169124271198360.webp",
+      "/jsvk/6107169124271198362.webp",
+      "/jsvk/6107169124271198363.webp"
+    ]
+  },
+
   // ================= COMMERCIAL =================
   "c1": {
     id: "c1",

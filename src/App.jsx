@@ -48,7 +48,8 @@ const navItems = [
       { label: 'Archaeological Developments', href: '/portfolio#archaeological-developments' },
       { label: 'Educational Institutions', href: '/portfolio#educational-institutions' },
       { label: 'Roads & Infrastructure', href: '/portfolio#roads-&-infrastructure' },
-      { label: 'Government Projects', href: '/portfolio#government-projects' }
+      { label: 'Government Projects', href: '/portfolio#government-projects' },
+      { label: 'Ongoing Projects', href: '/portfolio#ongoing-projects' }
     ]
   }
 ];

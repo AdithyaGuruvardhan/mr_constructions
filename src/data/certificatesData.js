@@ -348,5 +348,285 @@ export const certificatesData = [
       technicalProficiency: "Outstanding",
       generalBehaviour: "Outstanding"
     }
+  },
+  {
+    id: 11,
+    projectName: "Infosys Foundation Dharmashala at Pheripheral Cancer Centre",
+    client: "Kidwai Memorial Institute of Oncology-Sub Centre",
+    location: "Gulbarga District, Karnataka",
+    description: "Infosys Foundation Dharmashala at Pheripheral Cancer Centre, Kidwai Memorial Institute of Oncology-Sub Centre -Gulbarga District,Karnataka includes RCC structure, Finishes, Electrical, PHE works.",
+    donor: {
+      name: "Infosys Foundation",
+      address: "Neralu No. 1878, 11th Main, 39th Cross 4th T Block, Jayanagar Bangalore, Karnataka-560011, India"
+    },
+    financials: {
+      workOrderValue: "Rs. 05.20crore( Five crore Twenty Lakhs Only)",
+      costOnCompletion: "Rs. 05.20 Crore(Five Crore Twenty Lakhs Only)",
+      compensationLevied: "NOT APPLICABLE"
+    },
+    timeline: {
+      dateOfStart: "22nd March 2017",
+      stipulatedCompletion: "05th December 2018",
+      actualCompletion: "05th December 2018"
+    },
+    specifications: {
+      typeOfWork: "NON-Residential",
+      totalBuiltUpArea: "21500 sft",
+      basements: "Nil",
+      maximumHeight: "15.60 Mtrs",
+      storeys: "Ground Floor+3 Floors [4 Storeys]"
+    },
+    performance: {
+      qualityOfWork: "Outstanding",
+      resourcefulness: "Outstanding",
+      financialSoundness: "Outstanding",
+      technicalProficiency: "Outstanding",
+      generalBehaviour: "Outstanding"
+    }
+  },
+  {
+    id: 12,
+    projectName: "Infosys Foundation Construction of Skill Development centre for Redcross Society",
+    client: "Redcross Society",
+    location: "Tumkur, Karnataka",
+    description: "Infosys Foundation Construction of Skill Development centre for Redcross Society at Tumkur,Karnataka includes RCC structure, Finishes, Electrical, PHE works,External Development,lift etc,,",
+    donor: {
+      name: "Infosys Foundation",
+      address: "Neralu No. 1878, 11th Main, 39th Cross 4th T Block, Jayanagar Bangalore, Karnataka-560011, India"
+    },
+    financials: {
+      workOrderValue: "Rs. 13.66 Crore( Thirteen crore Sixty SIx Lakhs Only)",
+      costOnCompletion: "Rs. 13.01 Crore( Thirteen Crore One Lakhs Only)",
+      compensationLevied: "NOT APPLICABLE"
+    },
+    timeline: {
+      dateOfStart: "13th March 2020",
+      stipulatedCompletion: "01St Nov 2022",
+      actualCompletion: "01St Nov 2022"
+    },
+    specifications: {
+      typeOfWork: "NON-Residential",
+      totalBuiltUpArea: "49665 sft",
+      basements: "Nil",
+      maximumHeight: "14.5 Mtrs",
+      storeys: "Ground Floor+3 Floors [4 Storeys]"
+    },
+    performance: {
+      qualityOfWork: "Outstanding",
+      resourcefulness: "Outstanding",
+      financialSoundness: "Outstanding",
+      technicalProficiency: "Outstanding",
+      generalBehaviour: "Outstanding"
+    }
+  },
+  {
+    id: 13,
+    projectName: "Construction of Office Building and other Miscellaneous Facility",
+    client: "Gail India Limited, Bangalore",
+    location: "Manyatha Tech park, Bangalore",
+    description: "Construction of Office Building and other Miscellaneous Facility at Manyatha Tech park,Bangalore.work includes RCC structure, Finishes, Electrical, PHE,Firefighting, UGR, STP,External Development,DG stes, Lift ,Façade,Space frame Roofing and Co- ordinated with HAVC,Fire Alaram works.",
+    donor: {
+      name: "N/A",
+      address: "N/A"
+    },
+    financials: {
+      workOrderValue: "Rs. 34.61 crore( Thirty Four crore Sixty One Lakhs Only)",
+      costOnCompletion: "N/A",
+      compensationLevied: "NOT APPLICABLE"
+    },
+    timeline: {
+      dateOfStart: "24th May 2024",
+      stipulatedCompletion: "31st June 2027",
+      actualCompletion: "Ongoing"
+    },
+    specifications: {
+      typeOfWork: "NON-Residential",
+      totalBuiltUpArea: "1,28,600 Sqft",
+      basements: "One",
+      maximumHeight: "28.50 Mtrs",
+      storeys: "Basement ,Ground Floor+6 Floors [8 Storeys]"
+    },
+    performance: {
+      qualityOfWork: "Outstanding",
+      resourcefulness: "Outstanding",
+      financialSoundness: "Outstanding",
+      technicalProficiency: "Outstanding",
+      generalBehaviour: "Outstanding"
+    }
+  },
+  {
+    id: 14,
+    projectName: "Janaseva Trust Param Convention Center & Exhibition Hall",
+    client: "Param Foundation(Janaseva Trust) Channenahalli,Magadi Main Road,Bangalore",
+    location: "channenahalli,Magadi Main Road,Bangalore, Karnataka",
+    description: "Janaseva Trust Param Convention Center & Exhibition Hall at channenahalli,Magadi Main Road,Bangalore, Karnataka work includes RCC structure, Finishes, Electrical, PHE,External Development,STP,WTP, Swimming pool and Co- ordinated With Fire fighting,HAVC,Fire Alaram,Lift, Façade,Interior works.",
+    donor: {
+      name: "N/A",
+      address: "N/A"
+    },
+    financials: {
+      workOrderValue: "Rs. 41.00 crore( Forty one crores Only)",
+      costOnCompletion: "Rs. 40.00 Crore( Forty Crore Only)",
+      compensationLevied: "NOT APPLICABLE"
+    },
+    timeline: {
+      dateOfStart: "1st Jan 2022",
+      stipulatedCompletion: "31st October 2026",
+      actualCompletion: "Ongoing"
+    },
+    specifications: {
+      typeOfWork: "NON-Residential",
+      totalBuiltUpArea: "6,13,000 Sqft",
+      basements: "Two",
+      maximumHeight: "76.00 Mtrs",
+      storeys: "Basement1,Basement 2 ,Ground Floor + 16 Upper Floors[ 19 storeys]"
+    },
+    performance: {
+      qualityOfWork: "Outstanding",
+      resourcefulness: "Outstanding",
+      financialSoundness: "Outstanding",
+      technicalProficiency: "Outstanding",
+      generalBehaviour: "Outstanding"
+    }
+  },
+  {
+    id: 15,
+    projectName: "Construction of NTPC Mining Limited Office Building Complex",
+    client: "NTPC Limited ,Ranchi",
+    location: "Greater Ranchi",
+    description: "Construction of NTPC Mining Limited Office Building Complex at Greater Ranchi..work includes RCC structure, Civil Finishes, Electrical, PHE,Firefighting, UGR, STP,External Development,DG stes, Lift ,Façade,Space frame Roofing HVAC,Networking,Interiors,Furnitures, ,Fire Alarm ,Indoor Sports, Indoor Auditorium works.",
+    donor: {
+      name: "N/A",
+      address: "N/A"
+    },
+    financials: {
+      workOrderValue: "Rs. 90.90 crore(Ninety crore Ninety Lakhs Only)",
+      costOnCompletion: "N/A",
+      compensationLevied: "NOT APPLICABLE"
+    },
+    timeline: {
+      dateOfStart: "28th Nov 2024",
+      stipulatedCompletion: "28th June 2027",
+      actualCompletion: "Ongoing"
+    },
+    specifications: {
+      typeOfWork: "NON-Residential",
+      totalBuiltUpArea: "2,17,000 Sqft",
+      basements: "One",
+      maximumHeight: "38.10 Mtrs",
+      storeys: "Basement ,Ground Floor+8 Floors [10 Storeys]"
+    },
+    performance: {
+      qualityOfWork: "Outstanding",
+      resourcefulness: "Outstanding",
+      financialSoundness: "Outstanding",
+      technicalProficiency: "Outstanding",
+      generalBehaviour: "Outstanding"
+    }
+  },
+  {
+    id: 16,
+    projectName: "Construction of 20MLD TTRO Plant for SIPCOT",
+    client: "Aquvatech",
+    location: "Kelavarapalli Dam,Housr,Tamil Nadu",
+    description: "Construction of 20MLD TTRO Plant for SIPCOT,Tamil Nadu at Kelavarapalli Dam,Housr,Tamil Nadu includes All civil works,Electrical & Adim Buildings,Compound wall and External Development.",
+    donor: {
+      name: "N/A",
+      address: "N/A"
+    },
+    financials: {
+      workOrderValue: "Rs. 37.51 crore( Thirty Seven crore Fifty One Lakhs Only)",
+      costOnCompletion: "N/A",
+      compensationLevied: "NOT APPLICABLE"
+    },
+    timeline: {
+      dateOfStart: "26th June 2023",
+      stipulatedCompletion: "31st Aug 2026",
+      actualCompletion: "Ongoing"
+    },
+    specifications: {
+      typeOfWork: "NON-Residential",
+      totalBuiltUpArea: "2,61,000 Sqft",
+      basements: "Nil",
+      maximumHeight: "13.50 Mtrs",
+      storeys: "Basement ,Ground Floor+2 Floors [4 Storeys]"
+    },
+    performance: {
+      qualityOfWork: "Outstanding",
+      resourcefulness: "Outstanding",
+      financialSoundness: "Outstanding",
+      technicalProficiency: "Outstanding",
+      generalBehaviour: "Outstanding"
+    }
+  },
+  {
+    id: 17,
+    projectName: "Phase-2A-A1: Architectural Finishing and Public Health works for 6 Elevated Metro Stations",
+    client: "Bangalore Metrorail Corporation",
+    location: "Central Silk Board, HSR Layout, Agara, Ibbalur, Bellandur & Kadubeesanahalli",
+    description: "Phase-2A-A1: Architectural Finishing and Public Health works for 6 Elevated Metro Stations viz., Central Silk Board, HSR Layout , Agara, Ibbalur, Bellandur & Kadubeesanahalli, in Phase-2A Line of Bangalore Metro Rail Project",
+    donor: {
+      name: "N/A",
+      address: "N/A"
+    },
+    financials: {
+      workOrderValue: "Rs. 65.57 crore(Sixty Five crore Fifty Seven Lakhs Only)",
+      costOnCompletion: "N/A",
+      compensationLevied: "NOT APPLICABLE"
+    },
+    timeline: {
+      dateOfStart: "07st Feb 2025",
+      stipulatedCompletion: "31st March 2027",
+      actualCompletion: "Ongoing"
+    },
+    specifications: {
+      typeOfWork: "NON-Residential",
+      totalBuiltUpArea: "6 Metro Station (Appx Area 5,25,000 Sft)",
+      basements: "Nil",
+      maximumHeight: "17.50 Mtrs",
+      storeys: "Ground Floor+2 Floors [3 Storeys]"
+    },
+    performance: {
+      qualityOfWork: "Outstanding",
+      resourcefulness: "Outstanding",
+      financialSoundness: "Outstanding",
+      technicalProficiency: "Outstanding",
+      generalBehaviour: "Outstanding"
+    }
+  },
+  {
+    id: 18,
+    projectName: "Architectural Finishing works and Public Health Engineering works of 7 Metro Stations",
+    client: "Bangalore Metrorail Corporation",
+    location: "Challaghatta, Madavara (BIEC), Central Silk Board, BTM Layout, Jayadeva Hospital, Ragigudda & RV Road",
+    description: "Architectural Finishing works and Public Health Engineering works of Challaghatta Station in Reach-2 Extension, Madavara (BIEC) Station in Reach-3C and 5 stations at Central Silk Board, BTM Layout, Jayadeva Hospital, Ragigudda& RV Road in Reach-5 (P3) of Bangalore Metro Rail Project, Phase-2.” – Reg. Vendor/Material approval..",
+    donor: {
+      name: "N/A",
+      address: "N/A"
+    },
+    financials: {
+      workOrderValue: "Rs. 113.15 crore(One Hundred Thirteen crore Ninety Fifteen Lakhs Only)",
+      costOnCompletion: "Rs.112.64 Crore (One Hundred Twelve crore Sixty Four Lakhs Only)",
+      compensationLevied: "NOT APPLICABLE"
+    },
+    timeline: {
+      dateOfStart: "02st Feb 2022",
+      stipulatedCompletion: "31st Aug 2025",
+      actualCompletion: "Ongoing"
+    },
+    specifications: {
+      typeOfWork: "NON-Residential",
+      totalBuiltUpArea: "7 Metro Station (Appx Area 6,25,000 Sft)",
+      basements: "Nil",
+      maximumHeight: "34.0 Mtrs",
+      storeys: "Ground Floor+4 Floors [5 Storeys]"
+    },
+    performance: {
+      qualityOfWork: "Outstanding",
+      resourcefulness: "Outstanding",
+      financialSoundness: "Outstanding",
+      technicalProficiency: "Outstanding",
+      generalBehaviour: "Outstanding"
+    }
   }
 ];

@@ -370,6 +370,13 @@ const portfolioCategories = [
     projects: [
       { id: "c3", title: "Sira Solar Plant", subtitle: "Sira", img: "/sira_solar.webp" }
     ]
+  },
+  {
+    category: "Ongoing Projects",
+    projects: [
+      { id: "o1", title: "GAIL Office Building", subtitle: "Bengaluru", img: "/gail/6107169124271198344.webp" },
+      { id: "o2", title: "JSVK Param Convention Center", subtitle: "Bengaluru", img: "/jsvk/6107169124271198356.webp" }
+    ]
   }
 ];
 
@@ -507,8 +514,8 @@ export default function Portfolio() {
         <div className="w-full max-w-[1400px] mx-auto">
           {/* Typographical Header */}
           <div className="border-t-2 border-black/10 pt-4 mb-0 md:mb-12">
-            <h1 className="text-[13vw] md:text-[8vw] leading-[1.1] font-extrabold tracking-tighter uppercase pb-2">
-              <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2a2a2a] to-transparent inline-block pb-4">Our</span> <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2c52a1] to-transparent inline-block pb-4">Portfolio</span>
+            <h1 className="text-[11vw] md:text-[8vw] leading-normal font-extrabold tracking-tighter uppercase pb-2">
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2a2a2a] to-transparent inline-block py-[0.2em] my-[-0.2em]">Our</span> <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2c52a1] to-transparent inline-block py-[0.2em] my-[-0.2em]">Portfolio</span>
             </h1>
           </div>
 
