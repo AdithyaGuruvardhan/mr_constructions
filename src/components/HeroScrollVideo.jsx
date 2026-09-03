@@ -207,42 +207,65 @@ export default function HeroScrollVideo() {
   }, [isMobile]);
 
   return (
-    <div ref={containerRef} className="relative w-full bg-white h-[400vh]">
-      <div className="sticky top-0 w-full h-screen overflow-hidden">
-        <canvas
-          ref={canvasRef}
-          className="absolute top-0 left-0 w-full h-full"
-        />
+    <>
+      <div ref={containerRef} className="relative w-full bg-white h-[400vh]">
+        <div className="sticky top-0 w-full h-screen overflow-hidden">
+          <canvas
+            ref={canvasRef}
+            className="absolute top-0 left-0 w-full h-full"
+          />
 
-        {/* Overlay Content */}
-        <div className="absolute inset-0 z-10 pointer-events-none flex flex-col justify-between px-6 py-8 md:px-16 md:py-12">
+          {/* Overlay Content (Desktop Only) */}
+          <div className="hidden md:flex absolute inset-0 z-10 pointer-events-none flex-col justify-between px-6 py-8 md:px-16 md:py-12">
 
+            {/* Left aligned main content */}
+            <div className="flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto w-full px-4 sm:px-0 mt-24 md:mt-0">
+              <div className="max-w-2xl">
+                <h1 className="text-4xl sm:text-5xl md:text-[4rem] font-medium leading-tight mb-4 md:mb-6 tracking-tight" style={{ color: '#f2f2f2' }}>
+                  Engineering Excellence.<br className="hidden sm:block" /> Since 2005.
+                </h1>
+                <p className="text-base sm:text-lg md:text-xl max-w-[90%] sm:max-w-lg mb-6 md:mb-8 leading-relaxed" style={{ color: '#f2f2f2' }}>
+                  ISO-certified construction and engineering trusted by government and private clients.<br className="hidden md:block" /> 125+ projects completed with precision.
+                </p>
+                <button className="px-6 py-2.5 md:px-8 md:py-3 rounded-lg text-base md:text-lg font-medium pointer-events-auto transition-transform hover:scale-105" style={{ backgroundColor: 'rgba(44, 82, 161, 0.9)', color: '#FFFBF6' }}>
+                  Start Your Project
+                </button>
+              </div>
+            </div>
 
-
-          {/* Left aligned main content */}
-          <div className="flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto w-full px-4 sm:px-0 mt-24 md:mt-0">
-            <div className="max-w-2xl">
-              <h1 className="text-4xl sm:text-5xl md:text-[4rem] font-medium leading-tight mb-4 md:mb-6 tracking-tight" style={{ color: '#f2f2f2' }}>
-                Engineering Excellence.<br className="hidden sm:block" /> Since 2005.
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl max-w-[90%] sm:max-w-lg mb-6 md:mb-8 leading-relaxed" style={{ color: '#f2f2f2' }}>
-                ISO-certified construction and engineering trusted by government and private clients.<br className="hidden md:block" /> 125+ projects completed with precision.
+            {/* Bottom text */}
+            <div className="w-full text-center pb-2">
+              <p className="text-lg md:text-xl" style={{ color: '#f2f2f2' }}>
+                Scroll
               </p>
-              <button className="px-6 py-2.5 md:px-8 md:py-3 rounded-lg text-base md:text-lg font-medium pointer-events-auto transition-transform hover:scale-105" style={{ backgroundColor: 'rgba(44, 82, 161, 0.9)', color: '#FFFBF6' }}>
-                Start Your Project
-              </button>
             </div>
           </div>
 
-          {/* Bottom text */}
-          <div className="w-full text-center pb-2">
-            <p className="text-lg md:text-xl" style={{ color: '#f2f2f2' }}>
-              Scroll
-            </p>
+          {/* Mobile Overlay Content (Only "Scroll" text) */}
+          <div className="md:hidden absolute inset-0 z-10 pointer-events-none flex flex-col justify-end pb-8 px-6">
+            <div className="w-full text-center">
+              <p className="text-lg" style={{ color: '#f2f2f2' }}>
+                Scroll to view
+              </p>
+            </div>
           </div>
-
         </div>
       </div>
-    </div>
+
+      {/* Mobile Text Section (Below Video Frames) */}
+      <div className="md:hidden w-full bg-white px-6 py-16 flex flex-col items-start border-t border-gray-100">
+        <div className="max-w-2xl">
+          <h1 className="text-4xl font-medium leading-tight mb-4 tracking-tight text-gray-900">
+            Engineering Excellence.<br /> Since 2005.
+          </h1>
+          <p className="text-[17px] mb-8 leading-relaxed text-gray-600">
+            ISO-certified construction and engineering trusted by government and private clients. 125+ projects completed with precision.
+          </p>
+          <button className="px-8 py-3 rounded-lg text-lg font-medium transition-transform hover:scale-105" style={{ backgroundColor: 'rgba(44, 82, 161, 0.9)', color: '#FFFBF6' }}>
+            Start Your Project
+          </button>
+        </div>
+      </div>
+    </>
   );
 }

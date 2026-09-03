@@ -184,21 +184,21 @@ const CardNav = ({
         </div>
 
         <div
-          className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
-            } md:flex-row md:items-end md:gap-[12px]`}
+          className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 grid grid-cols-2 gap-2 content-start z-[1] ${isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
+            } md:flex md:flex-row md:items-end md:gap-[12px]`}
           aria-hidden={!isExpanded}
         >
           {(items || []).slice(0, 3).map((item, idx) => (
             <div
               key={`${item.label}-${idx}`}
-              className={`nav-card select-none relative flex flex-col gap-2 p-[12px_16px] rounded-[calc(0.75rem-0.2rem)] min-w-0 h-auto min-h-[60px] md:h-full md:min-h-0 ${item.twoCols ? 'flex-[1_1_auto] md:flex-[2_2_0%]' : 'flex-[1_1_auto] md:flex-[1_1_0%]'}`}
+              className={`nav-card select-none relative flex flex-col gap-2 p-[12px_16px] rounded-[calc(0.75rem-0.2rem)] min-w-0 h-auto min-h-[60px] md:h-full md:min-h-0 ${item.twoCols ? 'col-span-2 md:col-auto flex-[1_1_auto] md:flex-[2_2_0%]' : 'col-span-1 md:col-auto flex-[1_1_auto] md:flex-[1_1_0%]'}`}
               ref={setCardRef(idx)}
               style={{ backgroundColor: item.bgColor, color: item.textColor }}
             >
               <div className="nav-card-label font-medium tracking-[-0.5px] text-xl md:text-2xl mb-2">
                 {item.label}
               </div>
-              <div className={`nav-card-links mt-auto ${item.twoCols ? 'grid grid-cols-2 gap-x-4 gap-y-[2px]' : 'flex flex-col gap-[2px]'}`}>
+              <div className={`nav-card-links mt-2 ${item.twoCols ? 'grid grid-cols-2 gap-x-4 gap-y-[2px]' : 'flex flex-col gap-[2px]'}`}>
                 {item.links?.map((lnk, i) => (
                   <a
                     key={`${lnk.label}-${i}`}
@@ -218,7 +218,7 @@ const CardNav = ({
           <Link
             to="/contact"
             onClick={toggleMenu}
-            className="w-full mt-2 md:hidden border-0 rounded-[calc(0.75rem-0.2rem)] py-3 font-semibold flex items-center justify-center cursor-pointer transition-colors duration-300 shadow-sm"
+            className="w-full mt-2 col-span-2 md:hidden border-0 rounded-[calc(0.75rem-0.2rem)] py-3 font-semibold flex items-center justify-center cursor-pointer transition-colors duration-300 shadow-sm"
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
           >
             Enquire Now

@@ -38,20 +38,20 @@ export default function Footer() {
           </div>
 
           {/* Right Side */}
-          <div className="lg:w-5/12 flex flex-row justify-between lg:justify-end lg:gap-32">
-            <ul className="space-y-5 text-2xl lg:text-3xl font-medium tracking-tight">
-              <li><Link to="/" className="hover:text-gray-300 transition-colors">Home</Link></li>
-              <li><Link to="/about" className="hover:text-gray-300 transition-colors">About Us</Link></li>
-              <li><Link to="/portfolio" className="hover:text-gray-300 transition-colors">Portfolio</Link></li>
-              <li><Link to="/contact" className="hover:text-gray-300 transition-colors">Contact</Link></li>
-            </ul>
+          <div className="lg:w-5/12 flex justify-center lg:justify-end items-start mt-8 lg:mt-0">
+            <div className="grid grid-cols-[auto_auto] gap-x-16 md:gap-x-24 lg:gap-x-32 gap-y-5 lg:gap-y-6 items-baseline text-left">
+              <Link to="/" className="text-2xl lg:text-3xl font-medium tracking-tight hover:text-gray-300 transition-colors">Home</Link>
+              <Link to="/safety" className="text-sm font-medium hover:text-gray-300 transition-colors">Safety</Link>
 
-            <ul className="space-y-6 text-sm font-medium pt-1.5">
-              <li><Link to="/safety" className="hover:text-gray-300 transition-colors">Safety</Link></li>
-              <li><Link to="/careers" className="hover:text-gray-300 transition-colors">Careers</Link></li>
-              <li><Link to="/awards" className="hover:text-gray-300 transition-colors">Awards</Link></li>
-              <li><Link to="/certificates" className="hover:text-gray-300 transition-colors">Certificates</Link></li>
-            </ul>
+              <Link to="/about" className="text-2xl lg:text-3xl font-medium tracking-tight hover:text-gray-300 transition-colors">About Us</Link>
+              <Link to="/careers" className="text-sm font-medium hover:text-gray-300 transition-colors">Careers</Link>
+
+              <Link to="/portfolio" className="text-2xl lg:text-3xl font-medium tracking-tight hover:text-gray-300 transition-colors">Portfolio</Link>
+              <Link to="/awards" className="text-sm font-medium hover:text-gray-300 transition-colors">Awards</Link>
+
+              <Link to="/contact" className="text-2xl lg:text-3xl font-medium tracking-tight hover:text-gray-300 transition-colors">Contact</Link>
+              <Link to="/certificates" className="text-sm font-medium hover:text-gray-300 transition-colors">Certificates</Link>
+            </div>
           </div>
 
         </div>
@@ -59,16 +59,16 @@ export default function Footer() {
 
 
         {/* Bottom Links */}
-        <div className="flex flex-col xl:flex-row flex-wrap gap-y-6 text-[11px] text-gray-500 font-medium items-start xl:items-center justify-between w-full">
-          <div className="flex flex-wrap gap-x-6 gap-y-2 w-full xl:w-1/3 xl:justify-start">
+        <div className="flex flex-row flex-wrap gap-x-6 gap-y-2 text-[10px] sm:text-[11px] text-gray-500 font-medium items-center justify-center lg:justify-between w-full text-center mt-6 lg:mt-0">
+          <div className="flex-shrink-0">
             <Link to="/" className="hover:text-gray-300 transition-colors">MR Constructions</Link>
           </div>
 
-          <div className="w-full xl:w-1/3 flex justify-start xl:justify-center">
+          <div className="flex-shrink-0">
             <span className="italic">Designed and developed by <a href="https://www.buzziwah.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors underline decoration-white/30 hover:decoration-white/80 underline-offset-2 font-semibold">Buzziwah</a> 💜</span>
           </div>
 
-          <div className="flex gap-6 w-full xl:w-1/3 justify-start xl:justify-end">
+          <div className="flex-shrink-0">
             <span>Copyright &copy; {new Date().getFullYear()}</span>
           </div>
         </div>

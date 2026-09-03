@@ -222,14 +222,14 @@ export default function ProjectDetails() {
       {/* Drone/Stat Section */}
       <div className="w-full bg-gray-50 flex flex-col md:flex-row justify-between gap-12 lg:gap-0 py-16 md:py-24 px-6 md:px-16 items-stretch">
         {/* Left Image & Overlay */}
-        <div className="relative w-full lg:w-[55%]">
+        <div className="relative w-full lg:w-[55%] flex flex-col-reverse md:block">
           <img
             src={project.droneSection.img1}
             alt="Drone View 1"
             className="w-full h-auto md:h-[60vh] lg:h-[65vh] object-cover rounded-3xl shadow-xl"
           />
-          {/* Info Card Overlay (Inside Image) */}
-          <div className="absolute top-4 right-4 md:top-8 md:right-8 bg-gray-50 p-6 md:p-6 shadow-lg rounded-3xl z-10 w-[calc(100%-2rem)] md:w-[360px] text-left hover:-translate-y-1 transition-transform duration-300">
+          {/* Info Card Overlay (Inside Image on Desktop, Above on Mobile) */}
+          <div className="relative mb-6 md:mb-0 md:absolute md:top-8 md:right-8 bg-gray-50 p-6 md:p-6 shadow-lg rounded-3xl z-10 w-full md:w-[360px] text-left hover:-translate-y-1 transition-transform duration-300">
             <h3 className="text-lg md:text-xl font-bold text-[#1c1c1e] mb-1 md:mb-2">{project.droneSection.cardTitle}</h3>
             <p className="text-gray-500 text-sm md:text-sm font-medium leading-relaxed">
               {project.droneSection.cardDesc}
