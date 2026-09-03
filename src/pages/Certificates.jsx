@@ -65,13 +65,17 @@ const PerformanceReportCards = ({ performance }) => {
 const ProjectImageArc = ({ certificateId }) => {
   // Pull one image from EVERY project to create a massive, identical gallery for all certificates
   const getProjectImages = () => {
-    return Object.values(projectsData)
+    const baseImages = Object.values(projectsData)
       .map(project => project.galleryImages?.[0] || project.heroBg)
       .filter(Boolean);
+    
+    // Duplicate the array multiple times to create a large enough off-screen buffer 
+    // so the infinite carousel doesn't leave "holes" when items wrap around on large desktop screens.
+    return [...baseImages, ...baseImages, ...baseImages, ...baseImages];
   };
 
   const images = getProjectImages();
-  
+
   // Use state to track the active center index for the carousel
   const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 2));
 
@@ -93,11 +97,8 @@ const ProjectImageArc = ({ certificateId }) => {
 
   return (
     <div className="w-[100vw] ml-[calc(50%-50vw)] relative mt-0 mb-0 flex flex-col items-center overflow-visible">
-      {/* Dynamic 3D Arc Container with reduced height */}
-      <div
-        className="relative flex justify-center items-center w-full max-w-none h-[200px] sm:h-[250px] md:h-[350px] lg:h-[400px] mx-auto overflow-visible"
-        style={{ perspective: '900px', transformStyle: 'preserve-3d' }}
-      >
+      {/* Flat Carousel Container */}
+      <div className="relative flex justify-center items-center w-full max-w-none h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] mx-auto overflow-hidden">
         {images.map((img, index) => {
           const N = images.length;
           let offset = index - activeIndex;
@@ -106,42 +107,27 @@ const ProjectImageArc = ({ certificateId }) => {
           if (offset > N / 2) offset -= N;
           if (offset < -N / 2) offset += N;
 
-          const sign = Math.sign(offset);
           const absOffset = Math.abs(offset);
 
-          // Cap the depth and rotation so outer images don't grow infinitely large
-          const cappedAbsOffset = Math.min(absOffset, 5);
+          // Flat translation for all screen sizes with a 15% gap (115% center-to-center)
+          const gapMultiplier = 115;
+          const translateXPct = (offset * gapMultiplier) - 50;
 
-          const translateX = offset * 85;
-          const translateZ = -200 + (cappedAbsOffset * 70);
-          const rotateY = Math.max(-75, Math.min(75, -offset * 15));
+          // Uniform size and aspect ratio for all images on all screens
+          const aspectClass = "aspect-[4/5] sm:aspect-[4/3] lg:aspect-[3/2]";
+          const widthClass = "w-[45%] sm:w-[35%] md:w-[28%] lg:w-[22%]";
 
-          const zIndex = 10 + absOffset * 10;
-          const shadowX = -sign * 10;
-
-          // Assign more natural aspect ratios
-          let aspectClass = "aspect-[3/4]";
-          let widthClass = "w-[20%] sm:w-[16%] md:w-[12%] lg:w-[10%]";
-
-          if (absOffset === 0) {
-            aspectClass = "aspect-video";
-            widthClass = "w-[26%] sm:w-[22%] md:w-[16%] lg:w-[14%]";
-          } else if (absOffset === 1) {
-            aspectClass = "aspect-[4/5]";
-          }
-
-          // Fade out items that are far off-screen so they don't visibly fly across when wrapping
-          const opacity = absOffset > 5 ? 0 : 1;
+          // Fade out items that are far off-screen
+          let opacityClass = "opacity-100 pointer-events-auto";
+          if (absOffset > 3) opacityClass = "opacity-0 pointer-events-none";
 
           return (
             <div
               key={index}
-              className={`absolute ${widthClass} ${aspectClass} rounded-md overflow-hidden transition-all duration-700 hover:brightness-110`}
+              className={`absolute left-1/2 top-1/2 ${widthClass} ${aspectClass} ${opacityClass} rounded-2xl overflow-hidden transition-transform duration-700 hover:brightness-110 shadow-sm border border-gray-100`}
               style={{
-                transform: `translateX(${translateX}%) translateZ(${translateZ}px) rotateY(${rotateY}deg)`,
-                zIndex: zIndex,
-                boxShadow: `${shadowX}px 0 20px rgba(0,0,0,0.15)`,
-                opacity: opacity
+                transform: `translate(${translateXPct}%, -50%)`,
+                zIndex: 10 - absOffset
               }}
             >
               <img src={img} className="w-full h-full object-cover" alt={`Gallery ${index}`} />
@@ -151,20 +137,20 @@ const ProjectImageArc = ({ certificateId }) => {
       </div>
 
       {/* Navigation Arrows */}
-      <div className="flex justify-center gap-6 -mt-4 sm:-mt-6 lg:-mt-8 z-20 relative">
-        <button 
+      <div className="flex justify-center gap-4 md:gap-6 mt-2 sm:mt-4 lg:mt-6 z-20 relative">
+        <button
           onClick={handlePrev}
-          className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-transparent border border-[#1c1c1e] text-[#1c1c1e] hover:bg-[#2c52a1] hover:border-[#2c52a1] hover:text-white transition-all duration-300 flex items-center justify-center group cursor-pointer focus:outline-none"
+          className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent border border-[#1c1c1e] text-[#1c1c1e] hover:bg-[#2c52a1] hover:border-[#2c52a1] hover:text-white transition-all duration-300 flex items-center justify-center group cursor-pointer focus:outline-none"
         >
-          <svg className="w-4 h-4 md:w-5 md:h-5 transform rotate-180 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-3 h-3 md:w-5 md:h-5 transform rotate-180 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </button>
-        <button 
+        <button
           onClick={handleNext}
-          className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-transparent border border-[#1c1c1e] text-[#1c1c1e] hover:bg-[#2c52a1] hover:border-[#2c52a1] hover:text-white transition-all duration-300 flex items-center justify-center group cursor-pointer focus:outline-none"
+          className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent border border-[#1c1c1e] text-[#1c1c1e] hover:bg-[#2c52a1] hover:border-[#2c52a1] hover:text-white transition-all duration-300 flex items-center justify-center group cursor-pointer focus:outline-none"
         >
-          <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-3 h-3 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </button>
@@ -188,11 +174,11 @@ const CleanCard = ({ certificate }) => {
   return (
     <div
       ref={cardRef}
-      className="w-[85vw] max-w-[85vw] mx-auto rounded-[40px] p-8 sm:p-12 md:p-16 flex flex-col items-center text-center mb-0 relative"
+      className="w-full mx-auto rounded-3xl md:rounded-[40px] py-6 px-2 sm:p-8 md:p-16 flex flex-col items-center text-center mb-0 relative"
     >
       {/* Title Area */}
-      <div className="z-10 mb-2 -mt-8 sm:-mt-12 lg:-mt-16 max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-gray-900 leading-[1.1] font-serif">
+      <div className="z-10 mb-2 mt-4 sm:-mt-12 lg:-mt-16 max-w-4xl mx-auto px-2">
+        <h2 className="text-[26px] sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-gray-900 leading-[1.2] md:leading-[1.1] font-serif">
           {certificate.projectName}
         </h2>
       </div>
@@ -357,7 +343,7 @@ const Certificates = () => {
       <div className="w-full mx-auto flex flex-col items-center">
 
         {selectedCert ? (
-          <div className="w-[85vw] max-w-[85vw]">
+          <div className="w-full lg:w-[85vw] lg:max-w-[85vw]">
             <button
               onClick={() => setSelectedCert(null)}
               className="mb-8 inline-flex items-center text-sm font-semibold text-gray-500 hover:text-gray-900 transition-colors group bg-gray-50 px-4 py-2 rounded-full"
