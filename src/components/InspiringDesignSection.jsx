@@ -122,25 +122,20 @@ export default function InspiringDesignSection() {
                  </p>
                </div>
                
-               {/* View Project Circular Badge (Moved to bottom right) */}
+               {/* View Project Pill Button */}
                <div className="w-full flex justify-center lg:justify-end">
-                 <Link to="/portfolio/t2" className="flex relative items-center justify-center w-28 h-28 lg:w-36 lg:h-36 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 group mt-4 lg:mt-8 lg:-mr-12 xl:-mr-16">
-                   {/* Inner Circle */}
-                   <div className="absolute inset-0 m-auto w-16 h-16 lg:w-20 lg:h-20 bg-[#2c52a1] group-hover:bg-[#1c1c1e] transition-colors duration-300 rounded-full flex items-center justify-center shadow-lg z-10">
-                     <span className="text-[9px] lg:text-[10px] font-extrabold uppercase tracking-widest text-white text-center leading-tight">
-                       View<br/>Project
-                     </span>
-                   </div>
-                   
-                   {/* Rotating Circular Text */}
-                   <svg className="w-full h-full animate-spin pointer-events-none" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
-                     <path id="circlePathMelkote" d="M 50, 50 m -42, 0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" fill="transparent" />
-                     <text>
-                       <textPath href="#circlePathMelkote" startOffset="0" className="text-[8px] font-bold tracking-[0.18em] fill-[#1c1c1e]/80 uppercase">
-                         EXPLORE • DISCOVER • EXPLORE • DISCOVER •
-                       </textPath>
-                     </text>
-                   </svg>
+                 <Link
+                   to="/portfolio/t2"
+                   className="mt-4 lg:mt-8 inline-flex items-center gap-3 sm:gap-4 pl-6 sm:pl-8 pr-2 py-2 w-fit rounded-full bg-[#2c52a1] hover:bg-[#1c1c1e] transition-colors duration-300 cursor-pointer group shadow-lg"
+                 >
+                   <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-white whitespace-nowrap">
+                     View Project
+                   </span>
+                   <span className="flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-[#2c52a1] shrink-0 transition-colors duration-300">
+                     <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                     </svg>
+                   </span>
                  </Link>
                </div>
             </div>

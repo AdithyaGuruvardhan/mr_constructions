@@ -83,9 +83,9 @@ export default function AboutUs() {
 
         {/* M Ramesh Reddy Section */}
         <div className="w-full relative z-30 mb-24 md:mb-32">
-          <div className="bg-[#1c1c1e] rounded-[2rem] p-8 md:p-16 flex flex-col-reverse lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-12 lg:gap-16 items-center">
+          <div className="bg-[#16264c] rounded-[2rem] p-8 md:p-16 flex flex-col-reverse lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-12 lg:gap-16 items-center">
             {/* Decorative bottom text */}
-            <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#2a2a2c] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
+            <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#223a6e] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
               <span>THE VISIONARY</span>
             </div>
 
@@ -93,7 +93,7 @@ export default function AboutUs() {
               <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight mb-6 md:mb-8">
                 M Ramesh Reddy
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium text-justify">
                 M Ramesh Reddy’s journey is defined by hard work, determination, and an unwavering commitment to excellence. Born in Nangali, Karnataka, into a humble family, he began his career as a civil contractor and steadily built M R Constructions into a trusted leader in the industry. A pivotal milestone in his career came in 2012 when he became a vendor for Infosys, leading to an inspiring meeting with the renowned Smt. Sudha Murty. Today, his visionary leadership continues to drive M R Constructions toward new heights of engineering and operational success.
               </p>
             </div>
@@ -108,9 +108,9 @@ export default function AboutUs() {
 
         {/* Smt. Sudha Murty Section */}
         <div className="w-full relative z-30 mb-24 md:mb-32">
-          <div className="bg-[#1c1c1e] rounded-[2rem] p-8 md:p-16 flex flex-col-reverse lg:flex-row-reverse justify-between shadow-2xl relative overflow-hidden gap-12 lg:gap-16 items-center">
+          <div className="bg-[#16264c] rounded-[2rem] p-8 md:p-16 flex flex-col-reverse lg:flex-row-reverse justify-between shadow-2xl relative overflow-hidden gap-12 lg:gap-16 items-center">
             {/* Decorative bottom text */}
-            <div className="absolute -bottom-6 right-0 w-full flex justify-end gap-4 text-[#2a2a2c] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
+            <div className="absolute -bottom-6 right-0 w-full flex justify-end gap-4 text-[#223a6e] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
               <span>THE INSPIRATION</span>
             </div>
 
@@ -118,10 +118,10 @@ export default function AboutUs() {
               <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight mb-6 md:mb-8">
                 Smt. Sudha Murty
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium mb-4">
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium mb-4 text-justify">
                 Smt. Sudha Murty is a renowned author, philanthropist, educator, and social worker known for her simplicity and dedication to serving society. Through her work in education, healthcare, rural development, and social welfare, she has contributed to meaningful change across India.
               </p>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium text-justify">
                 Her writing has inspired generations with stories rooted in kindness, humility, compassion, and life lessons. Her journey reflects a deep commitment to empowering communities and creating a positive and lasting impact on society.
               </p>
             </div>
@@ -308,7 +308,7 @@ export default function AboutUs() {
                 <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
                   <div className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed space-y-2">
                     <p>
-                      Integrity is not merely a principle we follow—it is the cornerstone of every decision we make.
+                      Integrity is not merely a principle we follow - it is the cornerstone of every decision we make.
                     </p>
                   </div>
                 </div>

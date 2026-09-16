@@ -1,5 +1,5 @@
-import { useLayoutEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useLayoutEffect, useRef, useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
@@ -20,6 +20,20 @@ const CardNav = ({
   const navRef = useRef(null);
   const cardsRef = useRef([]);
   const tlRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Automatically close the menu when navigating to a new route
+    if (isExpanded) {
+      const tl = tlRef.current;
+      if (tl) {
+        setIsHamburgerOpen(false);
+        tl.eventCallback('onReverseComplete', () => setIsExpanded(false));
+        tl.reverse();
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
 
   const calculateHeight = () => {
     const navEl = navRef.current;
@@ -200,15 +214,16 @@ const CardNav = ({
               </div>
               <div className={`nav-card-links mt-2 ${item.twoCols ? 'grid grid-cols-2 gap-x-4 gap-y-[2px]' : 'flex flex-col gap-[2px]'}`}>
                 {item.links?.map((lnk, i) => (
-                  <a
+                  <Link
                     key={`${lnk.label}-${i}`}
                     className={`nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-lg md:text-xl py-1 ${lnk.label === 'Contact Us' ? 'font-bold' : ''}`}
-                    href={lnk.href}
+                    to={lnk.href}
                     aria-label={lnk.ariaLabel}
+                    onClick={toggleMenu}
                   >
                     <GoArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
                     {lnk.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

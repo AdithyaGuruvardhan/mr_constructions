@@ -70,13 +70,108 @@ export const projectsData = {
       "/jsvk/6107169124271198363.webp"
     ]
   },
+  "o3": {
+    id: "o3",
+    title: "BMRCL",
+    location: "BENGALURU",
+    number: "22",
+    heroBg: "/bmrcl/MRC%20website%20UIUX.webp",
+    images: {
+      mobile1: "/bmrcl/MRC%20website%20UIUX%20(1).webp",
+      mobile2: "/bmrcl/MRC%20website%20UIUX%20(2).webp",
+      desktopLeft: "/bmrcl/MRC%20website%20UIUX%20(1).webp",
+      desktopRight: "/bmrcl/MRC%20website%20UIUX%20(2).webp"
+    },
+    introText1: "Architectural Finishing and Public Health Engineering works for Bangalore Metro Rail Project, Phase-2.",
+    introText2: "Executed for Bangalore Metrorail Corporation, the project encompasses Challaghatta Station (Reach-2), Madavara (BIEC) Station (Reach-3C), and 5 stations at Central Silk Board, BTM Layout, Jayadeva Hospital, Ragigudda & RV Road in Reach-5 (P3).",
+    droneSection: {
+      img1: "/bmrcl/MRC%20website%20UIUX%20(3).webp",
+      img2: "/bmrcl/MRC%20website%20UIUX%20(4).webp",
+      cardTitle: "6,25,000 Sft",
+      cardDesc: "Approximate area across 7 Metro Stations",
+      stats: [
+        { title: "G+4 Floors", desc: "Up to Ground Floor + 4 Floors (5 Storeys) with a max height of 34.0 Mtrs" },
+        { title: "Rs. 113.15 Crore", desc: "Value of work orders executed for BMRCL" },
+        { title: "Status: Ongoing", desc: "Project is currently ongoing, stipulated for completion in Aug 2025" }
+      ]
+    },
+    galleryImages: [
+      "/bmrcl/MRC%20website%20UIUX.webp",
+      "/bmrcl/MRC%20website%20UIUX%20(1).webp",
+      "/bmrcl/MRC%20website%20UIUX%20(2).webp",
+      "/bmrcl/MRC%20website%20UIUX%20(3).webp",
+      "/bmrcl/MRC%20website%20UIUX%20(4).webp",
+      "/bmrcl/MRC%20website%20UIUX.webp"
+    ]
+  },
+  "o4": {
+    id: "o4",
+    title: "CMP Auditorium",
+    location: "BENGALURU",
+    number: "23",
+    heroBg: "/CMP/DSC_3965.webp",
+    images: {
+      mobile1: "/CMP/DSC_3969.webp",
+      mobile2: "/CMP/DSC_3970.webp",
+      desktopLeft: "/CMP/DSC_3969.webp",
+      desktopRight: "/CMP/DSC_3970.webp"
+    },
+    introText1: "Construction of the CMP Auditorium.",
+    introText2: "",
+    droneSection: {
+      img1: "/CMP/DSC_3980.webp",
+      img2: "/CMP/DSC_3985.webp",
+      cardTitle: "Auditorium",
+      cardDesc: "",
+      stats: [
+        { title: "Acoustic Design", desc: "State-of-the-art acoustic engineering and soundproofing for optimal audio experiences" },
+        { title: "Modern Seating", desc: "Designed to accommodate a large audience with tiered seating arrangements" },
+        { title: "Status: Ongoing", desc: "Project is currently ongoing" }
+      ]
+    },
+    galleryImages: [
+      "/CMP/DSC_3989.webp",
+      "/CMP/DSC_3997.webp",
+      "/CMP/DSC_4006.webp",
+      "/CMP/DSC_4013.webp",
+      "/CMP/DSC_4024.webp",
+      "/CMP/DSC_4058.webp"
+    ]
+  },
+  "o5": {
+    id: "o5",
+    title: "OTMA Building",
+    location: "BENGALURU",
+    number: "24",
+    singleRowGallery: true,
+    heroBg: "/otma/otma.png",
+    galleryImages: [
+      "/otma/otma.png",
+      "/otma/otma (1).png",
+      "/otma/otma (2).png",
+      "/otma/otma (3).png"
+    ]
+  },
+  "o6": {
+    id: "o6",
+    title: "NTPC",
+    number: "25",
+    singleRowGallery: true,
+    heroBg: "/ntpc/NTPC.png",
+    galleryImages: [
+      "/ntpc/NTPC.png",
+      "/ntpc/NTPC1.png",
+      "/ntpc/NTPC2.png",
+      "/ntpc/NTPC3.png"
+    ]
+  },
 
   // ================= COMMERCIAL =================
   "c1": {
     id: "c1",
     title: "Infosys New Campus",
     location: "HUBLI",
-    number: "01",
+    number: "06",
     heroBg: "/commercial/infosys/INFOSYS%20HUBLI29.webp",
     images: {
       mobile1: "/commercial/infosys/INFOSYS HUBLI INTERIOR12.webp",
@@ -111,7 +206,7 @@ export const projectsData = {
     id: "c2",
     title: "Lake Development",
     location: "HEBBAL MYSORE",
-    number: "02",
+    number: "07",
     heroBg: "/commercial/lake/infosys STP drone 1_6.webp",
     images: {
       mobile1: "/commercial/lake/infosys STP drone 1_14.webp",
@@ -146,7 +241,7 @@ export const projectsData = {
     id: "c3",
     title: "Sira Solar Plant",
     location: "SIRA",
-    number: "03",
+    number: "19",
     heroBg: "/commercial/sira%20solar%20plant/MRC%20sira%202S%20_8.webp",
     images: {
       mobile1: "/commercial/sira%20solar%20plant/MRC%20sira%202S%20_14.webp",
@@ -179,7 +274,7 @@ export const projectsData = {
     id: "c4",
     title: "Paying Guest Buildings",
     location: "ELECTRONIC CITY",
-    number: "04",
+    number: "08",
     heroBg: "/commercial/pg/PG13.webp",
     images: {
       mobile1: "/commercial/pg/PG15.webp",
@@ -216,7 +311,7 @@ export const projectsData = {
     id: "e1",
     title: "CBSE English Medium High School",
     location: "SHIVANAHALLI",
-    number: "05",
+    number: "09",
     heroBg: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC%20shivanahalli%20DRONE%20_9.webp",
     images: {
       mobile1: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC shivanahalli 2S 22_40.webp",
@@ -249,7 +344,7 @@ export const projectsData = {
     id: "e2",
     title: "Smt. Vimalakulkarni Memorial School",
     location: "HUBLI",
-    number: "06",
+    number: "10",
     heroBg: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp",
     images: {
       mobile1: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL4.webp",
@@ -284,7 +379,7 @@ export const projectsData = {
     id: "e3",
     title: "IIIT Dharwad",
     location: "DHARWAD",
-    number: "07",
+    number: "11",
     heroBg: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT14.webp",
     images: {
       mobile1: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT10.webp",
@@ -321,7 +416,7 @@ export const projectsData = {
     id: "h1",
     title: "Bowring Hospital",
     location: "BENGALURU",
-    number: "08",
+    number: "12",
     heroBg: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.webp",
     images: {
       mobile1: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital4.webp",
@@ -351,11 +446,46 @@ export const projectsData = {
       "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital4.webp"
     ]
   },
+  "h2": {
+    id: "h2",
+    title: "Infosys Foundation Govt Maternity Hospital",
+    location: "KANAKAPURA",
+    number: "13",
+    heroBg: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303150213.webp",
+    images: {
+      mobile1: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/KANAKAPURA6.webp",
+      mobile2: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303151116.webp",
+      desktopLeft: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/KANAKAPURA6.webp",
+      desktopRight: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303151116.webp"
+    },
+    introText1: "Construction of Infosys Foundation Govt Maternity Hospital at Kanakapura.",
+    introText2: "Executed for Infosys Foundation with a Built up area of 98000 Sft +Site development over a duration of 24 Months.",
+    droneSection: {
+      img1: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303150213.webp",
+      img2: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303171519.webp",
+      cardTitle: "98,000 Sft",
+      cardDesc: "Built-up area developed along with site development",
+      stats: [
+        { title: "B+G+3 Floors", desc: "Basement and 3 upper floors" },
+        { title: "24 Months", desc: "Duration taken to execute and complete the project" },
+        { title: "Architect", desc: "Sundaram Architect" },
+        { title: "All Services", desc: "Civil Structure, Finishes, PHE, Electrical, UGR, STP, Area Developments, HVAC coordination, fire fighting, Fire Alarm, Lift, Roads Etc" }
+      ]
+    },
+    galleryImages: [
+      "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303150213.webp",
+      "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303151020_Bokeh.webp",
+      "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303151116.webp",
+      "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303171519.webp",
+      "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220512091158.webp",
+      "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/KANAKAPURA1.webp"
+    ]
+  },
   "h3": {
     id: "h3",
     title: "Infosys Foundation Jayadeva Hospital",
     location: "BENGALURU",
-    number: "09",
+    number: "14",
     heroBg: "/hospital/Infosys Foundation Jayadeva Hospital Building Bangalore/MRC jayadeva drone 2S _5.webp",
     images: {
       mobile1: "/hospital/Infosys Foundation Jayadeva Hospital Building Bangalore/MRC jayadeva 2S _123.webp",
@@ -390,7 +520,7 @@ export const projectsData = {
     id: "h4",
     title: "Kidwai Cancer Hospital",
     location: "BENGALURU",
-    number: "11",
+    number: "15",
     heroBg: "/hospital/Kidwai%20Cancer%20Hospital/MRC kidwai DRONE _2.webp",
     images: {
       mobile1: "/hospital/Kidwai%20Cancer%20Hospital/MRC KIDWAI 2S _17.webp",
@@ -425,7 +555,7 @@ export const projectsData = {
     id: "h5",
     title: "Tata Memorial Centre",
     location: "MUMBAI",
-    number: "12",
+    number: "16",
     heroBg: "/hospital/Tata%20Memorial%20Centre%20Advanced%20Centr%20-%20Mumbai/MRC MUMBAI day 1_27.webp",
     images: {
       mobile1: "/hospital/Tata%20Memorial%20Centre%20Advanced%20Centr%20-%20Mumbai/MRC mumbai DRONE_6.webp",
@@ -462,7 +592,7 @@ export const projectsData = {
     id: "t1",
     title: "Development of Kalyani Vasanthpura",
     location: "BENGALURU",
-    number: "13",
+    number: "17",
     heroBg: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA KALYANI12.webp",
     images: {
       mobile1: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA%20KALYANI19.webp",
@@ -497,7 +627,7 @@ export const projectsData = {
     id: "t2",
     title: "Melukote Kalyani",
     location: "MELUKOTE",
-    number: "14",
+    number: "18",
     heroBg: "/temple/Melukote%20Kalayani/MELKOTE%20KALYANI9.webp",
     images: {
       mobile1: "/temple/Melukote%20Kalayani/MELKOTE%20KALYANI22.webp",
@@ -534,7 +664,7 @@ export const projectsData = {
     id: "m1",
     title: "BTM Layout Station",
     location: "BENGALURU",
-    number: "15",
+    number: "01",
     heroBg: "/metro/BTM/SWA01485.webp",
     images: {
       mobile1: "/metro/BTM/SWA01466.webp",
@@ -559,14 +689,15 @@ export const projectsData = {
       "/metro/BTM/SWA01477.webp",
       "/metro/BTM/SWA01483.webp",
       "/metro/BTM/SWA01488.webp",
-      "/metro/BTM/SWA01498.webp"
+      "/metro/BTM/SWA01498.webp",
+      "/metro/BTM/BTM.webp"
     ]
   },
   "m2": {
     id: "m2",
     title: "Jayadeva Station",
     location: "BENGALURU",
-    number: "16",
+    number: "02",
     heroBg: "/metro/Jayadeva/SWA01313.webp",
     images: {
       mobile1: "/metro/Jayadeva/clean_shot.webp",
@@ -599,7 +730,7 @@ export const projectsData = {
     id: "m3",
     title: "Ragigudda Station",
     location: "BENGALURU",
-    number: "17",
+    number: "03",
     heroBg: "/metro/Ragigudda/RGS (4).webp",
     images: {
       mobile1: "/metro/Ragigudda/SWA01234.webp",
@@ -632,7 +763,7 @@ export const projectsData = {
     id: "m4",
     title: "Rashtreeya Vidyalaya Road Station",
     location: "BENGALURU",
-    number: "18",
+    number: "04",
     heroBg: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01186.webp",
     images: {
       mobile1: "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01177.webp",
@@ -656,14 +787,16 @@ export const projectsData = {
       "/metro/Rashtreeya%20Vidyalaya%20Road/RVR STATION (2).webp",
       "/metro/Rashtreeya%20Vidyalaya%20Road/RVR STATION (4).webp",
       "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01182.webp",
-      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01217.webp"
+      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01217.webp",
+      "/metro/Rashtreeya%20Vidyalaya%20Road/RVR STATION (3).webp",
+      "/metro/Rashtreeya%20Vidyalaya%20Road/SWA01177.webp"
     ]
   },
   "m5": {
     id: "m5",
     title: "Silk Board Station",
     location: "BENGALURU",
-    number: "19",
+    number: "05",
     heroBg: "/metro/Silk%20board/SWA01540.webp",
     images: {
       mobile1: "/metro/Silk%20board/SWA01514.webp",
@@ -690,6 +823,36 @@ export const projectsData = {
       "/metro/Silk%20board/SWA01551.webp",
       "/metro/Silk%20board/SWA01513.webp",
       "/metro/Silk%20board/SWA01538.webp"
+    ]
+  },
+  "m6": {
+    id: "m6",
+    title: "Other Metro Stations",
+    location: "BENGALURU",
+    number: "06",
+    singleRowGallery: true,
+    heroBg: "/metro/Challaghatta STATION.png",
+    groupedGallery: [
+      {
+        title: "Challaghatta Station",
+        images: [
+          "/metro/Challaghatta STATION.png",
+          "/metro/Challaghatta STATION (1).png"
+        ]
+      },
+      {
+        title: "Madavara Station",
+        images: [
+          "/metro/madavara.png",
+          "/metro/madavara (1).png"
+        ]
+      }
+    ],
+    galleryImages: [
+      "/metro/Challaghatta STATION.png",
+      "/metro/Challaghatta STATION (1).png",
+      "/metro/madavara.png",
+      "/metro/madavara (1).png"
     ]
   }
 };

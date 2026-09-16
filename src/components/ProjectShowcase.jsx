@@ -194,33 +194,28 @@ export default function ProjectShowcase() {
       
       <div className="max-w-4xl mx-auto text-center font-sans flex flex-col items-center relative z-0">
         <div className="w-[2px] h-12 md:h-20 bg-[#2d2d2d]/70 mb-8 md:mb-12"></div>
-        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed mb-8 sm:pr-32 lg:pr-0 px-4">
+        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed mb-8 sm:pr-32 px-4">
           M R Constructions delivered the <span className="font-bold">New Campus Development</span> for <span className="font-bold">Infosys Limited at Hubli</span>, in association with architects <span className="font-bold">M/s RSP Consultants</span>. We covered a built-up area of <span className="font-bold">378,000 sq. ft.</span> with full site development, completed in <span className="font-bold">24 months</span>.
         </p>
-        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed sm:pr-32 lg:pr-0 px-4">
+        <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed px-4">
           Our scope included the <span className="font-bold">SDB (G+5)</span>, <span className="font-bold">Food Court (G+2)</span>, <span className="font-bold">UGR</span>, <span className="font-bold">amphitheater</span>, land development, compound walls, and all associated roads, services, and finishing works.
         </p>
-      </div>
 
-      {/* View Project Badge */}
-      <Link to="/portfolio/c1" className="relative sm:absolute mt-6 sm:mt-0 mx-auto sm:mx-0 right-auto sm:right-16 md:right-42 top-auto sm:top-1/2 transform-none sm:transform sm:-translate-y-1/2 flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 z-50 group">
-        {/* Inner Circle */}
-        <div className="absolute inset-0 m-auto w-16 h-16 sm:w-20 sm:h-20 bg-[#2c52a1] group-hover:bg-[#1c1c1e] transition-colors duration-300 rounded-full flex items-center justify-center shadow-lg z-10">
-          <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-white text-center leading-tight">
-            View<br />Project
+        {/* View Project Pill Button */}
+        <Link
+          to="/portfolio/c1"
+          className="mt-8 md:mt-12 inline-flex items-center gap-3 sm:gap-4 pl-6 sm:pl-8 pr-2 py-2 w-fit rounded-full bg-[#2c52a1] hover:bg-[#1c1c1e] transition-colors duration-300 cursor-pointer z-50 group shadow-lg"
+        >
+          <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-white whitespace-nowrap">
+            View Project
           </span>
-        </div>
-        
-        {/* Rotating Text */}
-        <svg className="w-full h-full animate-spin" style={{ animationDuration: '10s' }} viewBox="0 0 100 100">
-          <path id="circlePathHubli" d="M 50, 50 m -42, 0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" fill="transparent" />
-          <text>
-            <textPath href="#circlePathHubli" startOffset="0" className="text-[8px] font-bold tracking-[0.18em] fill-[#2d2d2d]/80 uppercase">
-              EXPLORE • DISCOVER • EXPLORE • DISCOVER •
-            </textPath>
-          </text>
-        </svg>
-      </Link>
+          <span className="flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-[#2c52a1] shrink-0 transition-colors duration-300">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </span>
+        </Link>
+      </div>
     </div>
     </>
   );

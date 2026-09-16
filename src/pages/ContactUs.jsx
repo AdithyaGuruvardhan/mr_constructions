@@ -16,7 +16,7 @@ export default function ContactUs() {
 
         {/* Header Section */}
         <div className="text-center mb-6 md:mb-8 flex flex-col items-center">
-          <div className="w-[2px] h-12 md:h-20 bg-[#2c52a1] mb-8"></div>
+          <div className="w-[2px] h-8 md:h-12 bg-[#2c52a1] mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-2xl mx-auto">
             Ready to bring your vision to life? <br/>Contact M R Constructions today. <br/>Our team is ready to assist you with your next landmark project.
           </p>
@@ -25,9 +25,9 @@ export default function ContactUs() {
         <div className="flex flex-col gap-16 md:gap-24">
 
           {/* Contact Information (Dark Card matching screenshot) */}
-          <div className="bg-[#1c1c1e] rounded-[2rem] p-6 sm:p-8 md:p-16 flex flex-col lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-8 lg:gap-16 min-h-[auto] lg:min-h-[500px]">
+          <div className="bg-[#16264c] rounded-[2rem] p-6 sm:p-8 md:p-16 flex flex-col lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-8 lg:gap-16 min-h-[auto] lg:min-h-[500px]">
             {/* Decorative bottom text */}
-            <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#2a2a2c] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
+            <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#223a6e] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
               <span>GET IN TOUCH</span>
             </div>
 
@@ -156,9 +156,9 @@ export default function ContactUs() {
           </div>
 
           {/* Map Section */}
-          <div className="bg-[#1c1c1e] rounded-[2rem] p-6 sm:p-8 md:p-16 flex flex-col lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-8 lg:gap-16 min-h-[auto] lg:min-h-[500px]">
+          <div className="bg-[#16264c] rounded-[2rem] p-6 sm:p-8 md:p-16 flex flex-col lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-8 lg:gap-16 min-h-[auto] lg:min-h-[500px]">
             {/* Decorative bottom text */}
-            <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#2a2a2c] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none z-0">
+            <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#223a6e] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none z-0">
               <span>OUR LOCATION</span>
             </div>
             

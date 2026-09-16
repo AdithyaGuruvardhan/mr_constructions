@@ -30,9 +30,9 @@ const navItems = [
     bgColor: '#e4e4e7',
     textColor: '#18181b',
     links: [
-      { label: 'Safety', href: '/safety' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'Awards', href: '/awards' },
+      // { label: 'Safety', href: '/safety' },
+      // { label: 'Careers', href: '/careers' },
+      // { label: 'Awards', href: '/awards' },
       { label: 'Certificates', href: '/certificates' }
     ]
   },

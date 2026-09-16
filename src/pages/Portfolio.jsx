@@ -330,7 +330,8 @@ const portfolioCategories = [
       { id: "m2", title: "Jayadeva Station", subtitle: "Bengaluru", img: "/metro/Jayadeva/clean_shot.webp" },
       { id: "m3", title: "Ragigudda Station", subtitle: "Bengaluru", img: "/metro/Ragigudda/RGS (4).webp" },
       { id: "m4", title: "Rashtreeya Vidyalaya Road Station", subtitle: "Bengaluru", img: "/metro/Rashtreeya%20Vidyalaya%20Road/RVR STATION (4).webp" },
-      { id: "m5", title: "Silk Board Station", subtitle: "Bengaluru", img: "/metro/Silk%20board/SWA01542.webp" }
+      { id: "m5", title: "Silk Board Station", subtitle: "Bengaluru", img: "/metro/Silk%20board/SWA01542.webp" },
+      { id: "m6", title: "Other Metro Stations", subtitle: "Bengaluru", img: "/metro/Challaghatta STATION.png" }
     ]
   },
   {
@@ -353,6 +354,7 @@ const portfolioCategories = [
     category: "Hospitals",
     projects: [
       { id: "h1", title: "Bowring Hospital", subtitle: "Bengaluru", img: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.webp" },
+      { id: "h2", title: "Infosys Foundation Govt Maternity Hospital", subtitle: "Kanakapura", img: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303171519.webp" },
       { id: "h3", title: "Infosys Foundation Jayadeva Hospital", subtitle: "Bengaluru", img: "/hospital.webp" },
       { id: "h4", title: "Kidwai Cancer Hospital", subtitle: "Bengaluru", img: "/hospital/Kidwai%20Cancer%20Hospital/MRC%20kidwai%20DRONE%20_11.webp" },
       { id: "h5", title: "Tata Memorial Centre Advanced Centre", subtitle: "Mumbai", img: "/hospital/Tata%20Memorial%20Centre%20Advanced%20Centr%20-%20Mumbai/MRC mumbai DRONE_6.webp" },
@@ -375,7 +377,11 @@ const portfolioCategories = [
     category: "Ongoing Projects",
     projects: [
       { id: "o1", title: "GAIL Office Building", subtitle: "Bengaluru", img: "/gail/6107169124271198344.webp" },
-      { id: "o2", title: "JSVK Param Convention Center", subtitle: "Bengaluru", img: "/jsvk/6107169124271198356.webp" }
+      { id: "o2", title: "JSVK Param Convention Center", subtitle: "Bengaluru", img: "/jsvk/6107169124271198356.webp" },
+      { id: "o3", title: "BMRCL", subtitle: "Bengaluru", img: "/bmrcl/MRC%20website%20UIUX.webp" },
+      { id: "o4", title: "CMP Auditorium", subtitle: "Bengaluru", img: "/CMP/DSC_3965.webp" },
+      { id: "o5", title: "OTMA Building", subtitle: "Bengaluru", img: "/otma/otma.png" },
+      { id: "o6", title: "NTPC", img: "/ntpc/NTPC.png" }
     ]
   }
 ];
@@ -411,78 +417,22 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-const DraggableCategoryRow = ({ category, projects }) => {
-  const scrollRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [hasDragged, setHasDragged] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
+const CategoryGrid = ({ category, projects }) => {
   const sectionId = category.toLowerCase().replace(/\s+/g, '-');
 
-  const onMouseDown = (e) => {
-    setIsDragging(true);
-    setHasDragged(false);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  };
-
-  const onMouseLeave = () => {
-    setIsDragging(false);
-  };
-
-  const onMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const onMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // scroll-fast
-    if (Math.abs(walk) > 5) {
-      setHasDragged(true);
-    }
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  // Center items based on how many fit safely on the screen to prevent cutoff bugs
-  let justifyClass = "justify-start";
-  if (projects.length <= 2) {
-    justifyClass = "md:justify-center";
-  } else if (projects.length === 3) {
-    justifyClass = "xl:justify-center justify-start";
-  } else if (projects.length === 4) {
-    justifyClass = "2xl:justify-center justify-start";
-  }
-
   return (
-    <div id={sectionId} className="w-full mb-16 md:mb-24 overflow-hidden max-w-[1600px] mx-auto scroll-mt-32">
-      <div className="flex items-center justify-center mb-8 px-6 md:px-16 text-center">
+    <div id={sectionId} className="w-full mb-16 md:mb-24 overflow-hidden max-w-[1400px] mx-auto scroll-mt-32">
+      <div className="flex items-center justify-center mb-12 px-6 md:px-16 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] tracking-tight uppercase drop-shadow-sm">{category}</h2>
       </div>
 
-      <div
-        ref={scrollRef}
-        onMouseDown={onMouseDown}
-        onMouseLeave={onMouseLeave}
-        onMouseUp={onMouseUp}
-        onMouseMove={onMouseMove}
-        className={`flex gap-6 overflow-x-auto hide-scrollbar pb-8 pt-4 px-6 md:px-16 ${justifyClass} ${isDragging ? 'cursor-grabbing select-none snap-none' : 'cursor-grab snap-x snap-mandatory'}`}
-        style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
-      >
+      <div className="flex flex-wrap justify-center gap-10 pb-8 pt-4 px-6 md:px-16">
         {projects.map(p => (
           <Link
             to={`/portfolio/${p.id}`}
             key={p.id}
-            className="snap-center block"
+            className="block"
             draggable="false"
-            onDragStart={(e) => e.preventDefault()}
-            onClick={(e) => {
-              if (hasDragged) {
-                e.preventDefault();
-              }
-            }}
           >
             <ProjectCard project={p} />
           </Link>
@@ -545,10 +495,10 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* Draggable Category Rows */}
+      {/* Category Grid */}
       <div className="-mt-10 md:mt-0 pb-32">
         {portfolioCategories.map((cat, idx) => (
-          <DraggableCategoryRow key={idx} category={cat.category} projects={cat.projects} />
+          <CategoryGrid key={idx} category={cat.category} projects={cat.projects} />
         ))}
       </div>
 

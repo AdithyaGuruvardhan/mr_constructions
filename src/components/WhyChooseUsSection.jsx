@@ -89,7 +89,7 @@ export default function WhyChooseUsSection() {
                 
                 {/* Circular Arrow Icon */}
                 <div className={`absolute bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110 cursor-pointer ${isDark ? 'bg-white text-[#2c52a1]' : 'bg-[#1c1c1e] text-white'}`}>
-                  <svg className="w-4 h-4 md:w-5 md:h-5 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
                 </div>
