@@ -340,6 +340,7 @@ const portfolioCategories = [
       { id: "c1", title: "Infosys New Campus", subtitle: "Hubli", img: "/commercial/infosys/INFOSYS HUBLI29.webp" },
       { id: "c2", title: "Lake development and construction", subtitle: "Hebbal Mysore", img: "/commercial/lake/infosys STP drone 1_10.webp" },
       { id: "c4", title: "Paying Guest Buildings", subtitle: "Electronic city", img: "/commercial/pg/PG13.webp" },
+      { id: "c5", title: "Construction of 20MLD TTRO Plant for SIPCOT", subtitle: "Hosur", img: "/commercial/TTRO/TTRO_1.webp" },
     ]
   },
   {
@@ -348,6 +349,7 @@ const portfolioCategories = [
       { id: "e1", title: "CBSE English Medium High School", subtitle: "Shivanahalli", img: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC shivanahalli DRONE _21.webp" },
       { id: "e2", title: "Smt. Vimalakulkarni Memorial School", subtitle: "Hubli", img: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp" },
       { id: "e3", title: "Indian Institute of Information Technology", subtitle: "Dharwad", img: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT7.webp" },
+      { id: "e4", title: "Indian Institute of Information Technology", subtitle: "Trichy", img: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_1.jpeg" },
     ]
   },
   {
@@ -388,17 +390,17 @@ const portfolioCategories = [
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[350px] aspect-[3/4] bg-gray-200 rounded-[2rem] p-8 md:p-10 flex flex-col justify-between relative group overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+    <div className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[350px] aspect-[3/4] bg-gray-200 rounded-[2rem] p-8 md:p-10 flex flex-col relative group overflow-hidden transition-transform duration-300 hover:-translate-y-2">
       {/* Top Text */}
-      <div className="z-10 flex flex-col gap-2 pointer-events-none select-none">
+      <div className="z-10 flex flex-col items-center gap-2 text-center pointer-events-none select-none shrink-0">
         <h3 className="font-bold text-xl md:text-2xl text-[#1c1c1e] leading-tight">{project.title}</h3>
         {project.subtitle && (
           <p className="text-sm md:text-base text-gray-500 font-light leading-relaxed">{project.subtitle}</p>
         )}
       </div>
 
-      {/* Center Image (takes most of the card) */}
-      <div className="absolute top-[140px] left-5 right-5 bottom-24 rounded-2xl overflow-hidden shadow-lg pointer-events-none select-none">
+      {/* Center Image (fills remaining space below the text, never overlaps it) */}
+      <div className="relative flex-1 min-h-0 mt-4 mb-16 md:mb-20 rounded-2xl overflow-hidden shadow-lg pointer-events-none select-none">
         <img
           src={project.img}
           alt={project.title}
@@ -455,7 +457,7 @@ export default function Portfolio() {
         }, 100);
       }
     }
-  }, [location.hash]);
+  }, [location.hash, location.key]);
 
   return (
     <div className="pt-32 min-h-screen bg-[#fafafa] overflow-hidden">

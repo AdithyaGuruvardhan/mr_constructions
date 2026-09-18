@@ -65,9 +65,9 @@ export default function ClienteleSection() {
         {allLogos.map((logo, index) => (
           <div
             key={`mobile-${index}`}
-            className="w-[calc(50%-0.5rem)] h-20 bg-[#e2e2e2] rounded-[1rem] flex items-center justify-center p-2 shadow-sm overflow-hidden"
+            className="w-[calc(50%-0.5rem)] h-24 bg-[#e2e2e2] rounded-[1rem] flex items-center justify-center p-1 shadow-sm overflow-hidden"
           >
-            <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain" />
+            <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain scale-125" />
           </div>
         ))}
       </div>

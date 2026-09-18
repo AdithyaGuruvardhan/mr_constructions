@@ -173,11 +173,19 @@ const ImageViewerModal = ({ images, activeIndex, onClose, onNext, onPrev }) => {
 };
 
 // Image Arc Gallery Component exactly matching the user screenshot
-const ProjectImageArc = ({ certificateId }) => {
-  // Pull one image from EVERY project to create a massive, identical gallery for all certificates
-  const baseImages = Object.values(projectsData)
-    .map(project => project.galleryImages?.[0] || project.heroBg)
-    .filter(Boolean);
+const ProjectImageArc = ({ projectId, projectIds }) => {
+  const linkedProject = projectId ? projectsData[projectId] : null;
+
+  // Priority: a specific project's full gallery > one image from each project in a given list > generic pool
+  const baseImages = linkedProject
+    ? (linkedProject.galleryImages?.length ? linkedProject.galleryImages : [linkedProject.heroBg]).filter(Boolean)
+    : projectIds?.length
+      ? projectIds
+          .map(id => projectsData[id]?.heroBg || projectsData[id]?.galleryImages?.[0])
+          .filter(Boolean)
+      : Object.values(projectsData)
+          .map(project => project.galleryImages?.[0] || project.heroBg)
+          .filter(Boolean);
 
   // Duplicate the array multiple times to create a large enough off-screen buffer
   // so the infinite carousel doesn't leave "holes" when items wrap around on large desktop screens.
@@ -338,7 +346,7 @@ const CleanCard = ({ certificate }) => {
 
       {/* The Arc Image Gallery in the center */}
       <div className="w-full z-10 mb-2 mt-0 lg:mt-2">
-        <ProjectImageArc certificateId={certificate.id} />
+        <ProjectImageArc projectId={certificate.projectId} projectIds={certificate.projectIds} />
       </div>
 
       {/* Detailed Information Grid */}
@@ -510,17 +518,18 @@ const Certificates = () => {
           </div>
         ) : (
           <div className="w-full max-w-7xl mx-auto">
-            <div className="mb-20 text-center">
-              <h1 className="text-4xl font-bold text-gray-900">Completed Projects</h1>
+            <div className="mb-8 text-center">
+              <h1 className="text-4xl font-bold text-gray-900">Project Certificates</h1>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
               {certificatesData.map((cert) => (
-                <CertificateSummaryCard
-                  key={cert.id}
-                  certificate={cert}
-                  onClick={() => setSelectedCert(cert)}
-                />
+                <div key={cert.id} className="w-[calc(50%-8px)] md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.333px)]">
+                  <CertificateSummaryCard
+                    certificate={cert}
+                    onClick={() => setSelectedCert(cert)}
+                  />
+                </div>
               ))}
             </div>
           </div>

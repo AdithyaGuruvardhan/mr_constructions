@@ -147,9 +147,16 @@ const CardNav = ({
     if (el) cardsRef.current[i] = el;
   };
 
+  const isCurrentLink = href => {
+    const [path, hash] = href.split('#');
+    const targetPath = path || '/';
+    const targetHash = hash ? `#${hash}` : '';
+    return location.pathname === targetPath && location.hash === targetHash;
+  };
+
   return (
     <div
-      className={`card-nav-container fixed left-1/2 -translate-x-1/2 w-[90%] max-w-[1200px] z-[99] top-[1.2em] md:top-[2em] ${className}`}
+      className={`card-nav-container fixed left-1/2 -translate-x-1/2 w-[93%] max-w-[1360px] z-[99] top-[1.2em] md:top-[2em] ${className}`}
     >
       <nav
         ref={navRef}
@@ -212,16 +219,18 @@ const CardNav = ({
               <div className="nav-card-label font-medium tracking-[-0.5px] text-xl md:text-2xl mb-2">
                 {item.label}
               </div>
-              <div className={`nav-card-links mt-2 ${item.twoCols ? 'grid grid-cols-2 gap-x-4 gap-y-[2px]' : 'flex flex-col gap-[2px]'}`}>
+              <div className={`nav-card-links mt-2 ${item.twoCols ? 'grid grid-cols-2 grid-flow-col grid-rows-4 gap-x-4 gap-y-[2px]' : 'flex flex-col gap-[2px]'}`}>
                 {item.links?.map((lnk, i) => (
                   <Link
                     key={`${lnk.label}-${i}`}
-                    className={`nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-lg md:text-xl py-1 ${lnk.label === 'Contact Us' ? 'font-bold' : ''}`}
+                    className="nav-card-link group inline-flex items-center gap-[6px] no-underline cursor-pointer transition-[opacity,font-weight] duration-300 hover:opacity-75 hover:font-bold text-lg md:text-xl py-1"
                     to={lnk.href}
                     aria-label={lnk.ariaLabel}
                     onClick={toggleMenu}
                   >
-                    <GoArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
+                    {!isCurrentLink(lnk.href) && (
+                      <GoArrowUpRight className="nav-card-link-icon shrink-0 transition-transform duration-300 group-hover:rotate-45" aria-hidden="true" />
+                    )}
                     {lnk.label}
                   </Link>
                 ))}

@@ -1,6 +1,7 @@
 export const certificatesData = [
   {
     id: 1,
+    projectId: "h3",
     projectName: "Infosys Foundation Hospital Block [300 Bedded Hospital Block]",
     client: "Sri Jayadeva Institute of Cardiovascular Sciences and Research",
     location: "Bangalore",
@@ -36,6 +37,7 @@ export const certificatesData = [
   },
   {
     id: 2,
+    projectId: "c1",
     projectName: "Software Development Block G+5, Food Court and External Development",
     client: "Infosys Limited",
     location: "Hubli SEZ New Campus, Dharwad District, Karnataka",
@@ -71,6 +73,7 @@ export const certificatesData = [
   },
   {
     id: 3,
+    projectId: "c2",
     projectName: "Construction of Sewage Treatment plant [STP]",
     client: "Infosys Limited",
     location: "Hebbal, Mysore district, Karnataka",
@@ -106,6 +109,7 @@ export const certificatesData = [
   },
   {
     id: 4,
+    projectId: "e3",
     projectName: "Infosys Foundation IIIT Girls Hostel (Dharwad)",
     client: "Infosys Foundation",
     location: "Ittigatti Road, Dharawad, Karnataka",
@@ -141,6 +145,7 @@ export const certificatesData = [
   },
   {
     id: 5,
+    projectId: "h5",
     projectName: "Infosys Foundation Asha Nivas at ACTREC campus",
     client: "Infosys Foundation",
     location: "Navi Mumbai, Maharashtra",
@@ -176,6 +181,7 @@ export const certificatesData = [
   },
   {
     id: 6,
+    projectId: "e4",
     projectName: "Infosys Foundation IIIT Girls Hostel (Trichy)",
     client: "Infosys Foundation",
     location: "Sethurapatti, Trichy, Tamilnadu",
@@ -211,6 +217,7 @@ export const certificatesData = [
   },
   {
     id: 7,
+    projectId: "h4",
     projectName: "Infosys Foundation OPD Block Kidwai Memorial Institute of Oncology",
     client: "Infosys Foundation",
     location: "Hosur Road, Bangalore",
@@ -246,6 +253,7 @@ export const certificatesData = [
   },
   {
     id: 8,
+    projectId: "h2",
     projectName: "Infosys Foundation Government Maternity Hospital",
     client: "Infosys Foundation",
     location: "Kanakapura, Karnataka",
@@ -316,6 +324,7 @@ export const certificatesData = [
   },
   {
     id: 10,
+    projectId: "e2",
     projectName: "Infosys Foundation School CBSC English Medium school",
     client: "Infosys Foundation",
     location: "Shivanahalli (Ramakrishna Mission) Bangalore, Karnataka",
@@ -421,6 +430,7 @@ export const certificatesData = [
   },
   {
     id: 13,
+    projectId: "o1",
     projectName: "Construction of Office Building and other Miscellaneous Facility",
     client: "Gail India Limited, Bangalore",
     location: "Manyatha Tech park, Bangalore",
@@ -456,6 +466,7 @@ export const certificatesData = [
   },
   {
     id: 14,
+    projectId: "o2",
     projectName: "Janaseva Trust Param Convention Center & Exhibition Hall",
     client: "Param Foundation(Janaseva Trust) Channenahalli,Magadi Main Road,Bangalore",
     location: "channenahalli,Magadi Main Road,Bangalore, Karnataka",
@@ -491,6 +502,7 @@ export const certificatesData = [
   },
   {
     id: 15,
+    projectId: "o6",
     projectName: "Construction of NTPC Mining Limited Office Building Complex",
     client: "NTPC Limited ,Ranchi",
     location: "Greater Ranchi",
@@ -526,6 +538,7 @@ export const certificatesData = [
   },
   {
     id: 16,
+    projectId: "c5",
     projectName: "Construction of 20MLD TTRO Plant for SIPCOT",
     client: "Aquvatech",
     location: "Kelavarapalli Dam,Housr,Tamil Nadu",
@@ -561,6 +574,7 @@ export const certificatesData = [
   },
   {
     id: 17,
+    projectId: "m5",
     projectName: "Phase-2A-A1: Architectural Finishing and Public Health works for 6 Elevated Metro Stations",
     client: "Bangalore Metrorail Corporation",
     location: "Central Silk Board, HSR Layout, Agara, Ibbalur, Bellandur & Kadubeesanahalli",
@@ -596,6 +610,7 @@ export const certificatesData = [
   },
   {
     id: 18,
+    projectIds: ["m1", "m2", "m3", "m4", "m5", "m6"],
     projectName: "Architectural Finishing works and Public Health Engineering works of 7 Metro Stations",
     client: "Bangalore Metrorail Corporation",
     location: "Challaghatta, Madavara (BIEC), Central Silk Board, BTM Layout, Jayadeva Hospital, Ragigudda & RV Road",
@@ -627,6 +642,42 @@ export const certificatesData = [
       financialSoundness: "Outstanding",
       technicalProficiency: "Outstanding",
       generalBehaviour: "Very Good"
+    }
+  },
+  {
+    id: 19,
+    projectId: "t2",
+    projectName: "Renovation of Kalyani at Sri Vasantha Vallabha Swamy Temple",
+    client: "Infosys Foundation",
+    location: "Uttarahalli Hobli, Vasanthapura, Bangalore",
+    description: "Renovation of Kalyani at Sri Vasantha Vallabha Swamy Temple, Uttarahalli Hobli, Vasanthapura, Bangalore, Karnataka includes desilting, new stone steps around the Kalyani, Mantapa, RCC structure, finishes, electrical and PHE works.",
+    donor: {
+      name: "Infosys Foundation",
+      address: "Neralu No. 1878, 11th Main, 39th Cross 4th T Block, Jayanagar Bangalore, Karnataka-560011, India"
+    },
+    financials: {
+      workOrderValue: "Rs. 08.50 crore (Eight crore Fifty Lakhs Only)",
+      costOnCompletion: "Rs. 7.50 Crore (Seven Crore Fifty Lakhs Only)",
+      compensationLevied: "NOT APPLICABLE"
+    },
+    timeline: {
+      dateOfStart: "29th November 2017",
+      stipulatedCompletion: "19th October 2018",
+      actualCompletion: "19th October 2018"
+    },
+    specifications: {
+      typeOfWork: "NON-Residential",
+      totalBuiltUpArea: "87,120 Sqft",
+      basements: "Nil",
+      maximumHeight: "Max Kalyani Depth: 6.0 Mtrs",
+      storeys: "N/A"
+    },
+    performance: {
+      qualityOfWork: "Outstanding",
+      resourcefulness: "Outstanding",
+      financialSoundness: "Outstanding",
+      technicalProficiency: "Outstanding",
+      generalBehaviour: "Outstanding"
     }
   }
 ];

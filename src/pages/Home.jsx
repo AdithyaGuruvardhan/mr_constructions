@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import HeroScrollVideo from '../components/HeroScrollVideo'
 import AboutSection from '../components/AboutSection'
 import ProcessSection from '../components/ProcessSection'
@@ -14,6 +16,20 @@ import FAQSection from '../components/FAQSection'
 import TestimonialsSection from '../components/TestimonialsSection'
 
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.hash, location.key]);
+
   return (
     <div className="w-full">
       {/* The Scroll-Driven Video Hero */}

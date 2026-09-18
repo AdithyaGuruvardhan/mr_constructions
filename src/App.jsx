@@ -22,6 +22,7 @@ const navItems = [
     links: [
       { label: 'Home', href: '/' },
       { label: 'About Us', href: '/about' },
+      { label: 'Services', href: '/#services' },
       { label: 'Contact Us', href: '/contact' }
     ]
   },
@@ -43,12 +44,12 @@ const navItems = [
     twoCols: true,
     links: [
       { label: 'All Projects', href: '/portfolio' },
-      { label: 'Hospitals', href: '/portfolio#hospitals' },
-      { label: 'Commercial', href: '/portfolio#commercial' },
-      { label: 'Archaeological Developments', href: '/portfolio#archaeological-developments' },
-      { label: 'Educational Institutions', href: '/portfolio#educational-institutions' },
-      { label: 'Roads & Infrastructure', href: '/portfolio#roads-&-infrastructure' },
       { label: 'Government Projects', href: '/portfolio#government-projects' },
+      { label: 'Commercial', href: '/portfolio#commercial' },
+      { label: 'Educational Institutions', href: '/portfolio#educational-institutions' },
+      { label: 'Hospitals', href: '/portfolio#hospitals' },
+      { label: 'Archaeological Developments', href: '/portfolio#archaeological-developments' },
+      { label: 'Roads & Infrastructure', href: '/portfolio#roads-&-infrastructure' },
       { label: 'Ongoing Projects', href: '/portfolio#ongoing-projects' }
     ]
   }

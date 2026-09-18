@@ -305,6 +305,47 @@ export const projectsData = {
       "/commercial/pg/PG14.webp"
     ]
   },
+  "c5": {
+    id: "c5",
+    title: "Construction of 20MLD TTRO Plant for SIPCOT",
+    location: "HOSUR",
+    number: "27",
+    heroBg: "/commercial/TTRO/TTRO_1.webp",
+    images: {
+      mobile1: "/commercial/TTRO/TTRO_2.webp",
+      mobile2: "/commercial/TTRO/TTRO_3.webp",
+      desktopLeft: "/commercial/TTRO/TTRO_2.webp",
+      desktopRight: "/commercial/TTRO/TTRO_3.webp"
+    },
+    introText1: "Built for Aquvatech at Kelavarapalli Dam, Hosur, this Tertiary Treatment Reverse Osmosis plant reflects our expertise in delivering large-scale water treatment infrastructure for SIPCOT, Tamil Nadu.",
+    introText2: "Our scope covers all civil works, electrical and admin buildings, compound wall, and external development, resulting in a facility built to treat 20 MLD across a Basement plus G+2 structure.",
+    droneSection: {
+      img1: "/commercial/TTRO/TTRO_4.webp",
+      img2: "/commercial/TTRO/TTRO_5.webp",
+      cardTitle: "2,61,000 Sft",
+      cardDesc: "Total built-up area developed for the 20 MLD TTRO plant",
+      stats: [
+        { title: "20 MLD", desc: "Tertiary Treatment Reverse Osmosis plant capacity delivered" },
+        { title: "Basement+G+2", desc: "Floors constructed, from basement to second floor" },
+        { title: "Full Civil & Electrical Works", desc: "Admin buildings, compound wall and external development executed" },
+        { title: "Status: Ongoing", desc: "Large-scale water treatment infrastructure under execution for SIPCOT" }
+      ]
+    },
+    galleryImages: [
+      "/commercial/TTRO/TTRO_6.webp",
+      "/commercial/TTRO/TTRO_7.webp",
+      "/commercial/TTRO/TTRO_8.webp",
+      "/commercial/TTRO/TTRO_9.webp",
+      "/commercial/TTRO/TTRO_10.webp",
+      "/commercial/TTRO/TTRO_11.webp",
+      "/commercial/TTRO/TTRO_12.webp",
+      "/commercial/TTRO/TTRO_13.webp",
+      "/commercial/TTRO/TTRO_14.webp",
+      "/commercial/TTRO/TTRO_15.webp",
+      "/commercial/TTRO/TTRO_16.webp",
+      "/commercial/TTRO/TTRO_17.webp"
+    ]
+  },
 
   // ================= EDUCATION =================
   "e1": {
@@ -408,6 +449,42 @@ export const projectsData = {
       "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT14.webp",
       "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT10.webp",
       "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT11.webp"
+    ]
+  },
+  "e4": {
+    id: "e4",
+    title: "IIIT Trichy",
+    location: "TRICHY",
+    number: "26",
+    heroBg: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_1.jpeg",
+    images: {
+      mobile1: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_2.jpeg",
+      mobile2: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_3.jpeg",
+      desktopLeft: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_2.jpeg",
+      desktopRight: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_3.jpeg"
+    },
+    introText1: "Built for Infosys Foundation at Sethurapatti, Trichy, this Girls Hostel reflects our expertise in delivering institutional residential facilities within the IIIT campus.",
+    introText2: "Executed over 23 months, our scope covered the complete RCC structure and finishes along with electrical, PHE, fire fighting, and lift coordination across a Ground plus 4 storey structure. Here's a closer look at the numbers behind the project.",
+    droneSection: {
+      img1: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_4.jpeg",
+      img2: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_5.jpeg",
+      cardTitle: "43,700 Sft",
+      cardDesc: "Built-up area developed along with complete site development",
+      stats: [
+        { title: "G+4", desc: "Floors constructed, from ground to fourth floor" },
+        { title: "23 Months", desc: "Duration taken to execute and complete the project end to end" },
+        { title: "Full MEP Coordination", desc: "Electrical, PHE, fire fighting and lift services coordinated" },
+        { title: "Status: Completed", desc: "Delivered as a fully finished, operational girls hostel facility" }
+      ]
+    },
+    galleryImages: [
+      "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_1.jpeg",
+      "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_2.jpeg",
+      "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_3.jpeg",
+      "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_4.jpeg",
+      "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_5.jpeg",
+      "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_6.jpeg",
+      "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_7.jpeg"
     ]
   },
 

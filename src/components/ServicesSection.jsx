@@ -65,7 +65,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="bg-white py-20 px-6 md:px-16 w-full">
+    <section id="services" className="bg-white py-20 px-6 md:px-16 w-full">
       <div className="max-w-7xl mx-auto flex flex-col items-start">
         
         {/* Title */}
