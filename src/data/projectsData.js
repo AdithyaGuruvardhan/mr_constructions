@@ -4,7 +4,7 @@ export const projectsData = {
     id: "o1",
     title: "GAIL Office Building",
     location: "BENGALURU",
-    number: "20",
+    number: "24",
     heroBg: "/gail/6107169124271198344.webp",
     images: {
       mobile1: "/gail/6107169124271198341.webp",
@@ -39,7 +39,7 @@ export const projectsData = {
     id: "o2",
     title: "JSVK Param Convention Center",
     location: "BENGALURU",
-    number: "21",
+    number: "25",
     heroBg: "/jsvk/6107169124271198359.webp",
     images: {
       mobile1: "/jsvk/6107169124271198351.webp",
@@ -74,7 +74,7 @@ export const projectsData = {
     id: "o3",
     title: "BMRCL",
     location: "BENGALURU",
-    number: "22",
+    number: "26",
     heroBg: "/bmrcl/MRC%20website%20UIUX.webp",
     images: {
       mobile1: "/bmrcl/MRC%20website%20UIUX%20(1).webp",
@@ -104,11 +104,11 @@ export const projectsData = {
       "/bmrcl/MRC%20website%20UIUX.webp"
     ]
   },
-  "o4": {
-    id: "o4",
+  "g1": {
+    id: "g1",
     title: "CMP Auditorium",
     location: "BENGALURU",
-    number: "23",
+    number: "07",
     heroBg: "/CMP/DSC_3965.webp",
     images: {
       mobile1: "/CMP/DSC_3969.webp",
@@ -126,7 +126,7 @@ export const projectsData = {
       stats: [
         { title: "Acoustic Design", desc: "State-of-the-art acoustic engineering and soundproofing for optimal audio experiences" },
         { title: "Modern Seating", desc: "Designed to accommodate a large audience with tiered seating arrangements" },
-        { title: "Status: Ongoing", desc: "Project is currently ongoing" }
+        { title: "Status: Completed", desc: "Project has been successfully completed" }
       ]
     },
     galleryImages: [
@@ -138,11 +138,11 @@ export const projectsData = {
       "/CMP/DSC_4058.webp"
     ]
   },
-  "o5": {
-    id: "o5",
+  "g2": {
+    id: "g2",
     title: "OTMA Building",
     location: "BENGALURU",
-    number: "24",
+    number: "08",
     singleRowGallery: true,
     heroBg: "/otma/otma.png",
     galleryImages: [
@@ -155,7 +155,7 @@ export const projectsData = {
   "o6": {
     id: "o6",
     title: "NTPC",
-    number: "25",
+    number: "27",
     singleRowGallery: true,
     heroBg: "/ntpc/NTPC.png",
     galleryImages: [
@@ -171,7 +171,7 @@ export const projectsData = {
     id: "c1",
     title: "Infosys New Campus",
     location: "HUBLI",
-    number: "06",
+    number: "09",
     heroBg: "/commercial/infosys/INFOSYS%20HUBLI29.webp",
     images: {
       mobile1: "/commercial/infosys/INFOSYS HUBLI INTERIOR12.webp",
@@ -206,7 +206,7 @@ export const projectsData = {
     id: "c2",
     title: "Lake Development",
     location: "HEBBAL MYSORE",
-    number: "07",
+    number: "10",
     heroBg: "/commercial/lake/infosys STP drone 1_6.webp",
     images: {
       mobile1: "/commercial/lake/infosys STP drone 1_14.webp",
@@ -241,7 +241,7 @@ export const projectsData = {
     id: "c3",
     title: "Sira Solar Plant",
     location: "SIRA",
-    number: "19",
+    number: "23",
     heroBg: "/commercial/sira%20solar%20plant/MRC%20sira%202S%20_8.webp",
     images: {
       mobile1: "/commercial/sira%20solar%20plant/MRC%20sira%202S%20_14.webp",
@@ -274,7 +274,7 @@ export const projectsData = {
     id: "c4",
     title: "Paying Guest Buildings",
     location: "ELECTRONIC CITY",
-    number: "08",
+    number: "11",
     heroBg: "/commercial/pg/PG13.webp",
     images: {
       mobile1: "/commercial/pg/PG15.webp",
@@ -309,7 +309,7 @@ export const projectsData = {
     id: "c5",
     title: "Construction of 20MLD TTRO Plant for SIPCOT",
     location: "HOSUR",
-    number: "27",
+    number: "12",
     heroBg: "/commercial/TTRO/TTRO_1.webp",
     images: {
       mobile1: "/commercial/TTRO/TTRO_2.webp",
@@ -352,7 +352,7 @@ export const projectsData = {
     id: "e1",
     title: "CBSE English Medium High School",
     location: "SHIVANAHALLI",
-    number: "09",
+    number: "13",
     heroBg: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC%20shivanahalli%20DRONE%20_9.webp",
     images: {
       mobile1: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC shivanahalli 2S 22_40.webp",
@@ -385,7 +385,7 @@ export const projectsData = {
     id: "e2",
     title: "Smt. Vimalakulkarni Memorial School",
     location: "HUBLI",
-    number: "10",
+    number: "14",
     heroBg: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp",
     images: {
       mobile1: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL4.webp",
@@ -420,7 +420,7 @@ export const projectsData = {
     id: "e3",
     title: "IIIT Dharwad",
     location: "DHARWAD",
-    number: "11",
+    number: "15",
     heroBg: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT14.webp",
     images: {
       mobile1: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT10.webp",
@@ -455,7 +455,7 @@ export const projectsData = {
     id: "e4",
     title: "IIIT Trichy",
     location: "TRICHY",
-    number: "26",
+    number: "16",
     heroBg: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_1.jpeg",
     images: {
       mobile1: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_2.jpeg",
@@ -527,7 +527,7 @@ export const projectsData = {
     id: "h2",
     title: "Infosys Foundation Govt Maternity Hospital",
     location: "KANAKAPURA",
-    number: "13",
+    number: "17",
     heroBg: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303150213.webp",
     images: {
       mobile1: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/KANAKAPURA6.webp",
@@ -562,7 +562,7 @@ export const projectsData = {
     id: "h3",
     title: "Infosys Foundation Jayadeva Hospital",
     location: "BENGALURU",
-    number: "14",
+    number: "18",
     heroBg: "/hospital/Infosys Foundation Jayadeva Hospital Building Bangalore/MRC jayadeva drone 2S _5.webp",
     images: {
       mobile1: "/hospital/Infosys Foundation Jayadeva Hospital Building Bangalore/MRC jayadeva 2S _123.webp",
@@ -597,7 +597,7 @@ export const projectsData = {
     id: "h4",
     title: "Kidwai Cancer Hospital",
     location: "BENGALURU",
-    number: "15",
+    number: "19",
     heroBg: "/hospital/Kidwai%20Cancer%20Hospital/MRC kidwai DRONE _2.webp",
     images: {
       mobile1: "/hospital/Kidwai%20Cancer%20Hospital/MRC KIDWAI 2S _17.webp",
@@ -632,7 +632,7 @@ export const projectsData = {
     id: "h5",
     title: "Tata Memorial Centre",
     location: "MUMBAI",
-    number: "16",
+    number: "20",
     heroBg: "/hospital/Tata%20Memorial%20Centre%20Advanced%20Centr%20-%20Mumbai/MRC MUMBAI day 1_27.webp",
     images: {
       mobile1: "/hospital/Tata%20Memorial%20Centre%20Advanced%20Centr%20-%20Mumbai/MRC mumbai DRONE_6.webp",
@@ -669,7 +669,7 @@ export const projectsData = {
     id: "t1",
     title: "Development of Kalyani Vasanthpura",
     location: "BENGALURU",
-    number: "17",
+    number: "21",
     heroBg: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA KALYANI12.webp",
     images: {
       mobile1: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA%20KALYANI19.webp",
@@ -704,7 +704,7 @@ export const projectsData = {
     id: "t2",
     title: "Melukote Kalyani",
     location: "MELUKOTE",
-    number: "18",
+    number: "22",
     heroBg: "/temple/Melukote%20Kalayani/MELKOTE%20KALYANI9.webp",
     images: {
       mobile1: "/temple/Melukote%20Kalayani/MELKOTE%20KALYANI22.webp",

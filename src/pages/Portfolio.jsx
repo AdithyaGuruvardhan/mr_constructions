@@ -331,7 +331,9 @@ const portfolioCategories = [
       { id: "m3", title: "Ragigudda Station", subtitle: "Bengaluru", img: "/metro/Ragigudda/RGS (4).webp" },
       { id: "m4", title: "Rashtreeya Vidyalaya Road Station", subtitle: "Bengaluru", img: "/metro/Rashtreeya%20Vidyalaya%20Road/RVR STATION (4).webp" },
       { id: "m5", title: "Silk Board Station", subtitle: "Bengaluru", img: "/metro/Silk%20board/SWA01542.webp" },
-      { id: "m6", title: "Other Metro Stations", subtitle: "Bengaluru", img: "/metro/Challaghatta STATION.png" }
+      { id: "m6", title: "Other Metro Stations", subtitle: "Bengaluru", img: "/metro/Challaghatta STATION.png" },
+      { id: "g1", title: "CMP Auditorium", subtitle: "Bengaluru", img: "/CMP/DSC_3965.webp" },
+      { id: "g2", title: "OTMA Building", subtitle: "Bengaluru", img: "/otma/otma.png" }
     ]
   },
   {
@@ -355,7 +357,7 @@ const portfolioCategories = [
   {
     category: "Hospitals",
     projects: [
-      { id: "h1", title: "Bowring Hospital", subtitle: "Bengaluru", img: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.webp" },
+      // { id: "h1", title: "Bowring Hospital", subtitle: "Bengaluru", img: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.webp" },
       { id: "h2", title: "Infosys Foundation Govt Maternity Hospital", subtitle: "Kanakapura", img: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303171519.webp" },
       { id: "h3", title: "Infosys Foundation Jayadeva Hospital", subtitle: "Bengaluru", img: "/hospital.webp" },
       { id: "h4", title: "Kidwai Cancer Hospital", subtitle: "Bengaluru", img: "/hospital/Kidwai%20Cancer%20Hospital/MRC%20kidwai%20DRONE%20_11.webp" },
@@ -381,8 +383,6 @@ const portfolioCategories = [
       { id: "o1", title: "GAIL Office Building", subtitle: "Bengaluru", img: "/gail/6107169124271198344.webp" },
       { id: "o2", title: "JSVK Param Convention Center", subtitle: "Bengaluru", img: "/jsvk/6107169124271198356.webp" },
       { id: "o3", title: "BMRCL", subtitle: "Bengaluru", img: "/bmrcl/MRC%20website%20UIUX.webp" },
-      { id: "o4", title: "CMP Auditorium", subtitle: "Bengaluru", img: "/CMP/DSC_3965.webp" },
-      { id: "o5", title: "OTMA Building", subtitle: "Bengaluru", img: "/otma/otma.png" },
       { id: "o6", title: "NTPC", img: "/ntpc/NTPC.png" }
     ]
   }
