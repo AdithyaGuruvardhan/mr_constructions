@@ -16,7 +16,7 @@ echo "==> Deploying to $REMOTE_HOST:$REMOTE_PATH"
 rsync -avzc --delete --exclude='.DS_Store' dist/ "$REMOTE_HOST:$REMOTE_PATH"
 
 echo "==> Verifying"
-DEPLOYED_JS=$(curl -s https://mrconstruction.in/ | grep -o 'index-[A-Za-z0-9]*\.js' || true)
+DEPLOYED_JS=$(curl -s https://mrconstruction.in/ | grep -o 'index-[A-Za-z0-9_-]*\.js' || true)
 LOCAL_JS=$(basename dist/assets/index-*.js)
 
 if [ "$DEPLOYED_JS" = "$LOCAL_JS" ]; then
