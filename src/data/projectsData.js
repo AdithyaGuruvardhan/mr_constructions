@@ -143,13 +143,41 @@ export const projectsData = {
     title: "OTMA Building",
     location: "BENGALURU",
     number: "08",
-    singleRowGallery: true,
-    heroBg: "/otma/otma.png",
+    showAllGallery: true,
+    heroBg: "/otma/SVB_6041.webp",
+    images: {
+      mobile1: "/otma/SVB_6033.webp",
+      mobile2: "/otma/SVB_6089.webp",
+      desktopLeft: "/otma/SVB_6033.webp",
+      desktopRight: "/otma/SVB_6089.webp"
+    },
+    introText1: "Construction of the OTMA Building.",
+    introText2: "",
+    droneSection: {
+      img1: "/otma/SVB_6051.webp",
+      img2: "/otma/SVB_6085.webp",
+      cardTitle: "OTMA Building",
+      cardDesc: "",
+      stats: [
+        { title: "Open Floor Plates", desc: "Spacious halls with vitrified flooring and generous natural light" },
+        { title: "Status: Completed", desc: "Project has been successfully completed" }
+      ]
+    },
     galleryImages: [
-      "/otma/otma.png",
-      "/otma/otma (1).png",
-      "/otma/otma (2).png",
-      "/otma/otma (3).png"
+      "/otma/SVB_6876.webp",
+      "/otma/SVB_6116.webp",
+      "/otma/SVB_6103.webp",
+      "/otma/SVB_6061.webp",
+      "/otma/SVB_5933.webp",
+      "/otma/SVB_6086.webp",
+      "/otma/SVB_6046.webp",
+      "/otma/SVB_5905.webp",
+      "/otma/SVB_6073.webp",
+      "/otma/SVB_5944.webp",
+      "/otma/SVB_6113.webp",
+      "/otma/SVB_5910.webp",
+      "/otma/SVB_5935.webp",
+      "/otma/SVB_5963.webp"
     ]
   },
   "o6": {

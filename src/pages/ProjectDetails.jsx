@@ -7,6 +7,8 @@ export default function ProjectDetails() {
   const project = getProjectData(id);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [zoomScale, setZoomScale] = useState(1);
+  // Single-row galleries (and grids with showAllGallery) show every image; otherwise the grid caps at 6
+  const lightboxImages = project ? (project.singleRowGallery || project.showAllGallery ? project.galleryImages : project.galleryImages.slice(0, 6)) : [];
 
   // Keyboard navigation for modal
   useEffect(() => {
@@ -14,17 +16,17 @@ export default function ProjectDetails() {
       if (selectedIndex === null) return;
       if (e.key === 'Escape') { setSelectedIndex(null); setZoomScale(1); }
       if (e.key === 'ArrowRight') { 
-        setSelectedIndex(prev => (prev < project.galleryImages.slice(0, 6).length - 1 ? prev + 1 : 0)); 
+        setSelectedIndex(prev => (prev < lightboxImages.length - 1 ? prev + 1 : 0)); 
         setZoomScale(1); 
       }
       if (e.key === 'ArrowLeft') { 
-        setSelectedIndex(prev => (prev > 0 ? prev - 1 : project.galleryImages.slice(0, 6).length - 1)); 
+        setSelectedIndex(prev => (prev > 0 ? prev - 1 : lightboxImages.length - 1)); 
         setZoomScale(1); 
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedIndex, project]);
+  }, [selectedIndex, lightboxImages.length]);
 
   if (!project) {
     return <div className="text-center p-20 text-2xl">Project Not Found</div>;
@@ -211,8 +213,8 @@ export default function ProjectDetails() {
           </div>
         ) : (
           <div className="flex flex-col gap-8 md:gap-20 items-center px-2 md:px-16 w-full max-w-[1600px] mx-auto pb-12">
-            {Array.from({ length: Math.ceil(project.galleryImages.slice(0, 6).length / 3) }, (_, i) =>
-              project.galleryImages.slice(0, 6).slice(i * 3, i * 3 + 3)
+            {Array.from({ length: Math.ceil(lightboxImages.length / 3) }, (_, i) =>
+              lightboxImages.slice(i * 3, i * 3 + 3)
             ).map((rowImages, rowIndex) => (
               <div key={rowIndex} className="flex flex-row items-center justify-center gap-2 md:gap-10 lg:gap-[4.5vw] w-full">
                 {rowImages.map((img, index) => (
@@ -273,7 +275,7 @@ export default function ProjectDetails() {
             className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-5xl md:text-7xl z-[10000] transition-colors p-4"
             onClick={(e) => { 
               e.stopPropagation(); 
-              setSelectedIndex(prev => (prev > 0 ? prev - 1 : project.galleryImages.slice(0, 6).length - 1)); 
+              setSelectedIndex(prev => (prev > 0 ? prev - 1 : lightboxImages.length - 1)); 
               setZoomScale(1); 
             }}
           >
@@ -285,7 +287,7 @@ export default function ProjectDetails() {
             className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-5xl md:text-7xl z-[10000] transition-colors p-4"
             onClick={(e) => { 
               e.stopPropagation(); 
-              setSelectedIndex(prev => (prev < project.galleryImages.slice(0, 6).length - 1 ? prev + 1 : 0)); 
+              setSelectedIndex(prev => (prev < lightboxImages.length - 1 ? prev + 1 : 0)); 
               setZoomScale(1); 
             }}
           >
@@ -298,7 +300,7 @@ export default function ProjectDetails() {
             onClick={(e) => e.stopPropagation()} 
           >
             <img 
-              src={project.galleryImages.slice(0, 6)[selectedIndex]} 
+              src={lightboxImages[selectedIndex]} 
               alt="Fullscreen View" 
               className="max-w-full max-h-[90vh] object-contain shadow-2xl rounded-lg transition-transform duration-300 ease-out"
               style={{ transform: `scale(${zoomScale})`, transformOrigin: 'center center' }}

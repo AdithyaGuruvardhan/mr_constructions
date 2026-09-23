@@ -333,7 +333,7 @@ const portfolioCategories = [
       { id: "m5", title: "Silk Board Station", subtitle: "Bengaluru", img: "/metro/Silk%20board/SWA01542.webp" },
       { id: "m6", title: "Other Metro Stations", subtitle: "Bengaluru", img: "/metro/Challaghatta STATION.png" },
       { id: "g1", title: "CMP Auditorium", subtitle: "Bengaluru", img: "/CMP/DSC_3965.webp" },
-      { id: "g2", title: "OTMA Building", subtitle: "Bengaluru", img: "/otma/otma.png" }
+      { id: "g2", title: "OTMA Building", subtitle: "Bengaluru", img: "/otma/SVB_6041.webp" }
     ]
   },
   {
