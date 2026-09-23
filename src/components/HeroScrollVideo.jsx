@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FRAME_COUNT = 138;
 const BATCH_SIZE = 30;
@@ -10,6 +11,7 @@ function getFrameUrl(index, isMobile) {
 }
 
 export default function HeroScrollVideo() {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
   const imagesRef = useRef({
@@ -227,7 +229,7 @@ export default function HeroScrollVideo() {
                 <p className="text-base sm:text-lg md:text-xl max-w-[90%] sm:max-w-lg mb-6 md:mb-8 leading-relaxed" style={{ color: '#f2f2f2' }}>
                   ISO-certified construction and engineering trusted by government and private clients.<br className="hidden md:block" /> 125+ projects completed with precision.
                 </p>
-                <button className="px-6 py-2.5 md:px-8 md:py-3 rounded-lg text-base md:text-lg font-medium pointer-events-auto transition-transform hover:scale-105" style={{ backgroundColor: 'rgba(44, 82, 161, 0.9)', color: '#FFFBF6' }}>
+                <button onClick={() => navigate('/contact')} className="px-6 py-2.5 md:px-8 md:py-3 rounded-lg text-base md:text-lg font-medium pointer-events-auto transition-transform hover:scale-105" style={{ backgroundColor: 'rgba(44, 82, 161, 0.9)', color: '#FFFBF6' }}>
                   Start Your Project
                 </button>
               </div>
@@ -261,7 +263,7 @@ export default function HeroScrollVideo() {
           <p className="text-[17px] mb-8 leading-relaxed text-gray-600">
             ISO-certified construction and engineering trusted by government and private clients. 125+ projects completed with precision.
           </p>
-          <button className="px-8 py-3 rounded-lg text-lg font-medium transition-transform hover:scale-105" style={{ backgroundColor: 'rgba(44, 82, 161, 0.9)', color: '#FFFBF6' }}>
+          <button onClick={() => navigate('/contact')} className="px-8 py-3 rounded-lg text-lg font-medium transition-transform hover:scale-105" style={{ backgroundColor: 'rgba(44, 82, 161, 0.9)', color: '#FFFBF6' }}>
             Start Your Project
           </button>
         </div>

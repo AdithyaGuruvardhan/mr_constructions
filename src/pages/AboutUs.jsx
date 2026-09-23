@@ -89,11 +89,11 @@ export default function AboutUs() {
               <span>THE VISIONARY</span>
             </div>
 
-            <div className="relative z-10 flex flex-col lg:w-6/12 justify-center">
+            <div className="relative z-10 flex flex-col w-full lg:w-6/12 justify-center">
               <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight mb-6 md:mb-8">
                 M Ramesh Reddy
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium text-justify">
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium text-left md:text-justify">
                 M Ramesh Reddy’s journey is defined by hard work, determination, and an unwavering commitment to excellence. Born in Nangali, Karnataka, into a humble family, he began his career as a civil contractor and steadily built M R Constructions into a trusted leader in the industry. A pivotal milestone in his career came in 2012 when he became a vendor for Infosys, leading to an inspiring meeting with the renowned Smt. Sudha Murty. Today, his visionary leadership continues to drive M R Constructions toward new heights of engineering and operational success.
               </p>
             </div>
@@ -114,14 +114,14 @@ export default function AboutUs() {
               <span>THE INSPIRATION</span>
             </div>
 
-            <div className="relative z-10 flex flex-col lg:w-6/12 justify-center">
+            <div className="relative z-10 flex flex-col w-full lg:w-6/12 justify-center">
               <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight mb-6 md:mb-8">
                 Smt. Sudha Murty
               </h2>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium mb-4 text-justify">
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium mb-4 text-left md:text-justify">
                 Smt. Sudha Murty is a renowned author, philanthropist, educator, and social worker known for her simplicity and dedication to serving society. Through her work in education, healthcare, rural development, and social welfare, she has contributed to meaningful change across India.
               </p>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium text-justify">
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium text-left md:text-justify">
                 Her writing has inspired generations with stories rooted in kindness, humility, compassion, and life lessons. Her journey reflects a deep commitment to empowering communities and creating a positive and lasting impact on society.
               </p>
             </div>

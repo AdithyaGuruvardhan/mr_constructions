@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CAROUSEL_IMAGES = [
   "/commercial/infosys/INFOSYS HUBLI19.webp",
@@ -9,6 +10,7 @@ const CAROUSEL_IMAGES = [
 ];
 
 export default function AboutSection() {
+  const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -42,7 +44,9 @@ export default function AboutSection() {
 
           {/* Action Button */}
           <div className="mb-8 md:mb-12">
-            <button className="group relative overflow-hidden bg-[#2c52a1] text-black px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl font-medium text-base md:text-lg inline-flex items-center space-x-2 transition-transform hover:scale-105 duration-300 shadow-sm">
+            <button
+              onClick={() => navigate('/about')}
+              className="group relative overflow-hidden bg-[#2c52a1] text-black px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl font-medium text-base md:text-lg inline-flex items-center space-x-2 transition-transform hover:scale-105 duration-300 shadow-sm">
               <span className="relative z-10 text-white">Read Our Story</span>
               <svg className="w-4 h-4 md:w-5 md:h-5 relative z-10 transition-all duration-300 group-hover:translate-x-1 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
