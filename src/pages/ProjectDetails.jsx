@@ -154,6 +154,28 @@ export default function ProjectDetails() {
         </div>
       )}
 
+      {/* Project Video Section */}
+      {project.video && (
+        <div className="w-full bg-white pt-12 md:pt-20 px-4 md:px-16">
+          <div className="max-w-[1600px] mx-auto w-full">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-black mb-8 md:mb-12 tracking-tighter leading-[1.1] pl-2 md:pl-0">
+              <span className="font-light block">Project</span>
+              <span className="font-medium block">Video</span>
+            </h2>
+            <video
+              src={project.video.src}
+              poster={project.video.poster}
+              controls
+              controlsList="nodownload"
+              onContextMenu={(e) => e.preventDefault()}
+              playsInline
+              preload="none"
+              className="w-full aspect-video bg-black object-cover rounded-[1rem] md:rounded-[2rem] shadow-xl"
+            />
+          </div>
+        </div>
+      )}
+
       {/* Gallery Section */}
       <div className="w-full bg-white py-12 flex flex-col overflow-hidden">
         <h2 className="text-4xl md:text-5xl lg:text-6xl text-black mb-12 md:mb-20 tracking-tighter leading-[1.1] pl-6 md:px-16 max-w-[1600px] mx-auto w-full">

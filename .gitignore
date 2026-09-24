@@ -25,3 +25,6 @@ dist-ssr
 .vercel
 .env*.local
 public/MR_CMP and OTMA.mp4
+
+# Original source footage (too large for GitHub)
+public/CMP & OTMA.mp4

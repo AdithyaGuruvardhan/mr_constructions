@@ -129,6 +129,10 @@ export const projectsData = {
         { title: "Status: Completed", desc: "Project has been successfully completed" }
       ]
     },
+    video: {
+      src: "/videos/cmp-auditorium.mp4",
+      poster: "/videos/cmp-auditorium-poster.webp"
+    },
     galleryImages: [
       "/CMP/DSC_3989.webp",
       "/CMP/DSC_3997.webp",
@@ -162,6 +166,10 @@ export const projectsData = {
         { title: "Open Floor Plates", desc: "Spacious halls with vitrified flooring and generous natural light" },
         { title: "Status: Completed", desc: "Project has been successfully completed" }
       ]
+    },
+    video: {
+      src: "/videos/otma-building.mp4",
+      poster: "/videos/otma-building-poster.webp"
     },
     galleryImages: [
       "/otma/SVB_6876.webp",
