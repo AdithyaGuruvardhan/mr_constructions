@@ -78,9 +78,9 @@ export default function Footer() {
                 <div>
                   <h5 className="text-blue-200/70 mb-1 text-xs font-medium">Head Office</h5>
                   <p className="font-semibold text-gray-200 leading-relaxed text-sm">
-                    No.16/1, 1st Main, 2nd Floor,<br />
-                    VR Layout, Basavanagudi,<br />
-                    Bengaluru-560004 Karnataka
+                    Ub Seer, 1st Floor, Southend Circle,<br />
+                    No. 12, Pattalamma Temple Rd, Basavanagudi,<br />
+                    Bengaluru, Karnataka 560004
                   </p>
                 </div>
                 <div>

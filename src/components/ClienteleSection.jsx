@@ -2,16 +2,12 @@ import React from 'react';
 
 const logosRow1 = [
   { src: '/clients/infosys.webp', alt: 'Infosys' },
-  { src: '/clients/iit.webp', alt: 'IIIT Dharwad' },
-  { src: '/clients/tata.webp', alt: 'Tata Memorial' },
   { src: '/clients/namma_metro.webp', alt: 'Namma Metro' },
 ];
 
 const logosRow2 = [
   { src: '/clients/Infosys%20Foundation.png', alt: 'Infosys Foundation' },
-  { src: '/clients/kiwadi.webp', alt: 'Kidwai' },
   { src: '/clients/elcita.webp', alt: 'Elcita' },
-  { src: '/clients/hospital.webp', alt: 'Hospital' },
   { src: '/clients/elcia.webp', alt: 'Elcia' },
 ];
 
@@ -48,12 +44,12 @@ export default function ClienteleSection() {
         </div>
       </div>
 
-      {/* Desktop View: Full-width, static grid sized to evenly fill every row (18 logos: 3 cols x 6 rows on tablet, 6 cols x 3 rows on desktop) */}
-      <div className="hidden md:grid w-full grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 px-6 lg:px-10">
+      {/* Desktop View: Full-width wrapping rows (3 per row on tablet, 6 on desktop), with any partial last row centered */}
+      <div className="hidden md:flex w-full flex-wrap justify-center gap-6 lg:gap-8 px-6 lg:px-10">
         {allLogos.map((logo, index) => (
           <div
             key={`logo-${index}`}
-            className="h-32 bg-[#e2e2e2] rounded-[1.5rem] flex items-center justify-center p-2 shadow-sm overflow-hidden transition-transform hover:scale-105"
+            className="w-[calc((100%-3rem)/3)] lg:w-[calc((100%-10rem)/6)] h-32 bg-[#e2e2e2] rounded-[1.5rem] flex items-center justify-center p-2 shadow-sm overflow-hidden transition-transform hover:scale-105"
           >
             <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain filter transition-all duration-300" />
           </div>

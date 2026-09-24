@@ -43,20 +43,20 @@ export default function ContactUs() {
 
             <div className="relative z-10 flex flex-col gap-4 md:gap-6 lg:w-7/12 justify-center w-full">
               {/* Pill 1: Location */}
-              <div className="bg-white rounded-[2rem] p-2 pr-4 md:p-2.5 md:pr-8 flex items-center justify-between hover:bg-gray-50 transition-colors w-full group cursor-pointer shadow-sm">
+              <a href="https://maps.app.goo.gl/gcQnjhYxLQdPr3g7A" target="_blank" rel="noopener noreferrer" className="bg-white rounded-[2rem] p-2 pr-4 md:p-2.5 md:pr-8 flex items-center justify-between hover:bg-gray-50 transition-colors w-full group cursor-pointer shadow-sm">
                 <div className="flex items-center gap-3 md:gap-4 w-full">
                   <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-gray-700 group-hover:text-[#2c52a1] transition-colors self-start mt-0.5 md:mt-0">
                     <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                   </div>
                   <div className="flex flex-col py-1 md:py-2 min-w-0">
                     <span className="text-[#1a1a1a] font-medium text-sm md:text-base">M R Constructions</span>
-                    <span className="text-gray-500 group-hover:text-[#2c52a1] transition-colors text-[11px] md:text-sm leading-snug mt-1 md:mt-0.5 break-words whitespace-normal">No.16/1, 1st Main, 2nd Floor, VR Layout, Basavanagudi, Bengaluru-560004 Karnataka</span>
+                    <span className="text-gray-500 group-hover:text-[#2c52a1] transition-colors text-[11px] md:text-sm leading-snug mt-1 md:mt-0.5 break-words whitespace-normal">Ub Seer, 1st Floor, Southend Circle, No. 12, Pattalamma Temple Rd, Basavanagudi, Bengaluru, Karnataka 560004</span>
                   </div>
                 </div>
                 <div className="text-gray-400 group-hover:text-[#2c52a1] ml-2 md:ml-4 flex-shrink-0 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all self-start mt-2 md:mt-4">
                   <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path></svg>
                 </div>
-              </div>
+              </a>
 
               {/* Pill 2: Email */}
               <div className="bg-white rounded-[2rem] md:rounded-full p-2 pr-4 md:p-2.5 md:pr-8 flex items-center justify-between hover:bg-gray-50 transition-colors w-full group cursor-pointer shadow-sm">
@@ -175,7 +175,7 @@ export default function ContactUs() {
             {/* Right Side: Map */}
             <div className="relative z-10 lg:w-7/12 w-full h-[250px] md:h-[350px] lg:h-auto rounded-[1.5rem] overflow-hidden bg-gray-100 shadow-inner">
               <iframe 
-                src="https://maps.google.com/maps?q=M%20R%20Constructions,%20No.16/1,%201st%20Main,%202nd%20Floor,%20VR%20Layout,%20Basavanagudi,%20Bengaluru-560004&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1214.3776917126413!2d77.57887190195387!3d12.938374745709051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae153d655f6111%3A0x79481067860d95a!2sMR%20Constructions%20(MRC)!5e0!3m2!1sen!2sin!4v1790246198209!5m2!1sen!2sin" 
                 width="100%" 
                 height="100%" 
                 frameBorder="0" 
@@ -183,6 +183,8 @@ export default function ContactUs() {
                 allowFullScreen="" 
                 aria-hidden="false" 
                 tabIndex="0"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
                 title="M R Constructions Location">
               </iframe>
             </div>

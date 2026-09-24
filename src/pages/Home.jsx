@@ -13,7 +13,7 @@ import LakeDevelopmentShowcase from '../components/LakeDevelopmentShowcase'
 import HubliSchoolShowcase from '../components/HubliSchoolShowcase'
 import SchoolInfrastructureFocus from '../components/SchoolInfrastructureFocus'
 import FAQSection from '../components/FAQSection'
-import TestimonialsSection from '../components/TestimonialsSection'
+// import TestimonialsSection from '../components/TestimonialsSection'
 
 export default function Home() {
   const location = useLocation();
@@ -66,7 +66,7 @@ export default function Home() {
       <InspiringDesignSection />
 
       {/* Testimonials Section */}
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       {/* FAQ Section */}
       <FAQSection />
