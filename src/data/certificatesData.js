@@ -431,7 +431,7 @@ export const certificatesData = [
   {
     id: 13,
     projectId: "o1",
-    projectName: "Construction of Office Building and other Miscellaneous Facility",
+    projectName: "Gail",
     client: "Gail India Limited, Bangalore",
     location: "Manyatha Tech park, Bangalore",
     description: "Construction of Office Building and other Miscellaneous Facility at Manyatha Tech park,Bangalore.work includes RCC structure, Finishes, Electrical, PHE,Firefighting, UGR, STP,External Development,DG stes, Lift ,Façade,Space frame Roofing and Co- ordinated with HAVC,Fire Alaram works.",
