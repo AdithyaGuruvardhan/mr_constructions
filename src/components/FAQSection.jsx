@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { T, Editable, useList, ItemTools, AddItem } from '../content/editable';
+import { useSiteContent } from '../content/ContentContext';
 
-const faqs = [
+const DEFAULT_FAQS = [
   {
     question: "What types of construction projects do you specialize in?",
     answer: "We specialize in a wide range of projects including commercial buildings, educational institutions, heritage restorations, lake developments, and large-scale residential complexes. Our diverse portfolio demonstrates our capability to handle complex engineering challenges."
@@ -21,9 +23,15 @@ const faqs = [
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
+  const faqs = useList('home.faq.items', DEFAULT_FAQS);
+  // While editing, show every answer so it can be edited
+  const { editMode } = useSiteContent();
+  const isOpen = (index) => editMode || openIndex === index;
+  // Text can't be typed reliably inside a <button>, so use a plain block while editing
+  const Toggle = editMode ? 'div' : 'button';
 
   const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndex(isOpen(index) ? null : index);
   };
 
   return (
@@ -32,7 +40,7 @@ export default function FAQSection() {
       {/* Massive Background Watermark */}
       <div className="absolute top-6 md:top-8 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
         <h1 className="text-[22vw] md:text-[8vw] leading-none font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 whitespace-nowrap">
-          FAQ's
+          <T k="home.faq.title">FAQ's</T>
         </h1>
       </div>
 
@@ -42,39 +50,41 @@ export default function FAQSection() {
         <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
           <div className="w-[2px] h-10 md:h-16 bg-[#2c52a1] mb-4 md:mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-3xl mx-auto">
-            Find answers to common questions about<br /> our construction process, capabilities, and quality assurance.
+            <T k="home.faq.text">{'Find answers to common questions about\nour construction process, capabilities, and quality assurance.'}</T>
           </p>
         </div>
 
         <div className="space-y-2">
-          {faqs.map((faq, index) => (
+          {faqs.items.map((faq, index) => (
             <div
               key={index}
-              className={`border-b border-gray-200 transition-all duration-300`}
+              className={`relative border-b border-gray-200 transition-all duration-300`}
             >
-              <button
+              <ItemTools list={faqs} index={index} vertical className="-top-3 right-0" />
+              <Toggle
                 onClick={() => toggleFaq(index)}
                 className="w-full flex justify-between items-center py-6 text-left focus:outline-none group"
               >
-                <h3 className={`text-lg md:text-xl font-medium pr-8 transition-colors duration-300 ${openIndex === index ? 'text-[#2c52a1]' : 'text-[#2d2d2d] group-hover:text-[#2c52a1]'}`}>
-                  {faq.question}
+                <h3 className={`text-lg md:text-xl font-medium pr-8 transition-colors duration-300 ${isOpen(index) ? 'text-[#2c52a1]' : 'text-[#2d2d2d] group-hover:text-[#2c52a1]'}`}>
+                  <Editable value={faq.question} onChange={v => faqs.update(index, { question: v })} />
                 </h3>
-                <span className={`flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full border transition-all duration-300 ${openIndex === index ? 'border-[#2c52a1] bg-[#2c52a1] text-white rotate-45' : 'border-gray-300 text-gray-500 group-hover:border-[#2c52a1] group-hover:text-[#2c52a1]'}`}>
+                <span className={`flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full border transition-all duration-300 ${isOpen(index) ? 'border-[#2c52a1] bg-[#2c52a1] text-white rotate-45' : 'border-gray-300 text-gray-500 group-hover:border-[#2c52a1] group-hover:text-[#2c52a1]'}`}>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
                   </svg>
                 </span>
-              </button>
+              </Toggle>
 
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === index ? 'max-h-[500px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen(index) ? 'max-h-[500px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}
               >
                 <p className="text-[#6b6b6b] text-base md:text-lg leading-relaxed pr-12">
-                  {faq.answer}
+                  <Editable value={faq.answer} onChange={v => faqs.update(index, { answer: v })} />
                 </p>
               </div>
             </div>
           ))}
+          <AddItem label="Add question" className="mt-4" onAdd={() => faqs.add({ question: 'New question?', answer: 'Answer to the question.' })} />
         </div>
       </div>
     </section>

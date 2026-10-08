@@ -1,8 +1,9 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import CardNav from './components/CardNav'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import EditBar from './content/EditBar'
 import Home from './pages/Home'
 import ContactUs from './pages/ContactUs'
 import AboutUs from './pages/AboutUs'
@@ -13,6 +14,8 @@ import Hospitals from './pages/Hospitals'
 import ArchaeologicalDevelopments from './pages/ArchaeologicalDevelopments'
 import ProjectDetails from './pages/ProjectDetails'
 import Certificates from './pages/Certificates'
+
+const AdminApp = lazy(() => import('./admin/AdminApp'))
 
 const navItems = [
   {
@@ -56,6 +59,18 @@ const navItems = [
 ];
 
 function App() {
+  const location = useLocation();
+
+  if (location.pathname.startsWith('/admin')) {
+    return (
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/admin/*" element={<AdminApp />} />
+        </Routes>
+      </Suspense>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-[#2c52a1] selection:text-white flex flex-col">
       <ScrollToTop />
@@ -85,6 +100,7 @@ function App() {
       </main>
 
       <Footer />
+      <EditBar />
     </div>
   )
 }

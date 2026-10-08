@@ -1,14 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { T, useField, LinkEdit } from '../content/editable';
+
+const DEFAULT_MAP = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1214.3776917126413!2d77.57887190195387!3d12.938374745709051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae153d655f6111%3A0x79481067860d95a!2sMR%20Constructions%20(MRC)!5e0!3m2!1sen!2sin!4v1790246198209!5m2!1sen!2sin';
 
 export default function ContactUs() {
+  const [mapsLink, setMapsLink] = useField('contact.mapsLink', 'https://maps.app.goo.gl/gcQnjhYxLQdPr3g7A');
+  const [mapEmbed, setMapEmbed] = useField('contact.mapEmbed', DEFAULT_MAP);
+  const [email] = useField('company.email', 'mrcons.office@gmail.com');
+  const [phone] = useField('company.phone', '+91 9148581550 / 9148581560');
+
   return (
     <div className="relative w-full min-h-screen bg-white text-[#2d2d2d] pt-32 sm:pt-40 md:pt-[18rem] pb-20 font-sans overflow-hidden">
 
       {/* Massive Background Watermark */}
       <div className="absolute top-28 md:top-32 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
         <h1 className="text-[12vw] md:text-[8vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-50 opacity-80 whitespace-nowrap">
-          GET IN TOUCH
+          <T k="contact.title">GET IN TOUCH</T>
         </h1>
       </div>
 
@@ -18,7 +26,7 @@ export default function ContactUs() {
         <div className="text-center mb-6 md:mb-8 flex flex-col items-center">
           <div className="w-[2px] h-8 md:h-12 bg-[#2c52a1] mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-2xl mx-auto">
-            Ready to bring your vision to life? <br/>Contact M R Constructions today. <br/>Our team is ready to assist you with your next landmark project.
+            <T k="contact.intro">{'Ready to bring your vision to life?\nContact M R Constructions today.\nOur team is ready to assist you with your next landmark project.'}</T>
           </p>
         </div>
 
@@ -28,67 +36,68 @@ export default function ContactUs() {
           <div className="bg-[#16264c] rounded-[2rem] p-6 sm:p-8 md:p-16 flex flex-col lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-8 lg:gap-16 min-h-[auto] lg:min-h-[500px]">
             {/* Decorative bottom text */}
             <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#223a6e] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
-              <span>GET IN TOUCH</span>
+              <span><T k="contact.card.watermark">GET IN TOUCH</T></span>
             </div>
 
             <div className="relative z-10 flex flex-col lg:w-5/12 justify-start lg:pt-4">
               <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight">
-                Building Excellence <br /> For Your Next <br /> Landmark Project
+                <T k="contact.card.title">{'Building Excellence\nFor Your Next\nLandmark Project'}</T>
               </h2>
               <Link to="/portfolio" className="mt-6 md:mt-8 flex items-center text-white/60 hover:text-white text-xs md:text-sm font-medium gap-2 transition-colors cursor-pointer w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-white/60"></span>
-                Explore More <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                <T k="contact.card.link">Explore More</T> <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </div>
 
             <div className="relative z-10 flex flex-col gap-4 md:gap-6 lg:w-7/12 justify-center w-full">
               {/* Pill 1: Location */}
-              <a href="https://maps.app.goo.gl/gcQnjhYxLQdPr3g7A" target="_blank" rel="noopener noreferrer" className="bg-white rounded-[2rem] p-2 pr-4 md:p-2.5 md:pr-8 flex items-center justify-between hover:bg-gray-50 transition-colors w-full group cursor-pointer shadow-sm">
+              <a href={mapsLink} target="_blank" rel="noopener noreferrer" className="relative bg-white rounded-[2rem] p-2 pr-4 md:p-2.5 md:pr-8 flex items-center justify-between hover:bg-gray-50 transition-colors w-full group cursor-pointer shadow-sm">
                 <div className="flex items-center gap-3 md:gap-4 w-full">
                   <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-gray-700 group-hover:text-[#2c52a1] transition-colors self-start mt-0.5 md:mt-0">
                     <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                   </div>
                   <div className="flex flex-col py-1 md:py-2 min-w-0">
-                    <span className="text-[#1a1a1a] font-medium text-sm md:text-base">M R Constructions</span>
-                    <span className="text-gray-500 group-hover:text-[#2c52a1] transition-colors text-[11px] md:text-sm leading-snug mt-1 md:mt-0.5 break-words whitespace-normal">Ub Seer, 1st Floor, Southend Circle, No. 12, Pattalamma Temple Rd, Basavanagudi, Bengaluru, Karnataka 560004</span>
+                    <span className="text-[#1a1a1a] font-medium text-sm md:text-base"><T k="contact.address.name">M R Constructions</T></span>
+                    <span className="text-gray-500 group-hover:text-[#2c52a1] transition-colors text-[11px] md:text-sm leading-snug mt-1 md:mt-0.5 break-words whitespace-normal"><T k="contact.address.text">Ub Seer, 1st Floor, Southend Circle, No. 12, Pattalamma Temple Rd, Basavanagudi, Bengaluru, Karnataka 560004</T></span>
                   </div>
                 </div>
                 <div className="text-gray-400 group-hover:text-[#2c52a1] ml-2 md:ml-4 flex-shrink-0 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all self-start mt-2 md:mt-4">
                   <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path></svg>
                 </div>
+                <LinkEdit value={mapsLink} onChange={setMapsLink} className="-top-3 right-4" question="Google Maps link for the address:" />
               </a>
 
               {/* Pill 2: Email */}
-              <div className="bg-white rounded-[2rem] md:rounded-full p-2 pr-4 md:p-2.5 md:pr-8 flex items-center justify-between hover:bg-gray-50 transition-colors w-full group cursor-pointer shadow-sm">
+              <a href={`mailto:${email.trim()}`} className="bg-white rounded-[2rem] md:rounded-full p-2 pr-4 md:p-2.5 md:pr-8 flex items-center justify-between hover:bg-gray-50 transition-colors w-full group cursor-pointer shadow-sm">
                 <div className="flex items-center gap-3 md:gap-4 w-full">
                   <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-gray-700 group-hover:text-[#2c52a1] transition-colors">
                     <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                   </div>
                   <div className="flex flex-col py-1 md:py-0 min-w-0">
-                    <span className="text-[#1a1a1a] font-medium text-sm md:text-base flex items-center gap-2">Email Address</span>
-                    <span className="text-gray-500 group-hover:text-[#2c52a1] transition-colors text-[11px] md:text-sm mt-0.5 break-words whitespace-normal">mrcons.office@gmail.com</span>
+                    <span className="text-[#1a1a1a] font-medium text-sm md:text-base flex items-center gap-2"><T k="contact.email.label">Email Address</T></span>
+                    <span className="text-gray-500 group-hover:text-[#2c52a1] transition-colors text-[11px] md:text-sm mt-0.5 break-words whitespace-normal"><T k="company.email">mrcons.office@gmail.com</T></span>
                   </div>
                 </div>
                 <div className="text-gray-400 group-hover:text-[#2c52a1] ml-2 md:ml-4 flex-shrink-0 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all">
                   <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path></svg>
                 </div>
-              </div>
+              </a>
 
               {/* Pill 3: Phone */}
-              <div className="bg-white rounded-[2rem] md:rounded-full p-2 pr-4 md:p-2.5 md:pr-8 flex items-center justify-between hover:bg-gray-50 transition-colors w-full group cursor-pointer shadow-sm">
+              <a href={`tel:${phone.split('/')[0].replace(/[^\d+]/g, '')}`} className="bg-white rounded-[2rem] md:rounded-full p-2 pr-4 md:p-2.5 md:pr-8 flex items-center justify-between hover:bg-gray-50 transition-colors w-full group cursor-pointer shadow-sm">
                 <div className="flex items-center gap-3 md:gap-4 w-full">
                   <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-gray-700 group-hover:text-[#2c52a1] transition-colors">
                     <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                   </div>
                   <div className="flex flex-col py-1 md:py-0 min-w-0">
-                    <span className="text-[#1a1a1a] font-medium text-sm md:text-base flex items-center gap-2">Phone Number</span>
-                    <span className="text-gray-500 group-hover:text-[#2c52a1] transition-colors text-[11px] md:text-sm mt-0.5 break-words whitespace-normal">+91 9148581550 / 9148581560</span>
+                    <span className="text-[#1a1a1a] font-medium text-sm md:text-base flex items-center gap-2"><T k="contact.phone.label">Phone Number</T></span>
+                    <span className="text-gray-500 group-hover:text-[#2c52a1] transition-colors text-[11px] md:text-sm mt-0.5 break-words whitespace-normal"><T k="company.phone">+91 9148581550 / 9148581560</T></span>
                   </div>
                 </div>
                 <div className="text-gray-400 group-hover:text-[#2c52a1] ml-2 md:ml-4 flex-shrink-0 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all">
                   <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path></svg>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -97,16 +106,16 @@ export default function ContactUs() {
             
             {/* Decorative bottom text */}
             <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-gray-300/70 font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
-              <span>GET IN TOUCH</span>
+              <span><T k="contact.form.watermark">GET IN TOUCH</T></span>
             </div>
 
             {/* Left Side: Text */}
             <div className="relative z-10 lg:w-5/12 flex flex-col justify-start -mt-2 lg:-mt-8">
               <h2 className="text-3xl md:text-4xl lg:text-8xl font-normal text-[#2d2d2d] mb-4 md:mb-6 leading-[0.9] tracking-tight">
-                Send us a <span className="font-light italic">Message</span>
+                <T k="contact.form.title1">Send us a</T> <span className="font-light italic"><T k="contact.form.title2">Message</T></span>
               </h2>
               <p className="text-gray-500 text-base md:text-lg">
-                Fill out the form below and our team will get back to you as soon as possible to discuss your project.
+                <T k="contact.form.text">Fill out the form below and our team will get back to you as soon as possible to discuss your project.</T>
               </p>
             </div>
 
@@ -115,7 +124,7 @@ export default function ContactUs() {
               <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-medium text-gray-700 pl-4">Full Name</label>
+                    <label className="text-sm font-medium text-gray-700 pl-4"><T k="contact.form.nameLabel">Full Name</T></label>
                     <input
                       type="text"
                       placeholder="Name"
@@ -123,7 +132,7 @@ export default function ContactUs() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-medium text-gray-700 pl-4">Email Address</label>
+                    <label className="text-sm font-medium text-gray-700 pl-4"><T k="contact.form.emailLabel">Email Address</T></label>
                     <input
                       type="email"
                       placeholder="Email"
@@ -133,7 +142,7 @@ export default function ContactUs() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-medium text-gray-700 pl-4">Subject</label>
+                  <label className="text-sm font-medium text-gray-700 pl-4"><T k="contact.form.subjectLabel">Subject</T></label>
                   <input
                     type="text"
                     placeholder="Subject"
@@ -141,7 +150,7 @@ export default function ContactUs() {
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-medium text-gray-700 pl-4">Message</label>
+                  <label className="text-sm font-medium text-gray-700 pl-4"><T k="contact.form.messageLabel">Message</T></label>
                   <textarea
                     rows="5"
                     placeholder="Message"
@@ -149,7 +158,7 @@ export default function ContactUs() {
                   ></textarea>
                 </div>
                 <button className="bg-[#2c52a1] text-white font-bold text-lg py-4 rounded-[2rem] mt-4 hover:bg-[#1a1a1a] hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer">
-                  Submit Request
+                  <T k="contact.form.button">Submit Request</T>
                 </button>
               </form>
             </div>
@@ -159,23 +168,24 @@ export default function ContactUs() {
           <div className="bg-[#16264c] rounded-[2rem] p-6 sm:p-8 md:p-16 flex flex-col lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-8 lg:gap-16 min-h-[auto] lg:min-h-[500px]">
             {/* Decorative bottom text */}
             <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#223a6e] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none z-0">
-              <span>OUR LOCATION</span>
+              <span><T k="contact.office.watermark">OUR LOCATION</T></span>
             </div>
             
             {/* Left Side: Text */}
             <div className="relative z-10 lg:w-5/12 flex flex-col justify-start">
               <h2 className="text-white text-3xl md:text-5xl lg:text-[3.5rem] font-medium leading-[1.1] tracking-tight mb-6">
-                Visit Our <br /> Office
+                <T k="contact.office.title">{'Visit Our\nOffice'}</T>
               </h2>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium mb-4">
-                Drop by our office to discuss how we can bring your next landmark project to life with precision and excellence.
+                <T k="contact.office.text">Drop by our office to discuss how we can bring your next landmark project to life with precision and excellence.</T>
               </p>
             </div>
 
             {/* Right Side: Map */}
             <div className="relative z-10 lg:w-7/12 w-full h-[250px] md:h-[350px] lg:h-auto rounded-[1.5rem] overflow-hidden bg-gray-100 shadow-inner">
+              <LinkEdit value={mapEmbed} onChange={setMapEmbed} className="top-3 left-3" label="🗺 Change map" question={'Paste the Google Maps "Embed a map" link (Share → Embed a map → copy the src="…" address):'} />
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1214.3776917126413!2d77.57887190195387!3d12.938374745709051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae153d655f6111%3A0x79481067860d95a!2sMR%20Constructions%20(MRC)!5e0!3m2!1sen!2sin!4v1790246198209!5m2!1sen!2sin" 
+                src={mapEmbed} 
                 width="100%" 
                 height="100%" 
                 frameBorder="0" 

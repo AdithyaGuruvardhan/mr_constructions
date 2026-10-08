@@ -3,13 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { getProjectData } from '../data/projectsData';
+import { useSiteContent } from '../content/ContentContext';
+import { T, Editable, EditableImg, ItemTools, EditOnly } from '../content/editable';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const AsymmetricalSection = ({ title, subtitle, link, imgUrl, animateFromCenter }) => {
   const containerRef = useRef(null);
-  const portfolioCategories = getProjectData();
 
   useGSAP(() => {
     if (animateFromCenter) {
@@ -322,91 +322,30 @@ const TempleSection = () => {
   );
 };
 
-const portfolioCategories = [
-  {
-    category: "Government Projects",
-    projects: [
-      { id: "m1", title: "BTM Layout Station", subtitle: "Bengaluru", img: "/metro/BTM/BTM.webp" },
-      { id: "m2", title: "Jayadeva Station", subtitle: "Bengaluru", img: "/metro/Jayadeva/clean_shot.webp" },
-      { id: "m3", title: "Ragigudda Station", subtitle: "Bengaluru", img: "/metro/Ragigudda/RGS (4).webp" },
-      { id: "m4", title: "Rashtreeya Vidyalaya Road Station", subtitle: "Bengaluru", img: "/metro/Rashtreeya%20Vidyalaya%20Road/RVR STATION (4).webp" },
-      { id: "m5", title: "Silk Board Station", subtitle: "Bengaluru", img: "/metro/Silk%20board/SWA01542.webp" },
-      { id: "m6", title: "Other Metro Stations", subtitle: "Bengaluru", img: "/metro/Challaghatta STATION.png" },
-      { id: "g1", title: "CMP Auditorium", subtitle: "Bengaluru", img: "/CMP/DSC_3965.webp" },
-      { id: "g2", title: "OTMA Building", subtitle: "Bengaluru", img: "/otma/SVB_6041.webp" }
-    ]
-  },
-  {
-    category: "Commercial",
-    projects: [
-      { id: "c1", title: "Infosys New Campus", subtitle: "Hubli", img: "/commercial/infosys/INFOSYS HUBLI29.webp" },
-      { id: "c2", title: "Lake development and construction", subtitle: "Hebbal Mysore", img: "/commercial/lake/infosys STP drone 1_10.webp" },
-      { id: "c4", title: "Paying Guest Buildings", subtitle: "Electronic city", img: "/commercial/pg/PG13.webp" },
-      { id: "c5", title: "Construction of 20MLD TTRO Plant for SIPCOT", subtitle: "Hosur", img: "/commercial/TTRO/TTRO_1.webp" },
-    ]
-  },
-  {
-    category: "Educational Institutions",
-    projects: [
-      { id: "e1", title: "CBSE English Medium High School", subtitle: "Shivanahalli", img: "/Education%20Institution/CBSE%20ENGLISH%20MEDIUM%20HIGH%20SCHOOL-%20Shivanahalli/MRC shivanahalli DRONE _21.webp" },
-      { id: "e2", title: "Smt. Vimalakulkarni Memorial School", subtitle: "Hubli", img: "/Education%20Institution/Hubli%20School/HUBLI SCHOOL1.webp" },
-      { id: "e3", title: "Indian Institute of Information Technology", subtitle: "Dharwad", img: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Dharwad/IIIT7.webp" },
-      { id: "e4", title: "Indian Institute of Information Technology", subtitle: "Trichy", img: "/Education%20Institution/Indian%20Institute%20of%20Information%20Technology%20(IIIT),%20Trichy/IIIT_Trichy_1.jpeg" },
-    ]
-  },
-  {
-    category: "Hospitals",
-    projects: [
-      // { id: "h1", title: "Bowring Hospital", subtitle: "Bengaluru", img: "/hospital/Bowring%20Hospital-%20Bangalore/Bowring%20hospital1.webp" },
-      { id: "h2", title: "Infosys Foundation Govt Maternity Hospital", subtitle: "Kanakapura", img: "/hospital/Infosys%20Foundation%20Government%20Maternity%20Hospital/IMG20220303171519.webp" },
-      { id: "h3", title: "Infosys Foundation Jayadeva Hospital", subtitle: "Bengaluru", img: "/hospital.webp" },
-      { id: "h4", title: "Kidwai Cancer Hospital", subtitle: "Bengaluru", img: "/hospital/Kidwai%20Cancer%20Hospital/MRC%20kidwai%20DRONE%20_11.webp" },
-      { id: "h5", title: "Tata Memorial Centre Advanced Centre", subtitle: "Mumbai", img: "/hospital/Tata%20Memorial%20Centre%20Advanced%20Centr%20-%20Mumbai/MRC mumbai DRONE_6.webp" },
-    ]
-  },
-  {
-    category: "Archaeological Developments",
-    projects: [
-      { id: "t1", title: "Development Of Kalyani", subtitle: "Vasanthpura, Bengaluru", img: "/temple/DEVELOPMENT%20OF%20KALAYANI%20VASANTHPURA,BANGALORE/VASANTHPURA KALYANI12.webp" },
-      { id: "t2", title: "Melukote Kalyani", subtitle: "Melukote", img: "/temple/Melukote%20Kalayani/MELKOTE KALYANI5.webp" },
-    ]
-  },
-  {
-    category: "Roads & Infrastructure",
-    projects: [
-      { id: "c3", title: "Sira Solar Plant", subtitle: "Sira", img: "/sira_solar.webp" }
-    ]
-  },
-  {
-    category: "Ongoing Projects",
-    projects: [
-      { id: "o1", title: "GAIL Office Building", subtitle: "Bengaluru", img: "/gail/6107169124271198344.webp" },
-      { id: "o2", title: "JSVK Param Convention Center", subtitle: "Bengaluru", img: "/jsvk/6107169124271198356.webp" },
-      { id: "o3", title: "BMRCL", subtitle: "Bengaluru", img: "/bmrcl/MRC%20website%20UIUX.webp" },
-      { id: "o6", title: "NTPC", img: "/ntpc/NTPC.png" }
-    ]
-  }
-];
-
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, onChange }) => {
+  const { editMode } = useSiteContent();
   return (
     <div className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[350px] aspect-[3/4] bg-gray-200 rounded-[2rem] p-8 md:p-10 flex flex-col relative group overflow-hidden transition-transform duration-300 hover:-translate-y-2">
       {/* Top Text */}
       <div className="z-10 flex flex-col items-center gap-2 text-center pointer-events-none select-none shrink-0">
-        <h3 className="font-bold text-xl md:text-2xl text-[#1c1c1e] leading-tight">{project.title}</h3>
-        {project.subtitle && (
-          <p className="text-sm md:text-base text-gray-500 font-light leading-relaxed">{project.subtitle}</p>
+        <h3 className="font-bold text-xl md:text-2xl text-[#1c1c1e] leading-tight"><Editable value={project.title} onChange={v => onChange({ title: v })} /></h3>
+        {(project.subtitle || editMode) && (
+          <p className="text-sm md:text-base text-gray-500 font-light leading-relaxed"><Editable value={project.subtitle ?? ''} onChange={v => onChange({ subtitle: v })} /></p>
         )}
       </div>
 
       {/* Center Image (fills remaining space below the text, never overlaps it) */}
       <div className="relative flex-1 min-h-0 mt-4 mb-16 md:mb-20 rounded-2xl overflow-hidden shadow-lg pointer-events-none select-none">
-        <img
-          src={project.img}
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          draggable="false"
-        />
+        {project.img && (
+          <EditableImg
+            src={project.img}
+            onChange={v => onChange({ img: v })}
+            folder={`projects-${project.id}`}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            draggable="false"
+          />
+        )}
       </div>
 
       {/* Bottom Button (Matching Affordable Price Card) */}
@@ -419,26 +358,43 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-const CategoryGrid = ({ category, projects }) => {
+const CategoryGrid = ({ category, projects, index }) => {
+  const { portfolioCategories, setCategories } = useSiteContent();
   const sectionId = category.toLowerCase().replace(/\s+/g, '-');
+
+  const updateCats = (fn) => {
+    const next = structuredClone(portfolioCategories);
+    fn(next);
+    setCategories(next);
+  };
+  // List helpers in the shape ItemTools expects
+  const cardList = {
+    items: projects,
+    move: (i, d) => updateCats(c => { const arr = c[index].projects; const j = i + d; if (j >= 0 && j < arr.length) [arr[i], arr[j]] = [arr[j], arr[i]]; }),
+    remove: (i) => updateCats(c => { c[index].projects.splice(i, 1); }),
+  };
 
   return (
     <div id={sectionId} className="w-full mb-16 md:mb-24 overflow-hidden max-w-[1400px] mx-auto scroll-mt-32">
       <div className="flex items-center justify-center mb-12 px-6 md:px-16 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] tracking-tight uppercase drop-shadow-sm">{category}</h2>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] tracking-tight uppercase drop-shadow-sm"><Editable value={category} onChange={v => updateCats(c => { c[index].category = v; })} /></h2>
       </div>
 
       <div className="flex flex-wrap justify-center gap-10 pb-8 pt-4 px-6 md:px-16">
-        {projects.map(p => (
+        {projects.map((p, i) => (
           <Link
             to={`/portfolio/${p.id}`}
             key={p.id}
-            className="block"
+            className="relative block"
             draggable="false"
           >
-            <ProjectCard project={p} />
+            <ItemTools list={cardList} index={i} className="top-3 left-3" />
+            <ProjectCard project={p} onChange={patch => updateCats(c => { Object.assign(c[index].projects[i], patch); })} />
           </Link>
         ))}
+        <EditOnly>
+          <a href="/admin/projects/new" className="mrc-add-btn self-center">+ Add project (opens admin)</a>
+        </EditOnly>
       </div>
     </div>
   );
@@ -446,6 +402,7 @@ const CategoryGrid = ({ category, projects }) => {
 
 export default function Portfolio() {
   const location = useLocation();
+  const { portfolioCategories } = useSiteContent();
 
   useEffect(() => {
     if (location.hash) {
@@ -467,7 +424,7 @@ export default function Portfolio() {
           {/* Typographical Header */}
           <div className="border-t-2 border-black/10 pt-4 mb-0 md:mb-12">
             <h1 className="text-[11vw] md:text-[8vw] leading-normal font-extrabold tracking-tighter uppercase pb-2">
-              <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2a2a2a] to-transparent inline-block py-[0.2em] my-[-0.2em]">Our</span> <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2c52a1] to-transparent inline-block py-[0.2em] my-[-0.2em]">Portfolio</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2a2a2a] to-transparent inline-block py-[0.2em] my-[-0.2em]"><T k="portfolio.title1">Our</T></span> <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#2c52a1] to-transparent inline-block py-[0.2em] my-[-0.2em]"><T k="portfolio.title2">Portfolio</T></span>
             </h1>
           </div>
 
@@ -475,21 +432,21 @@ export default function Portfolio() {
             {/* Left side: Highlight text */}
             <div className="lg:col-span-5">
               <h2 className="text-3xl md:text-4xl font-light text-[#4b4b4b] leading-[1.2] tracking-tight">
-                Building trust over <br className="hidden lg:block" /> <span className="font-semibold text-[#2c52a1]">2+ Decades</span> of Excellence.
+                <T k="portfolio.highlight1">Building trust over</T> <br className="hidden lg:block" /> <span className="font-semibold text-[#2c52a1]"><T k="portfolio.highlight2">2+ Decades</T></span> <T k="portfolio.highlight3">of Excellence.</T>
               </h2>
             </div>
 
             {/* Right side: Paragraphs */}
             <div className="lg:col-span-7 flex flex-col space-y-8 text-lg md:text-xl text-gray-600 font-light leading-relaxed">
               <p className="text-2xl md:text-2xl text-gray-800 font-normal leading-snug text-justify">
-                At M R Constructions, our portfolio is a reflection of the trust placed in us over 20+ years of building for institutions that matter. Each project — from IT campuses to hospitals, educational institutions, and heritage structures — represents more than construction; it represents a commitment to precision, safety, and lasting quality.
+                <T k="portfolio.intro.lead">{'At M R Constructions, our portfolio is a reflection of the trust placed in us over 20+ years of building for institutions that matter. Each project — from IT campuses to hospitals, educational institutions, and heritage structures — represents more than construction; it represents a commitment to precision, safety, and lasting quality.'}</T>
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-6 border-t border-black/10">
                 <p className="text-justify">
-                  We approach every project with the same discipline — whether it's a corporate campus for a global tech leader or an educational institution shaping generations of students. Our work spans commercial, educational, healthcare, and heritage construction, all held to the same uncompromising standard.
+                  <T k="portfolio.intro.col1">{"We approach every project with the same discipline — whether it's a corporate campus for a global tech leader or an educational institution shaping generations of students. Our work spans commercial, educational, healthcare, and heritage construction, all held to the same uncompromising standard."}</T>
                 </p>
                 <p className="text-justify">
-                  What you'll find here is not just a list of completed structures, but a record of partnerships built on reliability — with organizations that trusted us to deliver on time, on budget, and beyond expectation.
+                  <T k="portfolio.intro.col2">{"What you'll find here is not just a list of completed structures, but a record of partnerships built on reliability — with organizations that trusted us to deliver on time, on budget, and beyond expectation."}</T>
                 </p>
               </div>
             </div>
@@ -500,7 +457,7 @@ export default function Portfolio() {
       {/* Category Grid */}
       <div className="-mt-10 md:mt-0 pb-32">
         {portfolioCategories.map((cat, idx) => (
-          <CategoryGrid key={idx} category={cat.category} projects={cat.projects} />
+          <CategoryGrid key={idx} index={idx} category={cat.category} projects={cat.projects} />
         ))}
       </div>
 

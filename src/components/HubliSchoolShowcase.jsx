@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { T, useField, ImageButton } from '../content/editable';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,6 +11,7 @@ export default function HubliSchoolShowcase() {
   const schoolImgRef = useRef();
   const textRef = useRef();
   const leavesRef = useRef();
+  const [image, setImage] = useField('home.showcase3.image', '/Hubli_School.png');
 
   useGSAP(() => {
     // Main scroll animation
@@ -68,7 +70,7 @@ export default function HubliSchoolShowcase() {
           className="absolute inset-0 w-full h-full z-10"
         >
           <img
-            src="/Hubli_School.png"
+            src={image}
             alt="Hubli School Project"
             className="w-full h-full object-cover"
           />
@@ -78,12 +80,13 @@ export default function HubliSchoolShowcase() {
         <div ref={textRef} className="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-6 z-20 pointer-events-none mt-32">
           <div className="max-w-3xl text-center flex flex-col items-center pointer-events-auto">
             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#2d2d2d] mb-6 drop-shadow-sm">
-              Smt. Vimalakulkarni Memorial School — Hubli
+              <T k="home.showcase3.title">Smt. Vimalakulkarni Memorial School — Hubli</T>
             </h2>
             <div className="w-[2px] h-8 md:h-12 bg-[#2d2d2d]/50 mb-8"></div>
 
+            <ImageButton onChange={setImage} label="Replace school image" className="!relative !mb-4" />
             <p className="text-lg md:text-2xl text-[#2d2d2d] leading-relaxed font-medium drop-shadow-sm">
-              We undertook the construction of a CBSE education institution building for Smt. Vimalakulkarni Memorial School at Hubli, covering an area of 35,000 sft.
+              <T k="home.showcase3.text">We undertook the construction of a CBSE education institution building for Smt. Vimalakulkarni Memorial School at Hubli, covering an area of 35,000 sft.</T>
             </p>
           </div>
         </div>

@@ -2,11 +2,12 @@ import React, { useRef, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { T, Img, useField, LinkEdit } from '../content/editable';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function InspiringDesignSection() {
-  const isDark = false;
+  const [link, setLink] = useField('home.melkote.link', '/portfolio/t2');
   const pinContainerRef = useRef(null);
   const trackRef = useRef(null);
 
@@ -64,26 +65,26 @@ export default function InspiringDesignSection() {
               {/* Main Huge Typography */}
               <div className="relative md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-4 z-30 pointer-events-none mt-12 xl:mt-0 xl:ml-4">
                 <h2 className="font-editorial text-[16vw] md:text-[5.5vw] leading-[0.8] tracking-[-0.03em] text-[#131b2c] drop-shadow-xl md:drop-shadow-none">
-                  <span className="block">MELKOTE</span>
-                  <span className="block ml-12 md:ml-32 xl:ml-24">KALYANI</span>
+                  <span className="block"><T k="home.melkote.title1">MELKOTE</T></span>
+                  <span className="block ml-12 md:ml-32 xl:ml-24"><T k="home.melkote.title2">KALYANI</T></span>
                 </h2>
               </div>
             </div>
 
             {/* Main Center Image */}
             <div className="w-full sm:w-[80%] md:w-[60%] xl:w-[35%] z-20 shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-[1.5rem] overflow-hidden relative xl:-translate-x-4 group">
-              <img src="/temple/MELKOTE KALYANI3.webp" alt="Melkote Kalyani Main" className="w-full aspect-[4/5] md:aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-[2s]" />
+              <Img k="home.melkote.image1" src="/temple/MELKOTE KALYANI3.webp" alt="Melkote Kalyani Main" className="w-full aspect-[4/5] md:aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-[2s]" />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>
 
             {/* Description Text (Right of Image) */}
             <div className="w-full sm:w-[80%] md:w-[60%] xl:w-[25%] z-20 xl:self-end xl:pb-24 flex flex-col xl:-translate-x-12">
               <h3 className="font-editorial text-[1.5rem] md:text-[1.75rem] text-[#1c1c1e] leading-[1.1] mb-6 uppercase">
-                Restoring Divine Heritage & Sacred Architecture
+                <T k="home.melkote.heading">Restoring Divine Heritage & Sacred Architecture</T>
               </h3>
               
               <p className="text-[#6b6b6b] text-base md:text-lg leading-relaxed">
-                Surrounded by rich cultural history, the Melkote Kalyani project combines traditional restoration with meticulous engineering. We brought the ancient temple stepwell back to life, honoring its sacred design while ensuring structural longevity for generations. A landmark preserved not just for history, but for eternity.
+                <T k="home.melkote.text1">Surrounded by rich cultural history, the Melkote Kalyani project combines traditional restoration with meticulous engineering. We brought the ancient temple stepwell back to life, honoring its sacred design while ensuring structural longevity for generations. A landmark preserved not just for history, but for eternity.</T>
               </p>
             </div>
           </div>
@@ -96,7 +97,7 @@ export default function InspiringDesignSection() {
           <div className="w-full lg:w-[35vw] h-auto lg:h-full flex flex-col justify-between items-start lg:-mb-16">
             
             <div className="w-full sm:w-[70%] lg:w-[65%] shadow-[0_1px_5px_rgba(0,0,0,0.3)] rounded-[1.5rem] overflow-hidden relative group mt-0 lg:mt-auto">
-              <img src="/temple/MELKOTE KALYANI19.webp" alt="Melkote Kalyani detail" className="w-full aspect-[4/5] lg:aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-[1.5s]" />
+              <Img k="home.melkote.image2" src="/temple/MELKOTE KALYANI19.webp" alt="Melkote Kalyani detail" className="w-full aspect-[4/5] lg:aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-[1.5s]" />
               <div className="absolute inset-0 bg-black/2 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>
           </div>
@@ -106,31 +107,32 @@ export default function InspiringDesignSection() {
             
             {/* Image (Top Right - Horizontal) */}
             <div className="w-full lg:w-[90%] shadow-[0_1px_20px_rgba(0,0,0,0.3)] rounded-[1.5rem] overflow-hidden relative group">
-              <img src="/temple/MELKOTE KALYANI16.webp" alt="Melkote Kalyani structure" className="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-[1.5s]" />
+              <Img k="home.melkote.image3" src="/temple/MELKOTE KALYANI16.webp" alt="Melkote Kalyani structure" className="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-[1.5s]" />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>
 
             {/* Text Below (Offset towards center) */}
             <div className="w-full lg:w-[95%] mt-12 lg:mt-10 self-start flex flex-col gap-8">
                <h3 className="font-editorial text-[1.5rem] lg:text-[1.3rem] text-[#1c1c1e] leading-[1.1] uppercase text-center lg:text-left">
-                 Every detail was preserved to create<br className="hidden lg:block"/> spaces that feel sacred, timeless and<br className="hidden lg:block"/> effortless to experience
+                 <T k="home.melkote.heading2" brClassName="hidden lg:block">{'Every detail was preserved to create\nspaces that feel sacred, timeless and\neffortless to experience'}</T>
                </h3>
                
                <div className="flex justify-center lg:justify-end w-full">
                  <p className="text-[#6b6b6b] text-[12px] md:text-sm max-w-[280px] text-center lg:text-left leading-relaxed">
-                   Careful restoration of ancient stonework throughout the structure. Traditional water management systems. Structural reinforcements using authentic materials. Hand-carved architectural elements matching historical accuracy.
+                   <T k="home.melkote.text2">Careful restoration of ancient stonework throughout the structure. Traditional water management systems. Structural reinforcements using authentic materials. Hand-carved architectural elements matching historical accuracy.</T>
                  </p>
                </div>
                
                {/* View Project Pill Button */}
                <div className="w-full flex justify-center lg:justify-end">
                  <Link
-                   to="/portfolio/t2"
-                   className="mt-4 lg:mt-8 inline-flex items-center gap-3 sm:gap-4 pl-6 sm:pl-8 pr-2 py-2 w-fit rounded-full bg-[#2c52a1] hover:bg-[#1c1c1e] transition-colors duration-300 cursor-pointer group shadow-lg"
+                   to={link}
+                   className="relative mt-4 lg:mt-8 inline-flex items-center gap-3 sm:gap-4 pl-6 sm:pl-8 pr-2 py-2 w-fit rounded-full bg-[#2c52a1] hover:bg-[#1c1c1e] transition-colors duration-300 cursor-pointer group shadow-lg"
                  >
                    <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-white whitespace-nowrap">
-                     View Project
+                     <T k="home.melkote.button">View Project</T>
                    </span>
+                   <LinkEdit value={link} onChange={setLink} />
                    <span className="flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-[#2c52a1] shrink-0 transition-colors duration-300">
                      <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />

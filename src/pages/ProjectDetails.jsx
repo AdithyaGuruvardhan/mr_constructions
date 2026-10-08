@@ -1,10 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProjectData } from '../data/projectsData';
+import { useProject, useSiteContent } from '../content/ContentContext';
+import { T, Editable, EditableImg, ImageButton, ImagesButton, ItemTools, AddItem } from '../content/editable';
 
 export default function ProjectDetails() {
   const { id } = useParams();
-  const project = getProjectData(id);
+  const project = useProject(id);
+  const { projects, setProject } = useSiteContent();
+  const editable = !!projects[id];
+  // Update one field (e.g. "droneSection.cardTitle") of this project in the unsaved edits
+  const update = (path, value) => {
+    if (!editable) return;
+    const next = structuredClone(project);
+    const keys = path.split('.');
+    let o = next;
+    for (const k of keys.slice(0, -1)) o = o[k] ??= {};
+    o[keys.at(-1)] = value;
+    setProject(id, next);
+  };
+  const folder = `projects-${id}`;
+  const stats = project?.droneSection?.stats ?? [];
+  const statList = {
+    items: stats,
+    move: (i, d) => { const s = [...stats]; const j = i + d; if (j < 0 || j >= s.length) return; [s[i], s[j]] = [s[j], s[i]]; update('droneSection.stats', s); },
+    remove: (i) => update('droneSection.stats', stats.filter((_, j) => j !== i)),
+  };
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [zoomScale, setZoomScale] = useState(1);
   // Single-row galleries (and grids with showAllGallery) show every image; otherwise the grid caps at 6
@@ -38,21 +58,22 @@ export default function ProjectDetails() {
         className="min-h-[75vh] md:min-h-[95vh] w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat relative"
         style={{ backgroundImage: `url('${project.heroBg}')` }}
       >
+        <ImageButton onChange={v => update('heroBg', v)} folder={folder} label="Replace hero image" className="top-28 left-6" />
         <div className="z-10 w-full px-6 flex justify-center mt-20 mb-8 md:mt-0 md:mb-50">
           <div className="flex flex-col items-end w-fit max-w-[95vw] md:max-w-[85vw] lg:max-w-[1100px] xl:max-w-[1200px]">
             <h1 className="text-5xl sm:text-6xl md:text-[6rem] lg:text-[7rem] font-bold text-white text-center drop-shadow-md leading-[1.1]">
-              {project.title}
+              <Editable value={project.title} onChange={v => update('title', v)} />
             </h1>
             {project.location && (
               <p className="text-xl md:text-2xl lg:text-3xl text-white text-right drop-shadow-md mt-2 md:mt-4 font-bold uppercase mr-8 md:mr-32">
-                {project.location}
+                <Editable value={project.location} onChange={v => update('location', v)} />
               </p>
             )}
           </div>
         </div>
 
         <div className="absolute bottom-8 left-8 md:bottom-16 md:left-92 text-white font-bold text-4xl md:text-8xl drop-shadow-md z-10">
-          {project.number}
+          <Editable value={project.number ?? ''} onChange={v => update('number', v)} />
         </div>
       </div>
 
@@ -62,12 +83,14 @@ export default function ProjectDetails() {
           {/* Mobile Overlapped Images (Visible only on mobile/tablet) */}
           {project.images && (
             <div className="flex lg:hidden relative w-full max-w-sm mx-auto h-[220px] md:h-80 mb-2 md:mb-14 mt-4 md:mt-0">
-              <img
+              <EditableImg
+                onChange={v => update('images.mobile1', v)} folder={folder}
                 src={project.images.mobile1}
                 alt={`${project.title} View 1`}
                 className="absolute top-0 left-2 sm:left-4 md:left-8 w-40 md:w-56 h-auto object-cover rounded-xl shadow-lg z-10"
               />
-              <img
+              <EditableImg
+                onChange={v => update('images.mobile2', v)} folder={folder}
                 src={project.images.mobile2}
                 alt={`${project.title} View 2`}
                 className="absolute top-20 md:top-32 right-6 sm:right-12 md:right-8 w-40 md:w-56 h-auto object-cover rounded-xl shadow-lg z-20"
@@ -78,7 +101,8 @@ export default function ProjectDetails() {
           {/* Left Image (Visible only on desktop) */}
           {project.images && (
             <div className="hidden lg:flex w-full lg:w-1/4 justify-center">
-              <img
+              <EditableImg
+                onChange={v => update('images.desktopLeft', v)} folder={folder}
                 src={project.images.desktopLeft}
                 alt={`${project.title} View 1`}
                 className="w-full max-w-full aspect-[4/5] object-cover rounded-xl shadow-lg"
@@ -89,10 +113,10 @@ export default function ProjectDetails() {
           {/* Center Text */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center items-center gap-6 md:gap-8">
             <p className="text-lg md:text-2xl text-black text-center max-w-5xl leading-relaxed font-medium">
-              {project.introText1}
+              <Editable value={project.introText1 ?? ''} onChange={v => update('introText1', v)} />
             </p>
             <p className="text-lg md:text-2xl text-black text-center max-w-5xl leading-relaxed font-medium">
-              {project.introText2}
+              <Editable value={project.introText2 ?? ''} onChange={v => update('introText2', v)} />
             </p>
   
             {/* Decorative Vertical Line */}
@@ -102,7 +126,8 @@ export default function ProjectDetails() {
           {/* Right Image (Visible only on desktop) */}
           {project.images && (
             <div className="hidden lg:flex w-full lg:w-1/4 justify-center">
-              <img
+              <EditableImg
+                onChange={v => update('images.desktopRight', v)} folder={folder}
                 src={project.images.desktopRight}
                 alt={`${project.title} View 2`}
                 className="w-full max-w-full aspect-[4/5] object-cover rounded-xl shadow-lg"
@@ -118,16 +143,17 @@ export default function ProjectDetails() {
         <div className="w-full bg-gray-50 flex flex-col md:flex-row justify-between gap-12 lg:gap-0 py-16 md:py-24 px-6 md:px-16 items-stretch">
           {/* Left Image & Overlay */}
           <div className="relative w-full lg:w-[55%] flex flex-col-reverse md:block">
-            <img
+            <EditableImg
+              onChange={v => update('droneSection.img1', v)} folder={folder}
               src={project.droneSection.img1}
               alt="Drone View 1"
               className="w-full h-auto md:h-[60vh] lg:h-[65vh] object-cover rounded-3xl shadow-xl"
             />
             {/* Info Card Overlay (Inside Image on Desktop, Above on Mobile) */}
             <div className="relative mb-6 md:mb-0 md:absolute md:top-8 md:right-8 bg-gray-50 p-6 md:p-6 shadow-lg rounded-3xl z-10 w-full md:w-[360px] text-left hover:-translate-y-1 transition-transform duration-300">
-              <h3 className="text-lg md:text-xl font-bold text-[#1c1c1e] mb-1 md:mb-2">{project.droneSection.cardTitle}</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#1c1c1e] mb-1 md:mb-2"><Editable value={project.droneSection.cardTitle ?? ''} onChange={v => update('droneSection.cardTitle', v)} /></h3>
               <p className="text-gray-500 text-sm md:text-sm font-medium leading-relaxed">
-                {project.droneSection.cardDesc}
+                <Editable value={project.droneSection.cardDesc ?? ''} onChange={v => update('droneSection.cardDesc', v)} />
               </p>
             </div>
           </div>
@@ -135,17 +161,20 @@ export default function ProjectDetails() {
           {/* Right Content (Text + Staggered Image) */}
           <div className="w-full lg:w-[38%] mt-8 md:mt-0 flex flex-col justify-end items-end">
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-              {project.droneSection.stats.map((stat, idx) => (
-                <div key={idx} className="bg-[#2c2c2e] p-6 shadow-xl rounded-2xl flex-1 hover:-translate-y-2 transition-transform duration-300">
-                  <h4 className="text-2xl lg:text-xl font-bold text-white mb-2">{stat.title}</h4>
+              {stats.map((stat, idx) => (
+                <div key={idx} className="relative bg-[#2c2c2e] p-6 shadow-xl rounded-2xl flex-1 hover:-translate-y-2 transition-transform duration-300">
+                  <ItemTools list={statList} index={idx} className="-top-3 right-2" />
+                  <h4 className="text-2xl lg:text-xl font-bold text-white mb-2"><Editable value={stat.title} onChange={v => update('droneSection.stats', stats.map((s, j) => (j === idx ? { ...s, title: v } : s)))} /></h4>
                   <p className="text-gray-400 text-xs font-medium leading-relaxed">
-                    {stat.desc}
+                    <Editable value={stat.desc} onChange={v => update('droneSection.stats', stats.map((s, j) => (j === idx ? { ...s, desc: v } : s)))} />
                   </p>
                 </div>
               ))}
+              <AddItem label="Add stat" onAdd={() => update('droneSection.stats', [...stats, { title: 'New stat', desc: 'Description' }])} />
             </div>
   
-            <img
+            <EditableImg
+              onChange={v => update('droneSection.img2', v)} folder={folder}
               src={project.droneSection.img2}
               alt="Drone View 2"
               className="w-full h-auto md:h-[40vh] lg:h-[35vh] object-cover rounded-3xl shadow-xl"
@@ -159,8 +188,8 @@ export default function ProjectDetails() {
         <div className="w-full bg-white pt-12 md:pt-20 px-4 md:px-16">
           <div className="max-w-[1600px] mx-auto w-full">
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-black mb-8 md:mb-12 tracking-tighter leading-[1.1] pl-2 md:pl-0">
-              <span className="font-light block">Project</span>
-              <span className="font-medium block">Video</span>
+              <span className="font-light block"><T k="project.videoHeading1">Project</T></span>
+              <span className="font-medium block"><T k="project.videoHeading2">Video</T></span>
             </h2>
             <video
               src={project.video.src}
@@ -177,10 +206,11 @@ export default function ProjectDetails() {
       )}
 
       {/* Gallery Section */}
-      <div className="w-full bg-white py-12 flex flex-col overflow-hidden">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl text-black mb-12 md:mb-20 tracking-tighter leading-[1.1] pl-6 md:px-16 max-w-[1600px] mx-auto w-full">
-          <span className="font-light block">Project</span>
-          <span className="font-medium block">Gallery</span>
+      <div className="relative w-full bg-white py-12 flex flex-col overflow-hidden">
+        <h2 className="relative text-4xl md:text-5xl lg:text-6xl text-black mb-12 md:mb-20 tracking-tighter leading-[1.1] pl-6 md:px-16 max-w-[1600px] mx-auto w-full">
+          <span className="font-light block"><T k="project.galleryHeading1">Project</T></span>
+          <span className="font-medium block"><T k="project.galleryHeading2">Gallery</T></span>
+          {!project.groupedGallery && <ImagesButton images={project.galleryImages ?? []} onChange={v => update('galleryImages', v)} folder={folder} label="Edit gallery" className="top-2 right-6 md:right-16" />}
         </h2>
 
         {project.groupedGallery ? (
@@ -189,7 +219,7 @@ export default function ProjectDetails() {
               {project.groupedGallery.map((group, groupIdx) => (
                 <div key={groupIdx} className="flex flex-col w-full gap-6">
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1c1c1e] text-center md:text-left ml-2 tracking-tight">
-                    {group.title}
+                    <Editable value={group.title} onChange={v => update('groupedGallery', project.groupedGallery.map((g, j) => (j === groupIdx ? { ...g, title: v } : g)))} />
                   </h3>
                   <div className="flex flex-nowrap items-center gap-4 md:gap-10 lg:gap-[4.5vw]">
                     {group.images.map((img, imgIdx) => {
@@ -200,7 +230,9 @@ export default function ProjectDetails() {
                           onClick={() => { setSelectedIndex(absIndex); setZoomScale(1); }}
                           className="flex-none cursor-pointer rounded-[1rem] md:rounded-[2rem] shadow-xl group overflow-hidden bg-[#d1d1d1] transition-transform duration-300 hover:scale-[1.02] w-[42vw] sm:w-[45vw] md:w-[44vw] lg:w-[43vw] xl:w-[42vw] h-[25vh] sm:h-[35vh] md:h-[50vh] lg:h-[60vh] opacity-95 hover:opacity-100 z-10 hover:z-20 hover:shadow-2xl"
                         >
-                          <img
+                          <EditableImg
+                            onChange={v => update('groupedGallery', project.groupedGallery.map((g, j) => (j === groupIdx ? { ...g, images: g.images.map((x, k) => (k === imgIdx ? v : x)) } : g)))}
+                            folder={folder}
                             src={img}
                             alt={`${group.title} View ${imgIdx + 1}`}
                             className="w-full h-full object-cover"
@@ -223,7 +255,9 @@ export default function ProjectDetails() {
                   onClick={() => { setSelectedIndex(index); setZoomScale(1); }}
                   className="flex-none cursor-pointer rounded-[1rem] md:rounded-[2rem] shadow-xl group overflow-hidden bg-[#d1d1d1] transition-transform duration-300 hover:scale-[1.05] w-[45vw] md:w-[22vw] lg:w-[18vw] h-[25vh] md:h-[35vh] lg:h-[40vh] opacity-95 hover:opacity-100 z-10 hover:z-20 hover:shadow-2xl"
                 >
-                  <img
+                  <EditableImg
+                    onChange={v => update('galleryImages', project.galleryImages.map((x, k) => (k === index ? v : x)))}
+                    folder={folder}
                     src={img}
                     alt={`Gallery View ${index + 1}`}
                     className="w-full h-full object-cover"
@@ -245,7 +279,9 @@ export default function ProjectDetails() {
                     onClick={() => { setSelectedIndex(rowIndex * 3 + index); setZoomScale(1); }}
                     className="flex-none cursor-pointer rounded-[1rem] md:rounded-[2rem] shadow-xl group overflow-hidden bg-[#d1d1d1] transition-transform duration-300 hover:scale-[1.05] w-[28vw] md:w-[22vw] lg:w-[18vw] h-[22vh] md:h-[35vh] lg:h-[40vh] opacity-95 hover:opacity-100 z-10 hover:z-20 hover:shadow-2xl"
                   >
-                    <img
+                    <EditableImg
+                      onChange={v => update('galleryImages', project.galleryImages.map((x, k) => (k === rowIndex * 3 + index ? v : x)))}
+                      folder={folder}
                       src={img}
                       alt={`Gallery View ${rowIndex * 3 + index + 1}`}
                       className="w-full h-full object-cover"

@@ -28,3 +28,8 @@ public/MR_CMP and OTMA.mp4
 
 # Original source footage (too large for GitHub)
 public/CMP & OTMA.mp4
+
+# Admin API: secrets, live content and uploaded images stay on the server
+server/.env
+server/data
+server/uploads

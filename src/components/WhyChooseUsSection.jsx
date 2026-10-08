@@ -2,10 +2,11 @@ import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { T, Editable, useList, ItemTools, AddItem } from '../content/editable';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const features = [
+const DEFAULT_FEATURES = [
   {
     title: "Affordable Price",
     description: "We deliver quality construction solutions without compromising on your budget."
@@ -31,6 +32,7 @@ const features = [
 export default function WhyChooseUsSection() {
   const containerRef = useRef();
   const headerRef = useRef();
+  const features = useList('home.whyChooseUs.items', DEFAULT_FEATURES);
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -57,7 +59,7 @@ export default function WhyChooseUsSection() {
       {/* Massive Background Watermark */}
       <div className="absolute top-6 md:top-12 left-1/2 transform -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
         <h1 className="text-[10vw] leading-none font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 whitespace-nowrap">
-          Why Choose Us
+          <T k="home.whyChooseUs.title">Why Choose Us</T>
         </h1>
       </div>
 
@@ -67,24 +69,25 @@ export default function WhyChooseUsSection() {
         <div ref={headerRef} className="text-center mb-10 md:mb-14 flex flex-col items-center">
           <div className="w-[2px] h-10 md:h-14 bg-[#2c52a1] mb-8"></div>
           <p className="text-lg md:text-xl text-[#555555] leading-relaxed max-w-3xl mx-auto">
-            With over 2+ Decades of experience and 125+ projects delivered, M R Constructions has established itself as a trusted name in construction and engineering.
+            <T k="home.whyChooseUs.text">With over 2+ Decades of experience and 125+ projects delivered, M R Constructions has established itself as a trusted name in construction and engineering.</T>
           </p>
         </div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
-          {features.map((feature, index) => {
+          {features.items.map((feature, index) => {
             const isDark = index % 2 !== 0; // Odd indices are dark to match image
             return (
               <div 
                 key={index}
                 className={`feature-card relative ${isDark ? 'bg-[#2c52a1] text-white' : 'bg-gray-200 text-[#1c1c1e] shadow-sm'} p-6 sm:p-8 md:p-8 rounded-[1.5rem] md:rounded-[2rem] hover:-translate-y-2 transition-transform duration-300 flex flex-col min-h-[160px] md:min-h-[240px]`}
               >
+                <ItemTools list={features} index={index} className="top-3 right-3" />
                 <h3 className="text-lg md:text-xl lg:text-2xl font-semibold mb-3 md:mb-4 leading-tight">
-                  {feature.title}
+                  <Editable value={feature.title} onChange={v => features.update(index, { title: v })} />
                 </h3>
                 <p className={`${isDark ? 'text-blue-100' : 'text-gray-500'} text-xs md:text-sm leading-relaxed mb-10 md:mb-12`}>
-                  {feature.description}
+                  <Editable value={feature.description} onChange={v => features.update(index, { description: v })} />
                 </p>
                 
                 {/* Circular Arrow Icon */}
@@ -96,6 +99,7 @@ export default function WhyChooseUsSection() {
               </div>
             );
           })}
+          <AddItem label="Add reason" onAdd={() => features.add({ title: 'New Reason', description: 'Describe why clients choose us.' })} />
         </div>
 
       </div>

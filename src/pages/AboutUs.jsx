@@ -2,13 +2,32 @@ import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { T, Img, Editable, useField, useList, ItemTools, AddItem, ImageButton } from '../content/editable';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const DEFAULT_POINTS = [
+  "Two Decades of Proven Expertise",
+  "ISO-Certified Quality Systems",
+  "End-to-End Construction Capabilities",
+  "Government & Private Sector Experience",
+  "Precision-Driven Project Management",
+  "Design, Civil, Infrastructure, Finishing & MEP Excellence",
+  "Safety-Led Execution",
+  "Timely Delivery. Lasting Value"
+];
 
 export default function AboutUs() {
   const cardsRef = useRef(null);
   const sectionRef = useRef(null);
   const pointsRef = useRef(null);
+  const [heroBg, setHeroBg] = useField('about.hero.bg', '/bg.webp');
+  const [heroFg, setHeroFg] = useField('about.hero.fg', '/fg.webp');
+  const [whyBg, setWhyBg] = useField('about.why.bg', '/temple_bg.png');
+  const [whyFg, setWhyFg] = useField('about.why.fg', '/temple_fg.png');
+  const [valuesBg, setValuesBg] = useField('about.values.bg', '/commercial/infosys/INFOSYS%20HUBLI50.webp');
+  const tags = useList('about.why.tags', ['Excellence', 'Quality', 'Trust']);
+  const points = useList('about.why.points', DEFAULT_POINTS);
 
   useGSAP(() => {
     // 1. Container comes in when section is reached
@@ -48,25 +67,27 @@ export default function AboutUs() {
 
         {/* Background Image Layer */}
         <img
-          src="/bg.webp"
+          src={heroBg}
           alt="Background Skyline"
           className="absolute inset-0 w-full h-full object-cover object-[50%_70%] z-0"
         />
 
         {/* Sandwiched Text Layer */}
         <h1 className="relative z-10 text-[18vw] md:text-[16vw] leading-none font-bold uppercase tracking-normal text-transparent bg-clip-text bg-gradient-to-b from-[#2052a1]/40 to-transparent opacity-80 select-none -translate-y-12 md:-translate-y-26 drop-shadow-md">
-          ABOUT US
+          <T k="about.title">ABOUT US</T>
         </h1>
 
         {/* Foreground Image Layer */}
         <img
-          src="/fg.webp"
+          src={heroFg}
           alt="Foreground Building"
           className="absolute inset-0 w-full h-full object-cover object-[50%_70%] z-20 pointer-events-none"
         />
 
         {/* Fade to white at bottom for smooth transition */}
         <div className="absolute bottom-0 left-0 w-full h-32 md:h-38 bg-gradient-to-t from-white to-transparent z-30 pointer-events-none"></div>
+        <ImageButton onChange={setHeroBg} label="Replace sky (background)" className="top-28 left-6" />
+        <ImageButton onChange={setHeroFg} label="Replace building (cut-out PNG)" className="top-40 left-6" />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-30">
@@ -74,10 +95,7 @@ export default function AboutUs() {
         {/* Capabilities Inline Image Section */}
         <div className="flex justify-center mb-24 md:mb-32 w-full">
           <p className="text-md md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed md:leading-relaxed max-w-5xl text-center font-normal tracking-wide">
-            We cover the full construction value chain - <br className="hidden lg:block" />
-            design management, civil construction,{' '}
-            infrastructure, finishing, and<br /> MEP -{' '}
-            backed by experienced teams and modern methods,<br /> delivering practical, efficient, long-lasting builds.
+            <T k="about.intro">{'We cover the full construction value chain - design management, civil construction, infrastructure, finishing, and\nMEP - backed by experienced teams and modern methods,\ndelivering practical, efficient, long-lasting builds.'}</T>
           </p>
         </div>
 
@@ -86,21 +104,21 @@ export default function AboutUs() {
           <div className="bg-[#16264c] rounded-[2rem] p-8 md:p-16 flex flex-col-reverse lg:flex-row justify-between shadow-2xl relative overflow-hidden gap-12 lg:gap-16 items-center">
             {/* Decorative bottom text */}
             <div className="absolute -bottom-6 left-0 w-full flex gap-4 text-[#223a6e] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
-              <span>THE VISIONARY</span>
+              <span><T k="about.founder.watermark">THE VISIONARY</T></span>
             </div>
 
             <div className="relative z-10 flex flex-col w-full lg:w-6/12 justify-center">
               <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight mb-6 md:mb-8">
-                M Ramesh Reddy
+                <T k="about.founder.name">M Ramesh Reddy</T>
               </h2>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium text-left md:text-justify">
-                M Ramesh Reddy’s journey is defined by hard work, determination, and an unwavering commitment to excellence. Born in Nangali, Karnataka, into a humble family, he began his career as a civil contractor and steadily built M R Constructions into a trusted leader in the industry. A pivotal milestone in his career came in 2012 when he became a vendor for Infosys, leading to an inspiring meeting with the renowned Smt. Sudha Murty. Today, his visionary leadership continues to drive M R Constructions toward new heights of engineering and operational success.
+                <T k="about.founder.text">M Ramesh Reddy’s journey is defined by hard work, determination, and an unwavering commitment to excellence. Born in Nangali, Karnataka, into a humble family, he began his career as a civil contractor and steadily built M R Constructions into a trusted leader in the industry. A pivotal milestone in his career came in 2012 when he became a vendor for Infosys, leading to an inspiring meeting with the renowned Smt. Sudha Murty. Today, his visionary leadership continues to drive M R Constructions toward new heights of engineering and operational success.</T>
               </p>
             </div>
             
             <div className="relative z-10 flex flex-col lg:w-5/12 justify-end w-full self-end -mb-8 md:-mb-16 pt-8 md:pt-0">
               <div className="w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-square rounded-t-[1.5rem] md:rounded-t-[1.5rem] rounded-b-none overflow-hidden shadow-lg border-t border-l border-r border-white/10">
-                <img src="/ramesh_reddy.png" alt="M Ramesh Reddy" className="w-full h-full object-cover object-center" />
+                <Img k="about.founder.photo" src="/ramesh_reddy.png" alt="M Ramesh Reddy" className="w-full h-full object-cover object-center" />
               </div>
             </div>
           </div>
@@ -111,24 +129,24 @@ export default function AboutUs() {
           <div className="bg-[#16264c] rounded-[2rem] p-8 md:p-16 flex flex-col-reverse lg:flex-row-reverse justify-between shadow-2xl relative overflow-hidden gap-12 lg:gap-16 items-center">
             {/* Decorative bottom text */}
             <div className="absolute -bottom-6 right-0 w-full flex justify-end gap-4 text-[#223a6e] font-bold text-5xl md:text-7xl lg:text-8xl uppercase whitespace-nowrap select-none pointer-events-none">
-              <span>THE INSPIRATION</span>
+              <span><T k="about.inspiration.watermark">THE INSPIRATION</T></span>
             </div>
 
             <div className="relative z-10 flex flex-col w-full lg:w-6/12 justify-center">
               <h2 className="text-white text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.2] tracking-tight mb-6 md:mb-8">
-                Smt. Sudha Murty
+                <T k="about.inspiration.name">Smt. Sudha Murty</T>
               </h2>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium mb-4 text-left md:text-justify">
-                Smt. Sudha Murty is a renowned author, philanthropist, educator, and social worker known for her simplicity and dedication to serving society. Through her work in education, healthcare, rural development, and social welfare, she has contributed to meaningful change across India.
+                <T k="about.inspiration.text1">Smt. Sudha Murty is a renowned author, philanthropist, educator, and social worker known for her simplicity and dedication to serving society. Through her work in education, healthcare, rural development, and social welfare, she has contributed to meaningful change across India.</T>
               </p>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium text-left md:text-justify">
-                Her writing has inspired generations with stories rooted in kindness, humility, compassion, and life lessons. Her journey reflects a deep commitment to empowering communities and creating a positive and lasting impact on society.
+                <T k="about.inspiration.text2">Her writing has inspired generations with stories rooted in kindness, humility, compassion, and life lessons. Her journey reflects a deep commitment to empowering communities and creating a positive and lasting impact on society.</T>
               </p>
             </div>
             
             <div className="relative z-10 flex flex-col lg:w-5/12 justify-end w-full self-end -mb-8 md:-mb-16 pt-8 md:pt-0">
               <div className="w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-square rounded-t-[1.5rem] md:rounded-t-[1.5rem] rounded-b-none overflow-hidden shadow-lg border-t border-l border-r border-white/10">
-                <img src="/sudha_murthy.png" alt="Smt. Sudha Murty" className="w-full h-full object-cover object-top" />
+                <Img k="about.inspiration.photo" src="/sudha_murthy.png" alt="Smt. Sudha Murty" className="w-full h-full object-cover object-top" />
               </div>
             </div>
           </div>
@@ -140,14 +158,14 @@ export default function AboutUs() {
           {/* Top Full Width Text & CTA */}
           <div className="w-full flex flex-col items-start">
             <div className="flex items-center gap-2 mb-6 text-xs font-bold tracking-widest text-[#2d2d2d] uppercase">
-              OUR COMMITMENT
+              <T k="about.commitment.label">OUR COMMITMENT</T>
             </div>
             <p className="text-2xl md:text-3xl lg:text-[2rem] text-[#4a4a4a] leading-tight mb-8 max-w-5xl">
-              At MRC, excellence goes beyond the structures we build - it's in the confidence we inspire. Our commitment to safety, transparency, and engineering integrity forges enduring relationships with every client and partner.
+              <T k="about.commitment.text">At MRC, excellence goes beyond the structures we build - it's in the confidence we inspire. Our commitment to safety, transparency, and engineering integrity forges enduring relationships with every client and partner.</T>
             </p>
 
             <button className="flex items-center justify-between bg-[#2c52a1] text-white px-2 py-2 rounded-full w-44 hover:bg-[#2c2d3c] transition-colors shadow-lg">
-              <span className="pl-4 text-sm font-medium tracking-wide">Get in touch</span>
+              <span className="pl-4 text-sm font-medium tracking-wide"><T k="about.commitment.button">Get in touch</T></span>
               <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
               </div>
@@ -171,9 +189,9 @@ export default function AboutUs() {
                 <div className="bg-white text-[#2c52a1] w-10 h-10 rounded-full flex items-center justify-center mb-6 shadow-sm text-lg">
                   ✦
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-white mb-3">Vision</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-white mb-3"><T k="about.vision.title">Vision</T></h4>
                 <p className="text-md text-white/80 leading-relaxed font-medium">
-                  To shape the built environment through engineering excellence, responsible construction practices, and enduring partnerships that stand the test of time.
+                  <T k="about.vision.text">To shape the built environment through engineering excellence, responsible construction practices, and enduring partnerships that stand the test of time.</T>
                 </p>
               </div>
 
@@ -182,9 +200,9 @@ export default function AboutUs() {
                 <div className="bg-white text-[#2c52a1] w-10 h-10 rounded-full flex items-center justify-center mb-6 shadow-sm text-lg">
                   ✧
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-white mb-3">Mission</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-white mb-3"><T k="about.mission.title">Mission</T></h4>
                 <p className="text-md text-white/80 leading-relaxed font-medium">
-                  To deliver construction solutions that combine technical expertise, operational excellence, and uncompromising quality.
+                  <T k="about.mission.text">To deliver construction solutions that combine technical expertise, operational excellence, and uncompromising quality.</T>
                 </p>
               </div>
 
@@ -193,7 +211,7 @@ export default function AboutUs() {
 
             {/* Right: Image */}
             <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden h-[400px] lg:h-[550px] shadow-lg">
-              <img src="/infosys_hubli.webp" alt="Engineering Excellence" className="absolute inset-0 w-full h-full object-cover" />
+              <Img k="about.commitment.image" src="/infosys_hubli.webp" alt="Engineering Excellence" className="absolute inset-0 w-full h-full object-cover" />
             </div>
 
           </div>
@@ -204,7 +222,7 @@ export default function AboutUs() {
       <div ref={sectionRef} className="relative w-[95vw] md:w-[90vw] max-w-[1800px] mx-auto rounded-[1.5rem] md:rounded-[3rem] overflow-hidden min-h-[920px] sm:min-h-[800px] lg:min-h-[800px] mb-24 shadow-2xl flex flex-col justify-start bg-[#e6e4e0] z-30 pb-32 lg:pb-0">
 
           {/* Layer 1: Background Image */}
-          <img src="/temple_bg.png" alt="Archaeological Site Background" className="absolute inset-0 w-full h-full object-cover object-[50%_100%] z-0" />
+          <img src={whyBg} alt="Archaeological Site Background" className="absolute inset-0 w-full h-full object-cover object-[50%_100%] z-0" />
 
           {/* Layer 2: Content (Title and Cards) */}
           <div className="relative z-10 w-full flex flex-col lg:flex-row items-start justify-between px-4 sm:px-8 md:px-16 pt-8 md:pt-12 lg:pt-16 gap-6 md:gap-8">
@@ -212,43 +230,42 @@ export default function AboutUs() {
             {/* Left: Hero Title */}
             <div className="w-full lg:w-5/12 flex flex-col items-start z-10">
               <h2 className="text-5xl sm:text-6xl md:text-[5.5rem] font-medium text-[#f2f2f2] leading-[0.9] tracking-tighter uppercase w-full">
-                Why MRC
+                <T k="about.whyMrc.title">Why MRC</T>
               </h2>
               <div className="ml-1 sm:ml-2 mt-4 flex flex-row flex-wrap gap-2 md:gap-4 uppercase tracking-widest text-[9px] sm:text-[10px] md:text-xs font-bold items-center">
-                 <span className="bg-white text-[#2d2d2d] px-5 py-2.5 rounded-full shadow-md">Excellence</span>
-                 <span className="bg-white text-[#2d2d2d] px-5 py-2.5 rounded-full shadow-md">Quality</span>
-                 <span className="bg-white text-[#2d2d2d] px-5 py-2.5 rounded-full shadow-md">Trust</span>
+                 {tags.items.map((tag, i) => (
+                   <span key={i} className="relative bg-white text-[#2d2d2d] px-5 py-2.5 rounded-full shadow-md">
+                     <Editable value={tag} onChange={v => tags.update(i, v)} />
+                     <ItemTools list={tags} index={i} className="-top-8 left-0" />
+                   </span>
+                 ))}
+                 <AddItem label="Add tag" onAdd={() => tags.add('New')} />
               </div>
             </div>
 
             {/* Right: The Cards inside a beautiful glass/white container */}
             <div ref={cardsRef} className="w-full lg:w-7/12 bg-white/95 backdrop-blur-2xl p-6 sm:p-8 md:p-10 rounded-[1.5rem] md:rounded-[3rem] shadow-2xl relative lg:-mr-8 z-10 flex flex-col border border-white/20 mt-2 lg:mt-0 h-auto lg:min-h-[700px] pb-24 sm:pb-32 md:pb-40 lg:pb-16">
-              <h3 className="text-md sm:text-md md:text-4xl text-[#2d2d2d] font-bold mb-5 md:mb-8 leading-tight">Uncompromising standards & precision</h3>
+              <h3 className="text-md sm:text-md md:text-4xl text-[#2d2d2d] font-bold mb-5 md:mb-8 leading-tight"><T k="about.standards.title">Uncompromising standards & precision</T></h3>
 
               {/* The 8 points in a 2-col grid */}
               <div ref={pointsRef} className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 md:gap-y-6">
-                {[
-                  "Two Decades of Proven Expertise",
-                  "ISO-Certified Quality Systems",
-                  "End-to-End Construction Capabilities",
-                  "Government & Private Sector Experience",
-                  "Precision-Driven Project Management",
-                  "Design, Civil, Infrastructure, Finishing & MEP Excellence",
-                  "Safety-Led Execution",
-                  "Timely Delivery. Lasting Value"
-                ].map((text, idx) => (
-                  <div key={idx} className="flex items-start md:items-center gap-3 md:gap-4">
+                {points.items.map((text, idx) => (
+                  <div key={idx} className="relative flex items-start md:items-center gap-3 md:gap-4">
                     <span className="text-[#2052a1] shrink-0 text-xs md:text-base mt-1 md:mt-0">✦</span>
-                    <span className="text-[#2d2d2d] font-bold text-sm md:text-lg leading-snug md:leading-tight">{text}</span>
+                    <span className="text-[#2d2d2d] font-bold text-sm md:text-lg leading-snug md:leading-tight"><Editable value={text} onChange={v => points.update(idx, v)} /></span>
+                    <ItemTools list={points} index={idx} className="-top-4 right-0" />
                   </div>
                 ))}
+                <AddItem label="Add point" onAdd={() => points.add('New point')} />
               </div>
             </div>
 
           </div>
 
           {/* Layer 3: Foreground Image */}
-          <img src="/temple_fg.png" alt="Archaeological Site Foreground" className="absolute inset-0 w-full h-full object-cover object-[50%_100%] pointer-events-none z-20" />
+          <img src={whyFg} alt="Archaeological Site Foreground" className="absolute inset-0 w-full h-full object-cover object-[50%_100%] pointer-events-none z-20" />
+          <ImageButton onChange={setWhyBg} label="Replace background" className="bottom-6 left-6" />
+          <ImageButton onChange={setWhyFg} label="Replace foreground (cut-out PNG)" className="bottom-6 left-60" />
         </div>
 
         {/* Core Values & Ethics Section (Full Width) */}
@@ -256,13 +273,14 @@ export default function AboutUs() {
           
           {/* Background Image */}
           <img 
-            src="/commercial/infosys/INFOSYS%20HUBLI50.webp" 
+            src={valuesBg} 
             alt="Infosys Hubli Background" 
             className="absolute inset-0 w-full h-full object-cover z-0" 
           />
           
           {/* Dark overlay for readability */}
           <div className="absolute inset-0 bg-black/30 z-10"></div>
+          <ImageButton onChange={setValuesBg} label="Replace background" className="top-6 right-6" />
 
           <div className="relative z-20 w-full max-w-[1600px] mx-auto px-6 md:px-16 py-24">
             
@@ -272,7 +290,7 @@ export default function AboutUs() {
               <div className="flex flex-col justify-between gap-12 lg:gap-32">
                 <div className="text-white pt-4">
                   <h2 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tighter uppercase drop-shadow-lg">
-                    Core Values <br className="hidden lg:block"/> & Ethics
+                    <T k="about.values.title" brClassName="hidden lg:block">{'Core Values\n& Ethics'}</T>
                   </h2>
                   <div className="mt-8 w-24 h-1 bg-[#cca164]"></div>
                 </div>
@@ -280,10 +298,10 @@ export default function AboutUs() {
                 <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
                   <div className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed space-y-2">
                     <p>
-                      We are committed to maintaining the highest standards of professionalism, ethics, and transparency across all aspects of our business.
+                      <T k="about.values.card2a">We are committed to maintaining the highest standards of professionalism, ethics, and transparency across all aspects of our business.</T>
                     </p>
                     <p>
-                      Our reputation has been earned through consistent delivery, uncompromising quality, and a client-centric approach that fosters lasting relationships built on trust.
+                      <T k="about.values.card2b">Our reputation has been earned through consistent delivery, uncompromising quality, and a client-centric approach that fosters lasting relationships built on trust.</T>
                     </p>
                   </div>
                 </div>
@@ -294,10 +312,10 @@ export default function AboutUs() {
                 <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
                   <div className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed space-y-2">
                     <p>
-                      At MRC Construction Company, our foundation is built on the enduring principles of quality, integrity, and unwavering commitment.
+                      <T k="about.values.card1a">At MRC Construction Company, our foundation is built on the enduring principles of quality, integrity, and unwavering commitment.</T>
                     </p>
                     <p>
-                      These values were established by our founder, Mr.&nbsp;M.&nbsp;Ramesh Reddy, and are upheld in every project we undertake.
+                      <T k="about.values.card1b">{'These values were established by our founder, Mr.\u00a0M.\u00a0Ramesh Reddy, and are upheld in every project we undertake.'}</T>
                     </p>
                   </div>
                 </div>
@@ -308,7 +326,7 @@ export default function AboutUs() {
                 <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/20 hover:bg-white transition-colors duration-300">
                   <div className="text-sm md:text-xl text-[#1a1a1a] font-medium leading-relaxed space-y-2">
                     <p>
-                      Integrity is not merely a principle we follow - it is the cornerstone of every decision we make.
+                      <T k="about.values.card3">Integrity is not merely a principle we follow - it is the cornerstone of every decision we make.</T>
                     </p>
                   </div>
                 </div>

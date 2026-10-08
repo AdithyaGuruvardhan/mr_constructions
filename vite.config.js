@@ -8,4 +8,11 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
+  server: {
+    // In development, forward API and uploaded-image requests to the admin server (npm run server)
+    proxy: {
+      '/api': 'http://127.0.0.1:3001',
+      '/uploads': 'http://127.0.0.1:3001',
+    },
+  },
 })

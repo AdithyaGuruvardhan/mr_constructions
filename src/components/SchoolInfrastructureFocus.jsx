@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { T, Img, useField, LinkEdit } from '../content/editable';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,6 +11,7 @@ export default function SchoolInfrastructureFocus() {
   const sectionRef = useRef(null);
   const imageRef = useRef(null);
   const imageContainerRef = useRef(null);
+  const [link, setLink] = useField('home.showcase4.link', '/portfolio/e2');
 
   useGSAP(() => {
     // Image container reveal mask from bottom to top
@@ -50,11 +52,11 @@ export default function SchoolInfrastructureFocus() {
         {/* Left Column - Large Typography (Aligned to bottom end) */}
         <div className="w-full md:w-1/3 h-full flex flex-col justify-end z-10 order-1">
           <h2 className="text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.05] md:mb-2 lg:mb-4 font-light tracking-tight text-left text-[#2c2d3c]/90">
-            <span className="italic font-serif">INSPIRING</span><br />
-            DESIGN<br />
-            <span className="italic font-serif">WELLNESS-</span><br />
-            FOCUSED<br />
-            LEARNING
+            <span className="italic font-serif"><T k="home.showcase4.line1">INSPIRING</T></span><br />
+            <T k="home.showcase4.line2">DESIGN</T><br />
+            <span className="italic font-serif"><T k="home.showcase4.line3">WELLNESS-</T></span><br />
+            <T k="home.showcase4.line4">FOCUSED</T><br />
+            <T k="home.showcase4.line5">LEARNING</T>
           </h2>
         </div>
 
@@ -64,8 +66,9 @@ export default function SchoolInfrastructureFocus() {
             ref={imageContainerRef}
             className="w-full h-[50vh] md:h-[75%] relative overflow-hidden flex-shrink-0 rounded-2xl shadow-sm"
           >
-            <img 
+            <Img 
               ref={imageRef}
+              k="home.showcase4.image"
               src="/hubli_school_vert.webp" 
               alt="School Infrastructure" 
               className="w-full h-full object-cover object-center"
@@ -77,20 +80,21 @@ export default function SchoolInfrastructureFocus() {
         <div className="w-full md:w-1/3 h-full flex flex-col justify-start md:pt-8 lg:pt-18 md:pl-10 lg:pl-16 z-10 order-3">
           <div className="max-w-[280px] lg:max-w-[320px] space-y-8 text-sm md:text-base text-gray-500 font-light leading-relaxed">
             <p>
-              Our approach to educational infrastructure reflects a commitment to excellence. From the timeless elegance of its architecture to the thoughtfully curated learning environments, the campus embodies a holistic approach to student well-being.
+              <T k="home.showcase4.text1">Our approach to educational infrastructure reflects a commitment to excellence. From the timeless elegance of its architecture to the thoughtfully curated learning environments, the campus embodies a holistic approach to student well-being.</T>
             </p>
             <p>
-              Whether you're seeking a serene study retreat, a vibrant collaborative hub, or a space that fosters personal development, our infrastructure offers a robust foundation for success.
+              <T k="home.showcase4.text2">Whether you're seeking a serene study retreat, a vibrant collaborative hub, or a space that fosters personal development, our infrastructure offers a robust foundation for success.</T>
             </p>
 
             {/* View Project Pill Button */}
             <Link
-              to="/portfolio/e2"
-              className="mt-4 inline-flex items-center gap-3 sm:gap-4 pl-6 sm:pl-8 pr-2 py-2 w-fit rounded-full bg-[#2c52a1] hover:bg-[#1c1c1e] transition-colors duration-300 cursor-pointer group shadow-lg"
+              to={link}
+              className="relative mt-4 inline-flex items-center gap-3 sm:gap-4 pl-6 sm:pl-8 pr-2 py-2 w-fit rounded-full bg-[#2c52a1] hover:bg-[#1c1c1e] transition-colors duration-300 cursor-pointer group shadow-lg"
             >
               <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-white whitespace-nowrap">
-                View Project
+                <T k="home.showcase4.button">View Project</T>
               </span>
+              <LinkEdit value={link} onChange={setLink} />
               <span className="flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-[#2c52a1] shrink-0 transition-colors duration-300">
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />

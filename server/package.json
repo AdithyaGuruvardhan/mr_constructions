@@ -1,0 +1,17 @@
+{
+  "name": "mrconstruction-api",
+  "private": true,
+  "type": "module",
+  "description": "Admin API for mrconstruction.in (installed on its own on the server; locally the root package.json covers it)",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.4.0",
+    "sharp": "^0.35.3"
+  }
+}

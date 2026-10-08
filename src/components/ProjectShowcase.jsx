@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { T, useField, ImageButton, LinkEdit } from '../content/editable';
+import { useSiteContent } from '../content/ContentContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +18,10 @@ export default function ProjectShowcase() {
   const imgRightRef = useRef();
   const cloudRef = useRef();
   const cloudRightRef = useRef();
+  const { editMode } = useSiteContent();
+  const [image, setImage] = useField('home.showcase1.image', '/infosys_hubli.webp');
+  const [title] = useField('home.showcase1.title', 'Infosys New Campus, Hubli');
+  const [link, setLink] = useField('home.showcase1.link', '/portfolio/c1');
 
   useGSAP(() => {
     // We use a sticky container instead of GSAP pin to prevent layout glitches
@@ -115,17 +121,17 @@ export default function ProjectShowcase() {
           <div className="flex flex-col items-center justify-end pb-10 md:pb-0">
             <div className="w-[1px] h-20 md:h-32 bg-[#2d2d2d]/30 mb-8 md:mb-12"></div>
             <div className="w-16 h-16 md:w-24 md:h-24 border border-[#2d2d2d] rounded-full flex items-center justify-center text-[10px] md:text-xs tracking-widest text-[#2d2d2d] uppercase -rotate-90 text-center leading-tight">
-              MRC
+              <T k="home.showcase1.badge">MRC</T>
             </div>
           </div>
 
           {/* Right Side (Title & Instructions) */}
           <div className="flex flex-col items-end text-right pt-20 md:pt-20">
             <h3 className="text-xl md:text-4xl text-[#2d2d2d] uppercase tracking-widest font-medium mb-4">
-              Best<br />Work
+              <T k="home.showcase1.label">{'Best\nWork'}</T>
             </h3>
             <p className="text-xs md:text-sm text-[#6b6b6b] tracking-[0.2em] uppercase flex flex-col items-end gap-2">
-              <span>Scroll</span>
+              <span><T k="home.showcase1.scroll">Scroll</T></span>
               <span className="h-12 w-[1px] bg-[#6b6b6b]/50 block"></span>
             </p>
           </div>
@@ -151,7 +157,7 @@ export default function ProjectShowcase() {
         <div ref={leftMaskRef} className="absolute inset-0 w-full h-full shadow-2xl">
           <img
             ref={imgLeftRef}
-            src="/infosys_hubli.webp"
+            src={image}
             alt="Infosys New Campus, Hubli"
             className="absolute top-0 left-0 w-full h-auto min-h-screen object-cover object-top"
           />
@@ -161,7 +167,7 @@ export default function ProjectShowcase() {
         <div ref={rightMaskRef} className="absolute inset-0 w-full h-full shadow-2xl">
           <img
             ref={imgRightRef}
-            src="/infosys_hubli.webp"
+            src={image}
             alt="Infosys New Campus, Hubli"
             className="absolute top-0 left-0 w-full h-auto min-h-screen object-cover object-top"
           />
@@ -174,7 +180,7 @@ export default function ProjectShowcase() {
           style={{ perspective: '1000px' }}
         >
           <h2 className="text-white font-bold text-[10vw] sm:text-5xl md:text-[3rem] lg:text-[4.5rem] xl:text-[5.5rem] uppercase tracking-tight text-center leading-[1.1] md:leading-[0.95] px-4 w-full flex flex-wrap justify-center gap-x-2 md:gap-x-4">
-            {"Infosys New Campus, Hubli".split(' ').map((word, wordIndex) => (
+            {editMode ? <T k="home.showcase1.title">Infosys New Campus, Hubli</T> : title.split(' ').map((word, wordIndex) => (
               <span key={wordIndex} className="inline-flex whitespace-nowrap">
                 {word.split('').map((char, charIndex) => (
                   <span key={charIndex} className="inline-block title-char">
@@ -186,6 +192,7 @@ export default function ProjectShowcase() {
           </h2>
         </div>
 
+        <ImageButton onChange={setImage} label="Replace showcase image" className="bottom-6 left-1/2 -translate-x-1/2" />
       </div>
     </div>
     
@@ -195,20 +202,21 @@ export default function ProjectShowcase() {
       <div className="max-w-4xl mx-auto text-center font-sans flex flex-col items-center relative z-0">
         <div className="w-[2px] h-12 md:h-20 bg-[#2d2d2d]/70 mb-8 md:mb-12"></div>
         <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed mb-8 sm:pr-32 px-4">
-          M R Constructions delivered the <span className="font-bold">New Campus Development</span> for <span className="font-bold">Infosys Limited at Hubli</span>, in association with architects <span className="font-bold">M/s RSP Consultants</span>. We covered a built-up area of <span className="font-bold">378,000 sq. ft.</span> with full site development, completed in <span className="font-bold">24 months</span>.
+          <T k="home.showcase1.text1">M R Constructions delivered the **New Campus Development** for **Infosys Limited at Hubli**, in association with architects **M/s RSP Consultants**. We covered a built-up area of **378,000 sq. ft.** with full site development, completed in **24 months**.</T>
         </p>
         <p className="text-lg md:text-2xl lg:text-3xl text-[#2d2d2d] leading-relaxed px-4">
-          Our scope included the <span className="font-bold">SDB (G+5)</span>, <span className="font-bold">Food Court (G+2)</span>, <span className="font-bold">UGR</span>, <span className="font-bold">amphitheater</span>, land development, compound walls, and all associated roads, services, and finishing works.
+          <T k="home.showcase1.text2">Our scope included the **SDB (G+5)**, **Food Court (G+2)**, **UGR**, **amphitheater**, land development, compound walls, and all associated roads, services, and finishing works.</T>
         </p>
 
         {/* View Project Pill Button */}
         <Link
-          to="/portfolio/c1"
-          className="mt-8 md:mt-12 inline-flex items-center gap-3 sm:gap-4 pl-6 sm:pl-8 pr-2 py-2 w-fit rounded-full bg-[#2c52a1] hover:bg-[#1c1c1e] transition-colors duration-300 cursor-pointer z-50 group shadow-lg"
+          to={link}
+          className="relative mt-8 md:mt-12 inline-flex items-center gap-3 sm:gap-4 pl-6 sm:pl-8 pr-2 py-2 w-fit rounded-full bg-[#2c52a1] hover:bg-[#1c1c1e] transition-colors duration-300 cursor-pointer z-50 group shadow-lg"
         >
           <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-white whitespace-nowrap">
-            View Project
+            <T k="home.showcase1.button">View Project</T>
           </span>
+          <LinkEdit value={link} onChange={setLink} />
           <span className="flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-[#2c52a1] shrink-0 transition-colors duration-300">
             <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />

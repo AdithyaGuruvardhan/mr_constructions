@@ -7,3 +7,76 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+/* ---------- Live editing (admin only; active while body has .mrc-edit) ---------- */
+.mrc-edit [data-editable] {
+    outline: 1px dashed rgba(44, 82, 161, 0.7);
+    outline-offset: 3px;
+    border-radius: 2px;
+    cursor: text;
+    pointer-events: auto !important;
+    user-select: text !important;
+}
+.mrc-edit [data-editable]:hover,
+.mrc-edit [data-editable]:focus {
+    outline: 2px solid #2c52a1;
+    background-color: rgba(44, 82, 161, 0.08);
+}
+.mrc-edit [data-editable-img] {
+    cursor: pointer;
+    pointer-events: auto !important;
+}
+.mrc-edit [data-editable-img]:hover {
+    outline: 3px solid #2c52a1;
+    outline-offset: -3px;
+    filter: brightness(0.8);
+}
+.mrc-tool-btn,
+.mrc-item-tools button,
+.mrc-add-btn {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    pointer-events: auto !important;
+}
+.mrc-tool-btn {
+    background: #2c52a1;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+.mrc-item-tools {
+    display: inline-flex;
+    gap: 2px;
+    background: #1c1c1e;
+    border-radius: 8px;
+    padding: 3px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.mrc-item-tools button {
+    color: #fff;
+    min-width: 26px;
+    height: 26px;
+    border-radius: 6px;
+}
+.mrc-item-tools button:hover:not(:disabled) { background: rgba(255, 255, 255, 0.15); }
+.mrc-item-tools button:disabled { opacity: 0.3; }
+.mrc-item-tools .mrc-danger { color: #fca5a5; }
+.mrc-add-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 16px;
+    border: 2px dashed #2c52a1;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #2c52a1;
+    font-size: 14px;
+}
+.mrc-add-btn:hover { background: #eef2fb; }

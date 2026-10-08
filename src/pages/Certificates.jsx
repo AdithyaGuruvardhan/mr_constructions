@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { certificatesData } from '../data/certificatesData';
-import { projectsData } from '../data/projectsData';
+import { useSiteContent } from '../content/ContentContext';
+import { T, Editable } from '../content/editable';
 import {
   FaAward, FaLightbulb, FaChartLine, FaCogs, FaHandshake
 } from 'react-icons/fa';
@@ -11,7 +11,7 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 // Card-Based Performance Report Component
-const PerformanceReportCards = ({ performance }) => {
+const PerformanceReportCards = ({ performance, onChange }) => {
   const criteria = [
     { title: 'Quality of Work', key: 'qualityOfWork', icon: <FaAward className="w-5 h-5" /> },
     { title: 'Resourcefulness', key: 'resourcefulness', icon: <FaLightbulb className="w-5 h-5" /> },
@@ -25,7 +25,7 @@ const PerformanceReportCards = ({ performance }) => {
   return (
     <div className="w-full mt-4 text-left">
       <h3 className="text-xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-        Performance Report
+        <T k="certificates.performanceHeading">Performance Report</T>
       </h3>
 
       {/* Features Grid matching Home Page */}
@@ -41,10 +41,10 @@ const PerformanceReportCards = ({ performance }) => {
             >
               <div>
                 <h3 className="text-base md:text-lg font-bold mb-2 leading-tight break-words" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  {item.title}
+                  <T k={`certificates.criteria.${item.key}`}>{item.title}</T>
                 </h3>
                 <p className={`${isDark ? 'text-blue-100' : 'text-gray-500'} text-xs font-medium`}>
-                  Rated <span className="font-bold text-sm block mt-0.5">{rating}</span>
+                  <T k="certificates.ratedLabel">Rated</T> <span className="font-bold text-sm block mt-0.5"><Editable value={rating} onChange={v => onChange(item.key, v)} /></span>
                 </p>
               </div>
 
@@ -174,6 +174,7 @@ const ImageViewerModal = ({ images, activeIndex, onClose, onNext, onPrev }) => {
 
 // Image Arc Gallery Component exactly matching the user screenshot
 const ProjectImageArc = ({ projectId, projectIds }) => {
+  const { projects: projectsData } = useSiteContent();
   const linkedProject = projectId ? projectsData[projectId] : null;
 
   // Priority: a specific project's full gallery > one image from each project in a given list > generic pool
@@ -323,6 +324,18 @@ const ProjectImageArc = ({ projectId, projectIds }) => {
 // "Code signing made easy" Style Card
 const CleanCard = ({ certificate }) => {
   const cardRef = useRef(null);
+  const { setCertificate } = useSiteContent();
+  // Update one field (e.g. "financials.workOrderValue") of this certificate in the unsaved edits
+  const update = (path, value) => {
+    const next = structuredClone(certificate);
+    const keys = path.split('.');
+    let o = next;
+    for (const k of keys.slice(0, -1)) o = o[k] ??= {};
+    o[keys.at(-1)] = value;
+    setCertificate(certificate.id, next);
+  };
+  // An editable value of this certificate (a function, not a component, so fields aren't remounted on every edit)
+  const field = (path) => <Editable value={path.split('.').reduce((o, k) => o?.[k], certificate) ?? ''} onChange={v => update(path, v)} />;
 
   useEffect(() => {
     gsap.fromTo(
@@ -340,7 +353,7 @@ const CleanCard = ({ certificate }) => {
       {/* Title Area */}
       <div className="z-10 mt-0 mb-6 sm:mb-2 sm:-mt-12 lg:-mt-16 max-w-4xl mx-auto px-2">
         <h2 className="text-[26px] sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-gray-900 leading-[1.2] md:leading-[1.1] font-serif">
-          {certificate.projectName}
+          {field('projectName')}
         </h2>
       </div>
 
@@ -354,18 +367,18 @@ const CleanCard = ({ certificate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Client & Donor */}
           <div className="bg-gray-50/80 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
-            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4">Client Details</h3>
+            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4"><T k="certificates.heading.clientdetails">Client Details</T></h3>
             <div className="space-y-4">
               <div>
-                <p className="text-xs text-gray-500 mb-1">Client</p>
-                <p className="text-gray-900 font-medium text-sm">{certificate.client}</p>
-                <p className="text-gray-600 text-xs mt-1">{certificate.location}</p>
+                <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.client">Client</T></p>
+                <p className="text-gray-900 font-medium text-sm">{field('client')}</p>
+                <p className="text-gray-600 text-xs mt-1">{field('location')}</p>
               </div>
               {certificate.donor?.name && certificate.donor.name !== "N/A" && (
                 <div>
-                  <p className="text-xs text-gray-500 mb-1">Donor</p>
-                  <p className="text-gray-900 font-medium text-sm">{certificate.donor.name}</p>
-                  <p className="text-gray-600 text-xs mt-1">{certificate.donor.address}</p>
+                  <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.donor">Donor</T></p>
+                  <p className="text-gray-900 font-medium text-sm">{field('donor.name')}</p>
+                  <p className="text-gray-600 text-xs mt-1">{field('donor.address')}</p>
                 </div>
               )}
             </div>
@@ -373,67 +386,67 @@ const CleanCard = ({ certificate }) => {
 
           {/* Financials */}
           <div className="bg-gray-50/80 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
-            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4">Financials</h3>
+            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4"><T k="certificates.heading.financials">Financials</T></h3>
             <div className="space-y-4">
               <div>
-                <p className="text-xs text-gray-500 mb-1">Work Order Value</p>
-                <p className="text-gray-900 font-medium text-sm">{certificate.financials?.workOrderValue}</p>
+                <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.workOrderValue">Work Order Value</T></p>
+                <p className="text-gray-900 font-medium text-sm">{field('financials.workOrderValue')}</p>
               </div>
               <div>
-                <p className="text-xs text-gray-500 mb-1">Cost On Completion</p>
-                <p className="text-gray-900 font-medium text-sm">{certificate.financials?.costOnCompletion}</p>
+                <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.costOnCompletion">Cost On Completion</T></p>
+                <p className="text-gray-900 font-medium text-sm">{field('financials.costOnCompletion')}</p>
               </div>
               <div>
-                <p className="text-xs text-gray-500 mb-1">Compensation Levied</p>
-                <p className="text-gray-900 font-medium text-sm">{certificate.financials?.compensationLevied}</p>
+                <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.compensationLevied">Compensation Levied</T></p>
+                <p className="text-gray-900 font-medium text-sm">{field('financials.compensationLevied')}</p>
               </div>
             </div>
           </div>
 
           {/* Timeline */}
           <div className="bg-gray-50/80 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
-            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4">Timeline</h3>
+            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4"><T k="certificates.heading.timeline">Timeline</T></h3>
             <div className="space-y-4">
               <div>
-                <p className="text-xs text-gray-500 mb-1">Date of Start</p>
-                <p className="text-gray-900 font-medium text-sm">{certificate.timeline?.dateOfStart}</p>
+                <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.dateOfStart">Date of Start</T></p>
+                <p className="text-gray-900 font-medium text-sm">{field('timeline.dateOfStart')}</p>
               </div>
               <div>
-                <p className="text-xs text-gray-500 mb-1">Stipulated Completion</p>
-                <p className="text-gray-900 font-medium text-sm">{certificate.timeline?.stipulatedCompletion}</p>
+                <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.stipulatedCompletion">Stipulated Completion</T></p>
+                <p className="text-gray-900 font-medium text-sm">{field('timeline.stipulatedCompletion')}</p>
               </div>
               <div>
-                <p className="text-xs text-gray-500 mb-1">Actual Completion</p>
-                <p className="text-gray-900 font-medium text-sm">{certificate.timeline?.actualCompletion}</p>
+                <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.actualCompletion">Actual Completion</T></p>
+                <p className="text-gray-900 font-medium text-sm">{field('timeline.actualCompletion')}</p>
               </div>
             </div>
           </div>
 
           {/* Specifications */}
           <div className="bg-gray-50/80 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
-            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4">Specifications</h3>
+            <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4"><T k="certificates.heading.specifications">Specifications</T></h3>
             <div className="space-y-4">
               <div>
-                <p className="text-xs text-gray-500 mb-1">Type of Work</p>
-                <p className="text-gray-900 font-medium text-sm">{certificate.specifications?.typeOfWork}</p>
+                <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.typeOfWork">Type of Work</T></p>
+                <p className="text-gray-900 font-medium text-sm">{field('specifications.typeOfWork')}</p>
               </div>
               <div>
-                <p className="text-xs text-gray-500 mb-1">Total Built-Up Area</p>
-                <p className="text-gray-900 font-medium text-sm">{certificate.specifications?.totalBuiltUpArea}</p>
+                <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.totalBuiltUpArea">Total Built-Up Area</T></p>
+                <p className="text-gray-900 font-medium text-sm">{field('specifications.totalBuiltUpArea')}</p>
               </div>
               <div className="flex gap-4">
                 <div className="flex-1">
-                  <p className="text-xs text-gray-500 mb-1">Height</p>
-                  <p className="text-gray-900 font-medium text-sm">{certificate.specifications?.maximumHeight}</p>
+                  <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.height">Height</T></p>
+                  <p className="text-gray-900 font-medium text-sm">{field('specifications.maximumHeight')}</p>
                 </div>
                 <div className="flex-1">
-                  <p className="text-xs text-gray-500 mb-1">Basements</p>
-                  <p className="text-gray-900 font-medium text-sm">{certificate.specifications?.basements}</p>
+                  <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.basements">Basements</T></p>
+                  <p className="text-gray-900 font-medium text-sm">{field('specifications.basements')}</p>
                 </div>
               </div>
               <div>
-                <p className="text-xs text-gray-500 mb-1">Storeys</p>
-                <p className="text-gray-900 font-medium text-sm">{certificate.specifications?.storeys}</p>
+                <p className="text-xs text-gray-500 mb-1"><T k="certificates.label.storeys">Storeys</T></p>
+                <p className="text-gray-900 font-medium text-sm">{field('specifications.storeys')}</p>
               </div>
             </div>
           </div>
@@ -441,9 +454,9 @@ const CleanCard = ({ certificate }) => {
 
         {/* Description Section */}
         <div className="mt-8 bg-gray-50/80 rounded-2xl p-6 md:p-8 border border-gray-100 hover:shadow-md transition-shadow">
-          <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4">Project Description</h3>
+          <h3 className="text-sm font-bold text-[#2c52a1] tracking-wider uppercase mb-4"><T k="certificates.heading.projectdescription">Project Description</T></h3>
           <p className="text-[16px] text-gray-700 leading-relaxed mb-4">
-            {certificate.description}
+            {field('description')}
           </p>
           <p className="text-[16px] text-gray-700 leading-relaxed italic">
             "Our highly guided execution ensures that {certificate.specifications?.typeOfWork?.toLowerCase() || 'these'} projects of this scale—over {certificate.specifications?.totalBuiltUpArea || 'the stipulated area'}—are delivered with absolute peace of mind."
@@ -453,7 +466,7 @@ const CleanCard = ({ certificate }) => {
 
       {/* The Official Performance Report goes inside or below this card */}
       <div className="w-full bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] z-10">
-        <PerformanceReportCards performance={certificate.performance} />
+        <PerformanceReportCards performance={certificate.performance ?? {}} onChange={(key, v) => update(`performance.${key}`, v)} />
       </div>
 
     </div>
@@ -482,7 +495,7 @@ const CertificateSummaryCard = ({ certificate, onClick }) => {
       </div>
 
       <div className="flex items-center text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors pt-4 border-t border-gray-100">
-        View details
+        <T k="certificates.viewDetails">View details</T>
         <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
@@ -492,12 +505,15 @@ const CertificateSummaryCard = ({ certificate, onClick }) => {
 };
 
 const Certificates = () => {
-  const [selectedCert, setSelectedCert] = useState(null);
+  const { certificates: certificatesData } = useSiteContent();
+  // Keep the id (not a copy) so edits made on the open certificate show immediately
+  const [selectedId, setSelectedId] = useState(null);
+  const selectedCert = certificatesData.find(c => c.id === selectedId) ?? null;
 
   // Scroll to top when selecting a certificate
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [selectedCert]);
+  }, [selectedId]);
 
   return (
     <div className="min-h-screen bg-white pt-32 pb-2 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
@@ -506,20 +522,20 @@ const Certificates = () => {
         {selectedCert ? (
           <div className="w-full lg:w-[96vw] lg:max-w-[96vw]">
             <button
-              onClick={() => setSelectedCert(null)}
+              onClick={() => setSelectedId(null)}
               className="mb-4 sm:mb-8 inline-flex items-center text-sm font-semibold text-gray-500 hover:text-gray-900 transition-colors group bg-gray-50 px-4 py-2 rounded-full"
             >
               <svg className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              Back to all projects
+              <T k="certificates.back">Back to all projects</T>
             </button>
             <CleanCard certificate={selectedCert} />
           </div>
         ) : (
           <div className="w-full max-w-7xl mx-auto">
             <div className="mb-8 text-center">
-              <h1 className="text-4xl font-bold text-gray-900">Project Certificates</h1>
+              <h1 className="text-4xl font-bold text-gray-900"><T k="certificates.title">Project Certificates</T></h1>
             </div>
 
             <div className="flex flex-wrap justify-center gap-4 md:gap-8">
@@ -527,7 +543,7 @@ const Certificates = () => {
                 <div key={cert.id} className="w-[calc(50%-8px)] md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.333px)]">
                   <CertificateSummaryCard
                     certificate={cert}
-                    onClick={() => setSelectedCert(cert)}
+                    onClick={() => setSelectedId(cert.id)}
                   />
                 </div>
               ))}

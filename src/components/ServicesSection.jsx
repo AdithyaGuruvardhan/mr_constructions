@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { T, Editable, EditableImg, useList, ItemTools, AddItem } from '../content/editable';
 
 export default function ServicesSection() {
   const scrollRef = useRef(null);
@@ -9,7 +10,7 @@ export default function ServicesSection() {
   const [isDragging, setIsDragging] = useState(false);
   const navigate = useNavigate();
 
-  const serviceItems = [
+  const DEFAULT_SERVICES = [
     { id: 1, title: 'Government Projects', projects: 'Building major urban transit systems, interchange stations, and metro networks to power city mobility.', image: '/metro/Rashtreeya Vidyalaya Road/RVR STATION (2).webp', link: '/portfolio#government-projects' },
     { id: 2, title: 'Commercial', projects: 'Delivering modern office spaces, retail environments, and state-of-the-art commercial complexes.', image: '/commercial/infosys/INFOSYS HUBLI11.webp', link: '/portfolio#commercial' },
     { id: 3, title: 'Educational Institutions', projects: 'Building inspiring learning environments, from educational institutions to advanced research campuses.', image: '/hubli_school_vert.webp', link: '/portfolio#educational-institutions' },
@@ -17,6 +18,7 @@ export default function ServicesSection() {
     { id: 5, title: 'Archaeological Developments', projects: 'Preserving historical heritage and developing archaeological sites with traditional architectural integrity.', image: '/melukote_temple.webp', link: '/portfolio#archaeological-developments' },
     { id: 6, title: 'Roads & Infrastructure', projects: 'Developing critical transportation infrastructure including road networks and highways for seamless connectivity.', image: '/commercial/sira solar plant/SIRA SOLAR PLANT5.webp', link: '/portfolio#roads-&-infrastructure' },
   ];
+  const services = useList('home.services.items', DEFAULT_SERVICES);
 
   const handleMouseDown = (e) => {
     setIsDown(true);
@@ -70,9 +72,9 @@ export default function ServicesSection() {
         
         {/* Title */}
         <div className="text-left mb-12">
-          <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#2c52a1] mb-4">Services</h2>
+          <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#2c52a1] mb-4"><T k="home.services.title">Services</T></h2>
           <p className="text-[#6b6b6b] text-lg max-w-2xl">
-            Explore our diverse range of services across various sectors.
+            <T k="home.services.subtitle">Explore our diverse range of services across various sectors.</T>
           </p>
         </div>
 
@@ -88,17 +90,19 @@ export default function ServicesSection() {
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
           >
-            {serviceItems.map((item) => (
+            {services.items.map((item, i) => (
               <div 
-                key={item.id} 
+                key={i} 
                 onClick={(e) => handleCardClick(item.link, e)}
                 className="relative w-[280px] md:w-[360px] h-[400px] md:h-[500px] flex-shrink-0 rounded-[1.5rem] overflow-hidden group shadow-lg bg-gray-300 cursor-pointer"
               >
-                <img 
+                <EditableImg 
                   src={item.image} 
+                  onChange={v => services.update(i, { image: v })}
                   alt={item.title} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
                 />
+                <ItemTools list={services} index={i} className="top-3 right-3" />
                 
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/2 to-transparent pointer-events-none"></div>
@@ -106,14 +110,15 @@ export default function ServicesSection() {
                 {/* Text */}
                 <div className="absolute bottom-0 left-0 p-8 w-full pointer-events-none z-10">
                   <h3 className="text-white text-2xl font-medium tracking-wide mb-2">
-                    {item.title}
+                    <Editable value={item.title} onChange={v => services.update(i, { title: v })} />
                   </h3>
                   <p className="text-gray-300 text-sm leading-relaxed max-w-sm line-clamp-3">
-                    {item.projects}
+                    <Editable value={item.projects} onChange={v => services.update(i, { projects: v })} />
                   </p>
                 </div>
               </div>
             ))}
+            <AddItem label="Add service" className="flex-shrink-0 w-[200px]" onAdd={() => services.add({ title: 'New Service', projects: 'Describe this service.', image: '/building.webp', link: '/portfolio' })} />
           </div>
           
           <style dangerouslySetInnerHTML={{__html: `
