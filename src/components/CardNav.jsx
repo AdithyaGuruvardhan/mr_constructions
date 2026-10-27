@@ -7,6 +7,7 @@ import { GoArrowUpRight } from 'react-icons/go';
 const CardNav = ({
   logo,
   logoAlt = 'Logo',
+  logoMark,
   items,
   className = '',
   ease = 'power3.out',
@@ -190,7 +191,9 @@ const CardNav = ({
           </div>
 
           <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
-            <Link to="/" className="cursor-pointer hover:opacity-80 transition-opacity">
+            <Link to="/" className="flex items-center gap-1.5 md:gap-2 cursor-pointer hover:opacity-80 transition-opacity">
+              {/* The wordmark PNG is mostly padding (letters are ~25% of its height), so the mark is sized to the letters, not the image box */}
+              {logoMark && <img src={logoMark} alt="" className="h-6.5 md:h-8 lg:h-9 w-auto object-contain" />}
               <img src={logo} alt={logoAlt} className="logo h-24 md:h-30 lg:h-34 w-auto object-contain object-center" />
             </Link>
           </div>

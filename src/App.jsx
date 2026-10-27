@@ -77,6 +77,7 @@ function App() {
       <CardNav 
         logo="/mrc_blue_logo.png"
         logoAlt="MR Constructions Logo"
+        logoMark="/mrc_trademark_mark.png"
         items={navItems}
         baseColor="rgba(255, 255, 255, 0.95)"
         menuColor="#4b4b4b"

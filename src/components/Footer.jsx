@@ -118,11 +118,9 @@ export default function Footer() {
         </div>
 
         {/* Giant Wordmark */}
-        <div
-          className="overflow-hidden h-14 sm:h-20 md:h-28 lg:h-32 mt-10 sm:mt-8 md:-mt-8"
-          style={{ aspectRatio: '983 / 337' }}
-        >
-          <img src="/mrc_logo.png" alt="M R Constructions" className="w-full h-full object-cover object-center brightness-0 invert" />
+        <div className="h-14 sm:h-20 md:h-28 lg:h-32 mt-10 sm:mt-8 md:-mt-8">
+          {/* White copy of MRC_Logo_WordMark.png with the gold dot kept, for the dark footer */}
+          <img src="/mrc_wordmark_white.png" alt="M R Constructions" className="h-full w-auto object-contain" />
         </div>
 
         {/* Bottom Links */}
